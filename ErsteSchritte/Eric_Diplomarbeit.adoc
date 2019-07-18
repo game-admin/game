@@ -1,0 +1,59 @@
+= 
+
+
+= Introduction and Goals
+
+
+The ARZ in Vienna wants to find a way for a more intelligent, advanced and playful further education. The workers often have different knowledge about programming, so it is rather time consuming and costly to further educate them. This is where the idea of "game" comes into play. The "Game" is intended to be a platform on which employees can improve their programming knowladge with little games, quizzes or competitions. A great focus lies on the terms "self-study" and "Gamification". Gamification means that the information is transmittetd through games to ease the learning process. Furthermore there should be a possibility for trainers to bring in their own ideas, quizzes or modules. One of the goals of this diplome thesis is to motivate the people to continue their education in their free time. There should be a possibility to learn some skills without much effort. Another important aspect of "Game" is the point system, which will be implemented in the software. This will create transparency for employees and employers. This scoring system will be a great motivation for workers. 
+The most relevant Stakeholder are the following:
+
+
+* Roland Moder 
+
+* Konrad Renner
+
+* Michaela Würzl
+
+NOTE: The expections of the Stakeholders should be fulfilled. 
+
+The expectations of the stakeholders regarding the thesis are: 
+
+* sufficient documentation regarding the arc42 template 
+* Fulfillment of the quality goals
+* a clear and well-functioning software
+* an easy-to-use user interface
+
+
+---
+
+NOTE: Das ARZ Wien will einen Weg finden, seine Mitarbeiter intelligent, fortschrittlich und spielerisch weiterzubilden. Die Mitarbeitenden haben oft unterschiedliche Wissensstände, und es ist oft schwer eine passende Schulung zu finden, diese ist dann wieder zeit- und kostenaufwendig. Hier kommt die Idee vom "Game" ins Spiel. Das "Game" soll eine Plattform werden, auf der sich die Arbeitnehmer des Arz nebenbei weiterbilden können. Ein großes Augenmerk liegt hier auf dem Selbststudium und dem Begriff "Gamification". Gamification bedeutet, dass die Information oder das Wissens mittels kleiner Spielchen rübergrebracht wird, und so ein schneller Lerneffekt einsetzen soll. Weiters soll es auch für Trainer die Möglichkeit geben, ihre Ideen, Quize oder Module in die Plattform einzubringen. Das Ziel dieser Diplomarbeit ist es, die Menschen da draußen zu motivieren, sich selbst auch in ihrer Freizeit weiterzubilden. Es soll eine Möglichkeit geben, sich nebenbei einige Skills anzulernen, ohne großen Aufwand.
+Ein weiterer wichtiger Aspekt des "Game's" ist das Punktesystem, welches in die Software implementiert werden soll. Dieses soll Transparenz für Arbeitnehmer und Arbeitgeber schaffen. Dieses Punktesystem soll ein großer Motivationsfaktor sein.
+ausreichende Dokumentation hinsichtlich des arc42 Templates
+* Erfüllung der Qualitätsziele
+* eine übersichtliche und gut funktionierende Software
+* ein einfach zu bedienendes Userinterface
+
+
+= Aufgabenstellung
+...
+
+= Qualitätsziele
+...
+
+= Stakeholder
+
+.Stakeholder
+* Roland Moder roland.moder@aon.at
+* Konrad Renner konrad.renner@arz.at
+* Michaela Würzl michaela.wuerzl@arz.at
+
+
+
+
+[cols="1,1,2" options="header"]
+|===
+|Rolle |Kontakt |Erwartungshaltung
+| Diplomarbeitsbetreuer | Roland Moder | Von diesem Stakeholder wird erwartet, dass die Diplomarbeit reibungslos verläuft und in angemessener Zeit fertiggestellt wird. Er ist zuständig dafür, dass die Diplomanden ausreichend dokumentieren und die Anforderungen für eine Diplomarbeit erfüllen. 
+| Diplomarbeitsbetreuer | Konrad Renner | Von diesem Stakeholder wird erwartet, dass die Diplomanden die Aufgabenstellung richtig verstanden haben, und nach seinen Vorstellungen umgesetzt werden. Er muss die Architektur des Projekts kennen und trifft aufgrunddessen wichtige Entscheidungen um die Diplomarbeit einigermaßen zu lenken oder zu steuern. Er ist die Ansprechsperson für die Diplomanden falls Unklarheiten bei der Programmierung o.Ä. auftreten.   
+| Personalchefin | Michaela Würzl | Die Diplomarbeit "läuft" über die Personalabteilung, also ist die Personalchefin sozusagen das Oberhaupt der Diplomarbeit seitens der Firma. Sie erwartet sich ein ordentliches Ergebnis und muss von dem Projekt überzeugt werden.   
+|===
