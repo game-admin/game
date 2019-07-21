@@ -3,7 +3,9 @@
 = Introduction and Goals
 
 
-The ARZ  wants to find a way for a more intelligent, advanced and playful further education. The workers often have different knowledge about programming, so it is rather time consuming and costly to further educate them.
+The ARZ wants to find a way for a more intelligent, advanced and playful further education. ARZ means "Allgemeines Rechenzentrum" and it is a IT service provider with a location in Innsbruck and Vienna. Their homepage: https://www.arz.at/
+
+The workers often have different knowledge about programming, so it is rather time consuming and costly to further educate them.
 
 This is where the idea of "GAME" comes into play. The "GAME" is intended to be a platform on which employees can improve their programming knowladge with little games, quizzes or competitions.
 
@@ -53,7 +55,7 @@ Cornelia Sammer cornelia.sammer@arz.at
 [cols="1,1,2" options="header"]
 |===
 |Rolle |Kontakt |Erwartungshaltung
-| Diplomarbeitsbetreuer | Roland Moder | Von diesem Stakeholder wird erwartet, dass die Diplomarbeit reibungslos verläuft und in angemessener Zeit fertiggestellt wird. Er ist zuständig dafür, dass die Diplomanden ausreichend dokumentieren und die Anforderungen für eine Diplomarbeit erfüllen. 
+| Diplomarbeitsbetreuer | Roland Moder | Von diesem Stakeholder wird erwartet, dass die Diplomarbeit reibungslos verläuft und in angemessener Zeit fertiggestellt wird. Sie sollen die Anforderungen für eine Diplomarbeit erfüllen. (Er ist zuständig dafür, dass die Diplomanden ausreichend dokumentieren und die Anforderungen für eine Diplomarbeit erfüllen.) 
 | Diplomarbeitsbetreuer | Konrad Renner | Von diesem Stakeholder wird erwartet, dass die Diplomanden die Aufgabenstellung richtig verstanden haben, und nach seinen Vorstellungen umgesetzt werden. Er muss die Architektur des Projekts kennen und trifft aufgrunddessen wichtige Entscheidungen um die Diplomarbeit zu lenken bzw. zu steuern. Er ist die Ansprechsperson für die Diplomanden falls Unklarheiten bei der Programmierung o.Ä. auftreten.   
-| Personalentwicklung | Michaela Würzl | Die Diplomarbeit "läuft" über die Personalabteilung, also ist die Personalchefin sozusagen das Oberhaupt der Diplomarbeit seitens der Firma. Sie erwartet sich ein ordentliches Ergebnis und muss von dem Projekt überzeugt werden.   
+| Personalentwicklung | Michaela Würzl / Cornelia Sammer |  Sie erwarten sich eine zeitgerechte Fertigstellung der Software, sodass sie .........Sie erwartet sich ein ordentliches Ergebnis und muss von dem Projekt überzeugt werden.   
 |===
