@@ -1,7 +1,6 @@
 = GAME - Gamificated ARZ Member Education
 
-= Introduction and Goals
-
+== Introduction and Goals
 
 The ARZ wants to find a way for a more intelligent, advanced and playful further education. ARZ means "Allgemeines Rechenzentrum" and it is a IT service provider with a location in Innsbruck and Vienna. Their homepage: https://www.arz.at/
 
@@ -15,14 +14,15 @@ Furthermore there should be a possibility for trainers to bring in their own ide
 
 Another important aspect of "GAME" is the scoring system, which will be implemented in the software. This will create transparency for employees and employers. This scoring system will be a great motivation for workers. 
 
-The most relevant Stakeholders are the following:
 
-
+.The most relevant Stakeholders
 * Roland Moder 
 
 * Konrad Renner
 
 * Michaela Würzl
+
+* Cornelia Sammer
 
 NOTE: The expections of the Stakeholders should be fulfilled. 
 
@@ -36,26 +36,28 @@ The expectations of the stakeholders regarding the thesis are:
 
 ---
 
-= Aufgabenstellung
+== Aufgabenstellung
 ...
 
-= Qualitätsziele
+== Qualitätsziele
 ...
 
-= Stakeholder
+== Stakeholders
 
-* *Diplomarbeitsbetreuer* (Auftragnehmerseite)*:* Roland Moder roland.moder@aon.at
-* *Diplomarbeitsbetreuer* (Auftraggeberseite)*:* Konrad Renner konrad.renner@arz.at
-* *Personalentwicklung:* Michaela Würzl michaela.wuerzl@arz.at, 
+* *Thesis supervisor* (contractor side)*:* Roland Moder roland.moder@aon.at
+* *Thesis supervisor* (client side)*:* Konrad Renner konrad.renner@arz.at
+* *Human resource development:* Michaela Würzl michaela.wuerzl@arz.at, 
 Cornelia Sammer cornelia.sammer@arz.at
 
+*_Expectations_*:
+
+pass:[<u>Roland Moder</u>]: +
+Von diesem Stakeholder wird erwartet, dass die Diplomarbeit reibungslos verläuft und in angemessener Zeit fertiggestellt wird. Sie sollen die Anforderungen für eine Diplomarbeit erfüllen. (Er ist zuständig dafür, dass die Diplomanden ausreichend dokumentieren und die Anforderungen für eine Diplomarbeit erfüllen.)
+
+pass:[<u>Konrad Renner</u>]: +
+Er erwartet sich, dass das System ein Punktesystem beinhaltet, welches Lernfortschritte aufzeichnet, welche wiederum bewertet und verglichen werden können. Weiters wird von ihm erwartet, dass die Aufgabenstellungen selbstständig gepflegt werden können, das heißt wenn alle Aufgaben auf der Platform erfüllt worden sind, dann soll es eine Möglichkeit für Trainer geben, neue Aufgaben reinstellen zu können.
+
+pass:[<u>Michaela Würzl & Cornelia Sammer</u>]: +
+Sie erwarten sich eine zeitgerechte Fertigstellung der Software, sodass sie .........Sie erwartet sich ein ordentliches Ergebnis und muss von dem Projekt überzeugt werden.
 
 
-
-[cols="1,1,2" options="header"]
-|===
-|Rolle |Kontakt |Erwartungshaltung
-| Diplomarbeitsbetreuer | Roland Moder | Von diesem Stakeholder wird erwartet, dass die Diplomarbeit reibungslos verläuft und in angemessener Zeit fertiggestellt wird. Sie sollen die Anforderungen für eine Diplomarbeit erfüllen. (Er ist zuständig dafür, dass die Diplomanden ausreichend dokumentieren und die Anforderungen für eine Diplomarbeit erfüllen.) 
-| Diplomarbeitsbetreuer | Konrad Renner | Von diesem Stakeholder wird erwartet, dass die Diplomanden die Aufgabenstellung richtig verstanden haben, und nach seinen Vorstellungen umgesetzt werden. Er muss die Architektur des Projekts kennen und trifft aufgrunddessen wichtige Entscheidungen um die Diplomarbeit zu lenken bzw. zu steuern. Er ist die Ansprechsperson für die Diplomanden falls Unklarheiten bei der Programmierung o.Ä. auftreten.   
-| Personalentwicklung | Michaela Würzl / Cornelia Sammer |  Sie erwarten sich eine zeitgerechte Fertigstellung der Software, sodass sie .........Sie erwartet sich ein ordentliches Ergebnis und muss von dem Projekt überzeugt werden.   
-|===
