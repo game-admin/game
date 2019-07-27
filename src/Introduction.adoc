@@ -1,6 +1,7 @@
-= GAME - Gamificated ARZ Member Education
+[[section-Introduction]]
 
 == Introduction and Goals
+[role="introduction"]
 
 The ARZ wants to find a way for a more intelligent, advanced and playful further education. ARZ means "Allgemeines Rechenzentrum" and it is a IT service provider with a location in Innsbruck and Vienna. Their homepage: https://www.arz.at/
 
@@ -32,32 +33,3 @@ The expectations of the stakeholders regarding the thesis are:
 * Fulfillment of the quality goals
 * a clear and well-functioning software
 * an easy-to-use user interface
-
-
----
-
-== Aufgabenstellung
-...
-
-== Qualitätsziele
-...
-
-== Stakeholders
-
-* *Thesis supervisor* (contractor side)*:* Roland Moder roland.moder@aon.at
-* *Thesis supervisor* (client side)*:* Konrad Renner konrad.renner@arz.at
-* *Human resource development:* Michaela Würzl michaela.wuerzl@arz.at, 
-Cornelia Sammer cornelia.sammer@arz.at
-
-*_Expectations_*:
-
-pass:[<u>Roland Moder</u>]: +
-Von diesem Stakeholder wird erwartet, dass die Diplomarbeit reibungslos verläuft und in angemessener Zeit fertiggestellt wird. Sie sollen die Anforderungen für eine Diplomarbeit erfüllen. (Er ist zuständig dafür, dass die Diplomanden ausreichend dokumentieren und die Anforderungen für eine Diplomarbeit erfüllen.)
-
-pass:[<u>Konrad Renner</u>]: +
-Er erwartet sich, dass das System ein Punktesystem beinhaltet, welches Lernfortschritte aufzeichnet, welche wiederum bewertet und verglichen werden können. Weiters wird von ihm erwartet, dass die Aufgabenstellungen selbstständig gepflegt werden können, das heißt wenn alle Aufgaben auf der Platform erfüllt worden sind, dann soll es eine Möglichkeit für Trainer geben, neue Aufgaben reinstellen zu können.
-
-pass:[<u>Michaela Würzl & Cornelia Sammer</u>]: +
-Sie erwarten sich eine zeitgerechte Fertigstellung der Software, sodass sie .........Sie erwartet sich ein ordentliches Ergebnis und muss von dem Projekt überzeugt werden.
-
-

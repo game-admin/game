@@ -1,0 +1,63 @@
+= GAME - Gamificated ARZ Member Education
+
+== Introduction and Goals
+
+The ARZ wants to find a way for a more intelligent, advanced and playful further education. ARZ means "Allgemeines Rechenzentrum" and it is a IT service provider with a location in Innsbruck and Vienna. Their homepage: https://www.arz.at/
+
+The workers often have different knowledge about programming, so it is rather time consuming and costly to further educate them.
+
+This is where the idea of "GAME" comes into play. The "GAME" is intended to be a platform on which employees can improve their programming knowladge with little games, quizzes or competitions.
+
+A great focus lies on the terms "self-study" and "Gamification". Gamification means that the information is transmittetd through games to ease the learning process. 
+
+Furthermore there should be a possibility for trainers to bring in their own ideas, quizzes or modules. One of the goals of this diplome thesis is to motivate the people to continue their education in their free time. There should be a possibility to learn some skills without much effort. 
+
+Another important aspect of "GAME" is the scoring system, which will be implemented in the software. This will create transparency for employees and employers. This scoring system will be a great motivation for workers. 
+
+
+.The most relevant Stakeholders
+* Roland Moder 
+
+* Konrad Renner
+
+* Michaela Würzl
+
+* Cornelia Sammer
+
+NOTE: The expections of the Stakeholders should be fulfilled. 
+
+The expectations of the stakeholders regarding the thesis are: 
+
+* sufficient documentation regarding the arc42 template 
+* Fulfillment of the quality goals
+* a clear and well-functioning software
+* an easy-to-use user interface
+
+
+---
+
+== Aufgabenstellung
+...
+
+== Qualitätsziele
+...
+
+== Stakeholders
+
+* *Thesis supervisor* (contractor side)*:* Roland Moder roland.moder@aon.at
+* *Thesis supervisor* (client side)*:* Konrad Renner konrad.renner@arz.at
+* *Human resource development:* Michaela Würzl michaela.wuerzl@arz.at, 
+Cornelia Sammer cornelia.sammer@arz.at
+
+*_Expectations_*:
+
+pass:[<u>Roland Moder</u>]: +
+Von diesem Stakeholder wird erwartet, dass die Diplomarbeit reibungslos verläuft und in angemessener Zeit fertiggestellt wird. Sie sollen die Anforderungen für eine Diplomarbeit erfüllen. (Er ist zuständig dafür, dass die Diplomanden ausreichend dokumentieren und die Anforderungen für eine Diplomarbeit erfüllen.)
+
+pass:[<u>Konrad Renner</u>]: +
+Er erwartet sich, dass das System ein Punktesystem beinhaltet, welches Lernfortschritte aufzeichnet, welche wiederum bewertet und verglichen werden können. Weiters wird von ihm erwartet, dass die Aufgabenstellungen selbstständig gepflegt werden können, das heißt wenn alle Aufgaben auf der Platform erfüllt worden sind, dann soll es eine Möglichkeit für Trainer geben, neue Aufgaben reinstellen zu können.
+
+pass:[<u>Michaela Würzl & Cornelia Sammer</u>]: +
+Sie erwarten sich eine zeitgerechte Fertigstellung des Projekts, sodass das Konzept bis 31.12.2019 und die Umsetzung bis spätestens Ende April fertig ist. Weiters soll die Software verwendbar und integrierbar sei n, das heißt sie soll für die Mitarbeiter leicht verwendbar sein und das User-Interface sollte nicht schwer zu verwenden sein. 
+
+
