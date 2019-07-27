@@ -3,7 +3,7 @@
 //
 // ====================================
 
-= image:arz_logo.jpg[arz] GAME
+= image:arz_logo.jpg[arz] GAME - Gamificated ARZ Member Education
 // toc-title definition MUST follow document title without blank line!
 :toc-title: Table of Contents
 
