@@ -3,7 +3,7 @@
 //
 // ====================================
 
-= image:arz_logo.jpg[arz] GAME - Gamificated ARZ Member Education
+= image:logo.jpg[logo] GAME
 // toc-title definition MUST follow document title without blank line!
 :toc-title: Table of Contents
 
@@ -31,63 +31,63 @@ endif::basebackend-html[]
 
 <<<<
 // 1a. Introduction and Goals
-include::src/Introduction.adoc[]
+include::chapters/Introduction.adoc[]
 
 <<<<
 // 1b. Requirements Overview
-include::src/Requirements.adoc[]
+include::chapters/Requirements.adoc[]
 
 <<<<
 // 1c. Qualitygoals
-include::src/Qualitygoals.adoc[]
+include::chapters/Qualitygoals.adoc[]
 
 <<<<
 // 1d. Stakeholders
-include::src/Stakeholders.adoc[]
+include::chapters/Stakeholders.adoc[]
 
 <<<<
 // 2. Architecture Constraints
-include::src/02_architecture_constraints.adoc[]
+include::chapters/02_architecture_constraints.adoc[]
 
 <<<<
 // 3. System Scope and Context
-include::src/03_system_scope_and_context.adoc[]
+include::chapters/03_system_scope_and_context.adoc[]
 
 <<<<
 // 4. Solution Strategy
-include::src/04_solution_strategy.adoc[]
+include::chapters/04_solution_strategy.adoc[]
 
 <<<<
 // 5. Building Block View
-include::src/05_building_block_view.adoc[]
+include::chapters/05_building_block_view.adoc[]
 
 <<<<
 // 6. Runtime View
-include::src/06_runtime_view.adoc[]
+include::chapters/06_runtime_view.adoc[]
 
 <<<<
 // 7. Deployment View
-include::src/07_deployment_view.adoc[]
+include::chapters/07_deployment_view.adoc[]
 
 <<<<
 // 8. Concepts
-include::src/08_concepts.adoc[]
+include::chapters/08_concepts.adoc[]
 
 <<<<
 // 9. Design Decisions
-include::src/09_design_decisions.adoc[]
+include::chapters/09_design_decisions.adoc[]
 
 <<<<
 // 10. Quality Scenarios
-include::src/10_quality_scenarios.adoc[]
+include::chapters/10_quality_scenarios.adoc[]
 
 <<<<
 // 11. Technical Risks
-include::src/11_technical_risks.adoc[]
+include::chapters/11_technical_risks.adoc[]
 
 <<<<
 // 12. Glossary
-include::src/12_glossary.adoc[]
+include::chapters/12_glossary.adoc[]
 
 
 
