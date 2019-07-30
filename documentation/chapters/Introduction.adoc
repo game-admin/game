@@ -3,11 +3,11 @@
 == Introduction and Goals
 [role="introduction"]
 
-The ARZ wants to find a way for a more intelligent, advanced and playful further education. ARZ means "Allgemeines Rechenzentrum" and it is a IT service provider with a location in Innsbruck and Vienna. Their homepage: https://www.arz.at/
+The ARZ wants to establish a new way of gamificated education for the members. ARZ means "Allgemeines Rechenzentrum" and it is an IT service provider with locations in Innsbruck and Vienna. Their homepage: https://www.arz.at/
 
 The workers often have different knowledge about programming, so it is rather time consuming and costly to further educate them.
 
-This is where the idea of "GAME" comes into play. The "GAME" is intended to be a platform on which employees can improve their programming knowladge with little games, quizzes or competitions.
+This is where the idea of "GAME" comes into play. The "GAME" is intended to be a platform on which employees can improve their programming knowledge with little games, quizzes or competitions.
 
 A great focus lies on the terms "self-study" and "Gamification". Gamification means that the information is transmittetd through games to ease the learning process. 
 
