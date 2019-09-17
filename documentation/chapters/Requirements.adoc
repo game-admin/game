@@ -6,3 +6,15 @@
 The target is to create or modify a system in a way to get a simple, easy to use education platform for the ARZ members. There should be a possibility for trainers to upload, their own tasks and games for each difficulty level, to the platform. Aswell as a point system which rewards the user with points he can compare with other users and use to rank up.
 
 The motivation of this project is simple. Smarter employees. The ARZ wants to have a good educated staff, where the members want to learn more and also have fun while doing it.
+
+In Punkte aufteilen
+
+* create/modify a system to get a simple, easy to use education platform
+
+* trainers should be able to upload their own tasks and games to the platform
+
+* a variety of difficulty levels
+
+* a point system which rewards the user and lets him compare his points with other users
+
+* the points can also be used to rank up
