@@ -3,18 +3,6 @@
 == Qualitygoals
 [role="qualitygoals"]
 
-The quality goals are following:
-
-* the documentation must be without flaws and complete within the deadline
-* the system must be without flaws and should be ready at the deadline
-* the system must have a point system which rewards the user with points which can be compared
-* the system must be easy to use and simple to understand
-* the platform must have an option so that selected trainers can upload their own tasks
-
-Tabelle!!!
-
-nach Priorität geordnet, Funktionalität
-
 
 .Quality Goals
 |===
