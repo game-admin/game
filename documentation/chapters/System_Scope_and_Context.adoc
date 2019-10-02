@@ -1,0 +1,38 @@
+[[section-System_Scope_and_Context]]
+
+== System, Scope and Context
+[role = "System_Scope_and_Context]
+
+=== Technical Context
+
+The abstract technical context is described by the following C4-model:
+
+image::img/c4_context.png[C4-Context Model]
+
+The GAME system is precisely described through this C4-model:
+
+image::img/c4_container.png[C4-Container Model]
+
+=== Description
+
+The game system communicates with the following systems:
+
+* skill management system
+** This system transmits the current progress of the employees to the GAME System and vice versa.
+
+* training system "SkillA"
+** This system transfers existing progress of trainees to the GAME system.
+
+* SAP employee management system
+** This system transmits the current progress of the employees to the GAME System and vice versa.
+
+=== Considerations
+
+In the point system several difficulty levels are defined which reward the user with previously determined points.
+
+The trainer has to give every module he created a certain difficulty level.
+
+In the beginning it should be possible to manually enter the progresses of trainees from "SkillA" in the progress system.
+
+
+
