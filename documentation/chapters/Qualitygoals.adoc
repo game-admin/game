@@ -3,10 +3,15 @@
 == Qualitygoals
 [role="qualitygoals"]
 
-The quality goals are following:
 
-* the documentaion must be without flaws and complete within the deadline
-* the system must be without flaws and should be ready at the deadline
-* the system must have a point system which rewards the user with points which can be compared
-* the system must be easy to use and simple to understand
-* the platform must have an option so that selected trainers can upload their own tasks
+.Quality Goals
+|===
+|Name |Description
+
+|System ready and usability |The goal of this project is to create or modify a system to get a learning platform for the ARZ members. So the most important quality goal is the completion of the system because there cannot be any other features if the basic system does not exist. Also the system should be easy to use/understand and should not have flaws in it.
+
+|The point system |One of the most important goals of the education platform is to implement a point system for the users. The point system rewards the ARZ members and the users should be able to compare their points with each other. This will boost the motivation of the learners to educate themselves even more, by for example trying to reach certain points.
+
+|Trainers can upload games and tasks |Another feature should be the possibility for selected trainers to upload their own tasks and games for the users of the education platform. This should be the foundation to never run out of new games and tasks.
+
+|Documentation should be ready at deadline |The documentation of the whole project is another goal which is very important for the sucessfull completion. It should be without grammar or writing errors and should have an overall good looking format.
