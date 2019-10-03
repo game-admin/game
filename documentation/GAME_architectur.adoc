@@ -3,7 +3,7 @@
 //
 // ====================================
 
-= image:logo.jpg[logo] GAME
+= image:game_logo.png[Logo] Game
 // toc-title definition MUST follow document title without blank line!
 :toc-title: Table of Contents
 
