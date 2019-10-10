@@ -17,4 +17,4 @@ It's worth mentioning that PostgreSQL also supports many NoSQL features as well.
 
 == Consequences
 
-PostgreSQL is defined as the default database of the application, but database accesses must be as SQL standard compliance as possibly, so that the portability of the application is still warranted.
+PostgreSQL is defined as the default database of the application, but database accesses must be as SQL standard compliant as possible, so that the portability of the application is still warranted.
