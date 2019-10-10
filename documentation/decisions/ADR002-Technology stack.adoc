@@ -1,0 +1,17 @@
+= ADR002-Technology stack
+
+== Status
+
+accpeted
+
+== Context
+
+The GAME application consists of different subsystems. To make it possible, that these subsystems are maintable in the context of the whole application, it is important that these subsystems are based on the same base technology stack.
+
+== Decision
+
+The GAME application and its subsystems are developed with the help of the link:https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition[Java EE] technology stack. The Java EE technology is a proven technology which is standardised and offers therefore highest future-proofness.
+
+== Consequences
+
+The GAME application use Java EE in version 8 and is developed as application server neutral as possible. Version 8 is the latest production ready version of the plattform and therefore it is the version of choice for developing Java EE applications.

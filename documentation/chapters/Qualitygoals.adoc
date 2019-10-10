@@ -14,4 +14,5 @@
 
 |Trainers can upload games and tasks |Another feature should be the possibility for selected trainers to upload their own tasks and games for the users of the education platform. This should be the foundation to never run out of new games and tasks.
 
-|Documentation should be ready at deadline |The documentation of the whole project is another goal which is very important for the sucessfull completion. It should be without grammar or writing errors and should have an overall good looking format.
+|Up to date documentation is released with every update of the system |The documentation of the whole project is another goal which is very important for the sucessfull completion. It should be without grammar or writing errors and should have an overall good looking format.
+|===

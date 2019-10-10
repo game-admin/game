@@ -1,0 +1,17 @@
+= ADR008-Standard code formatter
+
+== Status
+
+accpeted
+
+== Context
+
+For seamless working together on a shared code base it is advantageous to use the same code formatter. So a standard code formatter must be defined.
+
+== Decision
+
+The standard code format is defined in the file link:fromatter.xml[]. This XML is created as an link:https://www.eclipse.org/[eclipse]-Formatter file, but can also be importet in other IDEs, such as Apache Netbeans or IntellJ Idea.
+
+== Consequences
+
+Everyone who creates or changes source code for the GAME application in this repository, must use this formatter setup to format the source code.

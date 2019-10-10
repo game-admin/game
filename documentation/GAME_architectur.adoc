@@ -3,7 +3,7 @@
 //
 // ====================================
 
-= image:logo.jpg[logo] GAME
+= image:game_logo.png[Logo] Game
 // toc-title definition MUST follow document title without blank line!
 :toc-title: Table of Contents
 
@@ -46,12 +46,8 @@ include::chapters/Qualitygoals.adoc[]
 include::chapters/Stakeholders.adoc[]
 
 <<<<
-// 2. Architecture Constraints
-include::chapters/02_architecture_constraints.adoc[]
-
-<<<<
 // 3. System Scope and Context
-include::chapters/03_system_scope_and_context.adoc[]
+include::chapters/System_Scope_and_Context.adoc[]
 
 <<<<
 // 4. Solution Strategy
