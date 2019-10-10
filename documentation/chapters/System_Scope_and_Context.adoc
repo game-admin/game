@@ -19,14 +19,13 @@ image::img/c4_container.png[C4-Container Model]
 
 The game system communicates with the following systems:
 
-* skill management system
+* Skill / SAP employee management system
 ** This system transmits the current progress of the employees to the GAME System and vice versa.
 
 * training system "SkillA"
-** This system transfers existing progress of trainees to the GAME system.
+** This system transfers progress from the "SkillA" training system to the GAME system.
 
-* SAP employee management system
-** This system transmits the current progress of the employees to the GAME System and vice versa.
+
 
 === Considerations
 
