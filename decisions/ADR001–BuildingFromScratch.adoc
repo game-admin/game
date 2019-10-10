@@ -1,0 +1,44 @@
+= ADR001-BuildingFromScratch
+
+== Status
+accpeted
+
+== Context
+The ARZ wants to create a learning platform for their members. The project team evaluated possibly alternatives to adapt from. An alternative needs to be able to run on-premise, be up to date with todays standards and preferably be opensource. The evaluated systems are the following:
+
+http://www.javaranch.com
+
+ * is based on "JForum" (a java forum)
+ * OpenSource
+ * Code is on SourceForge
+ 
+ -> doesn't meet the expectations
+
+http://www.skill-guru.com
+
+ * no On-premise possible
+
+ -> therefore  excluded
+
+http://www.betterprogrammer.com
+
+ * no further development, outdated (java version 1.5/1.6)
+
+ -> therefore not effective
+
+http://www.javapassion.com
+
+ * no possibility for extensions
+
+ * developed by an individual person
+ 
+ -> therefore no viable option
+
+
+== Decision
+None of the evaluated systems meet the requirements, so the system will be build up from scratch by the project team.
+
+
+== Consequences
+
+Development of a web application based on Java/Java Enterprise.
