@@ -9,7 +9,7 @@ The primary user interface of the GAME application will be web based. Therefore 
 
 == Decision
 
-As described in link:./ADR002-Technology stack.adoc[ADR002-Technology stack] Java EE is the base technology stack for the GAME application. The Java EE standard defines the JSF substandard as its UI Framework/Toolkit for web based applications. Therefore the web based UI of the GAME application will be developed with the JSF framework.
+As described in link:ADR002-Technology stack.adoc[ADR002-Technology stack] Java EE is the base technology stack for the GAME application. The Java EE standard defines the JSF substandard as its UI Framework/Toolkit for web based applications. Therefore the web based UI of the GAME application will be developed with the JSF framework.
 
 == Consequences
 
