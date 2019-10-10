@@ -10,7 +10,7 @@ The GAME application consists of different subsystems. To make it possible, that
 
 == Decision
 
-The GAME application and its subsystems are developed with the help of the Java EE technology stack. The Java EE technology is a proven technology which is standardised and offers therefore highest future-proofness.
+The GAME application and its subsystems are developed with the help of the link:https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition[Java EE] technology stack. The Java EE technology is a proven technology which is standardised and offers therefore highest future-proofness.
 
 == Consequences
 
