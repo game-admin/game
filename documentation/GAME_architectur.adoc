@@ -54,10 +54,6 @@ include::chapters/System_Scope_and_Context.adoc[]
 include::chapters/04_solution_strategy.adoc[]
 
 <<<<
-// 5. Building Block View
-include::chapters/05_building_block_view.adoc[]
-
-<<<<
 // 6. Runtime View
 include::chapters/06_runtime_view.adoc[]
 
@@ -71,7 +67,7 @@ include::chapters/08_concepts.adoc[]
 
 <<<<
 // 9. Design Decisions
-include::chapters/09_design_decisions.adoc[]
+include::chapters/Design_Decisions.adoc[]
 
 <<<<
 // 10. Quality Scenarios
