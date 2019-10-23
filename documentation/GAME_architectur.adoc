@@ -51,7 +51,7 @@ include::chapters/System_Scope_and_Context.adoc[]
 
 <<<<
 // 4. Solution Strategy
-include::chapters/04_solution_strategy.adoc[]
+include::chapters/Solution_Strategy.adoc[]
 
 <<<<
 // 6. Runtime View
