@@ -3,31 +3,31 @@
 
 [role=design_decisions]
 
-This chapter includes all decisions, the diploma team had to make.
+This chapter includes all decisions, the diploma team had to make. The following decisions are written in the link:https://adr.github.io/[Lightweight Architecture Decision Records]-format.
 
 <<<<
-include::decisions/ADR001-BuildingFromScratch.adoc[]
+include::../decisions/ADR001-BuildingFromScratch.adoc[]
 
 <<<<
-include::decisions/ADR002-Technology stack.adoc[]
+include::../decisions/ADR002-Technology stack.adoc[]
 
 <<<<
-include::decisions/ADR003-Build and Dependency management.adoc[]
+include::../decisions/ADR003-Build and Dependency management.adoc[]
 
 <<<<
-include::decisions/ADR004-UI technology stack.adoc[]
+include::../decisions/ADR004-UI technology stack.adoc[]
 
 <<<<
-include::decisions/ADR005-Communication with distributed systems.adoc[]
+include::../decisions/ADR005-Communication with distributed systems.adoc[]
 
 <<<<
-include::decisions/ADR006-Database.adoc[]
+include::../decisions/ADR006-Database.adoc[]
 
 <<<<
-include::decisions/ADR007-Java EE application server.adoc[]
+include::../decisions/ADR007-Java EE application server.adoc[]
 
 <<<<
-include::decisions/ADR008-Standard code formatter.adoc[]
+include::../decisions/ADR008-Standard code formatter.adoc[]
 
 
 

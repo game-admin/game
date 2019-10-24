@@ -1,4 +1,4 @@
-= ADR006-Java EE application server
+= ADR007-Java EE application server
 
 == Status
 
