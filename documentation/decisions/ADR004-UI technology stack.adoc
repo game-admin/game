@@ -5,7 +5,7 @@ accpeted
 
 == Context
 
-The primary user interface of the GAME application will be web based. Therefore a web UI Toolkit is needed for an efficient development of the UI an seamless integration with the backend systems.
+The primary user interface of the GAME application will be web based. Therefore a web UI Toolkit is needed for an efficient development of the UI and seamless integration with the backend systems.
 
 == Decision
 

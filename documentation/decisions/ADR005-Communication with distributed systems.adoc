@@ -1,4 +1,4 @@
-= ADR005-Communication with distriubted systems
+= ADR005-Communication with distributed systems
 
 == Status
 

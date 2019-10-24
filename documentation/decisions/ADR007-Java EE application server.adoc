@@ -12,7 +12,7 @@ Applications which are implemented on top of the Java EE specification, which is
 
 The link:https://wildfly.org/[Wildfly application server] will be used as the default application server in the GAME application.
 
-The Wildfly application is open source and has full support for the Java EE 8 specification. It is also widley used in the ARZ and therefore the medium of choice.
+The Wildfly application is open source and has full support for the Java EE 8 specification. It is also widely used in the ARZ and therefore the medium of choice.
 
 == Consequences
 

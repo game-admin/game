@@ -6,7 +6,7 @@ accpeted
 
 == Context
 
-The GAME application consists of different subsystems. To make it possible, that these subsystems can be automatically built and bundled an build and dependency management tool ist neede.
+The GAME application consists of different subsystems. To make it possible, that these subsystems can be automatically built and bundled a build and dependency management tool ist needed.
 
 == Decision
 
