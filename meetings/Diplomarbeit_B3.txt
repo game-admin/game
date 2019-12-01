@@ -1,0 +1,47 @@
+ git push --set upstream origin issue_4
+
+
+
+Nach dem pushen des Branches, auf github auf den branch gehen, und auf new pull request -> dann ev. assignes machen WICHTIG: mit develop branch pull request! 
+
+issue #4 "Nachricht" -> so wird dann automatisch der issue 4 weitergegeben
+
+Notes:
+nicht nur arz in wien -> ganzes ARZ
+
+ein satz: arz ist it dienstleister mit standort in innsbruck und wien und dann link auf die arz homepage
+Überschrift: GAME (Dokumenttitel)
+README -> The game is intendet to be a platform on which... 
+
+
+GAME -> Gamificated ARZ MitarbeiterInnen Entwicklung
+
+GAME -> Gamificated ARZ Member Education
+
+semantic linefeed /semantic line breaks
+
+Erwartungshaltung: Lehrer juckt nicht Punktesystem, will nur 1er Arbeit
+
+-> Conny als Stakeholder
+
+Konrad: Wort einigermaßen löschen -> statt oder zu steuern -> bzw zu steuern
+--> Vorstellungen: System beinhaltet Punktesystem, das Lernfortschritte aufzeichnet, diese bertet und verglichen werden können
+Aufgabenstellungen selbständig gepflegt werden können und von Kollegen durchgeführt werden und dann ins Projekt einfließen
+-> AUfgaben in der Platform, wenn alle erfüllt sind, soll man neue Aufgaben reinstellen könenn, die dann auch erfüllt werden können
+
+Conny:
+bei rolle statt Personalchefin -> Personalentwicklung 1. Kontakt würzl, 2. Kontakt sammer
+
+Cornelia Sammer mit reinnehmen
+Erwartung: Projekt wird zeitgerecht zeitgestellt damit es verwendet werden kann, auch wenn nur Prototyp -> es soll verwendbar und integrierbar sein
+Benutzerfreundlich
+
+Diplomarbeitsbetreuer: Moder -> Auftragnehmer, Renner -> Auftraggeberseite
+
+Bis zum nächsten Mal muss intro und goals und stakeholder bei review sein, und die andern beiden sollten auch schon fertig sein bei in progress
+
+google: agile softwareentwicklung
+
+mehr absätze!
+
+

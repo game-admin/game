@@ -1,0 +1,22 @@
+the arz wants to establish a new way of gamificated education for the members
+
+funktionale und nicht funktionale Anforderungen
+
+wikipedia -> ISO/IEC 9126 Qualitätsmerkmale
+
+Hauptanforderungen:
+
+Trainer bringen Aufgaben rein
+Mitarbeiter füllen diese aus
+das alles wird in einem Punktesystem aufgelistet
+
+
+Marktsondierung: Liste mit min. 5 Tools
+suchen -> //noch nicht dann in Matrix gegenüberstellen -> tool a,b,c,d -> Funktionalität x,y,z -> dann mit Schulnoten
+MUSS eine Webplattform sein -> ANFORDERUNG (Muss zentral auf Server laufen)
+
+idealerweise -> opensource (code gratis übernehmen)
+anforderungen: punktesystem, erweiterbar
+
+Funktionen beschreiben, Lizenzen beschreiben, Pricing Modell beschreiben -> Beschreibung
+

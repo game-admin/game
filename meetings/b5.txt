@@ -1,0 +1,28 @@
+System Scope and Context (arc42 template mit Beschreibungen runterladen)(logo!)
+
+Business Context
+(auf den pfeifen wir)
+
+Technical Context
+siehe c4 modell
+ganz links oben -> 3 Personengruppen:
+Trainer der seine Module pflegt
+Lerneneden der Module durchgeht und vom System Punkte bekommt
+Führungskraft: schaut wie sich die Lernenden machen/Fortschritte in seiner Gruppe
+
+in der Mitte das System mit kurzer Beschreibung
+-> zeichnen können wirs mit welchem Tool wir wollen (draw.io?)
+Abhängigkeiten: (die kommunizieren miteinander)
+Ausbildungprogramm "SkillA"
+Skillmanagement
+SAP / "Mitarbeiterverwaltung"
+
+-> Diagramm anschauen was er uns gegeben hat
+-> dann reingezommt aufs System: die einzelnen Features/Anwendungen (keine Mobile App)
+
+3.Oktober 24 uhr:
+1. Task: alles was bis jetzt gemacht wurde + decision record
+-> pull request von develop auf master
+2. feature branch machen und den dann in develop mergen (c4 Modell/System Scope..(befüllen + bissl Text, Erfahrungen?))
+
+
