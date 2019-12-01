@@ -16,4 +16,15 @@ p {
     background-color: red;
 }
 
+#footer {
+    background: url(../img/background.jpg);
+    position:relative;
+    margin-top: 50%;
+    
+}
+
+#menu {
+    width: 300px;
+    background-color: background;
+}
 

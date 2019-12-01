@@ -6,13 +6,21 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>GAME</title>
-        <link rel="stylesheet" href="./img/stylesheet.css" type="text/css" media="screen"></link>
+        
+        <h:outputStylesheet library="css" name="stylesheet.css"></h:outputStylesheet>
+        <!--<link rel="stylesheet" href="./img/stylesheet.css" type="text/css" media="screen"></link>  -->
     </h:head>
     <h:body>
-        <img src="./img/game_logo.png" alt="Logo" width="100" height="100"></img>
+        
+        <div id="logo">
+            <h:graphicImage library="img" name="game_logo.png" />
+        </div>
+        
+        
+        <!--<img src="./img/game_logo.png" alt="Logo" width="100" height="100"></img> -->
         <h1>GAME-Gamificated ARZ Member Education</h1>
         <ui:insert name="header">
+            <div id="menu">
             <p:tabMenu activeIndex="#{param.i}">
                 <p:menuitem value="Home" outcome="index.xhtml" icon="pi pi-star">
                     <f:param name="i" value="0" />
@@ -27,6 +35,7 @@
                     <f:param name="i" value="3" />
                 </p:menuitem>
             </p:tabMenu>
+            </div>
             <br />
             <h:form>
             <p:splitButton id="basic" value="Account" action="#{buttonView.save}" icon="pi pi-save">
@@ -43,12 +52,15 @@
         </ui:insert>
         <br />
         <ui:insert name="footer">
-            Das standardisierte Impressum.
+            <div class="footer">
+            <h:graphicImage library="img" name="background.jpg" />
             <br />
-            <p>
-                Kontakt: ARZ Wien
-            </p>
-            <a href="./faces/leaderboard.xhtml">Link</a>
+            Kontakt: ARZ Wien <br />
+            Grasbergergasse 13 <br />
+            1030 Wien <br />
+            <a href="http://www.arz.at">Hier gehts zum ARZ.</a>
+            
+            </div>
         </ui:insert>
         <br />
         
