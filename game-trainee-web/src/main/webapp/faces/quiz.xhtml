@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Java Learning Quiz</title>
+        
+    </h:head>
+    <h:body>
+        <ui:composition template="./../mainlayout.xhtml">
+            <ui:define name="content">
+                <h3 style="margin-top:0">Questions</h3>
+                <h:form>
+                    <!--<div class="ui-g ui-fluid"> -->
+                        <div class="ui-g-12 ui-md-4">
+                            <div class="ui-inputgroup">
+                                <span class="ui-inputgroup-addon">?</span>
+                                <p:inputText placeholder="Question" />      
+                            </div>
+                        </div>
+                </h:form>
+                <br />
+                <h:form>
+                    <div class="ui-g-12 ui-md-42">
+                        <div class="ui-inputgroup">
+                            <span class="ui-inputgroup-addon">+</span>
+                            <p:inputText placeholder="Right Answer" />      
+                        </div>
+                    </div>
+                </h:form>
+                <br />
+                <h:form>
+                        <div class="ui-g-12 ui-md-43">
+                            <div class="ui-inputgroup">
+                                <span class="ui-inputgroup-addon">-</span>
+                                <p:inputText placeholder="Wrong Answer" />   
+                            </div>
+                        </div>
+                    <!--</div>  -->
+                </h:form>
+                <br />
+                <h:form>  
+                    <p:commandButton value="Submit" id="ajax" action="#{buttonView.buttonSubmit}" 
+                                     style="margin-right:20px;" styleClass="ui-priority-primary" />
+                </h:form>
+                <br />
+            </ui:define>
+            
+        </ui:composition>
+        
+    </h:body>
+    
+</html>
