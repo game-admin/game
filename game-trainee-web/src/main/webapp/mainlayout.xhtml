@@ -7,19 +7,20 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         
-        <!--<h:outputStylesheet library="resources" name="css/stylesheet.css"></h:outputStylesheet> -->
-        <link rel="stylesheet" href="./css/stylesheet.css" type="text/css" media="screen" />  
     </h:head>
     <h:body>
-        
         <div id="logo">
-            <!-- <h:graphicImage library="resources" name="img/game_logo.png" /> -->
-            <img src="./img/game_logo.png" alt="Logo" width="100" height="100" />
+            <h:graphicImage library="img" name="game_logo.png" width="150" height="150" /> 
         </div>
+            <header>
+                 <h1>GAME-Gamificated ARZ Member Education</h1>
+
+            </header>
         
         
-        <h1>GAME-Gamificated ARZ Member Education</h1>
         <ui:insert name="header">
+                    <h:outputStylesheet library="resources" name="css/stylesheet.css"></h:outputStylesheet>
+
             <div id="menu">
             <p:tabMenu activeIndex="#{param.i}">
                 <p:menuitem value="Home" outcome="index.xhtml" icon="pi pi-star">
@@ -37,6 +38,7 @@
             </p:tabMenu>
             </div>
             <br />
+            <div id="logout">
             <h:form>
             <p:splitButton id="basic" value="Account" action="#{buttonView.save}" icon="pi pi-save">
                 <p:menuitem value="Points" action="#{buttonView.update}" icon="pi pi-refresh" />
@@ -45,26 +47,30 @@
                 <p:menuitem value="Logout" url="www.google.com" icon="pi pi-home" />
             </p:splitButton>
             </h:form>
+            </div>
         </ui:insert>
         <br />
         <ui:insert name="content">
             Content
         </ui:insert>
         <br />
+        <footer>
         <ui:insert name="footer">
-            <div class="footer">
+            
+            
                 <hr />
-                <img src="./img/game_logo.png" alt="Hintergrund" />
-                <!--<h:graphicImage library="img" name="background.jpg" /> -->
-                
+                <h:graphicImage library="img" name="background.jpg" width="10" height="10" /> 
                 <br />
                 Kontakt: <a href="http://www.arz.at">ARZ Wien</a> <br />
                 Grasbergergasse 13 <br />
                 1030 Wien <br />
-                
-
-            </div>
+                <br />
+                <br />
+                <br />
+            
+            
         </ui:insert>
+            </footer>
         <br />
         
     </h:body>

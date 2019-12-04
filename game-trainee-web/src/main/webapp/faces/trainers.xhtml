@@ -15,6 +15,8 @@
         <ui:composition template="./../mainlayout.xhtml">
            <ui:define name="content">
             <h2>Trainers</h2>
+            <h:outputStylesheet library="css" name="stylesheet.css" />
+            
              <h:form id="form">
                     <p:carousel value="#{trainerView.trainers}" headerText="Trainers" var="trainer" itemStyle="text-align:center" responsive="true">
                         <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
