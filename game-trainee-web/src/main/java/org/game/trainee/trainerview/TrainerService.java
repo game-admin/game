@@ -42,8 +42,8 @@ public class TrainerService {
         names[3] = "Tom";
         names[4] = "Alex";
         names[5] = "Josef";
-        names[6] = "Christian";
-        names[7] = "Markus";
+        names[6] = "Mr. Knolle";
+        names[7] = "BensiBoi";
         names[8] = "Michael";
         names[9] = "Martin";
       
