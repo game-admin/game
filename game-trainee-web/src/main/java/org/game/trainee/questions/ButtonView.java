@@ -19,7 +19,7 @@ import org.primefaces.model.menu.*;
 @Named
 @RequestScoped
 public class ButtonView {
- 
+    private String test;
     private MenuModel model;
  
     @PostConstruct
@@ -51,4 +51,13 @@ public class ButtonView {
         FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary, null);
         FacesContext.getCurrentInstance().addMessage(null, message);
     }
+
+    public String getTest() {
+        return test;
+    }
+
+    public void setTest(String test) {
+        this.test = test;
+    }
+    
 }
