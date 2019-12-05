@@ -5,64 +5,22 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
-    <h:head>
-        <title>Java Learning Quiz</title>
+
+
+ 
         
-    </h:head>
-    <h:body>
-        <ui:composition template="./../mainlayout.xhtml">
-            <ui:define name="content">
-                <h:outputStylesheet library="css" name="styleshee.css" />       
-                <h3 style="margin-top:0">Questions</h3>
-                <p:panel id="panel" header="Hier kannst du eine neue Frage definieren:" >
-                <h:form>
-                    <!--<div class="ui-g ui-fluid"> -->
-                        <div class="ui-g-12 ui-md-4">
-                            <div class="ui-inputgroup">
-                                <span class="ui-inputgroup-addon">?</span>
-                                <p:inputText placeholder="Question" value="#{question.text}" />  
-                                <h:outputText value="#{question.text}" />
-                            </div>
-                        </div>
-                
-                <br />
-                
-                    <div class="ui-g-12 ui-md-42">
-                        <div class="ui-inputgroup">
-                            <span class="ui-inputgroup-addon">+</span>
-                            <p:inputText placeholder="Right Answer" value="#{question.rightAnswer}" />    
-                            <h:outputText value="#{question.rightAnswer}" />
-                        </div>
-                    </div>
-                    
-                
-                <br />
-                
-                        <div class="ui-g-12 ui-md-43">
-                            <div class="ui-inputgroup">
-                                <span class="ui-inputgroup-addon">-</span>
-                                <p:inputText placeholder="Wrong Answer" />
-                                <h:outputText value="#{question.wrongAnswer}" />
-                            </div>
-                        </div>
-                    <!--</div>  -->
-                </h:form>
-                </p:panel>
-                <br />
-                <h:form>  
-                    <p:commandButton value="Submit" id="btn" action="#{buttonView.buttonSubmit}" 
-                                     style="margin-right:20px;" styleClass="ui-priority-primary" />
-                </h:form>
-                <br />
-            </ui:define>
-            
-        </ui:composition>
+    <ui:composition template="./../mainlayout.xhtml"
+                    xmlns="http://www.w3.org/1999/xhtml"
+                    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                    xmlns:f="http://java.sun.com/jsf/core"
+                    xmlns:h="http://java.sun.com/jsf/html"
+                    xmlns:p="http://primefaces.org/ui">
         
-    </h:body>
-    
-</html>
+        <ui:define name="content">
+            <h:form>
+                <h:inputText value="#{buttonView.test}" />
+                <h:commandButton action="#{buttonView.buttonSubmit}" type="submit" value="Hallo" />
+            </h:form>
+        </ui:define>
+      
+    </ui:composition>
