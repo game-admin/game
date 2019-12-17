@@ -1,29 +1,38 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="./../mainlayout.xhtml"
+                    xmlns="http://www.w3.org/1999/xhtml"
+                    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                    xmlns:f="http://java.sun.com/jsf/core"
+                    xmlns:h="http://java.sun.com/jsf/html"
+                    xmlns:p="http://primefaces.org/ui">
     
-    <h:head>
+    <ui:define name="head">
+        <h:outputStylesheet library="css" name="styleshee.css" />
         <title>Leaderboard</title>  
-    </h:head>
+    </ui:define>
     
-    <h:body>
-        <ui:composition template="./../mainlayout.xhtml">
-            <ui:define name="content"> 
-                        <h:outputStylesheet library="css" name="stylesheet.css" />
+    
+        
+            <ui:define name="content">         
                 <h2>Leaderboard</h2>
-                <p>Max Mustermann | Rang: Advaced Java Developer | Abzeichern: 
-                    <h:graphicImage library="img" name="icon2.jpg" height="50" width="70" /></p>
-                    
-                <p>Eric Bensi |Rang: Gott | Abzeichen: 
-                    <h:graphicImage library="img" name="icon1.jpg" height="50" width="50" /></p>
-                    
+                <table>
+                    <tr>
+                        <td>
+                        <p>Max Mustermann | Rang: Advaced Java Developer | Abzeichern: 
+                        <h:graphicImage library="img" name="icon2.jpg" height="50" width="70" /></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 
+                        <p>Eric Bensi |Rang: Gott | Abzeichen: 
+                        <h:graphicImage library="img" name="icon1.jpg" height="50" width="50" /></p>
+                        </td>
+                    </tr>
+                        
+                </table>
             </ui:define>
-        </ui:composition>
-    </h:body>
+        
     
-</html>
+</ui:composition>
