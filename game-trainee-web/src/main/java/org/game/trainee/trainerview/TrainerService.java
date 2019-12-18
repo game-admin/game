@@ -19,7 +19,7 @@ import javax.inject.Named;
 @ApplicationScoped
 public class TrainerService {
      
-    private final static String[] roles;
+    private final static String[] roles; 
     private final static String[] branches;
     private final static String[] names;
      

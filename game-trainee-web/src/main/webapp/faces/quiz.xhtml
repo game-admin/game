@@ -15,12 +15,42 @@ and open the template in the editor.
                     xmlns:f="http://java.sun.com/jsf/core"
                     xmlns:h="http://java.sun.com/jsf/html"
                     xmlns:p="http://primefaces.org/ui">
-        
+        <ui:define name="header">
+            <title>Eine Frage erstellen</title>
+            <h:outputScript library="javascript" name="quizscript.js"></h:outputScript>
+            <script src="../resources/javascript/quizscript.js"></script>
+        </ui:define>
+         
         <ui:define name="content">
-            <h:form>
-                <h:inputText value="#{buttonView.test}" />
-                <h:commandButton action="#{buttonView.buttonSubmit}" type="submit" value="Hallo" />
+            <h:outputScript library="javascript" name="quizscript.js"></h:outputScript> 
+            <h2>Hier kannst du eine neue Frage definieren!</h2>
+            <h:form id="question">
+                <!--<h:inputText value="#{buttonView.test}" id="frage"/> -->
+                <h:outputLabel for="frage" value="Frage:">
+                    <h:inputText value="#{buttonView.test}" id="frage" /> 
+                </h:outputLabel>
+                <br />
+                <div id="richtigeantworten">
+                    <h:outputLabel for="riantwort" value="Richtige Antwort:">
+                        <h:inputText value="#{buttonView.test}" id="riantwort" />
+                    </h:outputLabel>
+                    <br />
+                </div>
+                <h:button value="Richtige Antwort hinzufügen" id="addri" />
+                <h:button value="Diese Antwort löschen" id="delri" />
+                <br />
+                <h:outputLabel for="faantwort" value="Falsche Antwort:" >
+                    <h:inputText value="#{buttonView.test}" id="faantwort" />
+                </h:outputLabel>
+                <br />
+                <h:commandButton value="Falsche Antwort hinzufügen" id="addfa"   />
+                <h:button value="Diese Antwort löschen" id="delfa" />
+                <br />
+                <!--<h:commandButton action="nView.buttonSubmit}" type="submit" value="Fertig" /> -->
+                <br />
+                <!--<h:button value="Frage hinzufügen" id="add"  -->
             </h:form>
+            
         </ui:define>
       
     </ui:composition>
