@@ -1,22 +1,23 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="./../mainlayout.xhtml"
+                    xmlns="http://www.w3.org/1999/xhtml"
+                    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                    xmlns:f="http://java.sun.com/jsf/core"
+                    xmlns:h="http://java.sun.com/jsf/html"
+                    xmlns:p="http://primefaces.org/ui">
     
-    <h:head>
-        <title>Leaderboard</title> 
-        
-    </h:head>
+    <ui:define name="head">
+        <title>Home</title> 
+        <h:outputStylesheet library="css" name="stylesheet.css" />
+    </ui:define>
     
-    <h:body>
-        <ui:composition template="./../mainlayout.xhtml">
+   
+       
 
             <ui:define name="content">
-                                    <h:outputStylesheet library="css" name="stylesheet.css" />  
+                                      
 
                 <p>
                     <strong>Java Learning Quiz - Basics</strong> <br />
@@ -32,7 +33,8 @@
                         <f:param name="id" value="50" />
                     </p:link>
                 </p>
+                <h:link outcome="trainers" value="Trainers"></h:link><br /><br />
+                <h:link outcome="takequiz" value="Hier kannst du dein Wissen testen!"></h:link>
             </ui:define>                      
-        </ui:composition>
-    </h:body>
-</html>
+    
+</ui:composition>
