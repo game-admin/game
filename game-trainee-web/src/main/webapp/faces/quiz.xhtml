@@ -18,11 +18,9 @@ and open the template in the editor.
         <ui:define name="header">
             <title>Eine Frage erstellen</title>
             <h:outputScript library="javascript" name="quizscript.js"></h:outputScript>
-            <script src="../resources/javascript/quizscript.js"></script>
         </ui:define>
          
         <ui:define name="content">
-            <h:outputScript library="javascript" name="quizscript.js"></h:outputScript> 
             <h2>Hier kannst du eine neue Frage definieren!</h2>
             <h:form id="question">
                 <!--<h:inputText value="#{buttonView.test}" id="frage"/> -->
@@ -43,7 +41,8 @@ and open the template in the editor.
                     <h:inputText value="#{buttonView.test}" id="faantwort" />
                 </h:outputLabel>
                 <br />
-                <h:commandButton value="Falsche Antwort hinzufügen" id="addfa"   />
+                <h:commandButton value="Falsche Antwort hinzufügen" id="addfa"></h:commandButton>
+                
                 <h:button value="Diese Antwort löschen" id="delfa" />
                 <br />
                 <!--<h:commandButton action="nView.buttonSubmit}" type="submit" value="Fertig" /> -->

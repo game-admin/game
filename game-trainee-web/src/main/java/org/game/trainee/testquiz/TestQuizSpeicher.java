@@ -17,12 +17,13 @@ import javax.inject.Named;
 @ApplicationScoped
 public class TestQuizSpeicher {
     
-    public final static String[] fragen;
-    public final static String[][] antworten;
-    public final static int[] indexrichtig;
+    private final  String[] fragen; //kein static!
+    private final  String[][] antworten;
+    private final  int[] indexrichtig;
     
-    static {
-        fragen = new String[4];
+         
+    public TestQuizSpeicher() {
+       fragen = new String[4];
         fragen[0] = "Ist Java gut?";
         fragen[1] = "Ist Java auch eine Insel?";
         fragen[2] = "Wie gibt man Text in Java aus?";
@@ -45,7 +46,7 @@ public class TestQuizSpeicher {
         indexrichtig[0]=0;
         indexrichtig[1]=0;
         indexrichtig[2]=1;
-        indexrichtig[3]=1;
+        indexrichtig[3]=1; 
     }
     public TestQuiz createQuiz() {
         TestQuiz neu = new TestQuiz(getFragen(), getAntworten(), getRichtige());
