@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 
 body {
-    background-image: url(background.jpg);
+    
     background-color: beige;
 }
 
@@ -19,7 +19,8 @@ p {
 }
 
 footer {
-    background-image: url("../img/background.jpg");
+    background-image: url("background.jpg");
+    background-size: cover;
     bottom: 0px;
        
 }
