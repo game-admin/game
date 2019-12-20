@@ -4,16 +4,16 @@
 skinparam linetype ortho
 
 entity Punktezahl {
-    * PunktID: Int
+    * **PunktID: Int**
     --
     * Punkteanzahl: Int/Long
 }
 together {
 
     entity Quiz {
-        * QID: Int  PK
-        * FNR: Int  FK
-        * PID: Int  FK
+        * **QID: Int**
+        * FNR: Int
+        * PID: Int
         --
         * Namen: String
     }
@@ -25,32 +25,32 @@ together {
     }
     
     entity Mitarbeiter {
-        * MitID:  Int PK
-        * FortID: Int FK
+        * **MitID:  Int**
+        * FortID: Int
         --
         * Name: String
         Vorname: String
-        * Nickname: String  UNIQUE
+        * Nickname: String UNIQUE
         Abteilung
     }
     
 }
 
 entity Fortschritt {
-    * FortID: Int
+    * **FortID: Int**
     --
     * Button: Int
 }
 
 entity Fragen {
-    * FNR: Int
+    * **FNR: Int**
     --
     * Frage: String
 }
 
 entity Antworten {
-    * FNR:    Int  FK
-    * AntwID: Int  PK
+    * FNR:      Int
+    * **AntwID: Int**
     --
     * Antwort: String
     Richtige Antwort
@@ -67,6 +67,5 @@ QuizMitarbeiter|o--|{Mitarbeiter
 Quiz}|--||Punktezahl
 Punktezahl}|--||Fortschritt
 Fortschritt|o--o|Mitarbeiter
-
 
 ....
