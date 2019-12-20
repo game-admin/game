@@ -1,0 +1,72 @@
+[plantuml, diagram-classes, png]     
+....
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity Punktezahl {
+    * PunktID: Int
+    --
+    * Punkteanzahl: Int/Long
+}
+together {
+
+    entity Quiz {
+        * QID: Int  PK
+        * FNR: Int  FK
+        * PID: Int  FK
+        --
+        * Namen: String
+    }
+    
+    entity QuizMitarbeiter {
+        * QID:   Int
+        * MitID: Int  
+        --
+    }
+    
+    entity Mitarbeiter {
+        * MitID:  Int PK
+        * FortID: Int FK
+        --
+        * Name: String
+        Vorname: String
+        * Nickname: String  UNIQUE
+        Abteilung
+    }
+    
+}
+
+entity Fortschritt {
+    * FortID: Int
+    --
+    * Button: Int
+}
+
+entity Fragen {
+    * FNR: Int
+    --
+    * Frage: String
+}
+
+entity Antworten {
+    * FNR:    Int  FK
+    * AntwID: Int  PK
+    --
+    * Antwort: String
+    Richtige Antwort
+}
+
+
+
+
+
+Antworten}|--||Fragen
+Fragen}|--||Quiz
+Quiz|o--o{QuizMitarbeiter
+QuizMitarbeiter|o--|{Mitarbeiter
+Quiz}|--||Punktezahl
+Punktezahl}|--||Fortschritt
+Fortschritt|o--o|Mitarbeiter
+
+
+....
