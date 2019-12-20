@@ -13,41 +13,37 @@
         <div id="logo">
             <h:graphicImage library="img" name="game_logo.png" width="150" height="150" /> 
         </div>
-            <header>
-                 <h1>GAME-Gamificated ARZ Member Education</h1>
-
-            </header>
+        <header>
+            <h1>GAME-Gamificated ARZ Member Education</h1>
+        </header>
         
+        <ui:insert name="menubar">
+            <ui:include src="./faces/menubar.xhtml"></ui:include>
+        </ui:insert>
         
         <ui:insert name="header">
-                    <h:outputStylesheet library="resources" name="css/stylesheet.css"></h:outputStylesheet>
-
-            <div id="menu">
-                
-            </div>
+            <h:outputStylesheet library="resources" name="css/stylesheet.css"></h:outputStylesheet>
+            
         </ui:insert>
         <br />
         <ui:insert name="content">
             Content
         </ui:insert> 
         <br />
+        
         <footer>
         <ui:insert name="footer">
-            
-            
-                <hr />
-                <h:graphicImage library="img" name="background.jpg" width="10" height="10" /> 
-                <br />
-                Kontakt: <a href="http://www.arz.at">ARZ Wien</a> <br />
-                Grasbergergasse 13 <br />
-                1030 Wien <br />
-                <br />
-                <br />
-                <br />
-            
-            
+            <hr />
+            <!--<h:graphicImage library="img" name="background.jpg" width="10" height="10" /> -->
+            <br />
+            Kontakt: <a href="http://www.arz.at">ARZ Wien</a> <br />
+            Grasbergergasse 13 <br />
+            1030 Wien <br />
+            <br />
+            <br />
+            <br />          
         </ui:insert>
-            </footer>
+        </footer>
         <br />
 
     </h:body>

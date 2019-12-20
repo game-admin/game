@@ -19,11 +19,9 @@ p {
 }
 
 footer {
-    background-color: grey;
+    background-image: url("../img/background.jpg");
     bottom: 0px;
-    
-    
-    
+       
 }
 
 #menu {
@@ -35,8 +33,8 @@ footer {
 
 #logout {
     position:relative;
-    left:830px;
-    top:-2.5em;
+    left:800px;
+    top:-2.6em;
     
     width:200px;
     height:70px;
