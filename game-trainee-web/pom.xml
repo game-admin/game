@@ -57,7 +57,7 @@
         </dependency>
         <dependency>
             <groupId>org.primefaces.themes</groupId>
-            <artifactId>blitzer</artifactId>
+            <artifactId>hot-sneaks</artifactId>
             <version>1.0.10</version>
             
 	</dependency>
