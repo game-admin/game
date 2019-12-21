@@ -12,39 +12,17 @@
 
     <ui:define name="content">
         <h2>Dies ist ein Quiz um dein Java-Wissen zu testen!</h2><br />
-        <h:form id="quiz">
+        <h:form>
+        <ui:repeat var="quiz" value="#{testQuizAnzeigen.quiz}">
             <p class="frage">
-                <h:outputText value="#{testQuizSpeicher.fragen[0]}"></h:outputText> <br />
-                <h:outputText value="#{testQuizSpeicher.antworten[0][0]}"></h:outputText>
-                <input type="checkbox"></input><br />
-                <h:outputText value="#{testQuizSpeicher.antworten[0][1]}"></h:outputText>
-                <input type="checkbox"></input>
-            </p>
-            <br />
-            <p class="frage">
-                <h:outputText value="#{testQuizSpeicher.fragen[1]}"></h:outputText> <br />
-                <h:outputText value="#{testQuizSpeicher.antworten[1][0]}"></h:outputText>
-                <input type="checkbox"></input><br />
-                <h:outputText value="#{testQuizSpeicher.antworten[1][1]}"></h:outputText>
-                <input type="checkbox"></input>
-            </p>
-            <br />
-            <p class="frage">
-                <h:outputText value="#{testQuizSpeicher.fragen[2]}"></h:outputText> <br />
-                <h:outputText value="#{testQuizSpeicher.antworten[2][0]}"></h:outputText>
-                <input type="checkbox"></input><br />
-                <h:outputText value="#{testQuizSpeicher.antworten[2][1]}"></h:outputText>
-                <input type="checkbox"></input>
-            </p>
-            <br />
-            <p class="frage">
-                <h:outputText value="#{testQuizSpeicher.fragen[3]}"></h:outputText> <br />
-                <h:outputText value="#{testQuizSpeicher.antworten[3][0]}"></h:outputText>
-                <input type="checkbox"></input><br />
-                <h:outputText value="#{testQuizSpeicher.antworten[3][1]}"></h:outputText>
-                <input type="checkbox"></input>
-            </p>
-            <h:commandButton type="submit" value="Check Answers"></h:commandButton>
+                <h:outputText value="#{quiz.fragen}"></h:outputText> <br />
+                <h:outputText value="#{quiz.antworten[0]}"></h:outputText>
+                <h:commandButton action="#{testQuizAnzeigen.check(button1)}"></h:commandButton><br />
+                <h:outputText value="#{quiz.antworten[1]}"></h:outputText>
+                <h:commandButton action="#{testQuizAnzeigen.check(button2)}"></h:commandButton>
+            </p>      
+        </ui:repeat>
+            <h:commandButton type="submit" action="#{testQuizAnzeigen.check}"  ></h:commandButton>
         </h:form>
     </ui:define>
     

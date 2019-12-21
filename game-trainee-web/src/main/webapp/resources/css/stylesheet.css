@@ -10,7 +10,7 @@ and open the template in the editor.
 
 body {
     
-    background-color: beige;
+    /*background-color: beige; */
 }
 
 p {
@@ -19,8 +19,8 @@ p {
 }
 
 footer {
-    background-image: url("background.jpg");
-    background-size: cover;
+    /*background-image: url("C:\Users\marku\Desktop\DiplomarbeitGAME\game\game-trainee-web\src\main\webapp\resources\img\background.jpg");
+    background-size: cover;*/
     bottom: 0px;
        
 }
