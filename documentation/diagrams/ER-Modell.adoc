@@ -8,7 +8,6 @@ together {
 
     entity Quiz {
         * **QID: Int**
-        * PID: Int
         * FNR: Int
         * **Version: Int**
         --
