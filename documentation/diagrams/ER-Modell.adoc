@@ -3,30 +3,29 @@
 ' avoid problems with angled crows feet
 skinparam linetype ortho
 
-entity Punktezahl {
-    * **PunktID: Int**
-    --
-    * Punkteanzahl: Int/Long
-}
+
 together {
 
     entity Quiz {
         * **QID: Int**
-        * FNR: Int
         * PID: Int
+        * FNR: Int
+        * **Version: Int**
         --
         * Namen: String
     }
     
-    entity QuizMitarbeiter {
+    entity Quizbeantwortung {
         * QID:   Int
-        * MitID: Int  
+        * MitID: Int
+        * **Version: Int**
+        * GewAntwID: Int
         --
     }
     
     entity Mitarbeiter {
         * **MitID:  Int**
-        * FortID: Int
+        * **Version: Int**
         --
         * Name: String
         Vorname: String
@@ -36,36 +35,37 @@ together {
     
 }
 
-entity Fortschritt {
-    * **FortID: Int**
-    --
-    * Button: Int
-}
-
 entity Fragen {
     * **FNR: Int**
+    * **Version: Int**
     --
     * Frage: String
+    * Punkteanzahl: Int/Long
 }
 
-entity Antworten {
+entity Antwortmoeglichkeiten {
     * FNR:      Int
     * **AntwID: Int**
+    * **Version: Int**
     --
     * Antwort: String
     Richtige Antwort
 }
 
+entity Antwort {
+    * **Version: Int**
+    * **GewAntwID: Int**
+    --
+    * Gewählte Antwort: String
+}
 
 
 
 
-Antworten}|--||Fragen
+
+Antwortmoeglichkeiten}|--||Fragen
 Fragen}|--||Quiz
-Quiz|o--o{QuizMitarbeiter
-QuizMitarbeiter|o--|{Mitarbeiter
-Quiz}|--||Punktezahl
-Punktezahl}|--||Fortschritt
-Fortschritt|o--o|Mitarbeiter
-
+Quiz|o--o{Quizbeantwortung
+Quizbeantwortung}|--||Mitarbeiter
+Quizbeantwortung||--|{Antwort
 ....

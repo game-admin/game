@@ -3,7 +3,7 @@
 //
 // ====================================
 
-= image:game_logo.png[Logo] Game
+= image:./img/game_logo.png[Logo] Game
 // toc-title definition MUST follow document title without blank line!
 :toc-title: Table of Contents
 
@@ -69,6 +69,10 @@ include::chapters/08_concepts.adoc[]
 [[id_designdecisions]]
 // 9. Design Decisions
 include::chapters/Design_Decisions.adoc[]
+
+<<<<
+// ER-Modell
+image::diagrams/diagram-classes.png[]
 
 <<<<
 // 10. Quality Scenarios
