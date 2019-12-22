@@ -19,8 +19,8 @@ p {
 }
 
 footer {
-    /*background-image: url("C:\Users\marku\Desktop\DiplomarbeitGAME\game\game-trainee-web\src\main\webapp\resources\img\background.jpg");
-    background-size: cover;*/
+    background-image: url("background.gif");
+    background-size: cover;
     bottom: 0px;
        
 }
