@@ -1,0 +1,17 @@
+private email: koni.renner@gmail.com
+
+tabelle normalisieren: 3. NF, n-n Beziehungen auflösen
+
+plantuml er-modell -> kann man im ascidoc includen
+als eigene plantuml datei abspeichern
+
+Daten daweil als Variablen speichern
+
+quiz.xhtml von scratch wiederaufbauen
+
+<ui:include src= /.../.../menu.xhtml
+
+und da in dem menu ist dann die form
+
+einfach mal ausprobieren
+

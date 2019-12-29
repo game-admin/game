@@ -1,0 +1,86 @@
+// header file for arc42-template,
+// including all help texts
+//
+// ====================================
+
+= image:game_logo.png[Logo] Game
+// toc-title definition MUST follow document title without blank line!
+:toc-title: Table of Contents
+
+//additional style for arc42 help callouts
+ifdef::basebackend-html[]
+++++
+<style>
+.arc42help {font-size:small; width: 14px; height: 16px; overflow: hidden; position: absolute; right: 0px; padding: 2px 0px 3px 2px;}
+.arc42help::before {content: "?";}
+.arc42help:hover {width:auto; height: auto; z-index: 100; padding: 10px;}
+.arc42help:hover::before {content: "";}
+@media print {
+	.arc42help {display:hidden;}
+}
+</style>
+++++
+endif::basebackend-html[]
+
+
+***
+
+
+// numbering from here on
+:numbered:
+
+<<<<
+// 1a. Introduction and Goals
+include::chapters/Introduction.adoc[]
+
+<<<<
+// 1b. Requirements Overview
+include::chapters/Requirements.adoc[]
+
+<<<<
+// 1c. Qualitygoals
+include::chapters/Qualitygoals.adoc[]
+
+<<<<
+// 1d. Stakeholders
+include::chapters/Stakeholders.adoc[]
+
+<<<<
+// 3. System Scope and Context
+include::chapters/System_Scope_and_Context.adoc[]
+
+<<<<
+// 4. Solution Strategy
+include::chapters/Solution_Strategy.adoc[]
+
+<<<<
+// 6. Runtime View
+include::chapters/06_runtime_view.adoc[]
+
+<<<<
+// 7. Deployment View
+include::chapters/07_deployment_view.adoc[]
+
+<<<<
+// 8. Concepts
+include::chapters/08_concepts.adoc[]
+
+<<<<
+[[id_designdecisions]]
+// 9. Design Decisions
+include::chapters/Design_Decisions.adoc[]
+
+<<<<
+// 10. Quality Scenarios
+include::chapters/10_quality_scenarios.adoc[]
+
+<<<<
+// 11. Technical Risks
+include::chapters/11_technical_risks.adoc[]
+
+<<<<
+// 12. Glossary
+include::chapters/12_glossary.adoc[]
+
+
+

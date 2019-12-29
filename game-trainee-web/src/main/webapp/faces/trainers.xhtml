@@ -1,0 +1,43 @@
+    <?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="./../mainlayout.xhtml"
+                    xmlns="http://www.w3.org/1999/xhtml"
+                    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                    xmlns:f="http://java.sun.com/jsf/core"
+                    xmlns:h="http://java.sun.com/jsf/html"
+                    xmlns:p="http://primefaces.org/ui">
+    
+    <ui:define name="header">
+        <title>Trainers</title>  
+        <h:outputStylesheet library="css" name="stylesheet.css" />
+
+    </ui:define>>
+          
+           <ui:define name="content">
+            <h2>Trainers</h2>
+            
+            
+             <h:form id="trainerform">
+                    <p:carousel value="#{trainerView.trainers}" headerText="Trainers" var="trainer" itemStyle="text-align:center" responsive="true">
+                        <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+                            <f:facet name="header">
+                                <p:graphicImage library="img" name="trainer.jpg"/> 
+                            </f:facet>
+
+                            <h:outputText value="Name:"  />
+                            <h:outputText value="#{trainer.name}" />
+
+                            <h:outputText value="Role:" />
+                            <h:outputText value="#{trainer.role}" />
+
+                            <h:outputText value="Branch:" />
+                            <h:outputText value="#{trainer.branch}" />
+                        </p:panelGrid>
+                        
+                    </p:carousel>
+             </h:form>
+             
+        
+    </ui:define>
+</ui:composition>

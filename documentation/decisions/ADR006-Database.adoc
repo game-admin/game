@@ -1,0 +1,20 @@
+= ADR006-Database
+
+== Status
+
+accpeted
+
+== Context
+
+For persistent storage of data in the GAME application a database system is needed.
+
+== Decision
+
+The link:https://www.postgresql.org/[PostgreSQL] database will be used as the default database system in the GAME application.
+
+PostgreSQL comes with many features aimed to help developers build applications, administrators to protect data integrity and build fault-tolerant environments, and help you manage your data no matter how big or small the dataset. In addition to being free and open source, PostgreSQL is highly extensible. 
+It's worth mentioning that PostgreSQL also supports many NoSQL features as well.
+
+== Consequences
+
+PostgreSQL is defined as the default database of the application, but database accesses must be as SQL standard compliant as possible, so that the portability of the application is still warranted.

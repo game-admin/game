@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        
+    </h:head>
+    <h:body>
+
+        <div id="logo">
+            <h:graphicImage library="img" name="game_logo.png" width="150" height="150" /> 
+        </div>
+        <header>
+            <h1>GAME-Gamificated ARZ Member Education</h1>
+        </header>
+        
+        <ui:insert name="menubar">
+            <ui:include src="./faces/menubar.xhtml"></ui:include>
+        </ui:insert>
+        
+        <ui:insert name="header">
+            <h:outputStylesheet library="resources" name="css/stylesheet.css"></h:outputStylesheet>
+            
+        </ui:insert>
+        <br />
+        <ui:insert name="content">
+            Content
+        </ui:insert> 
+        <br />
+        
+        <footer> <!--style="background-image: url('test.gif'); background-size:cover;"-->
+        <ui:insert name="footer" >
+            <hr />
+            <!--<h:graphicImage library="img" name="background.jpg" width="10" height="10" /> -->
+            <br />
+            Kontakt: <a href="http://www.arz.at">ARZ Wien</a> <br />
+            Grasbergergasse 13 <br />
+            1030 Wien <br />
+            <br />
+            <br />
+            <br />          
+        </ui:insert>
+        </footer>
+        <br />
+
+    </h:body>
+</html>
+

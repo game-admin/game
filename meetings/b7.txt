@@ -1,0 +1,31 @@
+24.10.2019
+
+1. Trainee Interface zuerst (-> das wir gleich mal was zum angreifen haben)
+
+im Netbeans: Webmodul machen (im Netbeans)
+next
+ins git repository legen (location)
+game-trainee-web
+groupid: org.game
+.
+.
+.
+WICHTIG: erklären was Annotation sind
+generics!!!! wichtig sonst könnma den code ned lesen (enums auch?)
+Javabeans pattern anschauen! 
+UI-Composition
+
+
+Design überlegen
+Clickdu-mmies
+design abstimmen -> paralell (ihm vorher schicken, was aufzeichnen)
+
+
+jetzt hamma "Payara Server" genommen, weil das wildfly plugin nicht gefunden wurde
+
+
+Was dürfen wir verwenden: Primefaces!!! primefaces.org
+
+Jave ee tutorial -> von oracle -> auf das könnma referenzieren für Zitate
+
+FacesServlet: wertet xhtml Seiten aus, weiß auf Grund des Requests was es zu tun hat

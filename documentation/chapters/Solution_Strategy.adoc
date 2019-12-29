@@ -1,0 +1,11 @@
+[[section-solution-strategy]]
+== Solution Strategy
+
+=== Building from Scratch
+
+The key decision of this project is the settlement to program the system from scratch, since there is no suitable, open-source platform which can be used for our purpose. Which systems were examined are written in link:../decisions/ADR001-BuildingFromScratch.adoc[Building from Scratch].
+
+
+=== Programming Language
+
+The programming language we will use throughout this project is the highly acknowledged Java programming language. For in depth view of technology decisions please have a look in  <<id_designdecisions, Design Decisions>>.

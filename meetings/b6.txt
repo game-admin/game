@@ -1,0 +1,31 @@
+10.10.2019 15:00-16:30
+
+1. Solution Strategy befüllen -> Rücksprache mit Renner
+
+05 lassma aus
+
+Design Decisions -> decisions reinincluden,
+
+wildfly
+netbeans
+
+SOLID Prizipien verinnerlichen (Objektorient progriemmeren)
+
+-> Unverständnisse aufschreiben -> fragen:(Lehrer Gab/Hst)
+
+Java EE framework anschauen (grundlagenmäßig, wiki -> alles unverständliche hiterfragen)
+-> baut auf substandards auf
+-> wichtigsten: JSF (Websiten), JAX-RS (REST Services), CDI (Dependency & Lifecycle Framework), EJB (Backend-Komponenten), JPA (Datenbankzugriffe)
+--> Technologiestack
+
+Annotationen!! dienen zum konfigurieren (META-Informationen)
+
+-> kleines Bsp programmieren, nächstes Mal, tripple Coding Session, (erinnern vorher!)
+
+postgresql-Datenbank installieren https://www.postgresql.org/download/
+
+nächster Termin: 24.10.2019, 15 Uhr
+
+wildfly -> sowas wie apache, da rennt ein Webserver drauf
+
+

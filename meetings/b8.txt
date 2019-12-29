@@ -1,0 +1,33 @@
+home auf activities umbenennen
+
+LEADERBOARD
+
+punkte wegnehmen bei leaderboard stattdessen buttons(für jeden kurs spezifischen button) auflisten
+grafik für fortschritt
+platz weg
+nach namen sortiert
+abteilung dazu
+nickname nur bei quizzes beim leaderboard auch name dazu
+versch. sortierung
+
+Help seite wie forum aufgebaut
+
+Account: 
+alles bisherige raus 
+Nickname ändern
+Liste von Fragen, Antworten
+
+bei Trainers: Trainees weg
+
+Executive hat nur seine Trainees (Klasse Abteilung notwendig)
+
+neue Rolle => Administrator (weist die Rollen zu; hat alle Rechte)
+automatisch Trainee beim einloggen; wenn man trainer ist muss man admin fragen
+
+erstmal auf Quizzes konzentrieren
+bei Quiz bearbeiten oder erstellen
+Button im Quiz für Frage erstellen, bearbeiten und löschen
+Frage kann x Antworten haben; bestimmte Anzahl richtig
+
+internationalsierung(also mehrer Sprachen möglich) z.B. Browser frägt englischsprachige Seite ab => code erkennt das und gibt entsprechenden Text in der Sprache zurück
+

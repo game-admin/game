@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="./../mainlayout.xhtml"
+                    xmlns="http://www.w3.org/1999/xhtml"
+                    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                    xmlns:f="http://java.sun.com/jsf/core"
+                    xmlns:h="http://java.sun.com/jsf/html"
+                    xmlns:p="http://primefaces.org/ui">
+    
+    <ui:define name="header">
+        <title>Home</title> 
+        <h:outputStylesheet library="css" name="stylesheet.css" />
+    </ui:define>
+    
+    <ui:define name="content">                                      
+        <p>
+            <strong>Java Learning Quiz - Basics</strong> <br />
+            This quiz will check your knowledge on basic java skills.
+        </p>
+        <p>
+        <strong>Java Learning Quiz - Advanced</strong> <br />
+        This quiz will check, if you have enough in depth knowledge with java.
+        </p>
+        <br />
+        <p>If you want to create a quiz, 
+            <p:link outcome="quiz" value="click here!">
+            <f:param name="id" value="50" />
+            </p:link>
+        </p>
+    </ui:define>                      
+    
+</ui:composition>

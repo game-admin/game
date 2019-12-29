@@ -1,0 +1,22 @@
+Mandatory hat constraint not null also es muss vorhanden sein
+optional kann null sein
+primary key muss unique sein und not null
+foreign key ist constraint
+plantuml installieren und er modell schreiben und in asciidoc darstellen	asciidoc plantuml in google; 1ster link
+DOM-Manipulation weglassen
+JSF vor PrimeFaces also vorher schauen ob es bei jsf vorhanden is danach primefaces tags verwenden
+Frage soll 4 Antworten haben
+mit jsf kann man schleife machen die datenstruktur immer wieder wiederholt
+static nicht bei server verwenden
+jsf tutorial: java ee tutorial
+eventuell umsteigen auf php und mysql
+
+Webmodul wird auf Payara Server installiert
+Payara Server legt Connection Pool mit zB. 8 Verbindungen an, damit kann man direkt auf die Datenbank zugreifen
+man kann einstellen ab wann man die Verbindung "trennt" also wenn man eine Zeit lange nicht auf die Datenbank zugreift
+jdbc java database connectivity		man kapselt mit Entititäten die Tabellen der Datenbank
+
+Entitymanager mit dem kann man auf die Datenbank zugreifen
+Verbindung von Applikation zu Datenbank		@Resource(lookup = "jdbc/postgrespool")
+neuen branch und wenns nd funktioniert dann einfach branch löschen
+beginning java ee 7 buch runterladen
