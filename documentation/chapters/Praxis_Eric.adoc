@@ -1,0 +1,105 @@
+= Praktische Aufgabenstellung: Eric Haneder
+
+= Front End: Design und Graphic User Interface
+
+== Beginning
+Nachdem die Technologie festgelegt war, mit der die Website programmiert werden sollte, konnten wir anfangen.
+Zuerst muss aber mit dem Auftraggeber ein Design abgeklärt werden, welches ihm zusagt, und für uns umsetzbar ist.
+
+Hier ist ein abstraktes Diagramm der User-Interfaces:
+<Bild einfügen>
+
+image::Trainee Interface (1).png[]
+
+
+Nachdem auch das Design abgeklärt war, konnte nun die Erstellung der Interfaces beginnen.
+
+== Grundlagen
+Um eine Website zu programmieren, benötigt man ein Menge an umfangreichen Wissen. Man muss html, javascript und css beherschen. Darüber hinaus sollte man auch wissen, wie aus dem Code eine fertige Seite erzeugt wird, und wie Requests vom User ausgewertet und darauf geantwortet werden kann.
+
+=== HTML
+Hypertext Markup Language (HTML) is the common used language for building web pages. A HTML page is a text document (with a .html or .htm extension) used by browsers to present text and graphics. A web page is made of content, tags to change some aspects of the content, and external objects such as images, videos, JavaScript, or CSS files.
+
+.Beispielcode für eine html page
+[source, html]
+----
+<html>
+    <head>
+        <title>My Webpage</title>
+    </head>
+    <body>
+        <h1>This is my webpage</h1>
+        <p>
+            I hope you like it.
+        </p>
+        <a href="www.google.at">Link to Google</a>
+    </body>
+</html>
+----
+NOTE: U can notice several tags in this code (such as <body> or <p>). Every tag has its on purpose, attributes and must be closed. Href is an attribute of the a-tag.
+
+XHTML is just a validated version of html. This means, that there are certain rules, a html-page has to follow, to be valid. XHMTL pages have a .xhtml extension.
+
+Some of the rules are the following:
+
+* All tags must be closed. (so no <br>, <hr>, ...)
+* All tags are lowercase.
+* Attributes appear appear between single or double quotes (<table border="0"> instead of <table border = 0>)
+* There must be a strict structure with <html>, <head> and <body> tags.
+
+=== CSS
+Cascading Style Sheets (CSS) is a styling language used to describe the presentation of a document written in html or xhtml. CSS is used to define colors, fonts layouts, and other aspects of document presentation.It allows separation of a document’s content (written in XHTML) from its presentation (written in CSS).
+To embedd a .css file in your html or xhtml page, use the <link> tag.
+(e.g. <link rel="stylesheet" type="text/css" ?
+
+.Your css file could look like this:
+[source,css]
+----
+p {
+    font-size: 10px;
+}
+h1 {
+    color: red;
+    font-style: italic;
+}
+----
+
+=== JavaScript
+
+
+
+== Projektstruktur erstellen
+Um mit dem Programmieren zu beginnen, muss erst eine stabile Projektstruktur gegeben sein. Dafür haben wir in NetBeans auf "Projekt erstellen" geklickt, alle benötigten Resourcen vereinbart, und mit Maven wurde dann automatisch eine passende Projektstruktur erstellt.
+Nun muss man auch darauf achten, dass diese Struktur befolgt.
+Java-Dateien sollten unter src\main\java abgelegt werden.
+Everything regarding JSF should lie in src\main\webapp. That includes the xhtml-files, the CSS, JavaScript and Images should lie in a untergeordnetem resources folder. This is needed, for JSF to locate the resources faster.
+<Bild einfügen, welches die Projektstruktur zeigt>
+
+== Layout
+Um die Erstellung mehrerer UIs zu vereinfachen, wird ein Layout erstellt, welches als ein Template für die Pages dient.
+Dieses Layout habe ich in der mainlayout.xhtml realisiert.
+
+:sourcedir: src/main/webapp
+
+[source,xhtml]
+----
+include::../../game-trainee-web/src/main/webapp/mainlayout.xhtml[]
+----
+
+<Bild einfügen>
+
+.Erklärung
+ Anfangs wird dem Browser die Information weitergegeben, dass es sich um eine xhtml Datei handelt. Weiters werden die Buchstaben h, ui, f und p definiert, die alle auf eine jsf-library verweisen (Diese Verweise sind nötig, damit der Browser die JSF-Tags lesen kann.
+ Im head wird hier keine Information definiert (!).
+ Im body wird eine Logo angezeigt, mit einer Überschrift daneben (<h1>).
+ Der div-tag ist nur dazu da, um einen Bereich abzugrenzen, und diesen dann mit CSS zu positionieren/formatieren.
+ Mit <ui:insert> gibt man im mainlayout Informationen an, die die Clients des Layouts individuell einbauen, oder überschreiben wollen.
+ <h:outputStylesheet> wird zum Verknüpfen der CSS-Datei verwendet.
+ Mit <ui:include> können wir Informationen einer anderen Page, in diese Page einbauen.
+ Im footer-Bereich werden noch Kontaktdaten angezeigt.
+
+== User-Interfaces
+Die UIs liegen hier unter src\main\webapp\faces.
+Die erste zu erstellende Seite, ist die index.xhtml Seite, da diese standardmäßig vom Browser zuerst angezeigt wird, beim aufrufen der Website.
+Auf der Startseite sollte der User ...
+
