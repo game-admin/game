@@ -10,7 +10,7 @@ and open the template in the editor.
 
 body {
     
-    /*background-color: beige; */
+    background-color: ghostwhite;
 }
 
 p {
@@ -19,15 +19,14 @@ p {
 }
 
 footer {
-    background-image: url("background.gif");
-    background-size: cover;
-    bottom: 0px;
+    background-color: lightgrey;
+    margin: 0px 0px 0px 0px;
+    /*margin-bottom: 0px; */
        
 }
 
 #menu {
     width:1000px;
-  
     background-color: red;
     float:left;
 }
@@ -42,7 +41,13 @@ footer {
     
 }
 
-header {
+#header {
+    position:relative;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+/* header {
     position:relative;
     margin-left: 15%;
     margin-top:0%;
@@ -52,5 +57,5 @@ header {
     position:relative;
     margin-left:20%;
     margin-top:0%;
-}
+} */
 

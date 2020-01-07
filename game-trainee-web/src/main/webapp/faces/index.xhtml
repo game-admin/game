@@ -8,24 +8,22 @@
                     xmlns:p="http://primefaces.org/ui">
     
     <ui:define name="header">
-        <title>Home</title> 
+        <title>Activities</title> 
         <h:outputStylesheet library="css" name="stylesheet.css" />
     </ui:define>
     
     <ui:define name="content">                                      
+        <h1>Activities</h1>
         <p>
-            <strong>Java Learning Quiz - Basics</strong> <br />
-            This quiz will check your knowledge on basic java skills.
+            <strong>User:</strong> EricBensi <br />
+            Progress: 50% out of 100% <br />
+            Badges: *Abzeichen*
         </p>
         <p>
-            <strong>Java Learning Quiz - Advanced</strong> <br />
-            This quiz will check, if you have enough in depth knowledge with java.
+            Hier sollte spezifisch zum User, dessen Aktivitäten und Fortschritt dargestellt werden.
+            Weiters können hier Kurse vorgeschlagen werden.
         </p>
         <br />
-        <p>If you want to create a quiz, 
-            <p:link outcome="quiz" value="click here!">
-            <f:param name="id" value="50" />
-            </p:link>
-        </p>
+        
     </ui:define>                      
 </ui:composition>
