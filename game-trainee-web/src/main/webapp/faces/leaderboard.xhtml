@@ -15,13 +15,21 @@
        
     <ui:define name="content">         
         <h2>Leaderboard</h2>
-        <p:dataTable var="trainee" value="#{trainerView.trainers}">
+        <p:dataTable var="trainee" value="#{traineeView.trainees}">
             <p:column headerText="Name">
                 <h:outputText value="#{trainee.name}"></h:outputText>
             </p:column>
             
-            <p:column headerText="Rolle">
-                <h:outputText value="#{trainee.role}"></h:outputText>
+            <p:column headerText="Nickname">
+                <h:outputText value="#{trainee.nickname}"></h:outputText>
+            </p:column>
+            
+            <p:column headerText="Abteilung">
+                <h:outputText value="#{trainee.abteilung}"></h:outputText>
+            </p:column>
+            
+            <p:column headerText="Score">
+                <h:outputText value="#{trainee.score}"></h:outputText>
             </p:column>
         </p:dataTable>
         <table>
