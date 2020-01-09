@@ -3,30 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.game.trainee.testquiz;
+package org.game.trainee.quiz;
+
+import java.io.Serializable;
 
 /**
  *
  * @author Eric
  */
-public class TestQuiz {
-        
-   public String frage;
-   public String[] antworten;
-   public int indexrichtig;
-   
-   public TestQuiz(String frage, String[] antworten, int indexrichtig) {
-      this.frage=frage;
-      this.antworten=antworten;
-      this.indexrichtig=indexrichtig;
-   }
-   
+public class Frage implements Serializable {
+    public String frage;
+    public String[] antworten;
+    public int indexrichtig;
+    
+    public Frage(String frage, String[] antworten, int indexrichtig) {
+        this.frage=frage;
+        this.antworten=antworten;
+        this.indexrichtig=indexrichtig;
+    }
+
     public String getFrage() {
         return frage;
     }
 
-    public void setFrage(String fragen) {
-        this.frage = fragen;
+    public void setFrage(String frage) {
+        this.frage = frage;
     }
 
     public String[] getAntworten() {
@@ -44,5 +45,6 @@ public class TestQuiz {
     public void setIndexrichtig(int indexrichtig) {
         this.indexrichtig = indexrichtig;
     }
-
+    
+    
 }

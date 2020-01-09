@@ -19,19 +19,20 @@
         <p>
             <strong>Java Learning Quiz - Basics</strong> <br />
             This quiz will check your knowledge on basic java skills.
-            <h:link outcome="takequiz" value="Take Quiz!"></h:link>
+            <h:link outcome="takequiz.xhtml" value="Take Quiz!"></h:link>
         </p>
         <p>
             <strong>Java Learning Quiz - Advanced</strong> <br />
             This quiz will check, if you have enough in depth knowledge with java.
         </p>
         <p>
-            <h:link value="Take Quiz!" target="takequiz.xhtml" /> 
+            <h:link value="Take Quiz!" outcome="takequiz2.xhtml" /> 
         </p>
-        <p>If you want to create a quiz, 
-            <p:link outcome="quiz" value="click here!">
-            <f:param name="id" value="50" />
-            </p:link>
+        <p>
+            If you want to create a quiz, 
+            <h:link outcome="createquiz.xhtml" value="click here!">
+                <f:param name="id" value="50" />
+            </h:link>
         </p>
     </ui:define>      
     

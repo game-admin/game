@@ -5,32 +5,27 @@
  */
 package org.game.trainee.testquiz;
 
-import com.sun.faces.component.visit.FullVisitContext;
 import java.io.Serializable;
-import javax.faces.view.ViewScoped;
+//import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import javax.faces.application.FacesMessage;
-import javax.faces.component.UIComponent;
-import javax.faces.component.UIViewRoot;
-import javax.faces.component.visit.VisitCallback;
-import javax.faces.component.visit.VisitContext;
-import javax.faces.component.visit.VisitResult;
-import javax.faces.context.FacesContext;
+import javax.enterprise.context.RequestScoped;
 
 /**
  *
  * @author Eric
  */
 @Named
-@ViewScoped
+@RequestScoped
 public class TestQuizAnzeigen implements Serializable {
      
     private List<TestQuiz> quiz;
      
     private TestQuiz selectedQuestion;
+    private String selectedAnswer;
+    private Boolean[] buttons = new Boolean[2];
      
     @Inject
     private TestQuizSpeicher speicher;
@@ -38,6 +33,7 @@ public class TestQuizAnzeigen implements Serializable {
     @PostConstruct
     public void init() {
         quiz = speicher.createQuiz(4);
+        //buttons = speicher.createButtons(2);
     }
  
     public List<TestQuiz> getQuiz() {
@@ -55,37 +51,39 @@ public class TestQuizAnzeigen implements Serializable {
     public void setSelectedQuestion(TestQuiz selectedQuestion) {
         this.selectedQuestion = selectedQuestion;
     }
-    
-    public void check(String id) {
-       if(id=="button1" && selectedQuestion.getIndexrichtig()==0) {
-          FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Richtig")); 
-       } else if(id=="button2" && selectedQuestion.getIndexrichtig()==1) {
-           FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Richtig"));
-       } else {
-       FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Falsch"));
-       }
+
+    public String getSelectedAnswer() {
+        return selectedAnswer;
+    }
+
+    public void setSelectedAnswer(String selectedAnswer) {
+        this.selectedAnswer = selectedAnswer;
+    }
+
+    public Boolean[] getButtons() {
+        return buttons;
+    }
+
+    public void setButtons(Boolean[] buttons) {
+        this.buttons = buttons;
     }
     
-    public UIComponent findComponent(final String id) {
-
-        FacesContext context = FacesContext.getCurrentInstance(); 
-        UIViewRoot root = context.getViewRoot();
-        final UIComponent[] found = new UIComponent[1];
-
-        root.visitTree(new FullVisitContext(context), new VisitCallback() {     
-            @Override
-            public VisitResult visit(VisitContext context, UIComponent component) {
-                if (component != null 
-                    && component.getId() != null 
-                    && component.getId().equals(id)) {
-                    found[0] = component;
-                    return VisitResult.COMPLETE;
-                }
-                return VisitResult.ACCEPT;              
-            }
-        });
-
-        return found[0];
-
+     public String checkAnswers() {
+        if(buttons[quiz.get(0).indexrichtig] == true) {
+            if(buttons[quiz.get(1).indexrichtig] == true)
+                if(buttons[quiz.get(2).indexrichtig] == true)
+                    if(buttons[quiz.get(3).indexrichtig] == true)
+                        return "index.xhtml";
+        } else {
+        return "courses.xhtml";
+        }
+        return "leaderboard.xhtml";
+    } 
+     
+    public String checkTest() {
+        if(selectedAnswer.compareToIgnoreCase(quiz.get(0).antworten[0]) == 0) {
+            return "result.xhtml";
+        }
+        return "leaderboard.xhtml";
     }
 }

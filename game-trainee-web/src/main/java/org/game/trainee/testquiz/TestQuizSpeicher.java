@@ -60,10 +60,13 @@ public class TestQuizSpeicher {
          
         return list;
     }
-    /*public TestQuiz createQuiz() {
-        TestQuiz neu = new TestQuiz(getFragen(), getAntworten(), getRichtige());
-       return neu;
-    } */
+    
+    public boolean[] createButtons(int size) {
+        boolean[] b = new boolean[size];
+        for(int i=0; i<b.length; i++)
+            b[i] = false;
+        return b;
+    }
     
     public String getFragenFromIndex(int index) {
        

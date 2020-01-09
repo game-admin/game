@@ -3,8 +3,12 @@
 <ui:composition template="./../mainlayout.xhtml"
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                xmlns:h="http://xmlns.jcp.org/jsf/html">
-
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+    
+    <ui:define name="menubar">
+        menubar
+    </ui:define>
     <ui:define name="header">
         <title>Test-JavaQuiz</title>
         <h:outputStylesheet library="css" name="stylesheet.css"></h:outputStylesheet>
@@ -13,17 +17,17 @@
     <ui:define name="content">
         <h2>Dies ist ein Quiz um dein Java-Wissen zu testen!</h2><br />
         <h:form>
-        <ui:repeat var="quiz" value="#{testQuizAnzeigen.quiz}">
-            <p class="frage">
-                <h:outputText value="#{quiz.fragen}"></h:outputText> <br />
-                <h:outputText value="#{quiz.antworten[0]}"></h:outputText>
-                <h:commandButton action="#{testQuizAnzeigen.check(button1)}"></h:commandButton><br />
-                <h:outputText value="#{quiz.antworten[1]}"></h:outputText>
-                <h:commandButton action="#{testQuizAnzeigen.check(button2)}"></h:commandButton>
-            </p>      
-        </ui:repeat>
-            <h:commandButton type="submit" action="#{testQuizAnzeigen.check}"  ></h:commandButton>
+            <ui:repeat var="quiz" value="#{testQuizAnzeigen.quiz}">
+                    <h:outputText value="#{quiz.frage}"></h:outputText> <br />
+                    <h:outputText value="#{quiz.antworten[0]}"></h:outputText>
+                    <h:selectBooleanCheckbox value="#{testQuizAnzeigen.buttons[0]}"></h:selectBooleanCheckbox>
+                    <br />
+                    <h:outputText value="#{quiz.antworten[1]}"></h:outputText>
+                    <h:selectBooleanCheckbox value="#{testQuizAnzeigen.buttons[1]}"></h:selectBooleanCheckbox>  
+                    <br />
+            </ui:repeat>
+            <h:commandButton value="Check Answers" action="#{testQuizAnzeigen.checkAnswers()}"></h:commandButton> 
+            <!--<h:button outcome="result.xhtml" value="Check Answers static"></h:button> -->
         </h:form>
     </ui:define>
-    
 </ui:composition>
