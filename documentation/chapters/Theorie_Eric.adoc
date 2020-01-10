@@ -10,14 +10,29 @@ _(vgl. Selbstreguliertes Lernen in der dualen Ausbildung - Lerntypen und Bedingu
 
 *Wie genau also lernt der Mensch?*
 
-Um diese Frage zu beantworten, muss man sich die verschiedenen Lerntypen genauer anschauen.
+Um diese Frage zu beantworten, muss man sich die verschiedenen Lerntypen genauer anschauen. Frederick Vester hat mit seinem Buch "Denken, Lernen, Vergessen. Was in unserem Kopf vor, wie lernt das Gehirn, und wann lässt es uns im Stich?" (1975, Stuttgart) diese Lerntypen definiert. Jedoch wurde sein Buch unterschiedlich aufgefasst, sodass verschiedene Versionen seiner Einteilung auffindbar sind. Zumindest bei dem Fakt, dass es einen auditiven, einen visuellen und einen haptischen Lerntyp gibt, ist man sich einig. Jedoch gibt es einige Menschen, die meinen, der vierte Lerntyp nach Frederik Vester, wäre der kommunikative Lerntyp und andere meinen einen intellektuellen Lerntyp. 
 
-*Es gibt vier Lerntypen* (nach Frederic Vester)*:*
+ (Man stößt auch noch auf Begriffe wie "kognitiver Lerntyp" ≙ "intellektueller Lerntyp", oder den "kinästhetischen Lerntyp" ≙ "haptischer Lerntyp") 
 
-* optisch/visuell -> Lernen durch Sehen
-* auditiv/akkustisch -> Lernen durch Zuhören
-* Haptisch -> Lernen durch Handeln
-* Kognitiv -> Lernen durch Erkennen
+.Nachweise für 4 Lerntypen nach Vester mit "kommunikativem Lerntyp"
+ https://www.teko.ch/die-vier-lerntypen-und-ihre-besonderheiten;
+ https://www.mystipendium.de/studium/lerntypen;
+ https://karrierebibel.de/lerntypentest/#Die-vier-Lerntypen-angelehnt-an-Frederic-Vester;
+ https://learnsolution.de/die-vier-lerntypen-nach-frederic-vester/;
+ 
+.Nachweise für 4 Lerntypen nach Vester mit "intellektuellem Lerntyp"
+ http://www.rechtschreibwerkstatt-konzept.de/wp-content/uploads/2015/02/Looss_Lerntypen.pdf;
+ https://wb-web.de/wissen/lehren-lernen/lernstile-und-lerntypen.html;
+ https://smarter-learning.de/lerntypen/klassische-lerntypen-nach-vester/;
+ https://wissenschafts-thurm.de/lerntypen/;
+ "Erforschung der Lerntypen und -strategien am Beispiel einer Handelsschulklasse", Petra Hochleitner, 2016 
+ 
+Ich werde mich in dieser Analyse, auf diese Interpretation der Einteilung der Lerntypen nach Vester stützen:
+
+1. optisch/visuell -> Lernen durch Sehen und Beobachten
+2. auditiv/akkustisch -> Lernen durch Hören und Sprechen
+3. Haptisch -> Lernen durch Handeln (Anfassen und Fühlen)
+4.  Kognitiv -> Lernen durch Erkennen/den Intellekt
 
 Man kann den meisten Menschen keinen eindeutigen Lerntyp zustellen, da es viele Lern-Mischtypen gibt. Das heißt jemand lernt etwas schneller, indem er es sich durchliest und wieder aufschreibt (optisch & haptisch), ein wieder andere lernt durch eine Kombination des auditiven und haptischen besser.
 
@@ -46,6 +61,7 @@ Jeder kann sich anhand den Lerntypen orientieren, und sich selber einen oder meh
 == Woher kommt die Einteilung?
 
 == Auditiver Lerntyp
+Der auditive Lerntyp lernt am besten über sein Gehör. 
 
 == Optischer Lerntyp
 
