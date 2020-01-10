@@ -8,23 +8,19 @@ together {
 
     entity Quiz {
         * **QID: Int**
-        * FNR: Int
-        * **Version: Int**
         --
         * Namen: String
     }
     
     entity Quizbeantwortung {
+        * **QBEID: Int**
         * QID:   Int
         * MitID: Int
-        * **Version: Int**
-        * GewAntwID: Int
         --
     }
     
     entity Mitarbeiter {
         * **MitID:  Int**
-        * **Version: Int**
         --
         * Name: String
         Vorname: String
@@ -36,7 +32,7 @@ together {
 
 entity Fragen {
     * **FNR: Int**
-    * **Version: Int**
+    * QID: Int
     --
     * Frage: String
     * Punkteanzahl: Int/Long
@@ -45,14 +41,12 @@ entity Fragen {
 entity Antwortmoeglichkeiten {
     * FNR:      Int
     * **AntwID: Int**
-    * **Version: Int**
     --
     * Antwort: String
     Richtige Antwort
 }
 
 entity Antwort {
-    * **Version: Int**
     * **GewAntwID: Int**
     --
     * Gewählte Antwort: String
