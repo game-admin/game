@@ -15,7 +15,7 @@
     
    
     <ui:define name="content">
-        <h2>Kurse und Quizze</h2>               
+        <h1 align="center" style="margin-top: -1em">Quizzes</h1>               
         <p>
             <strong>Java Learning Quiz - Basics</strong> <br />
             This quiz will check your knowledge on basic java skills.
@@ -24,9 +24,7 @@
         <p>
             <strong>Java Learning Quiz - Advanced</strong> <br />
             This quiz will check, if you have enough in depth knowledge with java.
-        </p>
-        <p>
-            <h:link value="Take Quiz!" outcome="takequiz2.xhtml" /> 
+            <h:link value="Take Quiz!" outcome="takequiz2.xhtml"></h:link>
         </p>
         <p>
             If you want to create a quiz, 
@@ -34,6 +32,29 @@
                 <f:param name="id" value="50" />
             </h:link>
         </p>
+        <br/>
+        <h1 align="center">Courses</h1>
+        <p>
+            <strong>Java SE Learning Beginner Course</strong> <br/>
+            This course will give you some basic knowledge of Java SE.
+            <a href="https://docs.oracle.com/javase/tutorial/">Take Course!</a>
+        </p>
+        <p>
+            <strong>Creating a GUI with Swing</strong> <br/>
+            A comprehensive introduction to GUI creation on the Java platform.
+            <a href="https://docs.oracle.com/javase/tutorial/uiswing/index.html">Take Course!</a>
+        </p>
+        <p>
+            <strong>A Guide for JavaBeans</strong> <br/>
+            The Java platform's component technology.
+            <a href="https://docs.oracle.com/javase/tutorial/javabeans/index.html">Take Course!</a>
+        </p>
+        <p>
+            <strong>JDBC Database Access Course</strong> <br/>
+            Introduces an API for connectivity between the Java applications and a wide range of databases and data sources.
+            <a href="https://docs.oracle.com/javase/tutorial/jdbc/index.html">Take Course!</a>
+        </p>
+        
     </ui:define>      
     
     

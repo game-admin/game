@@ -24,19 +24,19 @@ public class TraineeGenerator {
     private final List<Double> progress = new ArrayList<>();
     
     public TraineeGenerator() {
-        names.add("Tom");
-        names.add("Eric");
-        names.add("Jan");
-        names.add("Alex");
+        names.add("Eric Haneder");
+        names.add("Jan Binder");
+        names.add("Alex Saliger");
+        names.add("Alexander Wurst");
         
-        nicknames.add("tommeier");
         nicknames.add("ericbensi");
-        nicknames.add("SyreaxZ");
+        nicknames.add("Syreax");
         nicknames.add("SaAlexX");
+        nicknames.add("Wursti");
         
-        abteilungen.add("Serverwartung");
         abteilungen.add("Management");
-        abteilungen.add("Softwaredevelopment");
+        abteilungen.add("Serverwarung");
+        abteilungen.add("Softwaredevelopment ");
         abteilungen.add("Softwarearchitektur");
         
         progress.add(50.0);
@@ -81,7 +81,6 @@ public class TraineeGenerator {
     public List<Double> getScores() {
         return progress;
     }
-    
     
 }
 

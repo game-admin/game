@@ -10,7 +10,7 @@ and open the template in the editor.
 
 body {
     
-    background-color: ghostwhite;
+    background-color: darkgray;
 }
 
 p {
@@ -45,6 +45,12 @@ footer {
     position:relative;
     margin-left: 0px;
     margin-top: 0px;
+}
+
+#question {
+    margin-left: 20%;
+    font-size: 1.5em;
+    width: 400px;
 }
 
 /* header {

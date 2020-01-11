@@ -11,6 +11,7 @@ import java.io.Serializable;
  *
  * @author Eric
  */
+@Deprecated
 public class Employee implements Serializable {
     private String nickname;
     private String name;
