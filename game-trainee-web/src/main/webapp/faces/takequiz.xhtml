@@ -18,13 +18,14 @@
             <ui:repeat var="quiz" value="#{testQuizAnzeigen.quiz}">
                     <h:outputText value="#{quiz.frage}"></h:outputText> <br />
                     <p:outputLabel style="font-size: 0.8em" for="box1" value="#{quiz.antworten[0]}"></p:outputLabel>
-                    <p:selectBooleanCheckbox id="box1" value="#{testQuizAnzeigen.buttons[0]}"></p:selectBooleanCheckbox>
+                    <p:selectBooleanCheckbox id="box1" value="#{quiz.buttons[0]}"></p:selectBooleanCheckbox>
+                    <h:outputText value="#{quiz.indexrichtig}"></h:outputText>
                     <br/>
                     <p:outputLabel style="font-size: 0.8em" for="box2" value="#{quiz.antworten[1]}"></p:outputLabel>
-                    <p:selectBooleanCheckbox id="box2" value="#{testQuizAnzeigen.buttons[1]}"></p:selectBooleanCheckbox>  
+                    <p:selectBooleanCheckbox id="box2" value="#{quiz.buttons[1]}"></p:selectBooleanCheckbox>  
                     <br/><br/>
             </ui:repeat>
-            <p:commandButton value="Check Answers" action="#{testQuizAnzeigen.checkAnswers()}"></p:commandButton> 
+            <h:commandButton value="Check Answers" action="#{testQuizAnzeigen.checkAnswers()}"></h:commandButton> 
             <!--<h:button outcome="result.xhtml" value="Check Answers static"></h:button> -->
         </h:form>
         </div>

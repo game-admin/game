@@ -12,7 +12,6 @@
         <title>Kurse und Quizze</title>  
         <h:outputStylesheet library="css" name="stylesheet.css" />
     </ui:define>
-    
    
     <ui:define name="content">
         <h1 align="center" style="margin-top: -1em">Quizzes</h1>               
@@ -28,9 +27,7 @@
         </p>
         <p>
             If you want to create a quiz, 
-            <h:link outcome="createquiz.xhtml" value="click here!">
-                <f:param name="id" value="50" />
-            </h:link>
+            <h:link outcome="createquiz.xhtml" value="click here!"></h:link>
         </p>
         <br/>
         <h1 align="center">Courses</h1>
@@ -54,10 +51,7 @@
             Introduces an API for connectivity between the Java applications and a wide range of databases and data sources.
             <a href="https://docs.oracle.com/javase/tutorial/jdbc/index.html">Take Course!</a>
         </p>
-        
     </ui:define>      
-    
-    
 </ui:composition>
 
 
