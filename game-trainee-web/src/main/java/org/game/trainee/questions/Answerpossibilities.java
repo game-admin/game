@@ -19,7 +19,7 @@ import javax.validation.constraints.NotNull;
  * @author Jan
  */
 @Entity
-public class Answers implements Serializable {
+public class Answerpossibilities implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int antwid;

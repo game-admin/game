@@ -19,8 +19,11 @@ import javax.validation.constraints.NotNull;
 public class Question {
    @Id  @GeneratedValue
    private int fnr;
+   private int qid;
    @NotNull
    private String text;
+   @NotNull
+   private Long points;
    //private String rightAnswer;
    //private String wrongAnswer;
    
@@ -46,19 +49,12 @@ public class Question {
    public String getQuestion() {
        return this.text;
    }
-  /* 
-   public void setRightAnswer(String rightAnswer) {
-       this.rightAnswer = rightAnswer;
-   }
-   public String getRightAnswer() {
-       return this.rightAnswer;
-   }
    
-   public void setWrongAnswer(String wrongAnswer) {
-       this.wrongAnswer = wrongAnswer;
-   }
-   public String getWrongAnswer() {
-       return this.wrongAnswer;
-   }
-*/
+    public Long getPoints() {
+        return points;
+    }
+
+    public void setPoints(Long points) {
+        this.points = points;
+    }
 }

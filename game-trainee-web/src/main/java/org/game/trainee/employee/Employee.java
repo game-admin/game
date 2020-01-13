@@ -31,7 +31,7 @@ public class Employee implements Serializable {
     public Employee(){
         
     }
-    
+/*    
     public Employee(String name, String nickname, String abteilung, int fortschritt) {
         this.name = name;
         this.nickname = nickname;
@@ -47,7 +47,7 @@ public class Employee implements Serializable {
         this.name = name;
         this.nickname = nickname;
     }
-
+*/
     public int getMitid() {
         return mitid;
     }
