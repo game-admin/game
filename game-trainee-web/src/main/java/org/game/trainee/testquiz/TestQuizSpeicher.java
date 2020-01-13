@@ -5,9 +5,12 @@
  */
 package org.game.trainee.testquiz;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
+
 
 /**
  *
@@ -48,21 +51,45 @@ public class TestQuizSpeicher {
         indexrichtig[2]=1;
         indexrichtig[3]=1; 
     }
-    public TestQuiz createQuiz() {
+    
+    public List<TestQuiz> createQuiz(int size) {
+        List<TestQuiz> list = new ArrayList<>();
+        for(int i = 0 ; i < size ; i++) {
+            list.add(new TestQuiz(getFragenFromIndex(i), getAntwortenFromIndex(i), getIndexrichtigFromIndex(i) ));
+        }
+         
+        return list;
+    }
+    /*public TestQuiz createQuiz() {
         TestQuiz neu = new TestQuiz(getFragen(), getAntworten(), getRichtige());
        return neu;
+    } */
+    
+    public String getFragenFromIndex(int index) {
+       
+        return fragen[index];
     }
     
+    public String[] getAntwortenFromIndex(int index) {
+        return antworten[index];
+    }
+    
+    public int getIndexrichtigFromIndex(int index) {
+        return indexrichtig[index];
+    }
+
     public String[] getFragen() {
         return fragen;
     }
-    
+
     public String[][] getAntworten() {
         return antworten;
     }
-    
-    public int[] getRichtige() {
+
+    public int[] getIndexrichtig() {
         return indexrichtig;
     }
+    
+    
     
 }

@@ -11,39 +11,39 @@ package org.game.trainee.testquiz;
  */
 public class TestQuiz {
         
-   public String[] fragen;
-   public String[][] antworten;
-   public int[] indexrichtig;
+   public String fragen;
+   public String[] antworten;
+   public int indexrichtig;
    
    public TestQuiz() {}
    
-   public TestQuiz(String[] fragen, String[][]antworten, int[] indexrichtig) {
+   public TestQuiz(String fragen, String[] antworten, int indexrichtig) {
       this.fragen=fragen;
       this.antworten=antworten;
       this.indexrichtig=indexrichtig;
    }
-
-    public String[] getFragen() {
+   
+    public String getFragen() {
         return fragen;
     }
 
-    public void setFragen(String[] fragen) {
+    public void setFragen(String fragen) {
         this.fragen = fragen;
     }
 
-    public String[][] getAntworten() {
+    public String[] getAntworten() {
         return antworten;
     }
 
-    public void setAntworten(String[][] antworten) {
+    public void setAntworten(String[] antworten) {
         this.antworten = antworten;
     }
 
-    public int[] getIndexrichtig() {
+    public int getIndexrichtig() {
         return indexrichtig;
     }
 
-    public void setIndexrichtig(int[] indexrichtig) {
+    public void setIndexrichtig(int indexrichtig) {
         this.indexrichtig = indexrichtig;
     }
 }

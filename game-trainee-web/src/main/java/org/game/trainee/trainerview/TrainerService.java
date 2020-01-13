@@ -50,7 +50,7 @@ public class TrainerService {
     }
      
     public List<Trainer> createTrainers(int size) {
-        List<Trainer> list = new ArrayList<Trainer>();
+        List<Trainer> list = new ArrayList<>();
         for(int i = 0 ; i < size ; i++) {
             list.add(new Trainer(getRandomName(), getRandomBranch(), getRandomRole()));
         }
