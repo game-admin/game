@@ -25,8 +25,9 @@ import org.game.trainee.traineeview.TraineeGenerator;
 public class TestQuizAnzeigen implements Serializable {
      
     private List<TestQuiz> quiz;
-    private List<String> results;
+    private List<Result> results;
     private int score; //Der Score sollte später injected werden, und mit einer DB verbunden sein
+    private int ricounter;
     
     @Inject 
     private TraineeGenerator trainee;
@@ -39,6 +40,7 @@ public class TestQuizAnzeigen implements Serializable {
         quiz = speicher.createQuiz(4);
         score = (int)trainee.getProgressFromIndex(0);
         results = new ArrayList<>();
+        ricounter = 0;
     }
  
     public List<TestQuiz> getQuiz() {
@@ -57,12 +59,20 @@ public class TestQuizAnzeigen implements Serializable {
         this.score = score;
     }
 
-    public List<String> getResults() {
+    public List<Result> getResults() {
         return results;
     }
 
-    public void setResults(List<String> results) {
+    public void setResults(List<Result> results) {
         this.results = results;
+    }
+
+    public int getRicounter() {
+        return ricounter;
+    }
+
+    public void setRicounter(int ricounter) {
+        this.ricounter = ricounter;
     }
     
     public String checkAnswers() {
@@ -72,19 +82,36 @@ public class TestQuizAnzeigen implements Serializable {
     }
     
     public void evaluateScore() {
-        if(quiz.get(0).buttons[0] && quiz.get(0).indexrichtig == 0 || quiz.get(0).buttons[1] && quiz.get(0).indexrichtig == 1) 
-            score+=100;
-        if(quiz.get(1).buttons[0] && quiz.get(1).indexrichtig == 0 || quiz.get(1).buttons[1] && quiz.get(1).indexrichtig == 1) 
-            score+=1000;
-        if(quiz.get(2).buttons[0] && quiz.get(2).indexrichtig == 0 || quiz.get(2).buttons[1] && quiz.get(2).indexrichtig == 1) 
-            score+=10000;
-        if(quiz.get(3).buttons[0] && quiz.get(3).indexrichtig == 0 || quiz.get(3).buttons[1] && quiz.get(3).indexrichtig == 1) 
-            score+=100000;
-        //Hier sollte dann noch der Score der Trainees geupdated werden
-        if(score==111150) {
-            results.add("Du hast alle Fragen richtig beantwortet!");
-            results.add("Du erhälst 80/80 Punkten!");
+        List<Integer> falsche = new ArrayList<>();
+        if(quiz.get(0).buttons[0] && quiz.get(0).indexrichtig == 0 || quiz.get(0).buttons[1] && quiz.get(0).indexrichtig == 1) { 
+            score+=20;
+            ricounter++;
+        } else {
+            falsche.add(0);
         }
+        if(quiz.get(1).buttons[0] && quiz.get(1).indexrichtig == 0 || quiz.get(1).buttons[1] && quiz.get(1).indexrichtig == 1) {
+            score+=20;
+            ricounter++;
+        } else {
+            falsche.add(1);
+        }
+        if(quiz.get(2).buttons[0] && quiz.get(2).indexrichtig == 0 || quiz.get(2).buttons[1] && quiz.get(2).indexrichtig == 1) {
+            score+=20;
+            ricounter++;
+        } else {
+            falsche.add(2);
+        }
+        if(quiz.get(3).buttons[0] && quiz.get(3).indexrichtig == 0 || quiz.get(3).buttons[1] && quiz.get(3).indexrichtig == 1) {
+            score+=20;
+            ricounter++;
+        } else {
+            falsche.add(3);
+        }
+        for(int i=0; i<falsche.size(); i++) {
+            results.add(new Result(quiz.get(falsche.get(i)).frage, quiz.get(falsche.get(i)).antworten[quiz.get(falsche.get(i)).indexrichtig]));
+        }
+        //Hier sollte dann noch der Score der Trainees geupdated werden
+        
     }
     
     /*public String checkForDoubleChecked() {

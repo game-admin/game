@@ -3,7 +3,8 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml" 
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 template="./../mainlayout.xhtml"
-                xmlns:h="http://xmlns.jcp.org/jsf/html">
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
 
     <ui:define name="header">
         <title>Results</title>
@@ -12,9 +13,22 @@
 
     <ui:define name="content">
         <h1>Results</h1>
-        <h:outputText value="#{testQuizAnzeigen.results.get(0)}"></h:outputText><br/>
-        <h:outputText value="#{testQuizAnzeigen.results.get(1)}"></h:outputText><br/>
-        Diesen Score hast du gerade: #{testQuizAnzeigen.score}
+        <p>
+            Du hast #{testQuizAnzeigen.ricounter}/4 Fragen richtig beantwortet! <br/>
+            Damit bekommst du #{testQuizAnzeigen.ricounter*20} Punkte! <br/>
+            Die von dir falsch beantworteten Fragen siehst du hier mit den richtigen Antworten:
+        </p>
+        <p>
+            <p:dataTable var="results" value="#{testQuizAnzeigen.results}">
+                <p:column headerText="Frage:">
+                    <h:outputText value="#{results.falscheFrage}"></h:outputText>
+                </p:column>
+                <p:column headerText="Richtige Antwort:">
+                    <h:outputText value="#{results.richtigeAntwort}"></h:outputText>
+                </p:column>
+            </p:dataTable>
+        </p>
+        <h:outputText value="Diesen Score hast du jetzt: #{testQuizAnzeigen.score}"></h:outputText>
     </ui:define>
 
 </ui:composition>
