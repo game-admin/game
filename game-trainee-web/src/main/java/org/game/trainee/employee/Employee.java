@@ -6,16 +6,31 @@
 package org.game.trainee.employee;
 
 import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 /**
  *
- * @author Eric
+ * @author Eric/Jan
  */
+@Entity
+
 public class Employee implements Serializable {
+    @Id @GeneratedValue
+    private int mitid;
+    @NotNull @Column(unique=true)
     private String nickname;
+    @NotNull
     private String name;
     private String abteilung;
     private int fortschritt;
+    
+    public Employee(){
+        
+    }
     
     public Employee(String name, String nickname, String abteilung, int fortschritt) {
         this.name = name;
@@ -33,6 +48,14 @@ public class Employee implements Serializable {
         this.nickname = nickname;
     }
 
+    public int getMitid() {
+        return mitid;
+    }
+
+    public void setMitid(int mitid) {
+        this.mitid = mitid;
+    }
+    
     public String getNickname() {
         return nickname;
     }

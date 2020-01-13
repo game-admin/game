@@ -5,23 +5,40 @@
  */
 package org.game.trainee.questions;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
 /**
  *
- * @author Eric
+ * @author Eric/Jan
  */
 
+@Entity
 public class Question {
+   @Id  @GeneratedValue
+   private int fnr;
+   @NotNull
    private String text;
-   private String rightAnswer;
-   private String wrongAnswer;
+   //private String rightAnswer;
+   //private String wrongAnswer;
    
    public Question() {}
    
    public Question(String text, String rightAnswer, String wrongAnswer) {
        this.text=text;
-       this.rightAnswer = rightAnswer;
-       this.wrongAnswer = wrongAnswer;      
+       /*this.rightAnswer = rightAnswer;
+       this.wrongAnswer = wrongAnswer; */     
    }
+
+    public int getFnr() {
+        return fnr;
+    }
+
+    public void setFnr(int fnr) {
+        this.fnr = fnr;
+    }
    
    public void setQuestion(String text) {
        this.text = text;
@@ -29,7 +46,7 @@ public class Question {
    public String getQuestion() {
        return this.text;
    }
-   
+  /* 
    public void setRightAnswer(String rightAnswer) {
        this.rightAnswer = rightAnswer;
    }
@@ -43,4 +60,5 @@ public class Question {
    public String getWrongAnswer() {
        return this.wrongAnswer;
    }
+*/
 }

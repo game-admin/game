@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="./../mainlayout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:define name="header">
+        <title>Test-JavaQuiz</title>
+        <h:outputStylesheet library="css" name="stylesheet.css"></h:outputStylesheet>
+    </ui:define>
+
+    <ui:define name="content">
+        <h2>Dies ist ein Quiz um dein Java-Wissen zu testen!</h2><br />
+        <h:form>
+        <ui:repeat var="quiz" value="#{testQuizAnzeigen.quiz}">
+            <p class="frage">
+                <h:outputText value="#{quiz.fragen}"></h:outputText> <br />
+                <h:outputText value="#{quiz.antworten[0]}"></h:outputText>
+                <h:commandButton action="#{testQuizAnzeigen.check(button1)}"></h:commandButton><br />
+                <h:outputText value="#{quiz.antworten[1]}"></h:outputText>
+                <h:commandButton action="#{testQuizAnzeigen.check(button2)}"></h:commandButton>
+            </p>      
+        </ui:repeat>
+            <h:commandButton type="submit" action="#{testQuizAnzeigen.check}"  ></h:commandButton>
+        </h:form>
+    </ui:define>
+    
+</ui:composition>
