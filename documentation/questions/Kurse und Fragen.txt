@@ -1,0 +1,39 @@
+Start Kurs:	https://www.tutorialspoint.com/java/index.htm
+Fragen:	What are advantages of Java?	!Platform Independent!, Flawless, Only compatible with Windows, !Secure!
+	What is written after a line of code?	 ".",      !";"!,      "{/}",     ","
+	What does Object Oriented mean?		!Java can be extended with Objects!, Java has no Objects, you have to use the programm Object to run Java, !Java consists of Objects!
+	Which Java Versions exist?	Java ME, Java EE, Java SS, Java SE
+	What are some features of Java?	High performance, Dynamic, Platform Dependant, Secure
+
+Kurs über Object & Classes + Constructor	https://www.tutorialspoint.com/java/java_object_classes.htm + https://www.tutorialspoint.com/java/java_constructors.htm
+Fragen:
+
+
+
+
+
+
+
+
+Kurs über Datentypen	https://www.tutorialspoint.com/java/java_basic_datatypes.htm
+
+
+
+
+
+
+Kurs über Variable und modifier Types	https://www.tutorialspoint.com/java/java_variable_types.htm	https://www.tutorialspoint.com/java/java_modifier_types.htm
+
+
+
+Kurs über Basic Operators:	https://www.tutorialspoint.com/java/java_basic_operators.htm
+
+
+Kurs über loops & Ifs		https://www.tutorialspoint.com/java/java_loop_control.htm	https://www.tutorialspoint.com/java/java_decision_making.htm
+
+
+
+
+
+
+
