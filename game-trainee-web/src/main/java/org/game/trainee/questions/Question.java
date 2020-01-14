@@ -24,15 +24,15 @@ public class Question {
    private String text;
    @NotNull
    private Long points;
-   //private String rightAnswer;
-   //private String wrongAnswer;
+   private String rightAnswer;  //temporär bis EJB erstellt wurden
+   private String wrongAnswer;
    
    public Question() {}
    
    public Question(String text, String rightAnswer, String wrongAnswer) {
        this.text=text;
-       /*this.rightAnswer = rightAnswer;
-       this.wrongAnswer = wrongAnswer; */     
+       this.rightAnswer = rightAnswer;
+       this.wrongAnswer = wrongAnswer;    
    }
 
     public int getFnr() {
@@ -57,4 +57,21 @@ public class Question {
     public void setPoints(Long points) {
         this.points = points;
     }
+
+    public String getRightAnswer() {
+        return rightAnswer;
+    }
+
+    public void setRightAnswer(String rightAnswer) {
+        this.rightAnswer = rightAnswer;
+    }
+
+    public String getWrongAnswer() {
+        return wrongAnswer;
+    }
+
+    public void setWrongAnswer(String wrongAnswer) {
+        this.wrongAnswer = wrongAnswer;
+    }
+    
 }
