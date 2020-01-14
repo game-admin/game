@@ -35,7 +35,7 @@ public class TraineeGenerator {
         nicknames.add("Wursti");
         
         abteilungen.add("Management");
-        abteilungen.add("Serverwarung");
+        abteilungen.add("Serverwartung");
         abteilungen.add("Softwaredevelopment ");
         abteilungen.add("Softwarearchitektur");
         

@@ -14,12 +14,12 @@
     <ui:define name="content">
         <h1>Results</h1>
         <p>
-            Du hast #{testQuizAnzeigen.ricounter}/4 Fragen richtig beantwortet! <br/>
-            Damit bekommst du #{testQuizAnzeigen.ricounter*20} Punkte! <br/>
+            Du hast #{testQuizController.ricounter}/4 Fragen richtig beantwortet! <br/>
+            Damit bekommst du #{testQuizController.ricounter*20} Punkte! <br/>
             Die von dir falsch beantworteten Fragen siehst du hier mit den richtigen Antworten:
         </p>
         <p>
-            <p:dataTable var="results" value="#{testQuizAnzeigen.results}">
+            <p:dataTable var="results" value="#{testQuizController.results}">
                 <p:column headerText="Frage:">
                     <h:outputText value="#{results.falscheFrage}"></h:outputText>
                 </p:column>
@@ -28,7 +28,7 @@
                 </p:column>
             </p:dataTable>
         </p>
-        <h:outputText value="Diesen Score hast du jetzt: #{testQuizAnzeigen.score}"></h:outputText>
+        <h:outputText value="Diesen Score hast du jetzt: #{testQuizController.score}"></h:outputText>
     </ui:define>
 
 </ui:composition>

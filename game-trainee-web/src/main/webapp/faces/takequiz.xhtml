@@ -15,7 +15,7 @@
         <h2 align="center">Dies ist ein Quiz um dein Java-Wissen zu testen!</h2><br />
         <div id="question">
         <h:form>
-            <ui:repeat var="quiz" value="#{testQuizAnzeigen.quiz}">
+            <ui:repeat var="quiz" value="#{testQuizController.quiz}">
                     <h:outputText value="#{quiz.frage}"></h:outputText> <br />
                     <p:outputLabel style="font-size: 0.8em" for="box1" value="#{quiz.antworten[0]}"></p:outputLabel>
                     <p:selectBooleanCheckbox id="box1" value="#{quiz.buttons[0]}"></p:selectBooleanCheckbox>
@@ -25,8 +25,7 @@
                     <p:selectBooleanCheckbox id="box2" value="#{quiz.buttons[1]}"></p:selectBooleanCheckbox>  
                     <br/><br/>
             </ui:repeat>
-            <h:commandButton value="Check Answers" action="#{testQuizAnzeigen.checkAnswers()}"></h:commandButton> 
-            <!--<h:button outcome="result.xhtml" value="Check Answers static"></h:button> -->
+            <h:commandButton value="Check Answers" action="#{testQuizController.checkAnswers()}"></h:commandButton> 
         </h:form>
         </div>
     </ui:define>

@@ -15,6 +15,9 @@
        
     <ui:define name="content">         
         <h2>Leaderboard</h2>
+        <p>
+            Hier siehst du eine Auflistung aller Trainees, mit ihren Nicknames und ihren Fortschritt.
+        </p>
         <p:dataTable var="trainee" value="#{traineeView.trainees}">
             <p:column headerText="Name">
                 <h:outputText value="#{trainee.name}"></h:outputText>
@@ -32,21 +35,5 @@
                 <h:outputText value="#{trainee.progress}"></h:outputText>
             </p:column>
         </p:dataTable>
-        <table>
-        <tr>
-            <td>
-                <p>Max Mustermann | Rang: Advaced Java Developer | Abzeichern: 
-                <h:graphicImage library="img" name="icon2.jpg" height="50" width="70" /></p>
-            </td>
-        </tr>
-        <tr>
-            <td> 
-                <p>Eric Bensi |Rang: Gott | Abzeichen: 
-                <h:graphicImage library="img" name="icon1.jpg" height="50" width="50" /></p>
-            </td>
-        </tr>
-                        
-        </table>
     </ui:define>
-         
 </ui:composition>

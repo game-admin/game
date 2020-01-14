@@ -20,17 +20,17 @@ import javax.inject.Named;
 @ApplicationScoped
 public class TestQuizSpeicher {
     
-    private final  String[] fragen; //kein static!
+    private final  List<String> fragen; 
     private final  String[][] antworten;
-    private final  int[] indexrichtig;
+    private final  List<Integer> indexrichtig;
     
          
     public TestQuizSpeicher() {
-       fragen = new String[4];
-        fragen[0] = "Ist Java gut?";
-        fragen[1] = "Ist Java auch eine Insel?";
-        fragen[2] = "Wie gibt man Text in Java aus?";
-        fragen[3] = "Wie muss man bei Klassennamen beachten?";
+       fragen = new ArrayList<>();
+        fragen.add("Ist Java gut?");
+        fragen.add("Ist Java auch eine Insel?");
+        fragen.add("Wie gibt man Text in Java aus?");
+        fragen.add("Wie muss man bei Klassennamen beachten?");
         
         antworten = new String[4][2];
         antworten[0][0] = "Ja";
@@ -45,11 +45,11 @@ public class TestQuizSpeicher {
         antworten[3][0] = "Der Anfangsbuchstabe muss klein sein!";
         antworten[3][1] = "Der Anfangsbuchstabe muss groß sein!";
         
-        indexrichtig = new int[4];
-        indexrichtig[0]=0;
-        indexrichtig[1]=0;
-        indexrichtig[2]=1;
-        indexrichtig[3]=1; 
+        indexrichtig = new ArrayList<>();
+        indexrichtig.add(0);
+        indexrichtig.add(0);
+        indexrichtig.add(1);
+        indexrichtig.add(1); 
     }
     
     public List<TestQuiz> createQuiz(int size) {
@@ -57,7 +57,6 @@ public class TestQuizSpeicher {
         for(int i = 0 ; i < size ; i++) {
             list.add(new TestQuiz(getFragenFromIndex(i), getAntwortenFromIndex(i), getIndexrichtigFromIndex(i) ));
         }
-         
         return list;
     }
     
@@ -69,8 +68,7 @@ public class TestQuizSpeicher {
     }
     
     public String getFragenFromIndex(int index) {
-       
-        return fragen[index];
+        return fragen.get(index);
     }
     
     public String[] getAntwortenFromIndex(int index) {
@@ -78,10 +76,10 @@ public class TestQuizSpeicher {
     }
     
     public int getIndexrichtigFromIndex(int index) {
-        return indexrichtig[index];
+        return indexrichtig.get(index);
     }
 
-    public String[] getFragen() {
+    public List<String> getFragen() {
         return fragen;
     }
 
@@ -89,10 +87,7 @@ public class TestQuizSpeicher {
         return antworten;
     }
 
-    public int[] getIndexrichtig() {
+    public List<Integer> getIndexrichtig() {
         return indexrichtig;
-    }
-    
-    
-    
+    }   
 }

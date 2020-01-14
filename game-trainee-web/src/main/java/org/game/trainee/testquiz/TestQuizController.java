@@ -22,7 +22,7 @@ import org.game.trainee.traineeview.TraineeGenerator;
  */
 @Named
 @ApplicationScoped
-public class TestQuizAnzeigen implements Serializable {
+public class TestQuizController implements Serializable {
      
     private List<TestQuiz> quiz;
     private List<Result> results;
@@ -83,35 +83,18 @@ public class TestQuizAnzeigen implements Serializable {
     
     public void evaluateScore() {
         List<Integer> falsche = new ArrayList<>();
-        if(quiz.get(0).buttons[0] && quiz.get(0).indexrichtig == 0 || quiz.get(0).buttons[1] && quiz.get(0).indexrichtig == 1) { 
-            score+=20;
-            ricounter++;
-        } else {
-            falsche.add(0);
-        }
-        if(quiz.get(1).buttons[0] && quiz.get(1).indexrichtig == 0 || quiz.get(1).buttons[1] && quiz.get(1).indexrichtig == 1) {
-            score+=20;
-            ricounter++;
-        } else {
-            falsche.add(1);
-        }
-        if(quiz.get(2).buttons[0] && quiz.get(2).indexrichtig == 0 || quiz.get(2).buttons[1] && quiz.get(2).indexrichtig == 1) {
-            score+=20;
-            ricounter++;
-        } else {
-            falsche.add(2);
-        }
-        if(quiz.get(3).buttons[0] && quiz.get(3).indexrichtig == 0 || quiz.get(3).buttons[1] && quiz.get(3).indexrichtig == 1) {
-            score+=20;
-            ricounter++;
-        } else {
-            falsche.add(3);
+        for(int i=0; i<quiz.size();i++) {
+            if(quiz.get(i).buttons[0] && quiz.get(i).indexrichtig == 0 || quiz.get(i).buttons[1] && quiz.get(i).indexrichtig == 1) {
+                score+=20;
+                ricounter++;
+            } else {
+                falsche.add(i);
+            }
         }
         for(int i=0; i<falsche.size(); i++) {
             results.add(new Result(quiz.get(falsche.get(i)).frage, quiz.get(falsche.get(i)).antworten[quiz.get(falsche.get(i)).indexrichtig]));
         }
         //Hier sollte dann noch der Score der Trainees geupdated werden
-        
     }
     
     /*public String checkForDoubleChecked() {
