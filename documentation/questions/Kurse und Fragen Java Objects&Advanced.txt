@@ -1,0 +1,26 @@
+Kurs über Vererbung	https://www.tutorialspoint.com/java/java_inheritance.htm + https://www.tutorialspoint.com/java/java_overriding.htm
+
+
+
+Kurs über Polymorphism&Abstraction	https://www.tutorialspoint.com/java/java_polymorphism.htm + https://www.tutorialspoint.com/java/java_abstraction.htm
+
+
+
+Kurs über Kapseln, Interfaces & Packages	https://www.tutorialspoint.com/java/java_encapsulation.htm	https://www.tutorialspoint.com/java/java_interfaces.htm	  https://www.tutorialspoint.com/java/java_packages.htm
+
+
+Kurs über Data Structures & Collections		https://www.tutorialspoint.com/java/java_data_structures.htm	https://www.tutorialspoint.com/java/java_collections.htm
+
+
+
+Kurs über Generics & Serialization	https://www.tutorialspoint.com/java/java_generics.htm	https://www.tutorialspoint.com/java/java_serialization.htm
+
+
+Kurs über Networking & Sending Email		https://www.tutorialspoint.com/java/java_networking.htm		https://www.tutorialspoint.com/java/java_sending_email.htm
+
+
+Kurs über Threads		https://www.tutorialspoint.com/java/java_multithreading.htm
+
+
+
+Kurs über Java Applet & Documentation		https://www.tutorialspoint.com/java/java_applet_basics.htm	https://www.tutorialspoint.com/java/java_documentation.htm

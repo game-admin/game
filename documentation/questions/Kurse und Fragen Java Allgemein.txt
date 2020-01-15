@@ -1,9 +1,9 @@
 Start Kurs:	https://www.tutorialspoint.com/java/index.htm
-Fragen:	What are advantages of Java?	!Platform Independent!, Flawless, Only compatible with Windows, 
+Fragen:	What are advantages of Java?	!Platform Independent!, Flawless, Only compatible with Windows, used for 
 	What is written after a line of code?	 ".",      !";"!,      "{/}",     ","
-	What does Object Oriented mean?		!Java can be extended with Objects!, Java has no Objects, you have to use the programm Object to run Java, !Java consists of Objects!
-	Which Java Versions exist?	Java ME, Java EE, Java SS, Java SE
-	What are some features of Java?	High performance, Dynamic, Platform Dependant, Secure
+	What does Object Oriented mean?		!Java can be extended with Objects!, Java has no Objects, you have to use the programm Object to run Java, Java has no Objects
+	Which Java Versions exist?	Java S, Java E, Java SS, !Java SE!
+	What are some features of Java?	High graphical visualisation, !Dynamic!, Platform Dependant, insecure
 
 Kurs über Object & Classes + Constructor	https://www.tutorialspoint.com/java/java_object_classes.htm + https://www.tutorialspoint.com/java/java_constructors.htm
 Fragen:
