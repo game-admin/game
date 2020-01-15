@@ -142,3 +142,56 @@ include::../../game-trainee-web/src/main/webapp/faces/leaderboard.xhtml[]
 
 Here we used the <p:dataTable> tag, which is used to display date just like in the regulare <table> tag. If you give it a list, it will know to diplay all elements of the list.
 
+= Java Classes
+
+== Trainer Classes
+
+.Trainer.java
+[source,java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/trainerview/Trainer.java[]
+----
+
+.TrainerService.java
+[source,java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/trainerview/TrainerService.java[]
+----
+
+.TrainerView.java
+[source,java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/trainerview/TrainerView.java[]
+----
+
+== Trainee Classes
+
+.Trainee.java
+[source,java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/traineview/Trainee.java[]
+----
+
+.TraineeView.java
+[source,java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/TraineeView.java[]
+----
+
+.TraineeGenerator.java
+[source,java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/TraineeGenerator.java[]
+----
+
+== Quiz Classes
+
+
+
+
+
+
+
+
+
+
