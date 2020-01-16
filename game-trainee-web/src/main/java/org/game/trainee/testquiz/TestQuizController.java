@@ -21,7 +21,7 @@ import org.game.trainee.traineeview.TraineeGenerator;
  * @author Eric
  */
 @Named
-@ApplicationScoped
+@RequestScoped
 public class TestQuizController implements Serializable {
      
     private List<TestQuiz> quiz;
