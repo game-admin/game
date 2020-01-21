@@ -6,14 +6,17 @@ Fragen:	What are advantages of Java?	!Platform Independent!, Flawless, Only comp
 	What are some features of Java?	High graphical visualisation, !Dynamic!, Platform Dependant, insecure
 
 Kurs über Object & Classes + Constructor	https://www.tutorialspoint.com/java/java_object_classes.htm + https://www.tutorialspoint.com/java/java_constructors.htm
-Fragen:
-
-
-
-
-
-
-
+Fragen: What concept of the following is Java supporting?	Classes
+	Which things do objects include?	state and behaviour
+	What is a variable type which classes can contain?	Local
+	What is the main rule of a constructor?
+	How do you create an Object?
+	How can you access instance variables and methods?
+	What does the import statement do?
+	-----
+	What does a constructor do?
+	Which classes contain a constructor?
+	What is a correct constructor head (considering the name of the programm is MyClass)?
 
 Kurs über Datentypen	https://www.tutorialspoint.com/java/java_basic_datatypes.htm
 
