@@ -14,7 +14,40 @@
     </ui:define>
    
     <ui:define name="content">
-        <h1 align="center" style="margin-top: -1em">Quizzes</h1>               
+        <h1 align="center" style="background-image: '../resources/img/board.png'">Quizzes</h1>               
+        <table id="quizzes">
+            <tr>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Description
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Java Learning Quiz - Basics
+                </td>
+                <td>
+                    This quiz will check your knowledge on basic java skills.
+                </td>
+                <td>
+                    <h:link outcome="takequiz.xhtml" value="Take Quiz!"></h:link>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Java Learning Quiz - Advanced
+                </td>
+                <td>
+                    This quiz will check, if you have enough in depth knowledge with java.
+                </td>
+                <td>
+                    <h:link outcome="takequiz.xhtml" value="Take Quiz!"></h:link>
+                </td>
+            </tr>
+        </table>
+        <hr/>
         <p>
             <strong>Java Learning Quiz - Basics</strong> <br />
             This quiz will check your knowledge on basic java skills.
@@ -29,7 +62,8 @@
             If you want to create a quiz, 
             <h:link outcome="createquiz.xhtml" value="click here!"></h:link>
         </p>
-        <br/>
+        <hr/>
+        <br/><br/>
         <h1 align="center">Courses</h1>
         <p>
             <strong>Java SE Learning Beginner Course</strong> <br/>

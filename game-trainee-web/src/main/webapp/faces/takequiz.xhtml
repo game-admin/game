@@ -12,19 +12,27 @@
     </ui:define>
 
     <ui:define name="content">
-        <h2 align="center">Dies ist ein Quiz um dein Java-Wissen zu testen!</h2><br />
-        <div id="question">
+        <h1 align="center">Java Learning Quiz!</h1>
+        <p style="margin-left: 20%; font-family: 'Arial', sans-serif;">
+            Für jede richitg beantwortete Frage bekommst du 20 Punkte! <br/>
+            Es ist immer nur eine Antwort richtig! <br/>
+            Wenn du alle Fragen richtig beantwortest, bekommst du dieses Emblem: 
+            <h:graphicImage library="img" name="#{testQuizController.emblem}"></h:graphicImage>
+        </p>
+        <div id="questions">
         <h:form>
             <ui:repeat var="quiz" value="#{testQuizController.quiz}">
+                <div class="question">
                     <h:outputText value="#{quiz.frage}"></h:outputText> <br />
                     <p:outputLabel style="font-size: 0.8em" for="box1" value="#{quiz.antworten[0]}"></p:outputLabel>
                     <p:selectBooleanCheckbox id="box1" value="#{quiz.buttons[0]}"></p:selectBooleanCheckbox>
                     <br/>
                     <p:outputLabel style="font-size: 0.8em" for="box2" value="#{quiz.antworten[1]}"></p:outputLabel>
                     <p:selectBooleanCheckbox id="box2" value="#{quiz.buttons[1]}"></p:selectBooleanCheckbox>  
-                    <br/><br/>
+                </div>    
+                <br/><br/>
             </ui:repeat>
-            <h:commandButton value="Check Answers" action="#{testQuizController.checkAnswers()}"></h:commandButton> 
+            <p:commandButton value="Check Answers" style="margin-left: 20%" action="#{testQuizController.checkAnswers()}"></p:commandButton> 
         </h:form>
         </div>
     </ui:define>
