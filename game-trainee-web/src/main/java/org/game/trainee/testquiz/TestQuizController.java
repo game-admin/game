@@ -28,6 +28,7 @@ public class TestQuizController implements Serializable {
     private List<Result> results;
     private int score; //Der Score sollte später injected werden, und mit einer DB verbunden sein
     private int ricounter;
+    private String emblem = "emblem.png";
     
     @Inject 
     private TraineeGenerator trainee;
@@ -74,10 +75,20 @@ public class TestQuizController implements Serializable {
     public void setRicounter(int ricounter) {
         this.ricounter = ricounter;
     }
+
+    public String getEmblem() {
+        return emblem;
+    }
+
+    public void setEmblem(String emblem) {
+        this.emblem = emblem;
+    }
     
     public String checkAnswers() {
         evaluateScore();
         //checkForDoubleChecked();
+        if(ricounter==quiz.size())
+            return "success.xhtml";
         return "result.xhtml";
     }
     
@@ -90,7 +101,7 @@ public class TestQuizController implements Serializable {
             } else {
                 falsche.add(i);
             }
-        }
+        }   
         for(int i=0; i<falsche.size(); i++) {
             results.add(new Result(quiz.get(falsche.get(i)).frage, quiz.get(falsche.get(i)).antworten[quiz.get(falsche.get(i)).indexrichtig]));
         }

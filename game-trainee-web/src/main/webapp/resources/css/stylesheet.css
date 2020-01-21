@@ -27,7 +27,6 @@ footer {
 
 #menu {
     width:1000px;
-    background-color: red;
     float:left;
 }
 
@@ -47,12 +46,40 @@ footer {
     margin-top: 0px;
 }
 
-#question {
-    margin-left: 20%;
+#questions {
+    margin-left: 33%;
     font-size: 1.5em;
-    width: 400px;
+    /*width: 60%; */
+    background-color: white;
+    border-radius: 5px;
+    width: fit-content;
 }
 
+
+#quizzes {
+    font-size: 1.3em;
+    border: 5px;
+    left: 10%;
+    width: 90%;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    
+}
+
+h1 {
+    margin-top: -1em;
+    max-width: 40%;
+    width: fit-content;
+    background-color:crimson;
+    margin-left: 33%;
+    font-family: "Arial Black", sans-serif;
+}
+
+.question {
+    background-color: white;
+    font-family: "Arial", sans-serif;
+    width: fit-content;
+    border-radius: 5px;
+}
 /* header {
     position:relative;
     margin-left: 15%;

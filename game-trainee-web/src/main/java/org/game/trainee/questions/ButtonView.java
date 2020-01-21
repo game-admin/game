@@ -43,8 +43,8 @@ public class ButtonView {
         addMessage("Data deleted");
     }
  
-    public void buttonSubmit() {
-        addMessage("Die Frage wurde dem Fragebogen hinzugefügt!");
+    public String buttonSubmit() {
+        return "courses.xhtml";
     }
  
     public void addMessage(String summary) {
