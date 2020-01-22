@@ -12,7 +12,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import org.game.trainee.traineeview.TraineeGenerator;
 
