@@ -169,7 +169,7 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/trainerview/Train
 .Trainee.java
 [source,java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/traineview/Trainee.java[]
+include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/Trainee.java[]
 ----
 
 .TraineeView.java

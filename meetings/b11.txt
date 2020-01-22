@@ -1,4 +1,4 @@
- Statt leaderboard: Emblemtafel / Emblemwall
+Statt leaderboard: Emblemtafel / Emblemwall
 statt score -> Emblems rein
 auf courses -> die Tabellenform
 
