@@ -9,7 +9,9 @@ together {
     entity Quiz {
         * **QID: Int**
         --
-        * Namen: String
+        * Titel: String
+        Beschreibung: String
+        * Reward: Blob
     }
     
     entity Quizbeantwortung {
@@ -17,6 +19,7 @@ together {
         * QID:   Int
         * MitID: Int
         --
+        * erreichtePunktezahl: Int
     }
     
     entity Mitarbeiter {
@@ -30,7 +33,7 @@ together {
     
 }
 
-entity Fragen {
+entity Frage {
     * **FNR: Int**
     * QID: Int
     --
@@ -38,7 +41,7 @@ entity Fragen {
     * Punkteanzahl: Int/Long
 }
 
-entity Antwortmoeglichkeiten {
+entity Antwortmoeglichkeit {
     * FNR:      Int
     * **AntwID: Int**
     --
@@ -47,18 +50,59 @@ entity Antwortmoeglichkeiten {
 }
 
 entity Antwort {
-    * **GewAntwID: Int**
+    * **GewaehlteAntwortID: Int**
     --
-    * Gewählte Antwort: String
+    * GewaehlteAntwort: String
+}
+
+entity Kurs {
+    * **KursID: Int**
+    --
+    * Titel: String
+    * Link: String/URL
+    Beschreibung: String
+}
+
+entity KursBesuch {
+    * KursID: Int
+    * MitID: Int
+    * **KursBesuchID: Int**
+    --
+    * Datum: Date
+
+}
+
+entity KursVorraussetzung {
+    * VorraussetzID: Int
+    * KursID: Int
+    * **KursVorraussetzID: Int**
+}
+
+entity Vorraussetzung {
+    * **VorraussetzID: Int**
+    --
+    KursID: Int
+    QuizID: Int
+}
+
+entity QuizVorraussetzung {
+    * VorraussetzID: Int
+    * QID: Int
+    * **QuizVorraussetzID: Int**
 }
 
 
-
-
-
-Antwortmoeglichkeiten}|--||Fragen
-Fragen}|--||Quiz
-Quiz|o--o{Quizbeantwortung
+Antwortmoeglichkeit}|--||Frage
+Frage}|--||Quiz
+Quiz||--|{Quizbeantwortung
 Quizbeantwortung}|--||Mitarbeiter
 Quizbeantwortung||--|{Antwort
+Mitarbeiter||--|{KursBesuch
+Kurs||--|{KursBesuch
+Kurs|o--|{KursVorraussetzung
+Vorraussetzung||--|{KursVorraussetzung
+Vorraussetzung|o--||Quiz
+Vorraussetzung|o--||Kurs
+Quiz|o--|{QuizVorraussetzung
+Vorraussetzung||--|{QuizVorraussetzung
 ....
