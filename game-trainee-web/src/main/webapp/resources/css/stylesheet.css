@@ -19,10 +19,9 @@ p {
 }
 
 footer {
-    background-color: lightgrey;
+    background-image: url("#{resource['img:background.gif']}");
     margin: 0px 0px 0px 0px;
     /*margin-bottom: 0px; */
-       
 }
 
 #menu {
