@@ -1,0 +1,43 @@
+ Statt leaderboard: Emblemtafel / Emblemwall
+statt score -> Emblems rein
+auf courses -> die Tabellenform
+
+
+Footer: nur ARZ Graphic reicht
+-> vll Mindesthöhe von Website
+im content soll man scrollen können, aber die farben sollen fixed sein
+header kleiner, und wenn man gank klein wird (responsive), soll dann nur noch Game angezeigt werden oder so (wie beim Dangl)
+Navigationsleiste soll über die ganze Seite gehen
+
+Anders Theme: Cruze, Home, Dot-Luv
+
+Payara treiber muss installiert werden
+
+Pooltype Unterschiede:
+1: Datasource und Treiber werden zur Verfügung gestellt -> das nehma normal
+2: XADataSource -> ist zur synchronisation von mehren Applikationen, die auf eine Datebank zugreifen (brauchma ned)
+3: brauchma auch eher ned
+4: da is dann nur ne Datenbanktreiberimplementierung -> low level
+
+Beim Emblem hochladen -> immer gleiche Größe verwenden
+-> nach der Prozentzahl der erreichten Punkte wir dann das Emblem mit der Größe angepasst
+-> Emblems gleich in Datenbank reinspeichern -> BLOP (Binary Large Object)
+-> Wichtig: nach erreichtem Erfolg, wird das Emblem groß oder weniger groß, dass man kriegt!
+
+-> bei Kurs: Vorraussetzungen dazugeben -> wo dan drinsteht, was du schon können
+sollstes, um diesen Kurs zu nehmen
+
+-> ein besuchter Kurs soll ne Vorraussetzung sein, dast nen anderen Kurs machen kannst
+
+-> Vorraussetzungen -> nach im Programm checken, wenn da bei Vorraussetzung ne KursID oder QuizID drin ist, dann musst du 
+je nachdem checken, ob derjenige Mitarbeiter den Kurs / Quiz schon gmacht hat oder nicht -> im Kursbesuch bzw. Quizbeantwortung
+
+-> Vorraussetzung kann ein Quiz oder ein Kurs sein, ein Kurs kann einen Kurs oder ein Quiz als Vorraussetzung haben, die Vorraussetzung
+ist einem oder mehreren Kursen zugewiesen -> Kursvorraussetzung
+-> Umgekehrt soll auch für ein Quiz, ein Kurs oder ein Quiz als Vorraussetzung sein -> QuizVorraussetzung
+
+Beim createQuiz -> 2 Checkboxlisten, wo die Quize und Kurse sind, wo man anhakerln kann, welche vorrausgesetzt sind
+
+-> Wichtig: sein eigenes Quiz kann nicht vorrausgesetzt werden für das Quiz -> in UI abfragen!
+
+Packages: Quiz; Mitarbeiter; Kurs (im Quiz und Kurs sind die Vorraussetzungen drinnen)
