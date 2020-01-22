@@ -71,8 +71,12 @@ include::chapters/08_concepts.adoc[]
 include::chapters/Design_Decisions.adoc[]
 
 <<<<
+
 // ER-Modell
 image::diagrams/diagram-classes.png[]
+
+//Theorie Eric
+include::chapters/Theorie_Eric.adoc[]
 
 <<<<
 // 10. Quality Scenarios

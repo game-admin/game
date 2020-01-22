@@ -1,0 +1,47 @@
+Start Kurs:	https://www.tutorialspoint.com/java/index.htm
+Fragen:	What are advantages of Java?	!Platform Independent!, Flawless, Only compatible with Windows, used for 
+	What is written after a line of code?	 ".",      !";"!,      "{/}",     ","
+	What does Object Oriented mean?		!Java can be extended with Objects!, , you have to use the programm Object to run Java, Java has no Objects
+	Which Java Versions exist?	Java S, Java E, Java SS, !Java SE!
+	What are some features of Java?	High graphical visualisation, !Dynamic!, Platform Dependant, insecure
+
+Kurs über Object & Classes + Constructor	https://www.tutorialspoint.com/java/java_object_classes.htm + https://www.tutorialspoint.com/java/java_constructors.htm
+Fragen: What concept of the following is Java supporting?	Classes
+	Which things do objects include?	state and behaviour
+	What is a variable type which classes can contain?	Local
+	What is the main rule of a constructor?
+	How do you create an Object?
+	How can you access instance variables and methods?
+	What does the import statement do?
+	-----
+	What does a constructor do?
+	Which classes contain a constructor?
+	What is a correct constructor head (considering the name of the programm is MyClass)?
+
+Kurs über Datentypen	https://www.tutorialspoint.com/java/java_basic_datatypes.htm
+Fragen: How many primitive datatypes exist in Java?
+	What is no data type in Java?	int	double	String	text
+	What are reference datatypes
+
+
+
+
+Kurs über Variable und modifier Types	https://www.tutorialspoint.com/java/java_variable_types.htm	https://www.tutorialspoint.com/java/java_modifier_types.htm
+
+
+
+
+Kurs über Basic Operators:	https://www.tutorialspoint.com/java/java_basic_operators.htm
+
+
+
+
+Kurs über loops & Ifs		https://www.tutorialspoint.com/java/java_loop_control.htm	https://www.tutorialspoint.com/java/java_decision_making.htm
+
+
+
+
+Kurs über Arrays		https://www.tutorialspoint.com/java/java_arrays.htm
+
+
+Kurs über Methoden		https://www.tutorialspoint.com/java/java_methods.htm

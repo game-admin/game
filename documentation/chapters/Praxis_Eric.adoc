@@ -64,18 +64,16 @@ h1 {
 }
 ----
 
-=== JavaScript
 
-
-
-== Projektstruktur erstellen
+== Getting Started
+=== Projektstruktur erstellen
 Um mit dem Programmieren zu beginnen, muss erst eine stabile Projektstruktur gegeben sein. Dafür haben wir in NetBeans auf "Projekt erstellen" geklickt, alle benötigten Resourcen vereinbart, und mit Maven wurde dann automatisch eine passende Projektstruktur erstellt.
 Nun muss man auch darauf achten, dass diese Struktur befolgt.
 Java-Dateien sollten unter src\main\java abgelegt werden.
 Everything regarding JSF should lie in src\main\webapp. That includes the xhtml-files, the CSS, JavaScript and Images should lie in a untergeordnetem resources folder. This is needed, for JSF to locate the resources faster.
 <Bild einfügen, welches die Projektstruktur zeigt>
 
-== Layout
+== Layout erstellen
 Um die Erstellung mehrerer UIs zu vereinfachen, wird ein Layout erstellt, welches als ein Template für die Pages dient.
 Dieses Layout habe ich in der mainlayout.xhtml realisiert.
 
@@ -99,7 +97,101 @@ include::../../game-trainee-web/src/main/webapp/mainlayout.xhtml[]
  Im footer-Bereich werden noch Kontaktdaten angezeigt.
 
 == User-Interfaces
-Die UIs liegen hier unter src\main\webapp\faces.
+Die UIs liegen hier unter src\main\webapp\faces. There are 4 main pages: Activites(index.xhtml), Courses & Quizes(courses.xhtml), Trainers(trainers.xhtml) and a leaderboard(leaderboard.xhtml.
 Die erste zu erstellende Seite, ist die index.xhtml Seite, da diese standardmäßig vom Browser zuerst angezeigt wird, beim aufrufen der Website.
-Auf der Startseite sollte der User ...
+Auf der Startseite sollte der User seinen Fortschritt und seine Aktivitäten sehen.
+
+.index.xhtml
+[source,xhtml]
+----
+include::../../game-trainee-web/src/main/webapp/faces/index.xhtml[]
+----
+As you can see, the index-page is using the mainlayout with the "template" attribute. We defined a individell title with <ui:define>. The content of this page is enclose in <ui:define> too.
+We dont need to set a footer here, because in the template page, there is already an universal footer defined.
+
+The Courses&Quizes page should display a list of course the trainee can go through and a list of quizes a trainee can take. Trainers should be able to add, delete and edit quizzes.
+
+.courses.xhtml
+[source,xhtml]
+----
+include::../../game-trainee-web/src/main/webapp/faces/courses.xhtml[]
+----
+
+At the the end there is a <h:link> tag. This is a JSF tag that resolves in to an <a> tag, leading to another page.
+There is a link that leads to a page where you can take a quiz, and there is a link where you can create a quiz. More on that later.
+
+The Trainers page should display all the trainers associated with the GAME platform. The trainees can contact these trainers if they need help.
+
+.trainers.xhtml
+[source,xhtml]
+----
+include::../../game-trainee-web/src/main/webapp/faces/trainers.xhtml[]
+----
+
+
+Here we used a primefaces tag called <p:carousel>. This tag is used to create a carousel. The <panelGrid> tag is used to display data in a grid. The <p:graphicImage> is just like the JSF tag <h:graphicImage>. <h:outputText> is used to display text, with the function to call a Backing Bean. For easier explanation here is a picture:
+Bild einfügen
+ 
+The leaderboard page is used to diplay all the trainees with their names, nicknames, branches and scored. You should be able to sort them by all of this columns.
+ 
+.leaderboard.xhtml
+[source,xhtml]
+----
+include::../../game-trainee-web/src/main/webapp/faces/leaderboard.xhtml[]
+----
+
+Here we used the <p:dataTable> tag, which is used to display date just like in the regulare <table> tag. If you give it a list, it will know to diplay all elements of the list.
+
+= Java Classes
+
+== Trainer Classes
+
+.Trainer.java
+[source,java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/trainerview/Trainer.java[]
+----
+
+.TrainerService.java
+[source,java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/trainerview/TrainerService.java[]
+----
+
+.TrainerView.java
+[source,java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/trainerview/TrainerView.java[]
+----
+
+== Trainee Classes
+
+.Trainee.java
+[source,java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/traineview/Trainee.java[]
+----
+
+.TraineeView.java
+[source,java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/TraineeView.java[]
+----
+
+.TraineeGenerator.java
+[source,java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/TraineeGenerator.java[]
+----
+
+== Quiz Classes
+
+
+
+
+
+
+
+
+
 

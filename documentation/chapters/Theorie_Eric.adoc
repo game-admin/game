@@ -1,24 +1,59 @@
 = Theoretische Aufgabenstellung: Eric Haneder
 
-= Lernen, Lerntypen und selbstreguliertes Lernen
+= (Lernen,) Lerntypen, Lernstile, Lernpräferenzen und selbstreguliertes Lernen
 == Lernen
 
-Jeder Mensch kommt nicht darum herum zu lernen. Sei es in der Schule oder im Berufsleben, sich weiterzubilden gehört zum Wesen des Menschen. Unter dem Begriff "Lernen" versteht man normalerweise die Aneignung von Wissen, den Aufbau von Fertigkeiten oder die Einübung motorischer Abläufe. Mit "Lernen" werden aber ebenso Tätigkeiten bezeichnet, welche mit dem Ziel einer Veränderung interner Bedingungen durchgeführt werden.
+Everyone has to learn, both actively and passively. Whether at school or in professional life, further education is part of the essence of man. The term "learning" usually means the acquisition of knowledge, the development of skills or the practice of motor processes. However, "learning" also refers to activities that are carried out with the aim of changing internal conditions.
 
 _(vgl. Selbstreguliertes Lernen in der dualen Ausbildung - Lerntypen und Bedingungen, Johannes Rosendahl, 2010)_
 
+There are many people who have tried to explain the process behind learning, or to classify different learning preferences and learning types. I will discuss these classifications in more detail below.
 
-*Wie genau also lernt der Mensch?*
+== Learning type classification according to Vester
 
-Um diese Frage zu beantworten, muss man sich die verschiedenen Lerntypen genauer anschauen.
+Frederick Vester hat mit seinem Buch "Denken, Lernen, Vergessen. Was in unserem Kopf vor, wie lernt das Gehirn, und wann lässt es uns im Stich?" (1975, Stuttgart) vier Lerntypen definiert. Jedoch wurde sein Buch unterschiedlich aufgefasst, sodass verschiedene Versionen seiner Einteilung auffindbar sind. Zumindest bei dem Fakt, dass es einen auditiven, einen visuellen und einen haptischen Lerntyp gibt, ist man sich einig. Jedoch gibt es einige Menschen, die meinen, der vierte Lerntyp nach Frederik Vester, wäre der kommunikative Lerntyp und andere meinen einen intellektuellen Lerntyp. 
 
-*Es gibt vier Lerntypen* (nach Frederic Vester)*:*
+In the book "Denken, Lernen, Vergessen. Was geht in unserem Kopf vor, wie lernt das Gehirn und wann lässt es uns im Stich? (1975, Stuttgart) Frederick Vester defined four types of learning. However, his book was interpreted differently, so that different versions of his classification can be found. At least on the fact that there is an auditory, a visual and a haptic learning type, there is agreement. However, there are some people who think that the fourth learning type after Frederik Vester is the communicative learning type and others think that it is an intellectual learning type.
 
-* optisch/visuell -> Lernen durch Sehen
-* auditiv/akkustisch -> Lernen durch Zuhören
-* Haptisch -> Lernen durch Handeln
-* Kognitiv -> Lernen durch Erkennen
+NOTE: One also comes across terms like "cognitive learning type" ≙ "intellectual learning type", or the "kinesthetic learning type" ≙ "haptic learning type.
 
+.Evidence for a classification according to Vester with a "communicative learning type"
+ https://www.teko.ch/die-vier-lerntypen-und-ihre-besonderheiten;
+ https://www.mystipendium.de/studium/lerntypen;
+ https://karrierebibel.de/lerntypentest/#Die-vier-Lerntypen-angelehnt-an-Frederic-Vester;
+ https://learnsolution.de/die-vier-lerntypen-nach-frederic-vester/;
+ 
+.Evidence for a classification to Vester with an "intellectual learning type""
+ http://www.rechtschreibwerkstatt-konzept.de/wp-content/uploads/2015/02/Looss_Lerntypen.pdf;
+ https://wb-web.de/wissen/lehren-lernen/lernstile-und-lerntypen.html;
+ https://smarter-learning.de/lerntypen/klassische-lerntypen-nach-vester/;
+ https://wissenschafts-thurm.de/lerntypen/;
+ "Erforschung der Lerntypen und -strategien am Beispiel einer Handelsschulklasse", Petra Hochleitner, 2016 
+ 
+I will be analyzing this classification according to Vester:
+
+1. optical/visual -> Learning through seeing and observing
+2. auditory/acoustically -> Learning through listening and speaking
+3. haptisch -> Learning through action (touching and feeling)
+4. cognitive -> Learning through recognition/intellect
+
+=== Auditory learning type
+The auditory learning type learns while using his hearing. He/She has no problem listening to someone over long periods of time. The auditive type prefers auditioned learning content and learns better if he/she reads the text aloud himself/herself.
+
+=== Visual learning type
+This learning type learns the best, when he takes up the learning content through his eyes. Reading texts will lead to great learning achievements. This gets a better unterstanding of facts through looking at pictures.
+
+=== Haptic learning type
+The haptic learning type achieves the best learning succes if he cant feel the information he has to learn.
+"Learning by Doing" describes this lerning method pretty good. He prefers to be actively integrated into the learning process. Practical demonstrations are helpful too. 
+
+=== Cognitive/Intellectual learning type
+This learning type understands and saves information the best, by thinking about and critically examining the information. The perception channel not important for taking up learning content.
+
+
+_(vgl."https://smarter-learning.de/lerntypen/klassische-lerntypen-nach-vester/"; letzter Zugriff: 14.01.2020)_
+
+=== Connections
 Man kann den meisten Menschen keinen eindeutigen Lerntyp zustellen, da es viele Lern-Mischtypen gibt. Das heißt jemand lernt etwas schneller, indem er es sich durchliest und wieder aufschreibt (optisch & haptisch), ein wieder andere lernt durch eine Kombination des auditiven und haptischen besser.
 
 Wenn man also effektiv lernen will, sollte man versuchen so viele Sinne wie möglich anzusprechen, um den Lernerfolg zu erhöhen.
@@ -40,24 +75,26 @@ Dabei hilft nur der "Try and Error" Prozess. Durch das Ausprobieren verschiedene
 
 _(vgl. "Erforschung der Lerntypen und -strategien am Beispiel einer Handelsschulklasse", Petra Hochleitner, 2016)_
 
+== Lernpräferenzen nach Dunn
+Dunn und Price (1989) definierten den Lernstil als eine typische Art und Weise, die von unterschiedlichen Elementen der Umgebung beeinflusst wird. This regards:
+
+* physical stimuli (light, sound, temperature, design)
+* social stimuli (pairs, peers, adults, groups)
+* stimuli of learning material (auditiv, visuell, taktil, kinästhetisch)
+* emotional stimuli (responsibility, persistence, motivation, disciplin)
+
+These factors are measured by the "Learning Styles Inventory. However this model does not take the actual processes, that play a role in learning into account.
+
+_(vgl. "Lernorientierungen, Lernstile, Lerntypen und kognitive Stile", Ulrike Creß, in "Handbuch Lernstrategien" von Heinz Mandl & Helmut Felix Friedrich, S.372)_
+
 == Wofür braucht man Lerntypen?
 Jeder kann sich anhand den Lerntypen orientieren, und sich selber einen oder mehrere dieser zuordnen. Wenn man das geschafft hat, kann man anhand dieser Lernmethoden entwickelen (oder vorhandene nehmen), um den persönlichen Lernerfolg zu steigern.
 
-== Woher kommt die Einteilung?
-
-== Auditiver Lerntyp
-
-== Optischer Lerntyp
-
-== Haptischer Lerntyp
-
-== Kognitiver Lerntyp
-
-= Wie lernt man richtig?
+== Wie lernt man richtig?
 Eine Standardregel die weit verbreitet ist besagt, dass man nicht am Tag vor einer Prüfung anfangen sollte zu lernen, da am nächsten Tag nicht viel Gelerntes hängen bleibt.
 (Bei mir is es zwar anders aber ok.)
 
-= Selbstreguliertes Lernen
+== Selbstreguliertes Lernen
 
 Der Begriff des selbstreguliertem Lernens, ist weder ein präziser wissenschaftlicher definierter Begriff, noch eine einheitliche gebrauchte alltagssprachliche Bezeichnung. Weiters kann man die Begriffe self-regulated learning, self-directed learning, learner control kaum schlüssig abgrenzen.
 

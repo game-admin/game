@@ -16,8 +16,8 @@ import javax.validation.constraints.NotNull;
  *
  * @author Eric/Jan
  */
-@Entity
 
+@Deprecated
 public class Employee implements Serializable {
     @Id @GeneratedValue
     private int mitid;

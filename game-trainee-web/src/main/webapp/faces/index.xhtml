@@ -20,6 +20,12 @@
             Badges: *Abzeichen*
         </p>
         <p>
+            Your score (Quiz):
+            <h:outputText value="#{testQuizController.score}"></h:outputText> <br/>
+            Your progress (Overall):
+            <h:outputText value="#{traineeGenerator.scores.get(0)}"></h:outputText>
+        </p>
+        <p>
             Hier sollte spezifisch zum User, dessen Aktivitäten und Fortschritt dargestellt werden.
             Weiters können hier Kurse vorgeschlagen werden.
         </p>

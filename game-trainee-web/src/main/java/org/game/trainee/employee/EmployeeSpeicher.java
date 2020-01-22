@@ -14,6 +14,7 @@ import javax.inject.Named;
  */
 @Named
 @ApplicationScoped
+@Deprecated
 public class EmployeeSpeicher {
    private final String[] namen;
    private final String[] nicknamen;
