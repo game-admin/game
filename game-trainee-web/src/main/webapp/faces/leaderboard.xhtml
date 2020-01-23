@@ -10,11 +10,11 @@
     
     <ui:define name="header">
         <h:outputStylesheet library="css" name="stylesheet.css" />
-        <title>Leaderboard</title>  
+        <title>Emblemtafel</title>  
     </ui:define>
        
     <ui:define name="content">         
-        <h1 align="center">Leaderboard</h1>
+        <h1 align="center">Emblemtafel</h1>
         <p>
             Hier siehst du eine Auflistung aller Trainees, mit ihren Nicknames und ihren Fortschritt.
         </p>
@@ -31,7 +31,7 @@
                 <h:outputText value="#{trainee.abteilung}"></h:outputText>
             </p:column>
             
-            <p:column headerText="Score">
+            <p:column headerText="Emblems">
                 <h:outputText value="#{trainee.progress}"></h:outputText>
             </p:column>
         </p:dataTable>

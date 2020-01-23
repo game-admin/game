@@ -21,6 +21,7 @@ p {
 footer {
     background-image: url("#{resource['img:background.gif']}");
     margin: 0px 0px 0px 0px;
+    background-size:cover;
     /*margin-bottom: 0px; */
 }
 
@@ -31,8 +32,8 @@ footer {
 
 #logout {
     position:relative;
-    left:800px;
-    top:-2.6em;
+    left:1140px;
+    top:-2.65em;
     
     width:200px;
     height:70px;
@@ -78,6 +79,41 @@ h1 {
     font-family: "Arial", sans-serif;
     width: fit-content;
     border-radius: 5px;
+}
+
+.fa-home {
+        margin-right: 9px;
+        margin-top: 5px;
+        width: 1.2em;
+        height: 1.2em;
+}
+
+.fa-book {
+    margin-right:9px;
+    margin-top: 5px;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.fa-question {
+    margin-right:9px;
+    margin-top: 5px;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.fa-eye {
+    margin-right:9px;
+    margin-top: 5px; 
+    width: 1.2em;
+    height: 1.2em; 
+}
+
+.fa-users {
+    margin-right:9px;
+    margin-top: 5px; 
+    width: 1.2em;
+    height: 1.2em;
 }
 /* header {
     position:relative;
