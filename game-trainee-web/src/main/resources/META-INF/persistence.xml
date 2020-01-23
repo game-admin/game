@@ -3,6 +3,7 @@
   <!-- Define Persistence Unit -->
   <persistence-unit name="my_persistence_unit">
     <class>org.game.trainee.questions.Answerpossibilities</class>
-    <class>org.game.trainee.quiz.Quiz</class>
+    <class>org.game.trainee.testquiz.Frage</class>
+    <class>org.game.trainee.testquiz.Antwortmoeglichkeiten</class>
   </persistence-unit>
 </persistence>
