@@ -6,14 +6,25 @@
 package org.game.trainee.traineeview;
 
 import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 /**
  *
- * @author Eric
+ * @author Eric/Jan
  */
+
+@Entity
 public class Trainee implements Serializable {
-    
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    public int MitID;
+    @NotNull
     public String name;
+    @NotNull @Column(unique = true)
     public String nickname;
     public String abteilung;
     public double progress;
@@ -33,6 +44,14 @@ public class Trainee implements Serializable {
         this.abteilung=abteilung;
     }
 
+    public int getMitID() {
+        return MitID;
+    }
+
+    public void setMitID(int MitID) {
+        this.MitID = MitID;
+    }
+    
     public String getName() {
         return name;
     }
