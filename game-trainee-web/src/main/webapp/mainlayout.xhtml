@@ -13,22 +13,18 @@
         <div id="header">
             <h:graphicImage library="img" name="header.png" style="width: 100%"></h:graphicImage>
         </div>
-        
         <ui:insert name="menubar">
             <ui:include src="./faces/menubar.xhtml"></ui:include>
         </ui:insert>
-        
         <ui:insert name="header">
             <h:outputStylesheet library="resources" name="css/stylesheet.css"></h:outputStylesheet>
         </ui:insert>
         <br />
-        
         <ui:insert name="content">
             Content
         </ui:insert> 
         <br />
-        
-        <h:graphicImage library="img" name="footer1.jpg" style="margin: 0px 0px 0px 0px;"></h:graphicImage>
+        <h:graphicImage library="img" name="footer1.jpg" style="top:100%; margin-bottom: 0px; padding-bottom: 0px;"></h:graphicImage>
     </h:body>
 </html>
 

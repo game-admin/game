@@ -10,7 +10,8 @@ and open the template in the editor.
 
 body {
     
-    background-color: darkgray;
+    background-color: #585858;
+    color: white;
 }
 
 p {
@@ -53,6 +54,7 @@ footer {
     background-color: white;
     border-radius: 5px;
     width: fit-content;
+    color: black;
 }
 
 

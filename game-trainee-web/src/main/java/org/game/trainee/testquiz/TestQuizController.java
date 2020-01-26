@@ -106,11 +106,5 @@ public class TestQuizController implements Serializable {
         }
         //Hier sollte dann noch der Score der Trainees geupdated werden
     }
-    
-    /*public String checkForDoubleChecked() {
-        if(buttons[0].booleanValue() == buttons[1].booleanValue())
-            return "index.xhtml"; //Hier sollte man eine Error-Message einbauen
-        return "result.xhtml";
-    } */
    
 }
