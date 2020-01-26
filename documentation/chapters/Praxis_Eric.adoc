@@ -79,6 +79,44 @@ Dieses Layout habe ich in der mainlayout.xhtml realisiert.
 
 :sourcedir: src/main/webapp
 
+[source, xhtml]
+----
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head> 
+        <!--<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+            rel="stylesheet"  type='text/css'></link> -->
+    </h:head>
+    <h:body>
+        <div id="header">
+            <h:graphicImage library="img" name="header.png" style="width: 100%"></h:graphicImage>
+        </div>
+        
+        <ui:insert name="menubar">
+            <ui:include src="./faces/menubar.xhtml"></ui:include>
+        </ui:insert>
+        
+        <ui:insert name="header">
+            <h:outputStylesheet library="resources" name="css/stylesheet.css"></h:outputStylesheet>
+        </ui:insert>
+        <br />
+        
+        <ui:insert name="content">
+            Content
+        </ui:insert> 
+        <br />
+        
+        <h:graphicImage library="img" name="footer1.jpg" style="margin: 0px 0px 0px 0px;"></h:graphicImage>
+    </h:body>
+</html>
+----
+
+
+
+
 [source,xhtml]
 ----
 include::../../game-trainee-web/src/main/webapp/mainlayout.xhtml[]
@@ -146,10 +184,6 @@ Here we used the <p:dataTable> tag, which is used to display date just like in t
 
 == Trainer Classes
 
-.Trainer.java
-[source,java]
-----
-include::../../game-trainee-web/src/main/java/org/game/trainee/trainerview/Trainer.java[]
 ----
 
 .TrainerService.java
@@ -166,10 +200,6 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/trainerview/Train
 
 == Trainee Classes
 
-.Trainee.java
-[source,java]
-----
-include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/Trainee.java[]
 ----
 
 .TraineeView.java
