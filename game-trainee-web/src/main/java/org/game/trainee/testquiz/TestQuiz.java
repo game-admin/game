@@ -11,13 +11,14 @@ public class TestQuiz implements Serializable {
    public String frage;
    public String[] antworten;
    public int indexrichtig;
-   public Boolean[] buttons;
+   public Boolean[] buttons; // for multiple choice
+   public String selectedAnswer; //for single choice radioButtons
    
    public TestQuiz(String frage, String[] antworten, int indexrichtig) {
       this.frage=frage;
       this.antworten=antworten;
       this.indexrichtig=indexrichtig;
-      buttons = new Boolean[2];
+      buttons = new Boolean[4];
    }
    
     public String getFrage() {
@@ -52,4 +53,11 @@ public class TestQuiz implements Serializable {
         this.buttons = buttons;
     }
 
+    public String getSelectedAnswer() {
+        return selectedAnswer;
+    }
+
+    public void setSelectedAnswer(String selectedAnswer) {
+        this.selectedAnswer = selectedAnswer;
+    }
 }

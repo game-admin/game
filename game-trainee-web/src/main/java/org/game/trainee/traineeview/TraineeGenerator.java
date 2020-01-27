@@ -48,7 +48,8 @@ public class TraineeGenerator {
     public List<Trainee> createTrainees(int size) {
         List<Trainee> list = new ArrayList<>();
         for(int i = 0 ; i < size ; i++) {
-            list.add(new Trainee(getNameFromIndex(i), getNicknameFromIndex(i), getAbteilungFromIndex(i), getProgressFromIndex(i) ));
+            list.add(new Trainee(getNameFromIndex(i), getNicknameFromIndex(i), getAbteilungFromIndex(i), getProgressFromIndex(i)));
+            list.get(i).embleme.add("emblem.png");
         }
         return list;
     }

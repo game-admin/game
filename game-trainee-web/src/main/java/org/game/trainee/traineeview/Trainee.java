@@ -6,6 +6,8 @@
 package org.game.trainee.traineeview;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,6 +30,7 @@ public class Trainee implements Serializable {
     public String nickname;
     public String abteilung;
     public double progress;
+    public List<String> embleme;
     
     public Trainee() {}
     
@@ -36,6 +39,7 @@ public class Trainee implements Serializable {
         this.nickname=nickname;
         this.abteilung=abteilung;
         this.progress=progress;
+        embleme = new ArrayList<>();
     }
     
     public Trainee(String name, String nickname, String abteilung) {
@@ -82,6 +86,14 @@ public class Trainee implements Serializable {
 
     public void setProgress(double progress) {
         this.progress = progress;
+    }
+
+    public List<String> getEmbleme() {
+        return embleme;
+    }
+
+    public void setEmbleme(List<String> embleme) {
+        this.embleme = embleme;
     }
     
     

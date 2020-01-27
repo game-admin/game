@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../mainlayout.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="header">
+        <title>Test - JavaQuiz</title>
+        <h:outputStylesheet library="css" name="stylesheet.css"></h:outputStylesheet>
+    </ui:define>
+
+    <ui:define name="content">
+        <h1 align="center">Java Learning Quiz!</h1>
+        <p style="margin-left: 20%; font-family: 'Arial', sans-serif;">
+            Für jede richitg beantwortete Frage bekommst du 20 Punkte! <br/>
+            Es können mehrere Antworten richtig sein! <br/>
+            Wenn du alle Fragen richtig beantwortest, bekommst du dieses Emblem: 
+            <h:graphicImage library="img" name="#{testQuizController.emblem}"></h:graphicImage>
+        </p>
+        <div id="questions">
+        <h:form>
+            <ui:repeat var="quiz" value="#{testQuizController.quiz}">
+                <div class="question">
+                    <h:outputText value="#{quiz.frage}"></h:outputText> <br />
+                    <table>
+                        <tr>
+                            <td>
+                                <h:outputText value="#{quiz.antworten[0]}"></h:outputText> 
+                            </td>
+                            <td>
+                                <p:selectBooleanCheckbox value="#{quiz.buttons[0]}"></p:selectBooleanCheckbox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:outputText value="#{quiz.antworten[1]}"></h:outputText>
+                            </td>
+                            <td>
+                                <p:selectBooleanCheckbox value="#{quiz.buttons[1]}"></p:selectBooleanCheckbox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:outputText value="#{quiz.antworten[2]}"></h:outputText>
+                            </td>
+                            <td>
+                                <p:selectBooleanCheckbox value="#{quiz.buttons[2]}"></p:selectBooleanCheckbox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:outputText value="#{quiz.antworten[3]}"></h:outputText>
+                            </td>
+                            <td>
+                                <p:selectBooleanCheckbox value="#{quiz.buttons[3]}"></p:selectBooleanCheckbox> 
+                            </td>
+                        </tr>
+                    </table>
+                    <!--
+                    <p:outputLabel style="font-size: 0.8em" for="box1" value="{quiz.antworten[0]}"></p:outputLabel>
+                    <p:selectBooleanCheckbox id="box1" value="{quiz.buttons[0]}" style="margin-left: 50%"></p:selectBooleanCheckbox>
+                    <br/>
+                    <p:outputLabel style="font-size: 0.8em" for="box2" value="{quiz.antworten[1]}"></p:outputLabel>
+                    <p:selectBooleanCheckbox id="box2" value="{quiz.buttons[1]}" style="margin-left: 50%"></p:selectBooleanCheckbox>  
+                    <br/>
+                    <p:outputLabel style="font-size: 0.8em" for="box3" value="{quiz.antworten[2]}"></p:outputLabel>
+                    <p:selectBooleanCheckbox id="box3" value="{quiz.buttons[2]}" style="margin-left: 50%"></p:selectBooleanCheckbox>
+                    <br/>
+                    <p:outputLabel style="font-size: 0.8em" for="box4" value="{quiz.antworten[3]}"></p:outputLabel>
+                    <p:selectBooleanCheckbox id="box4" value="{quiz.buttons[3]}" style="margin-left: 50%"></p:selectBooleanCheckbox>  -->
+                    <br/><br/>
+                </div>    
+            </ui:repeat>
+            <p:commandButton value="Check Answers" style="margin-left: 20%" action="#{testQuizController.checkAnswersMultipleChoice()}"></p:commandButton> 
+        </h:form>
+        </div>
+    </ui:define>
+</ui:composition>

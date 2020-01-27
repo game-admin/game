@@ -37,7 +37,7 @@ public class TestQuizController implements Serializable {
      
     @PostConstruct
     public void init() {
-        quiz = speicher.createQuiz(4);
+        quiz = speicher.createQuiz(4, false);
         score = (int)trainee.getProgressFromIndex(0);
         results = new ArrayList<>();
         ricounter = 0;
@@ -83,15 +83,21 @@ public class TestQuizController implements Serializable {
         this.emblem = emblem;
     }
     
-    public String checkAnswers() {
-        evaluateScore();
-        //checkForDoubleChecked();
+    public String checkAnswersSingleChoice() {
+        evaluateScoreRadio();
         if(ricounter==quiz.size())
             return "success.xhtml";
         return "result.xhtml";
     }
     
-    public void evaluateScore() {
+    public String checkAnswersMultipleChoice() {
+        evaluateScoreMultiple();
+        if(ricounter==quiz.size())
+            return "success.xhtml";
+        return "result.xhtml";
+    }
+    
+    public void evaluateScoreMultiple() {
         List<Integer> falsche = new ArrayList<>();
         for(int i=0; i<quiz.size();i++) {
             if(quiz.get(i).buttons[0] && quiz.get(i).indexrichtig == 0 || quiz.get(i).buttons[1] && quiz.get(i).indexrichtig == 1) {
@@ -105,6 +111,21 @@ public class TestQuizController implements Serializable {
             results.add(new Result(quiz.get(falsche.get(i)).frage, quiz.get(falsche.get(i)).antworten[quiz.get(falsche.get(i)).indexrichtig]));
         }
         //Hier sollte dann noch der Score der Trainees geupdated werden
+    }
+    
+    public void evaluateScoreRadio() {
+        List<Integer> falsche = new ArrayList<>();
+        for(int i=0; i<quiz.size(); i++) {
+            if(quiz.get(i).selectedAnswer.equals(quiz.get(i).antworten[quiz.get(i).indexrichtig])) {
+                score+=20;
+                ricounter++;
+            } else {
+                falsche.add(i);
+            }
+        }
+        for(int i=0; i<falsche.size(); i++) {
+            results.add(new Result(quiz.get(falsche.get(i)).frage, quiz.get(falsche.get(i)).antworten[quiz.get(falsche.get(i)).indexrichtig]));
+        }
     }
    
 }

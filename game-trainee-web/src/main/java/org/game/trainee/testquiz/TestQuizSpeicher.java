@@ -32,18 +32,26 @@ public class TestQuizSpeicher {
         fragen.add("Wie gibt man Text in Java aus?");
         fragen.add("Wie muss man bei Klassennamen beachten?");
         
-        antworten = new String[4][2];
+        antworten = new String[4][4];
         antworten[0][0] = "Ja";
         antworten[0][1] = "Nein";
+        antworten[0][2] = "Vielleicht";
+        antworten[0][3] = "kA";
         
         antworten[1][0] = "Ja";
         antworten[1][1] = "Nein";
+        antworten[1][2] = "Vielleicht";
+        antworten[1][3] = "kA";
         
         antworten[2][0] = "System.print();";
         antworten[2][1] = "System.out.print();";
+        antworten[2][2] = "System.print.out();";
+        antworten[2][3] = "Print();";
         
         antworten[3][0] = "Der Anfangsbuchstabe muss klein sein!";
         antworten[3][1] = "Der Anfangsbuchstabe muss groß sein!";
+        antworten[3][2] = "Vielleicht";
+        antworten[3][3] = "Antwortmöglichkeit 4";
         
         indexrichtig = new ArrayList<>();
         indexrichtig.add(0);
@@ -52,7 +60,7 @@ public class TestQuizSpeicher {
         indexrichtig.add(1); 
     }
     
-    public List<TestQuiz> createQuiz(int size) {
+    public List<TestQuiz> createQuiz(int size, boolean isMultipleChoice) {
         List<TestQuiz> list = new ArrayList<>();
         for(int i = 0 ; i < size ; i++) {
             list.add(new TestQuiz(getFragenFromIndex(i), getAntwortenFromIndex(i), getIndexrichtigFromIndex(i) ));

@@ -11,12 +11,13 @@ and open the template in the editor.
 body {
     
     background-color: #585858;
-    color: white;
+    color: black;
 }
 
 p {
     font-family: "Times New Roman", Times, serif;
     font-size: 20px;
+    color:white;
 }
 
 footer {
@@ -48,7 +49,7 @@ footer {
 }
 
 #questions {
-    margin-left: 33%;
+    margin-left: 25%;
     font-size: 1.5em;
     /*width: 60%; */
     background-color: white;
@@ -61,17 +62,22 @@ footer {
 #quizzes {
     font-size: 1.3em;
     border: 5px;
-    left: 10%;
-    width: 90%;
+    width: 100%;
     font-family: "Comic Sans MS", cursive, sans-serif;
+    color: white;
     
+}
+
+#radio {
+    font-size:0.8em;
+    color: black;
 }
 
 h1 {
     margin-top: -1em;
     max-width: 40%;
     width: fit-content;
-    background-color:crimson;
+    background-image: url("#{resource['img:board.png']}");
     margin-left: 33%;
     font-family: "Arial Black", sans-serif;
 }
@@ -81,6 +87,7 @@ h1 {
     font-family: "Arial", sans-serif;
     width: fit-content;
     border-radius: 5px;
+    color:black;
 }
 
 .fa-home {
@@ -117,15 +124,3 @@ h1 {
     width: 1.2em;
     height: 1.2em;
 }
-/* header {
-    position:relative;
-    margin-left: 15%;
-    margin-top:0%;
-}
-
-#logo {
-    position:relative;
-    margin-left:20%;
-    margin-top:0%;
-} */
-

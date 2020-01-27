@@ -32,7 +32,7 @@
             </p:column>
             
             <p:column headerText="Emblems">
-                <h:outputText value="#{trainee.progress}"></h:outputText>
+                <h:graphicImage library="img" name="#{trainee.embleme.get(0)}"></h:graphicImage>
             </p:column>
         </p:dataTable>
     </ui:define>
