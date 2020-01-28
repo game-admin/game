@@ -75,20 +75,53 @@ Dabei hilft nur der "Try and Error" Prozess. Durch das Ausprobieren verschiedene
 
 _(vgl. "Erforschung der Lerntypen und -strategien am Beispiel einer Handelsschulklasse", Petra Hochleitner, 2016)_
 
-== Lernpräferenzen nach Dunn
-Dunn und Price (1989) definierten den Lernstil als eine typische Art und Weise, die von unterschiedlichen Elementen der Umgebung beeinflusst wird. This regards:
+== Learning preferences according to Dunn
+Dunn and Price (1989) defined learning style as a typical way of learning that is influenced by different elements of the environment. This regards:
 
 * physical stimuli (light, sound, temperature, design)
 * social stimuli (pairs, peers, adults, groups)
 * stimuli of learning material (auditiv, visuell, taktil, kinästhetisch)
 * emotional stimuli (responsibility, persistence, motivation, disciplin)
 
-These factors are measured by the "Learning Styles Inventory. However this model does not take the actual processes, that play a role in learning into account.
+These factors are measured by the "Learning Styles Inventory". However, this model takes little account of the actual cognitive processes that play a role in learning.
 
-_(vgl. "Lernorientierungen, Lernstile, Lerntypen und kognitive Stile", Ulrike Creß, in "Handbuch Lernstrategien" von Heinz Mandl & Helmut Felix Friedrich, S.372)_
+_(vgl. "Lernorientierungen, Lernstile, Lerntypen und kognitive Stile", Ulrike Creß, in "Handbuch Lernstrategien" von Heinz Mandl & Helmut Felix Friedrich, S.373)_
+
+== Learning styles according to Pask !!!
+Pask und Scott (1972) identifizierten bei Problemlöseaufgaben, bei denen Personen selbständig nach Informationen suchen mussten, zwei entgegengesetzte Lernstrategien, deren konsistente Anwendung sie als Lernstil bezeichneten. Bei der holistischen Strategie behalten Lernende immer das Ganze im Blick und wenden sich erst in einem zweiten Schritt Detailfragestellungen zu. Sofern diese Strategie konsistent angewandt wird, spricht Pask vom Lernstil des comprehension learning. Lernende mit serieller Strategie arbeiten sich hingegen Schritt für Schritt durch das Lernmaterial und wenden sich in erster Linie den einzelnen Fragestellungen zu. Sofern diese Strategie konsistent verwendet wird, spricht Park von operation learning. Beide Strategien können zum selben Erfolg führen. Bei ihrer extremen Ausprägung haben beide allerdings einen negativen Effekt auf die Leistung, weshalb Pask beiden Lernstilen entsprechende Lernpathologien zuordnet. Globetrotting bezeichnet die Lernpathologie des extremen comprehension learning, bei dem Lerner unzulässige Verallgemeinerungen ohne die entsprechende Einzelanalyse vornehmen. Improvidence bezeichnet die Extremform des operation learning, bei dem Personen sich in Details verlieren, ohne diese zu einem übergreifendem Ganzen verbinden zu können. Da die Unterschiede zwischen holistischen und seriellem Vorgehen nicht nur das Lernverhalten, sondern die gesamte Art der Informationssuche und -verarbeitung betreffen, werden diese häufig auch als kognitive Stile interpretiert.
+
+Pask and Scott (1972) identified problem-solving tasks in which individuals had to search for information independently as two opposing learning strategies, the consistent application of which they called learning style. With the holistic strategy, learners always keep the whole in view and only in a second step turn to detailed questions. If this strategy is consistently applied, Pask speaks of the learning style of comprehension learning. Learners with a serial strategy, on the other hand, work their way through the learning material step by step and primarily turn their attention to individual questions. If this strategy is used consistently, Park speaks of operation learning. Both strategies can lead to the same success. In their extreme form, however, both have a negative effect on performance, which is why Pask assigns both learning styles to corresponding learning pathologies. Globetrotting refers to the learning pathology of extreme comprehension learning, in which learners make unacceptable generalisations without the corresponding individual analysis. Improvidence describes the extreme form of operation learning, in which individuals lose themselves in details without being able to combine them into an overarching whole. Since the differences between holistic and serial approaches affect not only learning behaviour but the entire way in which information is sought and processed, they are often interpreted as cognitive styles.
+
+_(vgl."Lernorientierungen, Lernstile, Lerntypen und kognitive Stile", Ulrike Creß, in "Handbuch Lernstrategien" von Heinz Mandl & Helmut Felix Friedrich, S.369)_
+
+
+== Learning styles according to Kolb
+In 1984 David Kolb took a completely different approach to classifying learning types. According to Kolb, the learning process is based on two orthogonal bipolar dimensions. The first dimension depicts how people perceive and collect information. Persons can perceive via the senses through practical experience or through abstract comprehension. The second dimension represents the way information is processed. It ranges from active trying to mental observation.
+(orthogonal -> two straight lines are called orthogonal if they enclose a 90 degree angle)
+The following figure shows the dimensions:
+
+image::img/dimensions.png[Learning styles according to Kolb]
+
+Quelle (https://selfdirectedlearning.webnode.es/learning-styles-by-kolb/; letzter Zugriff 28.01.2020)
+
+Kolb presents four learning styles defined by the four quadrants that result from these orthogonal dimensions.
+
+_Convergers_ explore their environment through active probing and process information in an abstract way. They are therefore interested in testing their theories and solving problems deductively.
+
+_Divergers_ combine mental observation with practical experience. This often leads them to creative solutions. 
+
+_Assimilators_ connect abstract comprehension with mental observation. They are therefore mainly interested in developing abstract theories and defining problems, less in solving concrete problems.
+
+_Accomodators_ combine active experimentation with concrete experience. They prefer casual learning directly from the situation. The learning style of a person is measured by Kolbs' Learning Style Inventory (KLSI).
+
+Kolb's approach is by far the most frequently cited of the approaches for recording learning styles.
+
+_(vgl. "Lernorientierungen, Lernstile, Lerntypen und kognitive Stile", Ulrike Creß, in "Handbuch Lernstrategien" von Heinz Mandl & Helmut Felix Friedrich, S.371-372)_
 
 == Wofür braucht man Lerntypen?
 Jeder kann sich anhand den Lerntypen orientieren, und sich selber einen oder mehrere dieser zuordnen. Wenn man das geschafft hat, kann man anhand dieser Lernmethoden entwickelen (oder vorhandene nehmen), um den persönlichen Lernerfolg zu steigern.
+The following figure shows the dimensions:
+
 
 == Wie lernt man richtig?
 Eine Standardregel die weit verbreitet ist besagt, dass man nicht am Tag vor einer Prüfung anfangen sollte zu lernen, da am nächsten Tag nicht viel Gelerntes hängen bleibt.
@@ -96,11 +129,9 @@ Eine Standardregel die weit verbreitet ist besagt, dass man nicht am Tag vor ein
 
 == Selbstreguliertes Lernen
 
-Der Begriff des selbstreguliertem Lernens, ist weder ein präziser wissenschaftlicher definierter Begriff, noch eine einheitliche gebrauchte alltagssprachliche Bezeichnung. Weiters kann man die Begriffe self-regulated learning, self-directed learning, learner control kaum schlüssig abgrenzen.
+Der Begriff des se lbstreguliertem Lernens, ist weder ein präziser wissenschaftlicher definierter Begriff, noch eine einheitliche gebrauchte alltagssprachliche Bezeichnung. Weiters kann man die Begriffe self-regulated learning, self-directed learning, learner control kaum schlüssig abgrenzen.
 
 Niegemann und Hofer (1997) oder Büser (2003) definieren, dass beim selbstbestimmten Lernen das Lernziel im Gegensatz  zum selbstgesteuerten bzw. –regulierten Lernen von der Person selbst bestimmt wird. Andere Autoren hingegen sehen das Entscheiden über die Lernziele explizit als Bestandteil selbstgesteuerten bzw. -regulierten Lernens (Arnold & Gomez-Tutor 2006; Dehnbostel 2003; Lang & Pätzold 2006; Neber 1978; Schreiber 1998, S. 45).
-
-
 
 _(vgl. Selbstreguliertes Lernen in der dualen Ausbildung - Lerntypen und Bedingungen, Johannes Rosendahl, 2010)_
 
