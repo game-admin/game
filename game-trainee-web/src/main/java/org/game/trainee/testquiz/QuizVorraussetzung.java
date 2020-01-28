@@ -6,6 +6,7 @@
 package org.game.trainee.testquiz;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -22,6 +23,7 @@ import org.game.trainee.kurs.Vorraussetzung;
 @Entity
 public class QuizVorraussetzung implements Serializable{
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="QUIZVORRAUSSETZID")
     private int QuizVorraussetzID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="QID")

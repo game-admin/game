@@ -6,6 +6,7 @@
 package org.game.trainee.testquiz;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,8 +21,10 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Antwort implements Serializable {
     @Id  @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="GEWAEHLTEANTWORTID")
     private int gewaehlteAntwortID;
     @NotNull
+    @Column(name="GEWAEHLTEANTWORT")
     private String gewaehlteAntwort;
 
     public int getGewaehlteAntwortID() {

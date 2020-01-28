@@ -7,6 +7,7 @@ package org.game.trainee.kurs;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -25,6 +26,7 @@ import org.game.trainee.traineeview.Trainee;
 @Entity
 public class KursBesuch implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="KURSBESUCHID")
     private int KursBesuchID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="MitID")
@@ -35,6 +37,7 @@ public class KursBesuch implements Serializable {
     @NotNull
     private Kurs kurs;
     @NotNull
+    @Column(name="DATUM")
     private Date datum;
 
     public int getKursBesuchID() {

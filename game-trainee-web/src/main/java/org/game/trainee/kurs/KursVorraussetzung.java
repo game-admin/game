@@ -6,6 +6,7 @@
 package org.game.trainee.kurs;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -21,6 +22,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class KursVorraussetzung implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="KURSVORRAUSSETZID")
     private int KursVorraussetzID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="KursID")

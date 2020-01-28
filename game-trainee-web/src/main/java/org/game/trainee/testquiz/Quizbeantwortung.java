@@ -6,6 +6,7 @@
 package org.game.trainee.testquiz;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -31,6 +32,7 @@ public class Quizbeantwortung implements Serializable {
     @JoinColumn(name="MitID")
     private Trainee trainee;
     @NotNull
+    @Column(name="ERREICHTEPUNKTE")
     private int erreichtePunkte;
 
     public int getQBEID() {

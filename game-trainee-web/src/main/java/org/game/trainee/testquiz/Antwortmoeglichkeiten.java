@@ -6,6 +6,7 @@
 package org.game.trainee.testquiz;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -24,12 +25,15 @@ import javax.validation.constraints.NotNull;
 public class Antwortmoeglichkeiten implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="ANTWID")
     private int AntwID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="FID")
     private Frage frage;
     @NotNull
+    @Column(name="ANTWORT")
     private String antwort;
+    @Column(name="RICHTIGEANTWORT")
     private boolean richtigeAntwort;
 
     public int getAntwID() {
