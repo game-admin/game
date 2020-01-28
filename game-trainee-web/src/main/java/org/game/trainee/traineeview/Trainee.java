@@ -23,14 +23,19 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Trainee implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    public int MitID;
-    @NotNull
-    public String name;
-    @NotNull @Column(unique = true)
-    public String nickname;
-    public String abteilung;
-    public double progress;
+    @Column(name="MITID")
+    private int MitID;
+    @NotNull @Column(name="VORNAME")
+    private String vorname;
+    @NotNull @Column(name="NACHNAME")
+    private String nachname;
+    @NotNull @Column(unique = true, name="NICKNAME")
+    private String nickname;
+    @Column(name="ABTEILUNG")
+    private String abteilung;
+    private double progress;
     public List<String> embleme;
+    public String name;
     
     public Trainee() {}
     
@@ -54,14 +59,6 @@ public class Trainee implements Serializable {
 
     public void setMitID(int MitID) {
         this.MitID = MitID;
-    }
-    
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getNickname() {
@@ -95,6 +92,29 @@ public class Trainee implements Serializable {
     public void setEmbleme(List<String> embleme) {
         this.embleme = embleme;
     }
-    
+
+    public String getVorname() {
+        return vorname;
+    }
+
+    public void setVorname(String vorname) {
+        this.vorname = vorname;
+    }
+
+    public String getNachname() {
+        return nachname;
+    }
+
+    public void setNachname(String nachname) {
+        this.nachname = nachname;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
     
 }

@@ -7,6 +7,7 @@ package org.game.trainee.kurs;
 
 import java.io.Serializable;
 import java.net.URL;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,11 +21,15 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Kurs implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="KURSID")
     private int KursID;
     @NotNull
+    @Column(name="TITEL")
     private String titel;
     @NotNull
+    @Column(name="LINK")
     private URL link;
+    @Column(name="BESCHREIBUNG")
     private String beschreibung;
 
     public int getKursID() {

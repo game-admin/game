@@ -7,6 +7,7 @@ package org.game.trainee.testquiz;
 
 import java.io.Serializable;
 import java.sql.Blob;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,10 +23,11 @@ import javax.validation.constraints.NotNull;
 public class Quiz implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int QID;
-    @NotNull
+    @NotNull @Column(name = "TITEL")
     private String titel;
+    @Column(name = "BESCHREIBUNG")
     private String beschreibung;
-    @NotNull
+    @NotNull @Column(name = "REWARD")
     private Blob reward;
 
     public int getQID() {
