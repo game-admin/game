@@ -5,5 +5,17 @@
     <class>org.game.trainee.questions.Answerpossibilities</class>
     <class>org.game.trainee.testquiz.Frage</class>
     <class>org.game.trainee.testquiz.Antwortmoeglichkeiten</class>
+    <class>org.game.trainee.kurs.Kurs</class>
+    <class>org.game.trainee.kurs.KursBesuch</class>
+    <class>org.game.trainee.kurs.KursVorraussetzung</class>
+    <class>org.game.trainee.testquiz.Quizbeantwortung</class>
+    <class>org.game.trainee.testquiz.QuizVorraussetzung</class>
+    <class>org.game.trainee.testquiz.Quiz</class>
+    <class>org.game.trainee.kurs.Vorraussetzung</class>
+    <class>org.game.trainee.traineeview.Trainee</class>
+    <class>org.game.trainee.testquiz.Antwort</class>
+    <properties>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+    </properties>
   </persistence-unit>
 </persistence>
