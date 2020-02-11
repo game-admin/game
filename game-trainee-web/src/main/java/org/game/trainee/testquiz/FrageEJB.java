@@ -3,24 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.game.trainee.EJB;
+package org.game.trainee.testquiz;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import org.game.trainee.kurs.Kurs;
+import org.game.trainee.testquiz.Frage;
 
 /**
  *
  * @author Jan
  */
-public class KursEJB {
+public class FrageEJB {
     private EntityManagerFactory factory;
     private EntityManager em;
     private EntityTransaction tx;
     
-    public KursEJB() {
+    public FrageEJB() {
         factory = Persistence.createEntityManagerFactory("Diplomarbeit");
         em = factory.createEntityManager();
     }
@@ -32,20 +32,20 @@ public class KursEJB {
         factory = null;
     }
     
-    public Kurs find(int KursID) {
-        return em.find(Kurs.class, KursID);
+    public Frage find(int FID) {
+        return em.find(Frage.class, FID);
     }
     
-    public void persist(Kurs k) {
+    public void persist(Frage f) {
         em.getTransaction().begin();
-        em.persist(k);
+        em.persist(f);
         em.getTransaction().commit();
     }
     
-    public void delete(int KursID) {
+    public void delete(int FID) {
         em.getTransaction().begin();
-        Kurs k = em.getReference(Kurs.class, KursID);
-        em.remove(k);
+        Frage f = em.getReference(Frage.class, FID);
+        em.remove(f);
         em.getTransaction().commit();
     }
 }

@@ -3,24 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.game.trainee.EJB;
+package org.game.trainee.traineeview;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import org.game.trainee.kurs.Vorraussetzung;
+import org.game.trainee.traineeview.Trainee;
 
 /**
  *
  * @author Jan
  */
-public class VorraussetzungEJB {
+public class TraineeEJB {
     private EntityManagerFactory factory;
     private EntityManager em;
     private EntityTransaction tx;
     
-    public VorraussetzungEJB() {
+    public TraineeEJB() {
         factory = Persistence.createEntityManagerFactory("Diplomarbeit");
         em = factory.createEntityManager();
     }
@@ -32,20 +32,20 @@ public class VorraussetzungEJB {
         factory = null;
     }
     
-    public Vorraussetzung find(int VorraussetzID) {
-        return em.find(Vorraussetzung.class, VorraussetzID);
+    public Trainee find(int MitID) {
+        return em.find(Trainee.class, MitID);
     }
     
-    public void persist(Vorraussetzung v) {
+    public void persist(Trainee t) {
         em.getTransaction().begin();
-        em.persist(v);
+        em.persist(t);
         em.getTransaction().commit();
     }
     
-    public void delete(int VorraussetzID) {
+    public void delete(int MitID) {
         em.getTransaction().begin();
-        Vorraussetzung v = em.getReference(Vorraussetzung.class, VorraussetzID);
-        em.remove(v);
+        Trainee t = em.getReference(Trainee.class, MitID);
+        em.remove(t);
         em.getTransaction().commit();
     }
 }

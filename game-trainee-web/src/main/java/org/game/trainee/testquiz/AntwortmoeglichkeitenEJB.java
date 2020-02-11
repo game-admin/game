@@ -3,24 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.game.trainee.EJB;
+package org.game.trainee.testquiz;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import org.game.trainee.testquiz.Quiz;
+import org.game.trainee.testquiz.Antwortmoeglichkeiten;
+
 
 /**
  *
  * @author Jan
  */
-public class QuizEJB {
+public class AntwortmoeglichkeitenEJB {
     private EntityManagerFactory factory;
     private EntityManager em;
     private EntityTransaction tx;
     
-    public QuizEJB() {
+    public AntwortmoeglichkeitenEJB() {
         factory = Persistence.createEntityManagerFactory("Diplomarbeit");
         em = factory.createEntityManager();
     }
@@ -32,20 +33,20 @@ public class QuizEJB {
         factory = null;
     }
     
-    public Quiz find(int QID) {
-        return em.find(Quiz.class, QID);
+    public Antwortmoeglichkeiten find(int AntwID) {
+        return em.find(Antwortmoeglichkeiten.class, AntwID);
     }
     
-    public void persist(Quiz q) {
+    public void persist(Antwortmoeglichkeiten antw) {
         em.getTransaction().begin();
-        em.persist(q);
+        em.persist(antw);
         em.getTransaction().commit();
     }
     
-    public void delete(int QID) {
+    public void delete(int AntwID) {
         em.getTransaction().begin();
-        Quiz q = em.getReference(Quiz.class, QID);
-        em.remove(q);
+        Antwortmoeglichkeiten antw = em.getReference(Antwortmoeglichkeiten.class, AntwID);
+        em.remove(antw);
         em.getTransaction().commit();
     }
 }
