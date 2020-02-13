@@ -5,6 +5,7 @@
  */
 package org.game.trainee.testquiz;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -15,6 +16,8 @@ import org.game.trainee.testquiz.Quiz;
  *
  * @author Jan
  */
+
+@Stateless
 public class QuizEJB {
     private EntityManagerFactory factory;
     private EntityManager em;

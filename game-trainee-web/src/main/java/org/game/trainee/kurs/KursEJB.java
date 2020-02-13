@@ -5,41 +5,29 @@
  */
 package org.game.trainee.kurs;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import org.game.trainee.kurs.Kurs;
 
 /**
  *
  * @author Jan
  */
+@Stateless
 public class KursEJB {
-    private EntityManagerFactory factory;
+    @PersistenceContext(unitName = "Diplomarbeit")
     private EntityManager em;
-    private EntityTransaction tx;
-    
-    public KursEJB() {
-        factory = Persistence.createEntityManagerFactory("Diplomarbeit");
-        em = factory.createEntityManager();
-    }
-    
-    public void shutdown() {
-        em.close();
-        factory.close();
-        em = null;
-        factory = null;
-    }
     
     public Kurs find(int KursID) {
         return em.find(Kurs.class, KursID);
     }
     
-    public void persist(Kurs k) {
-        em.getTransaction().begin();
-        em.persist(k);
-        em.getTransaction().commit();
+    public void update(Kurs kurs) {
+        em.merge(kurs);
     }
     
     public void delete(int KursID) {
