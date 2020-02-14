@@ -49,7 +49,7 @@ public class TraineeGenerator {
         List<Trainee> list = new ArrayList<>();
         for(int i = 0 ; i < size ; i++) {
             list.add(new Trainee(getNameFromIndex(i), getNicknameFromIndex(i), getAbteilungFromIndex(i), getProgressFromIndex(i)));
-            list.get(i).embleme.add("emblem.png");
+            list.get(i).embleme.add("javabeginner.png");
         }
         return list;
     }

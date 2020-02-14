@@ -12,14 +12,17 @@
         <h:outputStylesheet library="css" name="stylesheet.css" />
         <!--<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
             rel="stylesheet"  type='text/css'></link> -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     </ui:define>
     
     <ui:define name="content">                                      
         <h1>Activities</h1>
         <p>
-            <strong>User:</strong> EricBensi <br />
+            <strong>User:</strong> #{traineeView.trainees.get(0).name} <br />
+            <strong>Nickname:</strong> #{traineeView.trainees.get(0).nickname} <br/>
             Progress: 50% out of 100% <br />
-            Badges: *Abzeichen*
+            Badges: <h:graphicImage library="img" name="#{traineeView.trainees.get(0).embleme.get(0)}"></h:graphicImage>
+            
         </p>
         <p>
             Your score (Quiz):
@@ -31,9 +34,7 @@
             Hier sollte spezifisch zum User, dessen Aktivitäten und Fortschritt dargestellt werden.
             Weiters können hier Kurse vorgeschlagen werden.
         </p>
-        <p>
-           <i class="fa fa-home"></i>
-        </p>
+        
         <br />
         
     </ui:define>                      
