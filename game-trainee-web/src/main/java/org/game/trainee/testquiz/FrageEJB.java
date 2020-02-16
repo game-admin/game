@@ -5,41 +5,34 @@
  */
 package org.game.trainee.testquiz;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import static java.util.stream.Collectors.toCollection;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import org.game.trainee.testquiz.Frage;
 
 /**
  *
  * @author Jan
  */
+@Stateless
 public class FrageEJB {
-    private EntityManagerFactory factory;
+    @PersistenceContext(unitName = "Diplomarbeit")
     private EntityManager em;
-    private EntityTransaction tx;
-    
-    public FrageEJB() {
-        factory = Persistence.createEntityManagerFactory("Diplomarbeit");
-        em = factory.createEntityManager();
-    }
-    
-    public void shutdown() {
-        em.close();
-        factory.close();
-        em = null;
-        factory = null;
-    }
-    
+
     public Frage find(int FID) {
         return em.find(Frage.class, FID);
     }
     
-    public void persist(Frage f) {
-        em.getTransaction().begin();
-        em.persist(f);
-        em.getTransaction().commit();
+    public void update(Frage f) {
+        em.merge(f);
     }
     
     public void delete(int FID) {
@@ -47,5 +40,25 @@ public class FrageEJB {
         Frage f = em.getReference(Frage.class, FID);
         em.remove(f);
         em.getTransaction().commit();
+    }
+    
+    public List<Frage> findQuizFragen(int index) {
+        Query query = em.createQuery("SELECT * FROM frage f WHERE QID ="+index+";");
+        Collection<Frage> collection;
+        collection = (Collection<Frage>) query.getResultList();
+        ArrayList<Frage> newList = collection.stream().collect(toCollection(ArrayList::new));
+        return newList;
+    }
+    
+    public Frage findQuizFrage(int qindex, int findex) {
+        Query query;
+        query = em.createQuery("SELECT * FROM frage f WHERE QID="+qindex+" AND FID="+findex+";");
+        Frage frage;
+        frage = new Frage();
+        Collection<Frage> collection;
+        collection = (Collection<Frage>) query.getResultList();
+        ArrayList<Frage> newList = collection.stream().collect(toCollection(ArrayList::new));
+        frage = newList.get(0);
+        return frage;
     }
 }

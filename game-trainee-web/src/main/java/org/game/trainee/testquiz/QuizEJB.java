@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import org.game.trainee.testquiz.Quiz;
 
 /**
@@ -19,30 +20,15 @@ import org.game.trainee.testquiz.Quiz;
 
 @Stateless
 public class QuizEJB {
-    private EntityManagerFactory factory;
+    @PersistenceContext(unitName = "Diplomarbeit")
     private EntityManager em;
-    private EntityTransaction tx;
-    
-    public QuizEJB() {
-        factory = Persistence.createEntityManagerFactory("Diplomarbeit");
-        em = factory.createEntityManager();
-    }
-    
-    public void shutdown() {
-        em.close();
-        factory.close();
-        em = null;
-        factory = null;
-    }
     
     public Quiz find(int QID) {
         return em.find(Quiz.class, QID);
     }
     
-    public void persist(Quiz q) {
-        em.getTransaction().begin();
-        em.persist(q);
-        em.getTransaction().commit();
+    public void update(Quiz q) {
+        em.merge(q);
     }
     
     public void delete(int QID) {
