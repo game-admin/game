@@ -21,10 +21,10 @@
         <p>
             <p:dataTable var="results" value="#{testQuizController.results}">
                 <p:column headerText="Frage:">
-                    <h:outputText value="#{results.falscheFrage}"></h:outputText>
+                    <h:outputText value="#{results.falscheFrage}" style="#{results.farbe}"></h:outputText>
                 </p:column>
                 <p:column headerText="Richtige Antwort:">
-                    <h:outputText value="#{results.richtigeAntwort}"></h:outputText>
+                    <h:outputText value="#{results.richtigeAntwort}" style="#{results.farbe};"></h:outputText>
                 </p:column>
             </p:dataTable>
         </p>

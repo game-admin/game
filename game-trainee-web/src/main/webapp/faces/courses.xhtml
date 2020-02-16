@@ -9,51 +9,11 @@
                     xmlns:p="http://primefaces.org/ui">
     
     <ui:define name="header">
-        <title>Kurse und Quizze</title>  
+        <title>Kurse</title>  
         <h:outputStylesheet library="css" name="stylesheet.css" />
     </ui:define>
    
     <ui:define name="content">
-        <h1 align="center">Quizzes</h1>               
-        <table id="quizzes">
-            <tr>
-                <th>
-                    Title
-                </th>
-                <th>
-                    Description
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    Java Learning Quiz - Basics (Single Choice)
-                </td>
-                <td>
-                    This quiz will check your knowledge on basic java skills.
-                </td>
-                <td>
-                    <p:button outcome="takequiz.xhtml" value="Take Quiz!" ></p:button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Java Learning Quiz - Advanced (Multiple Choice)
-                </td>
-                <td>
-                    This quiz will check, if you have enough in depth knowledge with java.
-                </td>
-                <td>
-                    <p:button outcome="takeQuizMultipleChoice.xhtml" value="Take Quiz!"></p:button>
-                </td>
-            </tr>
-        </table>
-        <hr/>
-        <p>
-            If you want to create a quiz, 
-            <p:button outcome="createquiz.xhtml" value="click here!"></p:button>
-        </p>
-        <hr/>
-        <br/><br/>
         <h1 align="center">Courses</h1>
         <p>
             <strong>Java SE Learning Beginner Course</strong> <br/>

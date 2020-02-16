@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../mainlayout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+     
+    <ui:define name="header">
+        <title>Quizzes</title>
+        <h:outputStylesheet library="css" name="stylesheet.css" />
+    </ui:define>
+
+    <ui:define name="content">
+        <h1 align="center">Quizzes</h1>               
+        <table id="quizzes">
+            <tr>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Description
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Java Learning Quiz - Basics (Single Choice)
+                </td>
+                <td>
+                    This quiz will check your knowledge on basic java skills.
+                </td>
+                <td>
+                    <p:button outcome="takequiz.xhtml" value="Take Quiz!" ></p:button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Java Learning Quiz - Advanced (Multiple Choice)
+                </td>
+                <td>
+                    This quiz will check, if you have enough in depth knowledge with java.
+                </td>
+                <td>
+                    <p:button outcome="takeQuizMultipleChoice.xhtml" value="Take Quiz!"></p:button>
+                </td>
+            </tr>
+        </table>
+        <hr/>
+        <p>
+            If you want to create a quiz, 
+            <p:button outcome="createquiz.xhtml" value="click here!"></p:button>
+        </p>
+        <hr/>
+        <br/><br/>
+    </ui:define>
+</ui:composition>

@@ -5,6 +5,7 @@
  */
 package org.game.trainee.testquiz;
 
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import javax.inject.Inject;
@@ -98,16 +99,30 @@ public class TestQuizController implements Serializable {
     
     public void evaluateScoreMultiple() {
         List<Integer> falsche = new ArrayList<>();
-        for(int i=0; i<quiz.size();i++) {
-            if(quiz.get(i).buttons[0] && quiz.get(i).indexrichtig == 0 || quiz.get(i).buttons[1] && quiz.get(i).indexrichtig == 1) {
-                score+=20;
+        int j;
+        for(int i=0; i<quiz.size(); i++) {
+            for(j=0; j<quiz.get(i).antworten.length; j++) {
+            /*    if(quiz.get(i).frage.get(j).richtig && quiz.get(i).buttons[j] != 1) 
+                    j=1000;
+                if(!quiz.get(i).frage.get(j).richtig && quiz.get(i).buttons[j] != 0)
+                    j=1000; */
+            }
+            if(j<500) {
+                score+=10;
                 ricounter++;
             } else {
                 falsche.add(i);
             }
-        }   
+        }
+          /*  if(quiz.get(i).buttons[0] && quiz.get(i).indexrichtig == 0 || quiz.get(i).buttons[1] && quiz.get(i).indexrichtig == 1) {              
+                score+=10;  
+                ricounter++;
+            } else {
+                falsche.add(i);
+            } */
+         
         for(int i=0; i<falsche.size(); i++) {
-            results.add(new Result(quiz.get(falsche.get(i)).frage, quiz.get(falsche.get(i)).antworten[quiz.get(falsche.get(i)).indexrichtig]));
+            results.add(new Result(quiz.get(falsche.get(i)).frage, quiz.get(falsche.get(i)).antworten[quiz.get(falsche.get(i)).indexrichtig], "color: red"));
         }
         //Hier sollte dann noch der Score der Trainees geupdated werden
     }
@@ -116,15 +131,19 @@ public class TestQuizController implements Serializable {
         List<Integer> falsche = new ArrayList<>();
         for(int i=0; i<quiz.size(); i++) {
             if(quiz.get(i).selectedAnswer.equals(quiz.get(i).antworten[quiz.get(i).indexrichtig])) {
-                score+=20;
+                score+=10;
                 ricounter++;
+                falsche.add(9999);
             } else {
                 falsche.add(i);
             }
         }
-        for(int i=0; i<falsche.size(); i++) {
-            results.add(new Result(quiz.get(falsche.get(i)).frage, quiz.get(falsche.get(i)).antworten[quiz.get(falsche.get(i)).indexrichtig]));
+        for(int j=0; j<quiz.size(); j++) {
+                if(falsche.get(j) == j) {
+                    results.add(new Result(quiz.get(falsche.get(j)).frage, quiz.get(falsche.get(j)).antworten[quiz.get(falsche.get(j)).indexrichtig], "color: red"));
+                } else {
+                    results.add(new Result(quiz.get(j).frage, quiz.get(j).antworten[quiz.get(j).indexrichtig], "color: green"));
+                }
         }
     }
-   
 }
