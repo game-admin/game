@@ -5,41 +5,29 @@
  */
 package org.game.trainee.testquiz;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import org.game.trainee.testquiz.Frage;
 
 /**
  *
  * @author Jan
  */
+@Stateless
 public class FrageEJB {
-    private EntityManagerFactory factory;
+    @PersistenceContext(unitName = "Diplomarbeit")
     private EntityManager em;
-    private EntityTransaction tx;
-    
-    public FrageEJB() {
-        factory = Persistence.createEntityManagerFactory("Diplomarbeit");
-        em = factory.createEntityManager();
-    }
-    
-    public void shutdown() {
-        em.close();
-        factory.close();
-        em = null;
-        factory = null;
-    }
-    
+
     public Frage find(int FID) {
         return em.find(Frage.class, FID);
     }
     
-    public void persist(Frage f) {
-        em.getTransaction().begin();
-        em.persist(f);
-        em.getTransaction().commit();
+    public void update(Frage f) {
+        em.merge(f);
     }
     
     public void delete(int FID) {

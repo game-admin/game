@@ -5,10 +5,12 @@
  */
 package org.game.trainee.testquiz;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import org.game.trainee.testquiz.Antwortmoeglichkeiten;
 
 
@@ -16,31 +18,17 @@ import org.game.trainee.testquiz.Antwortmoeglichkeiten;
  *
  * @author Jan
  */
+@Stateless
 public class AntwortmoeglichkeitenEJB {
-    private EntityManagerFactory factory;
+    @PersistenceContext(unitName = "Diplomarbeit")
     private EntityManager em;
-    private EntityTransaction tx;
-    
-    public AntwortmoeglichkeitenEJB() {
-        factory = Persistence.createEntityManagerFactory("Diplomarbeit");
-        em = factory.createEntityManager();
-    }
-    
-    public void shutdown() {
-        em.close();
-        factory.close();
-        em = null;
-        factory = null;
-    }
     
     public Antwortmoeglichkeiten find(int AntwID) {
         return em.find(Antwortmoeglichkeiten.class, AntwID);
     }
     
-    public void persist(Antwortmoeglichkeiten antw) {
-        em.getTransaction().begin();
-        em.persist(antw);
-        em.getTransaction().commit();
+    public void update(Antwortmoeglichkeiten antw) {
+        em.merge(antw);
     }
     
     public void delete(int AntwID) {

@@ -5,41 +5,29 @@
  */
 package org.game.trainee.kurs;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import org.game.trainee.kurs.Vorraussetzung;
 
 /**
  *
  * @author Jan
  */
+@Stateless
 public class VorraussetzungEJB {
-    private EntityManagerFactory factory;
+    @PersistenceContext(unitName = "Diplomarbeit")
     private EntityManager em;
-    private EntityTransaction tx;
-    
-    public VorraussetzungEJB() {
-        factory = Persistence.createEntityManagerFactory("Diplomarbeit");
-        em = factory.createEntityManager();
-    }
-    
-    public void shutdown() {
-        em.close();
-        factory.close();
-        em = null;
-        factory = null;
-    }
     
     public Vorraussetzung find(int VorraussetzID) {
         return em.find(Vorraussetzung.class, VorraussetzID);
     }
     
-    public void persist(Vorraussetzung v) {
-        em.getTransaction().begin();
-        em.persist(v);
-        em.getTransaction().commit();
+    public void update(Vorraussetzung v) {
+        em.merge(v);
     }
     
     public void delete(int VorraussetzID) {

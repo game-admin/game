@@ -5,41 +5,29 @@
  */
 package org.game.trainee.traineeview;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import org.game.trainee.traineeview.Trainee;
 
 /**
  *
  * @author Jan
  */
+@Stateless
 public class TraineeEJB {
-    private EntityManagerFactory factory;
+    @PersistenceContext(unitName = "Diplomarbeit")
     private EntityManager em;
-    private EntityTransaction tx;
-    
-    public TraineeEJB() {
-        factory = Persistence.createEntityManagerFactory("Diplomarbeit");
-        em = factory.createEntityManager();
-    }
-    
-    public void shutdown() {
-        em.close();
-        factory.close();
-        em = null;
-        factory = null;
-    }
-    
+
     public Trainee find(int MitID) {
         return em.find(Trainee.class, MitID);
     }
     
-    public void persist(Trainee t) {
-        em.getTransaction().begin();
-        em.persist(t);
-        em.getTransaction().commit();
+    public void update(Trainee t) {
+        em.merge(t);
     }
     
     public void delete(int MitID) {
