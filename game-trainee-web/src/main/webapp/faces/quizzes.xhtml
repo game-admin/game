@@ -31,7 +31,11 @@
                     This quiz will check your knowledge on basic java skills.
                 </td>
                 <td>
-                    <p:button outcome="takequiz.xhtml" value="Take Quiz!" ></p:button>
+                    <h:form>
+                        <p:commandButton action="#{testQuizController.quizUebergabe()}" value="Take Quiz!">
+                            <f:param name="QID" value="1"></f:param>        <!-- value sollte dann mit ui:repeat raufgezogen werden und alle Quizzes sollen so nacheinander angezeigt werden -->
+                        </p:commandButton>                                  <!--value="{QuizEJB.getQUID"}-->
+                    </h:form>
                 </td>
             </tr>
             <tr>

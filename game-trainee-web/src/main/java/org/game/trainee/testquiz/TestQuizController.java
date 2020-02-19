@@ -11,8 +11,10 @@ import java.util.ArrayList;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
 import org.game.trainee.traineeview.TraineeGenerator;
 
 /**
@@ -27,7 +29,8 @@ public class TestQuizController implements Serializable {
     private List<Result> results;
     private int score; //Der Score sollte später injected werden, und mit einer DB verbunden sein
     private int ricounter;
-    private String emblem = "emblem.png";
+    private String emblem = "javapro.png";
+    private int qid;
     
     @Inject 
     private TraineeGenerator trainee;
@@ -37,8 +40,10 @@ public class TestQuizController implements Serializable {
      
     @PostConstruct
     public void init() {
-        quiz = speicher.createQuiz(4, false);
-        score = (int)trainee.getProgressFromIndex(0);
+        quiz = speicher.createQuiz(4, false); //hier sollte 1. mittels EJB das Quiz geholt werden
+                                              //und 2. sollte hier mittels qid das jeweilige quiz geholt werden
+        score = (int)trainee.getProgressFromIndex(0); //sollte auch über EJB gehen
+                                                      //und unten wenn score erhöht wird auch
         results = new ArrayList<>();
         ricounter = 0;
     }
@@ -146,4 +151,22 @@ public class TestQuizController implements Serializable {
                 }
         }
     }
+    
+    public String quizUebergabe() {
+        FacesContext fc = FacesContext.getCurrentInstance();
+        Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
+        this.qid = Integer.parseInt(params.get("QID"));
+        return "takequiz.xhtml";
+    }
+
+    public int getQid() {
+        return qid;
+    }
+
+    public void setQid(int qid) {
+        this.qid = qid;
+    }
+    
+    
+    
 }
