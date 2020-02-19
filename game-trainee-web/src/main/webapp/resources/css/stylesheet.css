@@ -124,3 +124,13 @@ h1 {
     width: 1.2em;
     height: 1.2em;
 }
+
+#results {
+    border: solid black;
+    margin-bottom: 1.5em;
+    width:33%;
+    margin-left:30%;
+    background-color: grey;
+    font-size: 1.2em;
+    padding: 5px;
+}

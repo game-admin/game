@@ -14,7 +14,7 @@
     <ui:define name="content">
         <h1 align="center">Java Learning Quiz!</h1>
         <p style="margin-left: 20%; font-family: 'Arial', sans-serif;">
-            Für jede richitg beantwortete Frage bekommst du 20 Punkte! <br/>
+            Für jede richitg beantwortete Frage bekommst du 10 Punkte! <br/>
             Es ist immer nur eine Antwort richtig! <br/>
             Wenn du alle Fragen richtig beantwortest, bekommst du dieses Emblem: 
             <h:graphicImage library="img" name="#{testQuizController.emblem}"></h:graphicImage>
@@ -34,7 +34,7 @@
                 </div>    
                 <br/><br/>
             </ui:repeat>
-            <h:commandButton value="Check Answers" style="margin-left: 20%" action="#{testQuizController.checkAnswersSingleChoice}"></h:commandButton> 
+            <p:commandButton value="Check Answers" style="margin-left: 20%" action="#{testQuizController.checkAnswersSingleChoice}"></p:commandButton> 
         </h:form>
         </div>
     </ui:define>

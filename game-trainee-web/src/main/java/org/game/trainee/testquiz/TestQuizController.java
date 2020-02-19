@@ -26,7 +26,7 @@ import org.game.trainee.traineeview.TraineeGenerator;
 public class TestQuizController implements Serializable {
      
     private List<TestQuiz> quiz;
-    private List<Result> results;
+    private List<Results> results;
     private int score; //Der Score sollte später injected werden, und mit einer DB verbunden sein
     private int ricounter;
     private String emblem = "javapro.png";
@@ -64,14 +64,6 @@ public class TestQuizController implements Serializable {
         this.score = score;
     }
 
-    public List<Result> getResults() {
-        return results;
-    }
-
-    public void setResults(List<Result> results) {
-        this.results = results;
-    }
-
     public int getRicounter() {
         return ricounter;
     }
@@ -90,45 +82,57 @@ public class TestQuizController implements Serializable {
     
     public String checkAnswersSingleChoice() {
         evaluateScoreRadio();
-        if(ricounter==quiz.size())
-            return "success.xhtml";
         return "result.xhtml";
     }
     
     public String checkAnswersMultipleChoice() {
         evaluateScoreMultiple();
-        if(ricounter==quiz.size())
-            return "success.xhtml";
         return "result.xhtml";
     }
     
     public void evaluateScoreMultiple() {
         List<Integer> falsche = new ArrayList<>();
-        int j;
+        /* int j;
         for(int i=0; i<quiz.size(); i++) {
             for(j=0; j<quiz.get(i).antworten.length; j++) {
-            /*    if(quiz.get(i).frage.get(j).richtig && quiz.get(i).buttons[j] != 1) 
+                if(quiz.get(i).frage.get(j).richtig && quiz.get(i).buttons[j] != 1) 
                     j=1000;
                 if(!quiz.get(i).frage.get(j).richtig && quiz.get(i).buttons[j] != 0)
-                    j=1000; */
+                    j=1000; 
             }
             if(j<500) {
                 score+=10;
                 ricounter++;
+                falsche.add(999);
             } else {
                 falsche.add(i);
             }
         }
-          /*  if(quiz.get(i).buttons[0] && quiz.get(i).indexrichtig == 0 || quiz.get(i).buttons[1] && quiz.get(i).indexrichtig == 1) {              
+           if(quiz.get(i).buttons[0] && quiz.get(i).indexrichtig == 0 || quiz.get(i).buttons[1] && quiz.get(i).indexrichtig == 1) {              
                 score+=10;  
                 ricounter++;
             } else {
                 falsche.add(i);
             } */
-         
-        for(int i=0; i<falsche.size(); i++) {
-            results.add(new Result(quiz.get(falsche.get(i)).frage, quiz.get(falsche.get(i)).antworten[quiz.get(falsche.get(i)).indexrichtig], "color: red"));
-        }
+        int richtige=0;  
+        for(int i=0; i<quiz.size(); i++ ) {
+            List<Integer> indexrichtig = umwandler(quiz.get(i).indexrichtig);
+            for(int z=0; z<4; z++) {
+                if(indexrichtig.get(z) == 1 && !quiz.get(i).buttons[z] || indexrichtig.get(z) == 0 && quiz.get(i).buttons[z]) {
+                    falsche.add(i);
+                    z=999;
+                } else {
+                    richtige++;
+                }
+            }
+            if(richtige==4) {
+                score+=10;
+                ricounter++;
+                falsche.add(9999);
+            }
+            richtige = 0;
+        } 
+        checkResults(falsche);
         //Hier sollte dann noch der Score der Trainees geupdated werden
     }
     
@@ -143,19 +147,15 @@ public class TestQuizController implements Serializable {
                 falsche.add(i);
             }
         }
-        for(int j=0; j<quiz.size(); j++) {
-                if(falsche.get(j) == j) {
-                    results.add(new Result(quiz.get(falsche.get(j)).frage, quiz.get(falsche.get(j)).antworten[quiz.get(falsche.get(j)).indexrichtig], "color: red"));
-                } else {
-                    results.add(new Result(quiz.get(j).frage, quiz.get(j).antworten[quiz.get(j).indexrichtig], "color: green"));
-                }
-        }
+        checkResults(falsche);
+        //Hier sollt dann noch der Score vom Trainee geupdated werden
     }
     
     public String quizUebergabe() {
         FacesContext fc = FacesContext.getCurrentInstance();
         Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
         this.qid = Integer.parseInt(params.get("QID"));
+        //hier drin sollt auch nach Vorraussetzungen geschaut werden, wenn diese nicht erfüllt sind, kommt eine Fehlermeldung
         return "takequiz.xhtml";
     }
 
@@ -167,6 +167,35 @@ public class TestQuizController implements Serializable {
         this.qid = qid;
     }
     
+    public List<Integer> umwandler(int indexrichtig) {
+        List<Integer> liste = new ArrayList<>();
+        for(int i=0; i<4; i++)
+            if(indexrichtig==i) {
+                liste.add(1);
+            } else {
+                liste.add(0);
+            }
+        return liste;
+    }
+    
+    public void checkResults(List<Integer> falsche) {
+       for(int i=0; i<quiz.size(); i++) {
+            List<Integer> indexrichtig = umwandler(quiz.get(i).indexrichtig);
+            if(falsche.get(i) == i) {
+                results.add(new Results(quiz.get(i).frage, quiz.get(i).antworten, indexrichtig, true));
+            } else {
+                results.add(new Results(quiz.get(i).frage, quiz.get(i).antworten, indexrichtig, false));
+            }
+        } 
+    }
+
+    public List<Results> getResults() {
+        return results;
+    }
+
+    public void setResults(List<Results> results) {
+        this.results = results;
+    }
     
     
 }

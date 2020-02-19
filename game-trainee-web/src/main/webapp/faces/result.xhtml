@@ -13,21 +13,23 @@
 
     <ui:define name="content">
         <h1>Results</h1>
-        <p>
+        <p style="font-size: 1.2em; margin-left:25%;">
             Du hast #{testQuizController.ricounter}/4 Fragen richtig beantwortet! <br/>
-            Damit bekommst du #{testQuizController.ricounter*20} Punkte! <br/>
-            Die von dir falsch beantworteten Fragen siehst du hier mit den richtigen Antworten:
+            Damit bekommst du #{testQuizController.ricounter*10} Punkte! <br/>
+            Die von dir richtig/falsch beantworteten Fragen siehst du hier mit den richtigen Antworten:
         </p>
         <p>
-            <p:dataTable var="results" value="#{testQuizController.results}">
-                <p:column headerText="Frage:">
-                    <h:outputText value="#{results.falscheFrage}" style="#{results.farbe}"></h:outputText>
-                </p:column>
-                <p:column headerText="Richtige Antwort:">
-                    <h:outputText value="#{results.richtigeAntwort}" style="#{results.farbe};"></h:outputText>
-                </p:column>
-            </p:dataTable>
-        </p>
+            <ui:repeat var="result" value="#{testQuizController.results}">
+                <div id="results">
+                    <h:outputText value="#{result.frage}" style="#{result.istfalsch? 'color:red; font-weight: bold;' : 'color:green; font-weight: bold;'}"></h:outputText> 
+                    <i class="#{result.istfalsch? 'fa fa-fw fa-close' : 'fa fa-fw fa-check'}"></i><br/>
+                    <h:outputText value="#{result.antworten[0]}" style="#{result.richtigeAntworten.get(0) == 1? 'color:green' : 'color:red'}"></h:outputText> <br/>
+                    <h:outputText value="#{result.antworten[1]}" style="#{result.richtigeAntworten.get(1) == 1? 'color:green' : 'color:red'}"></h:outputText> <br/>
+                    <h:outputText value="#{result.antworten[2]}" style="#{result.richtigeAntworten.get(2) == 1? 'color:green' : 'color:red'}"></h:outputText> <br/>
+                    <h:outputText value="#{result.antworten[3]}" style="#{result.richtigeAntworten.get(3) == 1? 'color:green' : 'color:red'}"></h:outputText> <br/>
+                </div>
+            </ui:repeat>
+        </p> 
         <h:outputText value="Diesen Score hast du jetzt: #{testQuizController.score} Punkte"></h:outputText>
     </ui:define>
 </ui:composition>
