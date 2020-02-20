@@ -12,15 +12,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
  *
  * @author Jan
  */
-
+@NamedQuery(name = Quiz.QUERY_FINDBY_BESCHREIBUNG, query = "select quiz from Quiz quiz where quiz.beschreibung like :beschreibung")
 @Entity
+@Table(name = "quiz", schema = "game")
 public class Quiz implements Serializable {
+    public static final String QUERY_FINDBY_BESCHREIBUNG="Quiz.findByBeschreibung";
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int QID;
     @NotNull @Column(name = "TITEL")

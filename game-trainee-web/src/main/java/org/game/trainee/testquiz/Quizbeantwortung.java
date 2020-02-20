@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import org.game.trainee.traineeview.Trainee;
 
@@ -22,6 +23,7 @@ import org.game.trainee.traineeview.Trainee;
  * @author Jan
  */
 @Entity
+@Table(name = "quizbeantwortung", schema = "game")
 public class Quizbeantwortung implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int QBEID;

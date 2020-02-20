@@ -13,16 +13,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
  *
- * @author Eric/Jan
+ * @author Jan
  */
 
 @Entity
+@Table(name = "trainee", schema = "game")
 public class Trainee implements Serializable {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name="MITID")
     private int MitID;
     @NotNull @Column(name="VORNAME")

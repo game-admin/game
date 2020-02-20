@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import org.game.trainee.kurs.Vorraussetzung;
 
 /**
@@ -21,6 +22,7 @@ import org.game.trainee.kurs.Vorraussetzung;
  * @author Jan
  */
 @Entity
+@Table(name = "quizvorraussetzung", schema = "game")
 public class QuizVorraussetzung implements Serializable{
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="QUIZVORRAUSSETZID")

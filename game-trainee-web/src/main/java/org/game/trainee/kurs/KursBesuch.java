@@ -15,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import org.game.trainee.traineeview.Trainee;
 
@@ -24,6 +25,7 @@ import org.game.trainee.traineeview.Trainee;
  */
 
 @Entity
+@Table(name = "kursbesuch", schema = "game")
 public class KursBesuch implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="KURSBESUCHID")

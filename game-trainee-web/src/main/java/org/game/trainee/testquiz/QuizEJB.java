@@ -5,6 +5,7 @@
  */
 package org.game.trainee.testquiz;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -36,5 +37,9 @@ public class QuizEJB {
         Quiz q = em.getReference(Quiz.class, QID);
         em.remove(q);
         em.getTransaction().commit();
+    }
+    
+    public List<Quiz> findByBeschreibung(String beschreibung) {
+        return em.createNamedQuery(Quiz.QUERY_FINDBY_BESCHREIBUNG, Quiz.class).setParameter("beschreibung", "%"+beschreibung+"%").getResultList();
     }
 }

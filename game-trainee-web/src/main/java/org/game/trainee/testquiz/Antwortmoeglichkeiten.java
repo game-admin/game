@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -22,6 +23,7 @@ import javax.validation.constraints.NotNull;
  */
 
 @Entity
+@Table(name = "antwortmoeglichkeiten", schema = "game")
 public class Antwortmoeglichkeiten implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

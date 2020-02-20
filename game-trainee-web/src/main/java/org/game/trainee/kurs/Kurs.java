@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -19,6 +20,7 @@ import javax.validation.constraints.NotNull;
  * @author Jan
  */
 @Entity
+@Table(name = "kurs", schema = "game")
 public class Kurs implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="KURSID")

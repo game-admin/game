@@ -37,6 +37,9 @@ public class TestQuizController implements Serializable {
           
     @Inject
     private TestQuizSpeicher speicher;
+    
+    @Inject
+    private QuizEJB quizbean;
      
     @PostConstruct
     public void init() {
@@ -197,5 +200,8 @@ public class TestQuizController implements Serializable {
         this.results = results;
     }
     
+    public String getQuizBezeichnung() {
+        return quizbean.find(1).getBeschreibung();
+    }
     
 }

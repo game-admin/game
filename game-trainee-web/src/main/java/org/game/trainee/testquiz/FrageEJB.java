@@ -50,15 +50,4 @@ public class FrageEJB {
         return newList;
     }
     
-    public Frage findQuizFrage(int qindex, int findex) {
-        Query query;
-        query = em.createQuery("SELECT * FROM frage f WHERE QID="+qindex+" AND FID="+findex+";");
-        Frage frage;
-        frage = new Frage();
-        Collection<Frage> collection;
-        collection = (Collection<Frage>) query.getResultList();
-        ArrayList<Frage> newList = collection.stream().collect(toCollection(ArrayList::new));
-        frage = newList.get(0);
-        return frage;
-    }
 }

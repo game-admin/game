@@ -1,19 +1,10 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- * Author:  Jan
- * Created: 20.02.2020
- */
 
 CREATE TABLE game.antwort
 (
     "GEWAEHLTEANTWORTID" bigint NOT NULL DEFAULT nextval('game."ANTWORT_GEWAEHLTEANTWORTID_seq"'::regclass),
     "GEWAEHLTEANTWORT" text COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT "ANTWORT_pkey" PRIMARY KEY ("GEWAEHLTEANTWORTID")
-)
+);
 
 CREATE TABLE game.antwortmoeglichkeiten
 (
@@ -27,7 +18,7 @@ CREATE TABLE game.antwortmoeglichkeiten
         ON UPDATE CASCADE
         ON DELETE CASCADE
         NOT VALID
-)
+);
 
 CREATE TABLE game.frage
 (
@@ -41,7 +32,7 @@ CREATE TABLE game.frage
         ON UPDATE CASCADE
         ON DELETE CASCADE
         NOT VALID
-)
+);
 
 CREATE TABLE game.kurs
 (
@@ -50,7 +41,7 @@ CREATE TABLE game.kurs
     "LINK" text COLLATE pg_catalog."default" NOT NULL,
     "BESCHREIBUNG" text COLLATE pg_catalog."default",
     CONSTRAINT "KURS_pkey" PRIMARY KEY ("KURSID")
-)
+);
 
 CREATE TABLE game.kursbesuch
 (
@@ -69,7 +60,7 @@ CREATE TABLE game.kursbesuch
         ON UPDATE CASCADE
         ON DELETE CASCADE
         NOT VALID
-)
+);
 
 CREATE TABLE game.kursvorraussetzung
 (
@@ -87,7 +78,7 @@ CREATE TABLE game.kursvorraussetzung
         ON UPDATE CASCADE
         ON DELETE CASCADE
         NOT VALID
-)
+);
 
 CREATE TABLE game.quiz
 (
@@ -96,7 +87,7 @@ CREATE TABLE game.quiz
     "BESCHREIBUNG" text COLLATE pg_catalog."default",
     "REWARD" text COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT "QUIZ_pkey" PRIMARY KEY ("QID")
-)
+);
 
 CREATE TABLE game.quizbeantwortung
 (
@@ -115,7 +106,7 @@ CREATE TABLE game.quizbeantwortung
         ON UPDATE CASCADE
         ON DELETE CASCADE
         NOT VALID
-)
+);
 
 CREATE TABLE game.quizvorraussetzung
 (
@@ -133,7 +124,7 @@ CREATE TABLE game.quizvorraussetzung
         ON UPDATE CASCADE
         ON DELETE CASCADE
         NOT VALID
-)
+);
 
 CREATE TABLE game.trainee
 (
@@ -144,7 +135,7 @@ CREATE TABLE game.trainee
     "ABTEILUNG" text COLLATE pg_catalog."default",
     CONSTRAINT "TRAINEE_pkey" PRIMARY KEY ("MITID"),
     CONSTRAINT "NICKNAME" UNIQUE ("NICKNAME")
-)
+);
 
 CREATE TABLE game.vorraussetzung
 (
@@ -162,4 +153,4 @@ CREATE TABLE game.vorraussetzung
         ON UPDATE CASCADE
         ON DELETE CASCADE
         NOT VALID
-)
+);

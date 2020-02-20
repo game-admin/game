@@ -23,7 +23,7 @@ import org.game.trainee.testquiz.Quiz;
  */
 
 @Entity
-@Table(name="vorraussetzungen")
+@Table(name="vorraussetzung", schema = "game")
 public class Vorraussetzung implements Serializable {
     @Id @GeneratedValue @Column(name="VORRAUSSETZID")
     private int VorraussetzID;
