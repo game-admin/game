@@ -3,28 +3,15 @@
 //
 // ====================================
 
-= image:./img/game_logo.png[Logo] Game
+= image:./img/doclogo2.png[Logo] Game
 // toc-title definition MUST follow document title without blank line!
 :toc-title: Table of Contents
 
-//additional style for arc42 help callouts
-ifdef::basebackend-html[]
-++++
-<style>
-.arc42help {font-size:small; width: 14px; height: 16px; overflow: hidden; position: absolute; right: 0px; padding: 2px 0px 3px 2px;}
-.arc42help::before {content: "?";}
-.arc42help:hover {width:auto; height: auto; z-index: 100; padding: 10px;}
-.arc42help:hover::before {content: "";}
-@media print {
-	.arc42help {display:hidden;}
-}
-</style>
-++++
-endif::basebackend-html[]
+//backend: 'docbook'
 
+//keyword: book
 
 ***
-
 
 // numbering from here on
 :numbered:
@@ -53,17 +40,17 @@ include::chapters/System_Scope_and_Context.adoc[]
 // 4. Solution Strategy
 include::chapters/Solution_Strategy.adoc[]
 
-<<<<
+//<<<<
 // 6. Runtime View
-include::chapters/06_runtime_view.adoc[]
+//include::chapters/06_runtime_view.adoc[]
 
-<<<<
+//<<<<
 // 7. Deployment View
-include::chapters/07_deployment_view.adoc[]
+//include::chapters/07_deployment_view.adoc[]
 
-<<<<
+//<<<<
 // 8. Concepts
-include::chapters/08_concepts.adoc[]
+//include::chapters/08_concepts.adoc[]
 
 <<<<
 [[id_designdecisions]]
@@ -71,24 +58,26 @@ include::chapters/08_concepts.adoc[]
 include::chapters/Design_Decisions.adoc[]
 
 <<<<
-
 // ER-Modell
 image::diagrams/diagram-classes.png[]
 
 //Theorie Eric
 include::chapters/Theorie_Eric.adoc[]
 
-<<<<
+//Praxis Eric
+include::chapters/Praxis_Eric.adoc[]
+
+//<<<<
 // 10. Quality Scenarios
-include::chapters/10_quality_scenarios.adoc[]
+//include::chapters/10_quality_scenarios.adoc[]
 
-<<<<
+//<<<<
 // 11. Technical Risks
-include::chapters/11_technical_risks.adoc[]
+//include::chapters/11_technical_risks.adoc[]
 
-<<<<
+//<<<<
 // 12. Glossary
-include::chapters/12_glossary.adoc[]
+//include::chapters/12_glossary.adoc[]
 
 
 

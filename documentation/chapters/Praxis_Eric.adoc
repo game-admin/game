@@ -1,23 +1,23 @@
-= Praktische Aufgabenstellung: Eric Haneder
+== Praktische Aufgabenstellung: Eric Haneder
 
-= Front End: Design und Graphic User Interface
+== Front End: Design und Graphic User Interface
 
-== Beginning
+=== Beginning
 Nachdem die Technologie festgelegt war, mit der die Website programmiert werden sollte, konnten wir anfangen.
 Zuerst muss aber mit dem Auftraggeber ein Design abgeklärt werden, welches ihm zusagt, und für uns umsetzbar ist.
 
 Hier ist ein abstraktes Diagramm der User-Interfaces:
 <Bild einfügen>
 
-image::Trainee Interface (1).png[]
+//image::Trainee Interface (1).png[]
 
 
 Nachdem auch das Design abgeklärt war, konnte nun die Erstellung der Interfaces beginnen.
 
-== Grundlagen
+=== Grundlagen
 Um eine Website zu programmieren, benötigt man ein Menge an umfangreichen Wissen. Man muss html, javascript und css beherschen. Darüber hinaus sollte man auch wissen, wie aus dem Code eine fertige Seite erzeugt wird, und wie Requests vom User ausgewertet und darauf geantwortet werden kann.
 
-=== HTML
+==== HTML
 Hypertext Markup Language (HTML) is the common used language for building web pages. A HTML page is a text document (with a .html or .htm extension) used by browsers to present text and graphics. A web page is made of content, tags to change some aspects of the content, and external objects such as images, videos, JavaScript, or CSS files.
 
 .Beispielcode für eine html page
@@ -47,7 +47,7 @@ Some of the rules are the following:
 * Attributes appear appear between single or double quotes (<table border="0"> instead of <table border = 0>)
 * There must be a strict structure with <html>, <head> and <body> tags.
 
-=== CSS
+==== CSS
 Cascading Style Sheets (CSS) is a styling language used to describe the presentation of a document written in html or xhtml. CSS is used to define colors, fonts layouts, and other aspects of document presentation.It allows separation of a document’s content (written in XHTML) from its presentation (written in CSS).
 To embedd a .css file in your html or xhtml page, use the <link> tag.
 (e.g. <link rel="stylesheet" type="text/css" ?
@@ -65,15 +65,15 @@ h1 {
 ----
 
 
-== Getting Started
-=== Projektstruktur erstellen
+=== Getting Started
+==== Projektstruktur erstellen
 Um mit dem Programmieren zu beginnen, muss erst eine stabile Projektstruktur gegeben sein. Dafür haben wir in NetBeans auf "Projekt erstellen" geklickt, alle benötigten Resourcen vereinbart, und mit Maven wurde dann automatisch eine passende Projektstruktur erstellt.
 Nun muss man auch darauf achten, dass diese Struktur befolgt.
 Java-Dateien sollten unter src\main\java abgelegt werden.
 Everything regarding JSF should lie in src\main\webapp. That includes the xhtml-files, the CSS, JavaScript and Images should lie in a untergeordnetem resources folder. This is needed, for JSF to locate the resources faster.
 <Bild einfügen, welches die Projektstruktur zeigt>
 
-== Layout erstellen
+==== Layout erstellen
 Um die Erstellung mehrerer UIs zu vereinfachen, wird ein Layout erstellt, welches als ein Template für die Pages dient.
 Dieses Layout habe ich in der mainlayout.xhtml realisiert.
 
@@ -134,7 +134,7 @@ include::../../game-trainee-web/src/main/webapp/mainlayout.xhtml[]
  Mit <ui:include> können wir Informationen einer anderen Page, in diese Page einbauen.
  Im footer-Bereich werden noch Kontaktdaten angezeigt.
 
-== User-Interfaces
+=== User-Interfaces
 Die UIs liegen hier unter src\main\webapp\faces. There are 4 main pages: Activites(index.xhtml), Courses & Quizes(courses.xhtml), Trainers(trainers.xhtml) and a leaderboard(leaderboard.xhtml.
 Die erste zu erstellende Seite, ist die index.xhtml Seite, da diese standardmäßig vom Browser zuerst angezeigt wird, beim aufrufen der Website.
 Auf der Startseite sollte der User seinen Fortschritt und seine Aktivitäten sehen.
@@ -180,9 +180,9 @@ include::../../game-trainee-web/src/main/webapp/faces/leaderboard.xhtml[]
 
 Here we used the <p:dataTable> tag, which is used to display date just like in the regulare <table> tag. If you give it a list, it will know to diplay all elements of the list.
 
-= Java Classes
+=== Java Classes
 
-== Trainer Classes
+==== Trainer Classes
 
 ----
 
@@ -198,7 +198,7 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/trainerview/Train
 include::../../game-trainee-web/src/main/java/org/game/trainee/trainerview/TrainerView.java[]
 ----
 
-== Trainee Classes
+==== Trainee Classes
 
 ----
 
@@ -214,7 +214,7 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/Train
 include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/TraineeGenerator.java[]
 ----
 
-== Quiz Classes
+==== Quiz Classes
 
 
 
