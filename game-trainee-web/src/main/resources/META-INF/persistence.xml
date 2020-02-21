@@ -21,6 +21,7 @@
       <property name="javax.persistence.sql-load-script-source" value="META-INF/insertSQL.sql"/>
       <property name="javax.persistence.schema-generation.create-script-source" value="META-INF/createSQL.sql"></property>
       <property name="javax.persistence.schema-generation.drop-script-source" value="META-INF/dropSQL.sql"></property>
+     <!-- <property name="javax.persistence.schema-generation.create-script-source" value="META-INF/createSeqSQL.sql" /> -->
     </properties>
   </persistence-unit>
 </persistence>

@@ -41,7 +41,7 @@ public class FrageEJB {
         em.remove(f);
         em.getTransaction().commit();
     }
-    
+    /*
     public List<Frage> findQuizFragen(int index) {
         Query query = em.createQuery("SELECT * FROM frage f WHERE QID ="+index+";");
         Collection<Frage> collection;
@@ -49,5 +49,5 @@ public class FrageEJB {
         ArrayList<Frage> newList = collection.stream().collect(toCollection(ArrayList::new));
         return newList;
     }
-    
+    */
 }

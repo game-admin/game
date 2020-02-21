@@ -1,14 +1,14 @@
 
 CREATE TABLE game.antwort
 (
-    "GEWAEHLTEANTWORTID" bigint NOT NULL DEFAULT nextval('game."ANTWORT_GEWAEHLTEANTWORTID_seq"'::regclass),
+    "GEWAEHLTEANTWORTID" bigint NOT NULL DEFAULT nextval('game."antwort_GEWAEHLTEANTWORTID_seq"'::regclass),
     "GEWAEHLTEANTWORT" text COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT "ANTWORT_pkey" PRIMARY KEY ("GEWAEHLTEANTWORTID")
 );
 
 CREATE TABLE game.antwortmoeglichkeiten
 (
-    "ANTWID" bigint NOT NULL DEFAULT nextval('game."ANTWORTMOEGLICHKEITEN_ANTWID_seq"'::regclass),
+    "ANTWID" bigint NOT NULL DEFAULT nextval('game."antwortmoeglichkeiten_ANTWID_seq"'::regclass),
     "FNR" bigint NOT NULL,
     "ANTWORT" text COLLATE pg_catalog."default" NOT NULL,
     "RICHTIGEANTWORT" boolean,
@@ -22,7 +22,7 @@ CREATE TABLE game.antwortmoeglichkeiten
 
 CREATE TABLE game.frage
 (
-    "FNR" bigint NOT NULL DEFAULT nextval('game."FRAGE_FNR_seq"'::regclass),
+    "FNR" bigint NOT NULL DEFAULT nextval('game."frage_FNR_seq"'::regclass),
     "QID" bigint NOT NULL,
     "FRAGE" text COLLATE pg_catalog."default" NOT NULL,
     "PUNKTEZAHL" bigint NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE game.frage
 
 CREATE TABLE game.kurs
 (
-    "KURSID" bigint NOT NULL DEFAULT nextval('game."KURS_KURSID_seq"'::regclass),
+    "KURSID" bigint NOT NULL DEFAULT nextval('game."kurs_KURSID_seq"'::regclass),
     "TITEL" text COLLATE pg_catalog."default" NOT NULL,
     "LINK" text COLLATE pg_catalog."default" NOT NULL,
     "BESCHREIBUNG" text COLLATE pg_catalog."default",
@@ -45,7 +45,7 @@ CREATE TABLE game.kurs
 
 CREATE TABLE game.kursbesuch
 (
-    "KURSBESUCHID" bigint NOT NULL DEFAULT nextval('game."KURSBESUCH_KURSBESUCHID_seq"'::regclass),
+    "KURSBESUCHID" bigint NOT NULL DEFAULT nextval('game."kursbesuch_KURSBESUCHID_seq"'::regclass),
     "KURSID" bigint NOT NULL,
     "MITID" bigint NOT NULL,
     "DATUM" date NOT NULL,
@@ -64,7 +64,7 @@ CREATE TABLE game.kursbesuch
 
 CREATE TABLE game.kursvorraussetzung
 (
-    "KURSVORRAUSSETZID" bigint NOT NULL DEFAULT nextval('game."KURSVORRAUSSETZUNG_KURSVORRAUSSETZID_seq"'::regclass),
+    "KURSVORRAUSSETZID" bigint NOT NULL DEFAULT nextval('game."kursvorrausetzung_KURSVORRAUSSETZID_seq"'::regclass),
     "VORRAUSSETZID" bigint NOT NULL,
     "KURSID" bigint NOT NULL,
     CONSTRAINT "KURSVORRAUSSETZUNG_pkey" PRIMARY KEY ("KURSVORRAUSSETZID"),
@@ -82,7 +82,7 @@ CREATE TABLE game.kursvorraussetzung
 
 CREATE TABLE game.quiz
 (
-    "QID" bigint NOT NULL DEFAULT nextval('game."QUIZ_QID_seq"'::regclass),
+    "QID" bigint NOT NULL DEFAULT nextval('game."quiz_QID_seq"'::regclass),
     "TITEL" text COLLATE pg_catalog."default" NOT NULL,
     "BESCHREIBUNG" text COLLATE pg_catalog."default",
     "REWARD" text COLLATE pg_catalog."default" NOT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE game.quiz
 
 CREATE TABLE game.quizbeantwortung
 (
-    "QBEID" bigint NOT NULL DEFAULT nextval('game."QUIZBEANTWORTUNG_QBEID_seq"'::regclass),
+    "QBEID" bigint NOT NULL DEFAULT nextval('game."quizbeantwortung_QBEID_seq"'::regclass),
     "QID" bigint NOT NULL,
     "MITID" bigint NOT NULL,
     "ERREICHTEPUNKTEZAHL" bigint NOT NULL,
@@ -110,7 +110,7 @@ CREATE TABLE game.quizbeantwortung
 
 CREATE TABLE game.quizvorraussetzung
 (
-    "QUIZVORRAUSSETZID" bigint NOT NULL DEFAULT nextval('game."QUIZVORRAUSSETZUNG_QUIZVORRAUSSETZID_seq"'::regclass),
+    "QUIZVORRAUSSETZID" bigint NOT NULL DEFAULT nextval('game."quizvorraussetzung_QUIZVORRAUSSETZID_seq"'::regclass),
     "VORRAUSSETZID" bigint NOT NULL,
     "QID" bigint NOT NULL,
     CONSTRAINT "QUIZVORRAUSSETZUNG_pkey" PRIMARY KEY ("QUIZVORRAUSSETZID"),
@@ -128,7 +128,7 @@ CREATE TABLE game.quizvorraussetzung
 
 CREATE TABLE game.trainee
 (
-    "MITID" bigint NOT NULL DEFAULT nextval('game."TRAINEE_MITID_seq"'::regclass),
+    "MITID" bigint NOT NULL DEFAULT nextval('game."trainee_MITID_seq"'::regclass),
     "NAME" text COLLATE pg_catalog."default" NOT NULL,
     "VORNAME" text COLLATE pg_catalog."default",
     "NICKNAME" text COLLATE pg_catalog."default" NOT NULL,
@@ -139,7 +139,7 @@ CREATE TABLE game.trainee
 
 CREATE TABLE game.vorraussetzung
 (
-    "VORRAUSSETZID" bigint NOT NULL DEFAULT nextval('game."VORRAUSSETZUNG_VORRAUSSETZID_seq"'::regclass),
+    "VORRAUSSETZID" bigint NOT NULL DEFAULT nextval('game."vorraussetzung_VORRAUSSETZID_seq"'::regclass),
     "KURSID" bigint,
     "QID" bigint,
     CONSTRAINT "VORRAUSSETZUNG_pkey" PRIMARY KEY ("VORRAUSSETZID"),
