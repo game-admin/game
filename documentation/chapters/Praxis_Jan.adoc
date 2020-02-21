@@ -1,0 +1,11 @@
+= Praktische Aufgabenstellung: Jan Binder
+
+= Back End: Datenbank und Datenbankverbindung
+
+== Begin
+
+Zu aller erst wurden die allgemeinen Grundlagen, wie die Technologie, die verwendet wird, und das Design festgelegt. Auch die Datenbank, in der die entsprechenden Tabellen und Datensätze stehen soll, wurde vereinbart.
+
+== Grundlagen
+
+Man braucht, um eine Datenbank und eine Datenbankverbindung zu erzeugen, ein gewisses Vorwissen. Hier werden SQL, JPA und Java von Nöten sein.

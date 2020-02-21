@@ -20,7 +20,7 @@ import javax.validation.constraints.NotNull;
  *
  * @author Jan
  */
-@NamedQuery(name = Quiz.QUERY_FINDBY_BESCHREIBUNG, query = "select quiz from Quiz quiz where quiz.beschreibung like :beschreibung")
+@NamedQuery(name = Quiz.QUERY_FINDBY_BESCHREIBUNG, query = "SELECT quiz FROM Quiz quiz WHERE quiz.beschreibung like :beschreibung")
 @Entity
 @Table(name = "quiz", schema = "game")
 public class Quiz implements Serializable {
