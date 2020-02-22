@@ -25,7 +25,7 @@ import org.game.trainee.testquiz.Quiz;
 @Entity
 @Table(name="voraussetzung", schema = "game")
 public class Voraussetzung implements Serializable {
-    @Id @GeneratedValue @Column(name="VORAUSSETZID")
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE) @Column(name="VORAUSSETZID")
     private int VoraussetzID;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="KursID")

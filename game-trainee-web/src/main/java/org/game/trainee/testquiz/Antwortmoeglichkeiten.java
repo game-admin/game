@@ -26,7 +26,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "antwortmoeglichkeiten", schema = "game")
 public class Antwortmoeglichkeiten implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name="ANTWID")
     private int AntwID;
     @ManyToOne(fetch = FetchType.LAZY)

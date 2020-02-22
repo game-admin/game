@@ -26,7 +26,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "frage", schema = "game")
 public class Frage implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int FID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="QID")

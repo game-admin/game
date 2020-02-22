@@ -24,7 +24,7 @@ import org.game.trainee.kurs.Voraussetzung;
 @Entity
 @Table(name = "quizvoraussetzung", schema = "game")
 public class QuizVoraussetzung implements Serializable{
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name="QUIZVORAUSSETZID")
     private int QuizVoraussetzID;
     @ManyToOne(fetch = FetchType.LAZY)

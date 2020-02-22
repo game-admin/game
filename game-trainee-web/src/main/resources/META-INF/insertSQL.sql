@@ -1,4 +1,24 @@
 
+INSERT INTO game.trainee ("MITID", "NAME", "VORNAME", "NICKNAME", "ABTEILUNG") VALUES (2, 'Haneder', 'Eric', 'ericbensi', NULL);
+INSERT INTO game.trainee ("MITID", "NAME", "VORNAME", "NICKNAME", "ABTEILUNG") VALUES (1, 'Binder', 'Jan', 'Syreax', NULL);
+INSERT INTO game.trainee ("MITID", "NAME", "VORNAME", "NICKNAME", "ABTEILUNG") VALUES (3, 'Saliger', 'Alex', 'SaAlexX_1010', NULL);
+INSERT INTO game.trainee ("MITID", "NAME", "VORNAME", "NICKNAME", "ABTEILUNG") VALUES (4, 'Wurst', 'Alexander', 'wursti', NULL);
+
+INSERT INTO game.quiz ("QID", "TITEL", "BESCHREIBUNG", "REWARD") VALUES (1, 'Start', 'Quiz about the general knowledge of Java', 'test');
+INSERT INTO game.quiz ("QID", "TITEL", "BESCHREIBUNG", "REWARD") VALUES (2, 'Object, Classes & Constructors', 'Quiz about Objects, Classes and Constructors in Java', 'test');
+
+
+INSERT INTO game.frage ("FNR", "QID", "FRAGE", "PUNKTEZAHL") VALUES (1, 1, 'What are advantages of Java?', 10);
+INSERT INTO game.frage ("FNR", "QID", "FRAGE", "PUNKTEZAHL") VALUES (2, 1, 'What is written after a line of code?', 10);
+INSERT INTO game.frage ("FNR", "QID", "FRAGE", "PUNKTEZAHL") VALUES (9, 1, 'What does Object Oriented mean?', 10);
+INSERT INTO game.frage ("FNR", "QID", "FRAGE", "PUNKTEZAHL") VALUES (10, 1, 'Which Java Version exist', 10);
+INSERT INTO game.frage ("FNR", "QID", "FRAGE", "PUNKTEZAHL") VALUES (11, 2, 'What concept of the following is Java supporting?', 10);
+INSERT INTO game.frage ("FNR", "QID", "FRAGE", "PUNKTEZAHL") VALUES (12, 2, 'Which things do objects include?', 10);
+INSERT INTO game.frage ("FNR", "QID", "FRAGE", "PUNKTEZAHL") VALUES (13, 2, 'What is not a variabletype which classes can contain?', 10);
+INSERT INTO game.frage ("FNR", "QID", "FRAGE", "PUNKTEZAHL") VALUES (14, 2, 'What is the main rule of a constructor?', 10);
+
+
+
 INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (1, 1, 'Flawless', false);
 INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (2, 1, 'Platform Independent', true);
 INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (3, 1, 'Only compatible with Windows', false);
@@ -33,23 +53,12 @@ INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANT
 INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (32, 14, 'Must contain attributes', false);
 
 
-INSERT INTO game.frage ("FNR", "QID", "FRAGE", "PUNKTEZAHL") VALUES (1, 1, 'What are advantages of Java?', 10);
-INSERT INTO game.frage ("FNR", "QID", "FRAGE", "PUNKTEZAHL") VALUES (2, 1, 'What is written after a line of code?', 10);
-INSERT INTO game.frage ("FNR", "QID", "FRAGE", "PUNKTEZAHL") VALUES (9, 1, 'What does Object Oriented mean?', 10);
-INSERT INTO game.frage ("FNR", "QID", "FRAGE", "PUNKTEZAHL") VALUES (10, 1, 'Which Java Version exist', 10);
-INSERT INTO game.frage ("FNR", "QID", "FRAGE", "PUNKTEZAHL") VALUES (11, 2, 'What concept of the following is Java supporting?', 10);
-INSERT INTO game.frage ("FNR", "QID", "FRAGE", "PUNKTEZAHL") VALUES (12, 2, 'Which things do objects include?', 10);
-INSERT INTO game.frage ("FNR", "QID", "FRAGE", "PUNKTEZAHL") VALUES (13, 2, 'What is not a variabletype which classes can contain?', 10);
-INSERT INTO game.frage ("FNR", "QID", "FRAGE", "PUNKTEZAHL") VALUES (14, 2, 'What is the main rule of a constructor?', 10);
+
 
 INSERT INTO game.kurs ("KURSID", "TITEL", "LINK", "BESCHREIBUNG") VALUES (1, 'Start-Kurs', 'https://www.tutorialspoint.com/java/index.htm', NULL);
 INSERT INTO game.kurs ("KURSID", "TITEL", "LINK", "BESCHREIBUNG") VALUES (2, 'Object & Classes', 'https://www.tutorialspoint.com/java/java_object_classes.htm', NULL);
 INSERT INTO game.kurs ("KURSID", "TITEL", "LINK", "BESCHREIBUNG") VALUES (3, 'Constructors', 'https://www.tutorialspoint.com/java/java_constructors.htm', NULL);
 
-INSERT INTO game.quiz ("QID", "TITEL", "BESCHREIBUNG", "REWARD") VALUES (1, 'Start', 'Quiz about the general knowledge of Java', 'test');
-INSERT INTO game.quiz ("QID", "TITEL", "BESCHREIBUNG", "REWARD") VALUES (2, 'Object, Classes & Constructors', 'Quiz about Objects, Classes and Constructors in Java', 'test');
 
-INSERT INTO game.trainee ("MITID", "NAME", "VORNAME", "NICKNAME", "ABTEILUNG") VALUES (2, 'Haneder', 'Eric', 'ericbensi', NULL);
-INSERT INTO game.trainee ("MITID", "NAME", "VORNAME", "NICKNAME", "ABTEILUNG") VALUES (1, 'Binder', 'Jan', 'Syreax', NULL);
-INSERT INTO game.trainee ("MITID", "NAME", "VORNAME", "NICKNAME", "ABTEILUNG") VALUES (3, 'Saliger', 'Alex', 'SaAlexX_1010', NULL);
-INSERT INTO game.trainee ("MITID", "NAME", "VORNAME", "NICKNAME", "ABTEILUNG") VALUES (4, 'Wurst', 'Alexander', 'wursti', NULL);
+
+

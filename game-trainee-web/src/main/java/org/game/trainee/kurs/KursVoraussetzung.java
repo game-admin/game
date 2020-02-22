@@ -23,7 +23,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "kursvoraussetzung", schema = "game")
 public class KursVoraussetzung implements Serializable {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name="KURSVORAUSSETZID")
     private int KursVoraussetzID;
     @ManyToOne(fetch = FetchType.LAZY)
