@@ -18,6 +18,6 @@ pass:[<u>Konrad Renner</u>]: +
 He expects the software to contain a scoring system that records the learning progress of every member, which can be evaluated and compared. Furthermore, he expects to be able to mantain the tasks independently, this means if all tasks have been fulfilled on the platform, there should be an opportunity for coaches to be able to put in new tasks. 
 
 
-pass:[<u>Michaela Würzl & Cornelia Sammer</u>]: +
+pass:[<u>Michaela Würzl and Cornelia Sammer</u>]: +
 They expect a timely completion of the project, so that the concept is completed by 31.12.2019, and the implementation should be completed by the end of April. Moreover, the software should be utilizable and integrable, this means the user interface should be easy to use for employees, trainers and moderators.
 
