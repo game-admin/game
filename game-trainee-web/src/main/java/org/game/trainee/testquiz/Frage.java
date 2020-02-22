@@ -37,9 +37,6 @@ public class Frage implements Serializable {
     @NotNull
     @Column(name="PUNKTEZAHL")
     private int punktezahl;
-    @NotNull
-    @Column(name="RICHTIGEANTWORT")
-    private boolean richtig;
 
     public int getFID() {
         return FID;
@@ -63,14 +60,6 @@ public class Frage implements Serializable {
 
     public void setPunktezahl(int Punktezahl) {
         this.punktezahl = Punktezahl;
-    }
-
-    public boolean isRichtig() {
-        return richtig;
-    }
-
-    public void setRichtig(boolean richtig) {
-        this.richtig = richtig;
     }
 
     public Quiz getQuiz() {

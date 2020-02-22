@@ -10,16 +10,16 @@ DROP TABLE game.kurs;
 
 DROP TABLE game.kursbesuch;
 
-DROP TABLE game.kursvorraussetzung;
+DROP TABLE game.kursvoraussetzung;
 
 DROP TABLE game.quiz;
 
 DROP TABLE game.quizbeantwortung;
 
 
-DROP TABLE game.quizvorraussetzung;
+DROP TABLE game.quizvoraussetzung;
 
 DROP TABLE game.trainee;
 
 
-DROP TABLE game.vorraussetzung;
+DROP TABLE game.voraussetzung;

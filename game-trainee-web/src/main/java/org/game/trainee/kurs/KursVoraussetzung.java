@@ -21,24 +21,24 @@ import javax.persistence.Table;
  * @author Jan
  */
 @Entity
-@Table(name = "kursvorraussetzung", schema = "game")
-public class KursVorraussetzung implements Serializable {
+@Table(name = "kursvoraussetzung", schema = "game")
+public class KursVoraussetzung implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="KURSVORRAUSSETZID")
-    private int KursVorraussetzID;
+    @Column(name="KURSVORAUSSETZID")
+    private int KursVoraussetzID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="KursID")
     private Kurs kurs;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="VorraussetzID")
-    private Vorraussetzung vorraussetzung;
+    @JoinColumn(name="VoraussetzID")
+    private Voraussetzung voraussetzung;
 
-    public int getKursVorraussetzID() {
-        return KursVorraussetzID;
+    public int getKursVoraussetzID() {
+        return KursVoraussetzID;
     }
 
-    public void setKursVorraussetzID(int KursVorraussetzID) {
-        this.KursVorraussetzID = KursVorraussetzID;
+    public void setKursVoraussetzID(int KursVoraussetzID) {
+        this.KursVoraussetzID = KursVoraussetzID;
     }
 
     public Kurs getKurs() {
@@ -49,12 +49,12 @@ public class KursVorraussetzung implements Serializable {
         this.kurs = kurs;
     }
 
-    public Vorraussetzung getVorraussetzung() {
-        return vorraussetzung;
+    public Voraussetzung getVoraussetzung() {
+        return voraussetzung;
     }
 
-    public void setVorraussetzung(Vorraussetzung vorraussetzung) {
-        this.vorraussetzung = vorraussetzung;
+    public void setVoraussetzung(Voraussetzung voraussetzung) {
+        this.voraussetzung = voraussetzung;
     }
     
     

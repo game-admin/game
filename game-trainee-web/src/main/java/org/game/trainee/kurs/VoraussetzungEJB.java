@@ -11,28 +11,28 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
-import org.game.trainee.kurs.Vorraussetzung;
+import org.game.trainee.kurs.Voraussetzung;
 
 /**
  *
  * @author Jan
  */
 @Stateless
-public class VorraussetzungEJB {
+public class VoraussetzungEJB {
     @PersistenceContext(unitName = "Diplomarbeit")
     private EntityManager em;
     
-    public Vorraussetzung find(int VorraussetzID) {
-        return em.find(Vorraussetzung.class, VorraussetzID);
+    public Voraussetzung find(int VoraussetzID) {
+        return em.find(Voraussetzung.class, VoraussetzID);
     }
     
-    public void update(Vorraussetzung v) {
+    public void update(Voraussetzung v) {
         em.merge(v);
     }
     
-    public void delete(int VorraussetzID) {
+    public void delete(int VoraussetzID) {
         em.getTransaction().begin();
-        Vorraussetzung v = em.getReference(Vorraussetzung.class, VorraussetzID);
+        Voraussetzung v = em.getReference(Voraussetzung.class, VoraussetzID);
         em.remove(v);
         em.getTransaction().commit();
     }

@@ -85,12 +85,12 @@ The entity "KursBesuch" is a table, which splits the many-to-many relationship b
 That means it has the PK of both tables as a foreign key and it also provides a column named "datum" which indicates the date the user has visited the course.
 
 
-===== Vorrausetzung Entities
+===== Vorausetzung Entities
 
-.Vorrausetzung.java
+.Vorausetzung.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/Vorraussetzung.java[lines=19..36]
+include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/Voraussetzung.java[lines=19..36]
 //Getter, Setter
 ----
 
@@ -98,26 +98,29 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/Vorraussetzu
 
 
 
-.KursVorrausetzung.java
+.KursVorausetzung.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursVorraussetzung.java[lines=18..35]
+include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursVoraussetzung.java[lines=18..35]
 //Getter, Setter
 ----
 
-"KursVorraussetzung" is another entity which splits up a many-to-many relationship. 
-This time it is between "kurs" and "vorraussetzung". Since there is no column other than the two foreign keys and the primary key "KursVorraussetzID" this table has no function except as a middle table for "kurs" and "vorraussetzung".
+The function of "KursVoraussetzung" is that a course can have a course or a quiz as a requirement to take this course. This table contains courses and their required quizzes or courses.
 
 
-.QuizVorrausetzung.java
+"KursVoraussetzung" is another entity which splits up a many-to-many relationship. 
+This time it is between "kurs" and "voraussetzung". Since there is no column other than the two foreign keys and the primary key "KursVoraussetzID" this table has no function except as a middle table for "kurs" and "voraussetzung".
+
+
+.QuizVorausetzung.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/QuizVorraussetzung.java[lines=19..36]
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/QuizVoraussetzung.java[lines=19..36]
 
 //Getter, Setter
 ----
 
-
+This table has the same function as "KursVoraussetzung", but instead of courses with quizzes. So this table contains quizzes and their required courses or quizzes.
 
 
 ===== Quiz Entities
@@ -130,7 +133,7 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Quiz.jav
 //Getter, Setter
 ----
 
-
+This is the table for all quizzes. It contains the "QID", which is the primary key, a title, a description and a reward. The title has a constraint called NOT NULL because every quiz must have a specification which topic it has, since the description is optional the title is the only differentiation between the quizzes.
 
 
 
@@ -149,11 +152,12 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Quizbean
 .Frage.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Frage.java[lines=21..43]
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Frage.java[lines=21..40]
 
 //Getter, Setter
 ----
 
+Every Quiz contains of many questions. These questions are stored in the table "Frage". Each question has a "FID", a "QID", so it can be ... to a quiz. A question also has the question itself, set points you get for each question.
 
 .Antwortmoeglichkeiten.java
 [source, java]
@@ -203,3 +207,6 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/QuizEJB.
 ----
 include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/TraineeEJB.java[lines=16..]
 ----
+
+
+

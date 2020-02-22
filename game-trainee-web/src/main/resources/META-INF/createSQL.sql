@@ -62,19 +62,19 @@ CREATE TABLE game.kursbesuch
         NOT VALID
 );
 
-CREATE TABLE game.kursvorraussetzung
+CREATE TABLE game.kursvoraussetzung
 (
-    "KURSVORRAUSSETZID" bigint NOT NULL DEFAULT nextval('game."kursvorrausetzung_KURSVORRAUSSETZID_seq"'::regclass),
-    "VORRAUSSETZID" bigint NOT NULL,
+    "KURSVORAUSSETZID" bigint NOT NULL DEFAULT nextval('game."kursvorausetzung_KURSVORRAUSSETZID_seq"'::regclass),
+    "VORAUSSETZID" bigint NOT NULL,
     "KURSID" bigint NOT NULL,
-    CONSTRAINT "KURSVORRAUSSETZUNG_pkey" PRIMARY KEY ("KURSVORRAUSSETZID"),
+    CONSTRAINT "KURSVORAUSSETZUNG_pkey" PRIMARY KEY ("KURSVORAUSSETZID"),
     CONSTRAINT "Kurs" FOREIGN KEY ("KURSID")
         REFERENCES game.kurs ("KURSID") MATCH SIMPLE
         ON UPDATE CASCADE
         ON DELETE CASCADE
         NOT VALID,
-    CONSTRAINT "Vorraussetzung" FOREIGN KEY ("VORRAUSSETZID")
-        REFERENCES game.vorraussetzung ("VORRAUSSETZID") MATCH SIMPLE
+    CONSTRAINT "Voraussetzung" FOREIGN KEY ("VORAUSSETZID")
+        REFERENCES game.voraussetzung ("VORAUSSETZID") MATCH SIMPLE
         ON UPDATE CASCADE
         ON DELETE CASCADE
         NOT VALID
@@ -108,19 +108,19 @@ CREATE TABLE game.quizbeantwortung
         NOT VALID
 );
 
-CREATE TABLE game.quizvorraussetzung
+CREATE TABLE game.quizvoraussetzung
 (
-    "QUIZVORRAUSSETZID" bigint NOT NULL DEFAULT nextval('game."quizvorraussetzung_QUIZVORRAUSSETZID_seq"'::regclass),
-    "VORRAUSSETZID" bigint NOT NULL,
+    "QUIZVORAUSSETZID" bigint NOT NULL DEFAULT nextval('game."quizvoraussetzung_QUIZVORAUSSETZID_seq"'::regclass),
+    "VORAUSSETZID" bigint NOT NULL,
     "QID" bigint NOT NULL,
-    CONSTRAINT "QUIZVORRAUSSETZUNG_pkey" PRIMARY KEY ("QUIZVORRAUSSETZID"),
+    CONSTRAINT "QUIZVORAUSSETZUNG_pkey" PRIMARY KEY ("QUIZVORAUSSETZID"),
     CONSTRAINT "Quiz" FOREIGN KEY ("QID")
         REFERENCES game.quiz ("QID") MATCH SIMPLE
         ON UPDATE CASCADE
         ON DELETE CASCADE
         NOT VALID,
-    CONSTRAINT "Vorraussetzung" FOREIGN KEY ("VORRAUSSETZID")
-        REFERENCES game.vorraussetzung ("VORRAUSSETZID") MATCH SIMPLE
+    CONSTRAINT "Voraussetzung" FOREIGN KEY ("VORAUSSETZID")
+        REFERENCES game.voraussetzung ("VORAUSSETZID") MATCH SIMPLE
         ON UPDATE CASCADE
         ON DELETE CASCADE
         NOT VALID
@@ -137,12 +137,12 @@ CREATE TABLE game.trainee
     CONSTRAINT "NICKNAME" UNIQUE ("NICKNAME")
 );
 
-CREATE TABLE game.vorraussetzung
+CREATE TABLE game.voraussetzung
 (
-    "VORRAUSSETZID" bigint NOT NULL DEFAULT nextval('game."vorraussetzung_VORRAUSSETZID_seq"'::regclass),
+    "VORAUSSETZID" bigint NOT NULL DEFAULT nextval('game."voraussetzung_VORAUSSETZID_seq"'::regclass),
     "KURSID" bigint,
     "QID" bigint,
-    CONSTRAINT "VORRAUSSETZUNG_pkey" PRIMARY KEY ("VORRAUSSETZID"),
+    CONSTRAINT "VORAUSSETZUNG_pkey" PRIMARY KEY ("VORAUSSETZID"),
     CONSTRAINT "Kurs" FOREIGN KEY ("KURSID")
         REFERENCES game.kurs ("KURSID") MATCH SIMPLE
         ON UPDATE CASCADE
