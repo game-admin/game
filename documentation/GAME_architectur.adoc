@@ -1,7 +1,3 @@
-// header file for arc42-template,
-// including all help texts
-//
-// ====================================
 
 = image:./img/doclogo2.png[Logo] Game
 // toc-title definition MUST follow document title without blank line!
@@ -19,6 +15,10 @@
 <<<<
 // 1a. Introduction and Goals
 include::chapters/Introduction.adoc[]
+
+<<<<
+// Abstract
+include::chapters/Abstract.adoc[]
 
 <<<<
 // 1b. Requirements Overview
@@ -40,18 +40,6 @@ include::chapters/System_Scope_and_Context.adoc[]
 // 4. Solution Strategy
 include::chapters/Solution_Strategy.adoc[]
 
-//<<<<
-// 6. Runtime View
-//include::chapters/06_runtime_view.adoc[]
-
-//<<<<
-// 7. Deployment View
-//include::chapters/07_deployment_view.adoc[]
-
-//<<<<
-// 8. Concepts
-//include::chapters/08_concepts.adoc[]
-
 <<<<
 [[id_designdecisions]]
 // 9. Design Decisions
@@ -61,23 +49,10 @@ include::chapters/Design_Decisions.adoc[]
 // ER-Modell
 image::diagrams/diagram-classes.png[]
 
+<<<<
 //Theorie Eric
 include::chapters/Theorie_Eric.adoc[]
 
+<<<<
 //Praxis Eric
 include::chapters/Praxis_Eric.adoc[]
-
-//<<<<
-// 10. Quality Scenarios
-//include::chapters/10_quality_scenarios.adoc[]
-
-//<<<<
-// 11. Technical Risks
-//include::chapters/11_technical_risks.adoc[]
-
-//<<<<
-// 12. Glossary
-//include::chapters/12_glossary.adoc[]
-
-
-

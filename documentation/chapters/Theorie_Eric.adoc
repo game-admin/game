@@ -52,7 +52,7 @@ This learning type understands and saves information the best, by thinking about
 _(vgl."https://smarter-learning.de/lerntypen/klassische-lerntypen-nach-vester/"; letzter Zugriff: 14.01.2020)_
 
 ==== Connections
-Most of the time, it is not possible to assign someone a certain learning type, as there mix-types of learning. There are some people who learn faster by through text and writing it down afterwards (visual & haptic), and others are better of learning by reading and reciting out lout (auditory & haptic).
+Most of the time, it is not possible to assign someone a certain learning type, as there mix-types of learning. There are some people who learn faster by reading through text and writing it down afterwards (visual & haptic), and others are better of learning by reading and reciting out lout (auditory & haptic).
 
 So if you want to learn effectively, you should try to appeal to more than one sense,  to find a combination that fits your style.
 
@@ -85,7 +85,7 @@ These factors are measured by the "Learning Styles Inventory". However, this mod
 
 _(vgl. "Lernorientierungen, Lernstile, Lerntypen und kognitive Stile", Ulrike Creß, in "Handbuch Lernstrategien" von Heinz Mandl & Helmut Felix Friedrich, S.373)_
 
-=== Learning styles according to Pask *
+=== Learning styles according to Pask 
 Around 1972, Pask and Scott identified two opposing learning strategies used in problem-solving tasks where people had to search for information independently.They described the consistend usage of these strategies as a learning style.
 The holistic strategy means that learners always keep the big picture in mind and only turn to detailed questions in a second step. If this strategy is applied consistently, Pask speaks of the learning style of comprehension learning. On the other hand, learners with a serial strategy work their way step by step through the learning material and primarily turn to individual questions. If this strategy is used consistently, Park speaks of operation learning. Both strategies can lead to the same success. In their extreme form, however, both have a negative effect on performance, which is why Pask assigns both learning styles to corresponding learning pathologies. _Globetrotting_ refers to the learning pathology of extreme comprehension learning, in which learners make inadmissible generalizations without the corresponding individual analysis. _Improvidence_ describes the extreme form of operation learning, in which people lose themselves in details without being able to connect them to a big picture. Since the differences between holistic and serial approaches affect not only learning behaviour but the entire way in which information is sought and processed, they are often interpreted as cognitive styles.
 
