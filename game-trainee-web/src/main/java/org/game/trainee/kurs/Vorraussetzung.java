@@ -41,5 +41,21 @@ public class Vorraussetzung implements Serializable {
     public void setVorraussetzID(int VorraussetzID) {
         this.VorraussetzID = VorraussetzID;
     }
+
+    public Kurs getKurs() {
+        return kurs;
+    }
+
+    public void setKurs(Kurs kurs) {
+        this.kurs = kurs;
+    }
+
+    public Quiz getQuiz() {
+        return quiz;
+    }
+
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
+    }
     
 }

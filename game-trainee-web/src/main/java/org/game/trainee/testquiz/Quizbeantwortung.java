@@ -52,6 +52,22 @@ public class Quizbeantwortung implements Serializable {
     public void setErreichtePunkte(int erreichtePunkte) {
         this.erreichtePunkte = erreichtePunkte;
     }
+
+    public Quiz getQuiz() {
+        return quiz;
+    }
+
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
+    }
+
+    public Trainee getTrainee() {
+        return trainee;
+    }
+
+    public void setTrainee(Trainee trainee) {
+        this.trainee = trainee;
+    }
     
     
 }

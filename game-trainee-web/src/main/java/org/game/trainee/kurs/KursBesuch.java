@@ -57,6 +57,22 @@ public class KursBesuch implements Serializable {
     public void setDatum(Date datum) {
         this.datum = datum;
     }
+
+    public Trainee getTrainee() {
+        return trainee;
+    }
+
+    public void setTrainee(Trainee trainee) {
+        this.trainee = trainee;
+    }
+
+    public Kurs getKurs() {
+        return kurs;
+    }
+
+    public void setKurs(Kurs kurs) {
+        this.kurs = kurs;
+    }
     
     
 }

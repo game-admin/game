@@ -1,11 +1,205 @@
-= Praktische Aufgabenstellung: Jan Binder
+== Praktische Aufgabenstellung: Jan Binder
 
-= Back End: Datenbank und Datenbankverbindung
+== Back End: Datenbank und Datenbankverbindung
 
-== Begin
+=== Begin
 
 Zu aller erst wurden die allgemeinen Grundlagen, wie die Technologie, die verwendet wird, und das Design festgelegt. Auch die Datenbank, in der die entsprechenden Tabellen und Datensätze stehen soll, wurde vereinbart.
 
-== Grundlagen
+First of all the basics, like the technology we are using and the design are set. The database, in which all the tables and data sets are, is also appointed.
 
-Man braucht, um eine Datenbank und eine Datenbankverbindung zu erzeugen, ein gewisses Vorwissen. Hier werden SQL, JPA und Java von Nöten sein.
+=== Grundlagen
+
+Man braucht, um eine Datenbank und eine Datenbankverbindung zu erzeugen, ein gewisses Vorwissen. Hier werden SQL, JPA und Java von Nöten sein. Also wie das Programm mit der Datenbank kommuniziert und wie sogenannte Queries erstellt werden.
+
+==== SQL
+
+SQL is short for "Structured Query Language". It is used to insert, change and delete data sets or create or delete tables.
+
+.Beispielcode von SQL
+[source, SQL]
+----
+CREATE TABLE mitarbeiter (
+    id integer,
+    nachname text,
+    vorname text,
+    gehalt integer
+);
+
+
+INSERT INTO mitarbeiter (id, nachname, vorname, gehalt)
+VALUES (1, Mustermann, Max, 2000);
+
+
+
+SELECT * FROM mitarbeiter;
+
+----
+All this code does is it creates a new table called "mitarbeiter" which contains the columns "id", "nachname", "vorname" and "gehalt". Every column has its datatype next to it. Optionally there are constraints to the columns, such as "NOT NULL". which tells the database that this column cannot be empty or "UNIQUE", which means that a data set must be unique in this column.
+The next command is INSERT INTO. This code tells the database to write data into the table. First you need to set the table with all its columns and then the values.
+Last there is the "SELECT * FROM mitarbeiter;" command which  picks out every data set from the table "mitarbeiter". Further there is a possibility to only select a few specific data sets.
+
+==== JPA
+
+
+
+
+
+=== Getting Started
+
+
+
+
+
+
+
+
+
+==== Entities
+===== Kurs Entities
+
+.Kurs.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/Kurs.java[lines=17..36]
+//Getter, Setter
+----
+
+Here is the Kurs-Entity, it has the primary key "KursID", which helps to find a specific course from the table. 
+The table also has a column "titel" which is basically the title of this course. 
+It also has the constraint NOT NULL so if there is a new course there must be a title as well.
+The next column is the "link" it contains the links of the courses so the visitors can be redirected to the page with the explanation of the topic.
+This cannot be empty too. 
+The last column is "beschreibung", which is the description of the course. 
+This column can be empty, but it is not recommended since it helps the user specify which course contains what information.
+
+
+.KursBesuch.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursBesuch.java[lines=22..44]
+//Getter, Setter
+----
+
+The entity "KursBesuch" is a table, which splits the many-to-many relationship between "trainee" and "kurs".
+That means it has the PK of both tables as a foreign key and it also provides a column named "datum" which indicates the date the user has visited the course.
+
+
+===== Vorrausetzung Entities
+
+.Vorrausetzung.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/Vorraussetzung.java[lines=19..36]
+//Getter, Setter
+----
+
+
+
+
+
+.KursVorrausetzung.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursVorraussetzung.java[lines=18..35]
+//Getter, Setter
+----
+
+"KursVorraussetzung" is another entity which splits up a many-to-many relationship. 
+This time it is between "kurs" and "vorraussetzung". Since there is no column other than the two foreign keys and the primary key "KursVorraussetzID" this table has no function except as a middle table for "kurs" and "vorraussetzung".
+
+
+.QuizVorrausetzung.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/QuizVorraussetzung.java[lines=19..36]
+
+//Getter, Setter
+----
+
+
+
+
+===== Quiz Entities
+
+.Quiz.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Quiz.java[lines=19..36]
+
+//Getter, Setter
+----
+
+
+
+
+
+.Quizbeantwortung.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Quizbeantwortung.java[lines=21..39]
+
+
+//Getter, Setter
+----
+
+
+
+
+.Frage.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Frage.java[lines=21..43]
+
+//Getter, Setter
+----
+
+
+.Antwortmoeglichkeiten.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Antwortmoeglichkeiten.java[lines=20..40]
+
+//Getter, Setter
+----
+
+
+===== Trainee Entity
+
+.Trainee.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/Trainee.java[lines=19..41]
+
+//Getter, Setter
+----
+
+
+==== EJBs
+
+.KursEJB.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursEJB.java[lines=16..]
+----
+
+
+.FrageEJB.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/FrageEJB.java[lines=21..]
+----
+
+
+.QuizEJB.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/QuizEJB.java[lines=16..]
+----
+
+
+.TraineeEJB.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/TraineeEJB.java[lines=16..]
+----

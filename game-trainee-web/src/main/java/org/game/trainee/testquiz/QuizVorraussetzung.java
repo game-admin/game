@@ -41,6 +41,22 @@ public class QuizVorraussetzung implements Serializable{
     public void setQuizVorraussetzID(int QuizVorraussetzID) {
         this.QuizVorraussetzID = QuizVorraussetzID;
     }
+
+    public Quiz getQuiz() {
+        return quiz;
+    }
+
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
+    }
+
+    public Vorraussetzung getVorraussetzung() {
+        return vorraussetzung;
+    }
+
+    public void setVorraussetzung(Vorraussetzung vorraussetzung) {
+        this.vorraussetzung = vorraussetzung;
+    }
     
     
 }

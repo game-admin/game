@@ -72,4 +72,12 @@ public class Frage implements Serializable {
     public void setRichtig(boolean richtig) {
         this.richtig = richtig;
     }
+
+    public Quiz getQuiz() {
+        return quiz;
+    }
+
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
+    }
 }

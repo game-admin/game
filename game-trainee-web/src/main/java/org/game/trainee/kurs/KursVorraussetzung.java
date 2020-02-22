@@ -40,6 +40,22 @@ public class KursVorraussetzung implements Serializable {
     public void setKursVorraussetzID(int KursVorraussetzID) {
         this.KursVorraussetzID = KursVorraussetzID;
     }
+
+    public Kurs getKurs() {
+        return kurs;
+    }
+
+    public void setKurs(Kurs kurs) {
+        this.kurs = kurs;
+    }
+
+    public Vorraussetzung getVorraussetzung() {
+        return vorraussetzung;
+    }
+
+    public void setVorraussetzung(Vorraussetzung vorraussetzung) {
+        this.vorraussetzung = vorraussetzung;
+    }
     
     
 }

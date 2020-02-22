@@ -40,6 +40,8 @@ public class QuizEJB {
     }
     
     public List<Quiz> findByBeschreibung(String beschreibung) {
-        return em.createNamedQuery(Quiz.QUERY_FINDBY_BESCHREIBUNG, Quiz.class).setParameter("beschreibung", "%"+beschreibung+"%").getResultList();
+        return em.createNamedQuery(Quiz.QUERY_FINDBY_BESCHREIBUNG, Quiz.class)
+                .setParameter("beschreibung", "%"+beschreibung+"%")
+                .getResultList();
     }
 }
