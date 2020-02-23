@@ -1,11 +1,273 @@
-= Praktische Aufgabenstellung: Jan Binder
+== Praktische Aufgabenstellung: Jan Binder
 
-= Back End: Datenbank und Datenbankverbindung
+== Back End: Datenbank und Datenbankverbindung
 
-== Begin
+=== Begin
 
 Zu aller erst wurden die allgemeinen Grundlagen, wie die Technologie, die verwendet wird, und das Design festgelegt. Auch die Datenbank, in der die entsprechenden Tabellen und Datensätze stehen soll, wurde vereinbart.
 
-== Grundlagen
+First of all the basics, like the technology we are using and the design are set. The database, in which all the tables and data sets are, is also appointed.
 
-Man braucht, um eine Datenbank und eine Datenbankverbindung zu erzeugen, ein gewisses Vorwissen. Hier werden SQL, JPA und Java von Nöten sein.
+=== Grundlagen
+
+Man braucht, um eine Datenbank und eine Datenbankverbindung zu erzeugen, ein gewisses Vorwissen. Hier werden SQL, JPA und Java von Nöten sein. Also wie das Programm mit der Datenbank kommuniziert und wie sogenannte Queries erstellt werden.
+
+You need some foreknowledgement to build a database and a database connectivity. Knowlegde about SQL, JPA and Java is required. You need these languages to create queriesor to understand how the program communicates with the database.
+
+==== SQL
+
+SQL is short for "Structured Query Language". It is used to insert, change and delete data sets or create or delete tables.
+
+.Beispielcode von SQL
+[source, SQL]
+----
+CREATE TABLE mitarbeiter (
+    id integer,
+    nachname text,
+    vorname text,
+    gehalt integer
+);
+
+
+INSERT INTO mitarbeiter (id, nachname, vorname, gehalt)
+VALUES (1, Mustermann, Max, 2000);
+
+
+
+SELECT * FROM mitarbeiter;
+
+----
+All this code does is it creates a new table called "mitarbeiter" which contains the columns "id", "nachname", "vorname" and "gehalt". Every column has its datatype next to it. Optionally there are constraints to the columns, such as "NOT NULL". which tells the database that this column cannot be empty or "UNIQUE", which means that a data set must be unique in this column.
+The next command is INSERT INTO. This code tells the database to write data into the table. First you need to set the table with all its columns and then the values like shown.
+Last there is the "SELECT * FROM mitarbeiter;" command which picks out every data set from the table "mitarbeiter". Further there is a possibility to only select a few specific data sets.
+
+==== JPA
+
+
+
+
+
+=== Getting Started
+
+
+
+
+
+
+
+
+
+==== Entities
+===== Kurs Entities
+
+.Kurs.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/Kurs.java[lines=17..36]
+//Getter, Setter
+----
+
+Here is the Kurs-Entity, it has the primary key "KursID", which helps to find a specific course from the table. 
+The table also has a column "titel" which is basically the title of this course. 
+It also has the constraint NOT NULL so if there is a new course there must be a title as well.
+The next column is the "link" it contains the links of the courses so the visitors can be redirected to the page with the explanation of the topic.
+This cannot be empty too. 
+The last column is "beschreibung", which is the description of the course. 
+This column can be empty, but it is not recommended since it helps the user specify which course contains what information.
+
+
+.KursBesuch.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursBesuch.java[lines=22..44]
+//Getter, Setter
+----
+
+The entity "KursBesuch" is a table, which splits the many-to-many relationship between "trainee" and "kurs".
+That means it has the PK of both tables as a foreign key and it also provides a column named "datum" which indicates the date the user has visited the course.
+
+
+===== Vorausetzung Entities
+
+.Vorausetzung.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/Voraussetzung.java[lines=19..36]
+//Getter, Setter
+----
+
+
+
+
+
+.KursVorausetzung.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursVoraussetzung.java[lines=18..35]
+//Getter, Setter
+----
+
+The function of "KursVoraussetzung" is that a course can have a course or a quiz as a requirement to take this course. This table contains courses and their required quizzes or courses.
+
+
+"KursVoraussetzung" is another entity which splits up a many-to-many relationship. 
+This time it is between "kurs" and "voraussetzung". Since there is no column other than the two foreign keys and the primary key "KursVoraussetzID" this table has no function except as a middle table for "kurs" and "voraussetzung".
+
+
+.QuizVorausetzung.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/QuizVoraussetzung.java[lines=19..36]
+
+//Getter, Setter
+----
+
+This table has the same function as "KursVoraussetzung", but instead of courses with quizzes. So this table contains quizzes and their required courses or quizzes.
+
+
+===== Quiz Entities
+
+.Quiz.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Quiz.java[lines=19..36]
+
+//Getter, Setter
+----
+
+This is the table for all quizzes. It contains the "QID", which is the primary key, a title, a description and a reward. The title has a constraint called NOT NULL because every quiz must have a specification which topic it has, since the description is optional the title is the only differentiation between the quizzes.
+
+
+
+.Quizbeantwortung.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Quizbeantwortung.java[lines=21..39]
+
+
+//Getter, Setter
+----
+
+
+
+
+.Frage.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Frage.java[lines=21..40]
+
+//Getter, Setter
+----
+
+Every Quiz contains of many questions. These questions are stored in the table "Frage". Each question has a "FID", a "QID", so it can be ... to a quiz. A question also has the question itself, set points you get for each question.
+
+.Antwortmoeglichkeiten.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Antwortmoeglichkeiten.java[lines=20..40]
+
+//Getter, Setter
+----
+
+
+===== Trainee Entity
+
+.Trainee.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/Trainee.java[lines=19..41]
+
+//Getter, Setter
+----
+
+
+==== EJBs
+
+.KursEJB.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursEJB.java[lines=16..]
+----
+
+
+.FrageEJB.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/FrageEJB.java[lines=21..]
+----
+
+
+.QuizEJB.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/QuizEJB.java[lines=16..]
+----
+
+
+.TraineeEJB.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/TraineeEJB.java[lines=16..]
+----
+
+==== Persistence.xml
+
+.persistence.xml
+[source, XML]
+----
+include::../../game-trainee-web/src/main/resources/META-INF/persistence.xml[]
+----
+
+The "persistence.xml" is used to configure many things, such as the source of the scipt used for dropping, if the database should always drop and then create all tables, and much more.
+
+==== SQL-Files
+In this chapter I will introduce all SQL-files used in this project int he order they are when the program is started.
+
+
+.dropSeqSQL.sql
+[source, SQL]
+----
+include::../../game-trainee-web/src/main/resources/META-INF/dropSeqSQL.sql[]
+----
+
+Before everything is created, you need to make sure that there is no existing sequence, because otherwise there would be errors when creating the sequences. This script drops every sequence at the start.
+
+.dropSQL.sql
+[source, SQL]
+----
+include::../../game-trainee-web/src/main/resources/META-INF/dropSQL.sql[]
+----
+
+This script has the function of dropping every table before creating so there are no errors. 
+
+.createSeqSQL.sql
+[source, SQL]
+----
+include::../../game-trainee-web/src/main/resources/META-INF/createSeqSQL.sql[lines=1..10]
+----
+
+This SQL-file is used to create all the sequences for the primary keys of the tables, so it automatically goes to the next number whenever a new data row is created. I only included one sequence because it repeats for every table.
+
+.createSQL.sql
+[source, SQL]
+----
+include::../../game-trainee-web/src/main/resources/META-INF/createSQL.sql[]
+----
+
+This file is used to create all the tables we are using. It produces every table with its associated columns. 
+
+.alterTableSQL.sql
+[source, SQL]
+----
+include::../../game-trainee-web/src/main/resources/META-INF/alterTableSQL.sql[]
+----
+
+This file is used to give all the tables its associated primary keys and foreign keys. This is not done in the "createSQL" file, because it would generate errors. 
+
+.insertSQL.sql
+[source, SQL]
+----
+include::../../game-trainee-web/src/main/resources/META-INF/insertSQL.sql[]
+----
+
+At last the "insertSQL" script is used to insert all the data we want into the belonging table. the order of the commands is very important because, if you insert "antwortmoeglichkeiten" at first there would be no existing matching "FNR" or with "frage " no fitting "QID".

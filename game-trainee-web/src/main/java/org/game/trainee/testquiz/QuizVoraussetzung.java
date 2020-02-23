@@ -15,31 +15,47 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import org.game.trainee.kurs.Vorraussetzung;
+import org.game.trainee.kurs.Voraussetzung;
 
 /**
  *
  * @author Jan
  */
 @Entity
-@Table(name = "quizvorraussetzung", schema = "game")
-public class QuizVorraussetzung implements Serializable{
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="QUIZVORRAUSSETZID")
-    private int QuizVorraussetzID;
+@Table(name = "quizvoraussetzung", schema = "game")
+public class QuizVoraussetzung implements Serializable{
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name="QUIZVORAUSSETZID")
+    private int QuizVoraussetzID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="QID")
     private Quiz quiz;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="VorraussetzID")
-    private Vorraussetzung vorraussetzung;
+    @JoinColumn(name="VoraussetzID")
+    private Voraussetzung voraussetzung;
 
     public int getQuizVorraussetzID() {
-        return QuizVorraussetzID;
+        return QuizVoraussetzID;
     }
 
     public void setQuizVorraussetzID(int QuizVorraussetzID) {
-        this.QuizVorraussetzID = QuizVorraussetzID;
+        this.QuizVoraussetzID = QuizVorraussetzID;
+    }
+
+    public Quiz getQuiz() {
+        return quiz;
+    }
+
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
+    }
+
+    public Voraussetzung getVoraussetzung() {
+        return voraussetzung;
+    }
+
+    public void setVorraussetzung(Voraussetzung voraussetzung) {
+        this.voraussetzung = voraussetzung;
     }
     
     

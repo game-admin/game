@@ -1,11 +1,5 @@
 
-CREATE SEQUENCE game."antwort_GEWAEHLTEANTWORTID_seq"
-    INCREMENT 1
-    START 1
-    MINVALUE 1
-    MAXVALUE 9223372036854775807
-    CACHE 1;
-
+CREATE SCHEMA IF NOT EXISTS "game" AUTHORIZATION darbeit;
 
 
 CREATE SEQUENCE game."antwortmoeglichkeiten_ANTWID_seq"
@@ -41,7 +35,7 @@ CREATE SEQUENCE game."kursbesuch_KURSBESUCHID_seq"
     CACHE 1;
 
 
-CREATE SEQUENCE game."kursvorraussetzung_KURSVORRAUSSETZID_seq"
+CREATE SEQUENCE game."kursvoraussetzung_KURSVORAUSSETZID_seq"
     INCREMENT 1
     START 1
     MINVALUE 1
@@ -66,7 +60,7 @@ CREATE SEQUENCE game."quizbeantwortung_QBEID_seq"
     CACHE 1;
 
 
-CREATE SEQUENCE game."quizvorraussetzung_QUIZVORRAUSSETZID_seq"
+CREATE SEQUENCE game."quizvoraussetzung_QUIZVORAUSSETZID_seq"
     INCREMENT 1
     START 1
     MINVALUE 1
@@ -83,7 +77,7 @@ CREATE SEQUENCE game."trainee_MITID_seq"
     CACHE 1;
 
 
-CREATE SEQUENCE game."vorraussetzung_VORRAUSSETZID_seq"
+CREATE SEQUENCE game."voraussetzung_VORAUSSETZID_seq"
     INCREMENT 1
     START 1
     MINVALUE 1

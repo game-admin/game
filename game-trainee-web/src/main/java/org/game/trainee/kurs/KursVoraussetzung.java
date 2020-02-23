@@ -6,7 +6,6 @@
 package org.game.trainee.kurs;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,54 +15,30 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import org.game.trainee.traineeview.Trainee;
 
 /**
  *
  * @author Jan
  */
-
 @Entity
-@Table(name = "kursbesuch", schema = "game")
-public class KursBesuch implements Serializable {
+@Table(name = "kursvoraussetzung", schema = "game")
+public class KursVoraussetzung implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name="KURSBESUCHID")
-    private int KursBesuchID;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="MitID")
-    @NotNull
-    private Trainee trainee;
+    @Column(name="KURSVORAUSSETZID")
+    private int KursVoraussetzID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="KursID")
-    @NotNull
     private Kurs kurs;
-    @NotNull
-    @Column(name="DATUM")
-    private Date datum;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="VoraussetzID")
+    private Voraussetzung voraussetzung;
 
-    public int getKursBesuchID() {
-        return KursBesuchID;
+    public int getKursVoraussetzID() {
+        return KursVoraussetzID;
     }
 
-    public void setKursBesuchID(int KursBesuchID) {
-        this.KursBesuchID = KursBesuchID;
-    }
-
-    public Date getDatum() {
-        return datum;
-    }
-
-    public void setDatum(Date datum) {
-        this.datum = datum;
-    }
-
-    public Trainee getTrainee() {
-        return trainee;
-    }
-
-    public void setTrainee(Trainee trainee) {
-        this.trainee = trainee;
+    public void setKursVoraussetzID(int KursVoraussetzID) {
+        this.KursVoraussetzID = KursVoraussetzID;
     }
 
     public Kurs getKurs() {
@@ -72,6 +47,14 @@ public class KursBesuch implements Serializable {
 
     public void setKurs(Kurs kurs) {
         this.kurs = kurs;
+    }
+
+    public Voraussetzung getVoraussetzung() {
+        return voraussetzung;
+    }
+
+    public void setVoraussetzung(Voraussetzung voraussetzung) {
+        this.voraussetzung = voraussetzung;
     }
     
     

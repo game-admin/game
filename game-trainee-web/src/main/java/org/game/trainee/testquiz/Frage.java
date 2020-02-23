@@ -26,7 +26,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "frage", schema = "game")
 public class Frage implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int FID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="QID")
@@ -37,9 +37,6 @@ public class Frage implements Serializable {
     @NotNull
     @Column(name="PUNKTEZAHL")
     private int punktezahl;
-    @NotNull
-    @Column(name="RICHTIGEANTWORT")
-    private boolean richtig;
 
     public int getFID() {
         return FID;
@@ -65,11 +62,11 @@ public class Frage implements Serializable {
         this.punktezahl = Punktezahl;
     }
 
-    public boolean isRichtig() {
-        return richtig;
+    public Quiz getQuiz() {
+        return quiz;
     }
 
-    public void setRichtig(boolean richtig) {
-        this.richtig = richtig;
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
     }
 }

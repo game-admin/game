@@ -25,7 +25,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "quiz", schema = "game")
 public class Quiz implements Serializable {
     public static final String QUERY_FINDBY_BESCHREIBUNG="Quiz.findByBeschreibung";
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int QID;
     @NotNull @Column(name = "TITEL")
     private String titel;

@@ -23,10 +23,10 @@ import org.game.trainee.testquiz.Quiz;
  */
 
 @Entity
-@Table(name="vorraussetzung", schema = "game")
-public class Vorraussetzung implements Serializable {
-    @Id @GeneratedValue @Column(name="VORRAUSSETZID")
-    private int VorraussetzID;
+@Table(name="voraussetzung", schema = "game")
+public class Voraussetzung implements Serializable {
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE) @Column(name="VORAUSSETZID")
+    private int VoraussetzID;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="KursID")
     private Kurs kurs;
@@ -34,12 +34,28 @@ public class Vorraussetzung implements Serializable {
     @JoinColumn(name="QID")
     private Quiz quiz;
 
-    public int getVorraussetzID() {
-        return VorraussetzID;
+    public int getVoraussetzID() {
+        return VoraussetzID;
     }
 
-    public void setVorraussetzID(int VorraussetzID) {
-        this.VorraussetzID = VorraussetzID;
+    public void setVoraussetzID(int VoraussetzID) {
+        this.VoraussetzID = VoraussetzID;
+    }
+
+    public Kurs getKurs() {
+        return kurs;
+    }
+
+    public void setKurs(Kurs kurs) {
+        this.kurs = kurs;
+    }
+
+    public Quiz getQuiz() {
+        return quiz;
+    }
+
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
     }
     
 }
