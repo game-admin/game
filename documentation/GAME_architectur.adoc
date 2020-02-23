@@ -56,3 +56,13 @@ include::chapters/Theorie_Eric.adoc[]
 <<<<
 //Praxis Eric
 include::chapters/Praxis_Eric.adoc[]
+
+<<<<
+//Theorie Jan
+include::chapters/Theorie_Jan.adoc[]
+
+<<<<
+//Praxis Jan
+include::chapters/Praxis_Jan.adoc[]
+
+

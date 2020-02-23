@@ -18,7 +18,7 @@
         <p>
             Hier siehst du eine Auflistung aller Trainees, mit ihren Nicknames und ihren Fortschritt.
         </p>
-        <p:dataTable var="trainee" value="#{traineeView.trainees}">
+        <p:dataTable var="trainee" value="#{traineeController.trainees}">
             <p:column headerText="Name">
                 <h:outputText value="#{trainee.name}"></h:outputText>
             </p:column>

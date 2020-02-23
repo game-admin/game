@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.game.trainee.traineeview;
 
 import java.io.Serializable;
@@ -18,7 +13,7 @@ import javax.inject.Named;
  */
 @Named
 @ViewScoped
-public class TraineeView implements Serializable {
+public class TraineeController implements Serializable {
     private List<Trainee> trainees;
     private Trainee selectedTrainee;
     

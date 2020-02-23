@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.game.trainee.testquiz;
-
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -50,38 +44,6 @@ public class TestQuizController implements Serializable {
         results = new ArrayList<>();
         ricounter = 0;
     }
- 
-    public List<TestQuiz> getQuiz() {
-        return quiz;
-    }
- 
-    public void setSpeicher(TestQuizSpeicher speicher) {
-        this.speicher = speicher;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public int getRicounter() {
-        return ricounter;
-    }
-
-    public void setRicounter(int ricounter) {
-        this.ricounter = ricounter;
-    }
-
-    public String getEmblem() {
-        return emblem;
-    }
-
-    public void setEmblem(String emblem) {
-        this.emblem = emblem;
-    }
     
     public String checkAnswersSingleChoice() {
         evaluateScoreRadio();
@@ -95,28 +57,6 @@ public class TestQuizController implements Serializable {
     
     public void evaluateScoreMultiple() {
         List<Integer> falsche = new ArrayList<>();
-        /* int j;
-        for(int i=0; i<quiz.size(); i++) {
-            for(j=0; j<quiz.get(i).antworten.length; j++) {
-                if(quiz.get(i).frage.get(j).richtig && quiz.get(i).buttons[j] != 1) 
-                    j=1000;
-                if(!quiz.get(i).frage.get(j).richtig && quiz.get(i).buttons[j] != 0)
-                    j=1000; 
-            }
-            if(j<500) {
-                score+=10;
-                ricounter++;
-                falsche.add(999);
-            } else {
-                falsche.add(i);
-            }
-        }
-           if(quiz.get(i).buttons[0] && quiz.get(i).indexrichtig == 0 || quiz.get(i).buttons[1] && quiz.get(i).indexrichtig == 1) {              
-                score+=10;  
-                ricounter++;
-            } else {
-                falsche.add(i);
-            } */
         int richtige=0;  
         for(int i=0; i<quiz.size(); i++ ) {
             List<Integer> indexrichtig = umwandler(quiz.get(i).indexrichtig);
@@ -161,14 +101,6 @@ public class TestQuizController implements Serializable {
         //hier drin sollt auch nach Vorraussetzungen geschaut werden, wenn diese nicht erfüllt sind, kommt eine Fehlermeldung
         return "takequiz.xhtml";
     }
-
-    public int getQid() {
-        return qid;
-    }
-
-    public void setQid(int qid) {
-        this.qid = qid;
-    }
     
     public List<Integer> umwandler(int indexrichtig) {
         List<Integer> liste = new ArrayList<>();
@@ -191,6 +123,10 @@ public class TestQuizController implements Serializable {
             }
         } 
     }
+    
+    public String getQuizBezeichnung() {
+        return quizbean.find(1).getBeschreibung();
+    }
 
     public List<Results> getResults() {
         return results;
@@ -200,8 +136,43 @@ public class TestQuizController implements Serializable {
         this.results = results;
     }
     
-    public String getQuizBezeichnung() {
-        return quizbean.find(1).getBeschreibung();
+    public List<TestQuiz> getQuiz() {
+        return quiz;
+    }
+ 
+    public void setSpeicher(TestQuizSpeicher speicher) {
+        this.speicher = speicher;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public int getRicounter() {
+        return ricounter;
+    }
+
+    public void setRicounter(int ricounter) {
+        this.ricounter = ricounter;
+    }
+
+    public String getEmblem() {
+        return emblem;
+    }
+
+    public void setEmblem(String emblem) {
+        this.emblem = emblem;
     }
     
+    public int getQid() {
+        return qid;
+    }
+
+    public void setQid(int qid) {
+        this.qid = qid;
+    }
 }

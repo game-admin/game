@@ -16,7 +16,7 @@
     <ui:define name="content">
         <h1 align="center">Trainers</h1>
         <h:form id="trainerform">
-            <p:carousel value="#{trainerView.trainers}" headerText="Trainers" var="trainer" itemStyle="text-align:center" responsive="true">
+            <p:carousel value="#{trainerController.trainers}" headerText="Trainers" var="trainer" itemStyle="text-align:center" responsive="true">
                 <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
                     <f:facet name="header">
                         <p:graphicImage library="img" name="trainer.jpg"/> 

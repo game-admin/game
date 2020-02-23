@@ -1,3 +1,4 @@
+
 == Abstract (Deutsche Version)
 Der Ziel der folgenden Diplomarbeit war, eine Lernplattform für Mitarbeiter einer Softwarefirma zu entwicklen. Anfangs haben wir die verschiedenen Arten wie Menschen lernen genauer betrachtet, und diese zu Lerntypen zusammengefasst. (Vester, Pask, Dunn,) Darüber sind wir auf das Thema "Wissensmanagement" näher eingegangen, und haben identifiziert, was Menschen mit ihrem Wissen anstellen. Diese Beiden Fachgebiete haben wir in unsere Website einfließen lassen, und diese so aufgebaut, dass sich Mitarbeiter Kurse anschauen können und mit dem daraus gewonnenen Wissen Quizze beantworten sollen. Das besondere hierbei ist, dass jeder "Spieler" Punkte und Embleme für richtig beantwortete Fragen bekommt. Dadurch können sich diese miteinander vergleichen und anspornen die meisten Punkte zu gewinnen. Somit ist ein spielerischer Faktor inkludiert, der dem Lernerfolg hilft.
 
