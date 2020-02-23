@@ -12,6 +12,8 @@ First of all the basics, like the technology we are using and the design are set
 
 Man braucht, um eine Datenbank und eine Datenbankverbindung zu erzeugen, ein gewisses Vorwissen. Hier werden SQL, JPA und Java von Nöten sein. Also wie das Programm mit der Datenbank kommuniziert und wie sogenannte Queries erstellt werden.
 
+You need some foreknowledgement to build a database and a database connectivity. Knowlegde about SQL, JPA and Java is required. You need these languages to create queriesor to understand how the program communicates with the database.
+
 ==== SQL
 
 SQL is short for "Structured Query Language". It is used to insert, change and delete data sets or create or delete tables.
@@ -36,8 +38,8 @@ SELECT * FROM mitarbeiter;
 
 ----
 All this code does is it creates a new table called "mitarbeiter" which contains the columns "id", "nachname", "vorname" and "gehalt". Every column has its datatype next to it. Optionally there are constraints to the columns, such as "NOT NULL". which tells the database that this column cannot be empty or "UNIQUE", which means that a data set must be unique in this column.
-The next command is INSERT INTO. This code tells the database to write data into the table. First you need to set the table with all its columns and then the values.
-Last there is the "SELECT * FROM mitarbeiter;" command which  picks out every data set from the table "mitarbeiter". Further there is a possibility to only select a few specific data sets.
+The next command is INSERT INTO. This code tells the database to write data into the table. First you need to set the table with all its columns and then the values like shown.
+Last there is the "SELECT * FROM mitarbeiter;" command which picks out every data set from the table "mitarbeiter". Further there is a possibility to only select a few specific data sets.
 
 ==== JPA
 
@@ -208,5 +210,64 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/QuizEJB.
 include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/TraineeEJB.java[lines=16..]
 ----
 
+==== Persistence.xml
+
+.persistence.xml
+[source, XML]
+----
+include::../../game-trainee-web/src/main/resources/META-INF/persistence.xml[]
+----
+
+The "persistence.xml" is used to configure many things, such as the source of the scipt used for dropping, if the database should always drop and then create all tables, and much more.
+
+==== SQL-Files
+In this chapter I will introduce all SQL-files used in this project int he order they are when the program is started.
 
 
+.dropSeqSQL.sql
+[source, SQL]
+----
+include::../../game-trainee-web/src/main/resources/META-INF/dropSeqSQL.sql[]
+----
+
+Before everything is created, you need to make sure that there is no existing sequence, because otherwise there would be errors when creating the sequences. This script drops every sequence at the start.
+
+.dropSQL.sql
+[source, SQL]
+----
+include::../../game-trainee-web/src/main/resources/META-INF/dropSQL.sql[]
+----
+
+This script has the function of dropping every table before creating so there are no errors. 
+
+.createSeqSQL.sql
+[source, SQL]
+----
+include::../../game-trainee-web/src/main/resources/META-INF/createSeqSQL.sql[lines=1..10]
+----
+
+This SQL-file is used to create all the sequences for the primary keys of the tables, so it automatically goes to the next number whenever a new data row is created. I only included one sequence because it repeats for every table.
+
+.createSQL.sql
+[source, SQL]
+----
+include::../../game-trainee-web/src/main/resources/META-INF/createSQL.sql[]
+----
+
+This file is used to create all the tables we are using. It produces every table with its associated columns. 
+
+.alterTableSQL.sql
+[source, SQL]
+----
+include::../../game-trainee-web/src/main/resources/META-INF/alterTableSQL.sql[]
+----
+
+This file is used to give all the tables its associated primary keys and foreign keys. This is not done in the "createSQL" file, because it would generate errors. 
+
+.insertSQL.sql
+[source, SQL]
+----
+include::../../game-trainee-web/src/main/resources/META-INF/insertSQL.sql[]
+----
+
+At last the "insertSQL" script is used to insert all the data we want into the belonging table. the order of the commands is very important because, if you insert "antwortmoeglichkeiten" at first there would be no existing matching "FNR" or with "frage " no fitting "QID".
