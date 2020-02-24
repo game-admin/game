@@ -1,0 +1,5 @@
+== Division of Tasks
+
+Eric Haneder ist für die Funktion und Gestaltung der Website zuständig. Er ist dafür verantwortlich, dass die Homepage übersichtlich und leicht zu bedienen ist. Er programmiert die Website auf Basis von _Java Enterprise Edition, _PrimeFaces_ und _HTML_, wie von der Firma gewünscht.
+
+Jan Binder ...
