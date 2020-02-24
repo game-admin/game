@@ -25,7 +25,7 @@ import org.game.trainee.traineeview.Trainee;
 @Entity
 @Table(name = "quizbeantwortung", schema = "game")
 public class Quizbeantwortung implements Serializable {
-    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int QBEID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="QID")

@@ -22,7 +22,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "kurs", schema = "game")
 public class Kurs implements Serializable {
-    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="KURSID")
     private int KursID;
     @NotNull

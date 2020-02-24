@@ -2,6 +2,7 @@
 CREATE SCHEMA IF NOT EXISTS "game" AUTHORIZATION darbeit;
 
 
+
 CREATE SEQUENCE game."antwortmoeglichkeiten_ANTWID_seq"
     INCREMENT 1
     START 1
@@ -83,3 +84,5 @@ CREATE SEQUENCE game."voraussetzung_VORAUSSETZID_seq"
     MINVALUE 1
     MAXVALUE 9223372036854775807
     CACHE 1;
+
+

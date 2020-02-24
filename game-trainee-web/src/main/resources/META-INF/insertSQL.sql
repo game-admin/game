@@ -1,6 +1,6 @@
 
-INSERT INTO game.trainee ("MITID", "NAME", "VORNAME", "NICKNAME", "ABTEILUNG") VALUES (2, 'Haneder', 'Eric', 'ericbensi', NULL);
 INSERT INTO game.trainee ("MITID", "NAME", "VORNAME", "NICKNAME", "ABTEILUNG") VALUES (1, 'Binder', 'Jan', 'Syreax', NULL);
+INSERT INTO game.trainee ("MITID", "NAME", "VORNAME", "NICKNAME", "ABTEILUNG") VALUES (2, 'Haneder', 'Eric', 'ericbensi', NULL);
 INSERT INTO game.trainee ("MITID", "NAME", "VORNAME", "NICKNAME", "ABTEILUNG") VALUES (3, 'Saliger', 'Alex', 'SaAlexX_1010', NULL);
 INSERT INTO game.trainee ("MITID", "NAME", "VORNAME", "NICKNAME", "ABTEILUNG") VALUES (4, 'Wurst', 'Alexander', 'wursti', NULL);
 

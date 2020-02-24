@@ -24,7 +24,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "trainee", schema = "game")
 public class Trainee implements Serializable {
-    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="MITID")
     private int MitID;
     @NotNull @Column(name="VORNAME")
