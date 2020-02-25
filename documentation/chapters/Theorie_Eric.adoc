@@ -7,7 +7,13 @@ Everyone has to learn, both actively and passively. Whether at school or in prof
 
 _(vgl. Selbstreguliertes Lernen in der dualen Ausbildung - Lerntypen und Bedingungen, Johannes Rosendahl, 2010)_
 
-There are many people who have tried to explain the process behind learning, or to classify different learning preferences and learning types. I will discuss these classifications in more detail below.
+=== Physiological structures of learning 
+Regardless of the theoretical approach to learning, it is true that learning is linked to the ability to modify the central nervous system (CNS) (Birbaumer & Schmidt 1996, 2006). The central nervous system consists of the brain and spinal cord, whose impulse-transmitting cells (neurons) receive and process signals from the peripheral nervous system and generate and transmit signals for the regulation of organs such as muscles. 
+
+Despite the large amount of signals that are constantly received by the sense organs from the environment and transmitted to the CNS, the number of connections between the peripheral nervous system and the CNS is relatively small. Most of the estimated 100 billion neurons (Goldstein 1997, S. 11) serve to process information (pattern recognition, linking), they receive their input from cortical neurons and deliver their output to other cortical neurons.
+_(vgl. Selbstreguliertes Lernen in der dualen Ausbildung - Lerntypen und Bedingungen, Johannes Rosendahl, 2010, S.22)_
+
+There are many people who have tried to classify different learning preferences and learning types. I will discuss these classifications in more detail below.
 
 === Learning type classification according to Vester
 
@@ -97,7 +103,7 @@ In 1984 David Kolb took a completely different approach to classifying learning 
 (orthogonal -> two straight lines are called orthogonal if they enclose a 90 degree angle)
 The following figure shows the dimensions:
 
-image::img/dimensions.png[Learning styles according to Kolb]
+image::../img/dimensions.png[Learning styles according to Kolb]
 
 Quelle (https://selfdirectedlearning.webnode.es/learning-styles-by-kolb/; letzter Zugriff 28.01.2020)
 
@@ -123,6 +129,9 @@ Niegemann and Hofer (1997) or Büser (2003) define that in self-directed learnin
 
 _(vgl. Selbstreguliertes Lernen in der dualen Ausbildung - Lerntypen und Bedingungen, Johannes Rosendahl, 2010)_
 
+Beim selbstregulierten Lernen spielt die eigene Motivation eine große Rolle. Hierbei kann die Bildung von Zielintentionen(Lernzielen) helfen. Die Wahl des Lernziels muss aber nicht zwingend selbstbestimmt erfolgen. 
+
+image:../img/dipl1.pdf[page=1] 
 
 
 

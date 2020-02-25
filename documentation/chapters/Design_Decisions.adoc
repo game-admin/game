@@ -5,7 +5,6 @@
 
 This chapter includes all decisions, the diploma team had to make. The following decisions are written in the link:https://adr.github.io/[Lightweight Architecture Decision Records]-format.
 
-<<<<
 include::../decisions/ADR001-BuildingFromScratch.adoc[]
 
 <<<<
