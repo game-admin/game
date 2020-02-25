@@ -7,6 +7,7 @@ package org.game.trainee.kurs;
 
 import java.io.Serializable;
 import java.net.URL;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,9 +23,9 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "kurs", schema = "game")
 public class Kurs implements Serializable {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
     @Column(name="KURSID")
-    private int KursID;
+    private String KursID = UUID.randomUUID().toString();
     @NotNull
     @Column(name="TITEL")
     private String titel;
@@ -34,11 +35,11 @@ public class Kurs implements Serializable {
     @Column(name="BESCHREIBUNG")
     private String beschreibung;
 
-    public int getKursID() {
+    public String getKursID() {
         return KursID;
     }
 
-    public void setKursID(int KursID) {
+    public void setKursID(String KursID) {
         this.KursID = KursID;
     }
 

@@ -7,6 +7,7 @@ package org.game.trainee.testquiz;
 
 import java.io.Serializable;
 import java.sql.Blob;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,8 +26,8 @@ import javax.validation.constraints.NotNull;
 @Table(name = "quiz", schema = "game")
 public class Quiz implements Serializable {
     public static final String QUERY_FINDBY_BESCHREIBUNG="Quiz.findByBeschreibung";
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    private int QID;
+    @Id @Column(name = "QID")
+    private String QID = UUID.randomUUID().toString();
     @NotNull @Column(name = "TITEL")
     private String titel;
     @Column(name = "BESCHREIBUNG")
@@ -34,11 +35,11 @@ public class Quiz implements Serializable {
     @NotNull @Column(name = "REWARD")
     private Blob reward;
 
-    public int getQID() {
+    public String getQID() {
         return QID;
     }
 
-    public void setQID(int QID) {
+    public void setQID(String QID) {
         this.QID = QID;
     }
 

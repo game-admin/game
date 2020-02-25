@@ -8,6 +8,7 @@ package org.game.trainee.traineeview;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,9 +25,9 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "trainee", schema = "game")
 public class Trainee implements Serializable {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
     @Column(name="MITID")
-    private int MitID;
+    private String MitID = UUID.randomUUID().toString();
     @NotNull @Column(name="VORNAME")
     private String vorname;
     @NotNull @Column(name="NACHNAME")
@@ -55,11 +56,11 @@ public class Trainee implements Serializable {
         this.abteilung=abteilung;
     }
 
-    public int getMitID() {
+    public String getMitID() {
         return MitID;
     }
 
-    public void setMitID(int MitID) {
+    public void setMitID(String MitID) {
         this.MitID = MitID;
     }
 

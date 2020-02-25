@@ -6,6 +6,7 @@
 package org.game.trainee.kurs;
 
 import java.io.Serializable;
+import java.util.UUID;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,8 +26,8 @@ import org.game.trainee.testquiz.Quiz;
 @Entity
 @Table(name="voraussetzung", schema = "game")
 public class Voraussetzung implements Serializable {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO) @Column(name="VORAUSSETZID")
-    private int VoraussetzID;
+    @Id @Column(name="VORAUSSETZID")
+    private String VoraussetzID = UUID.randomUUID().toString();
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="KursID")
     private Kurs kurs;
@@ -34,11 +35,11 @@ public class Voraussetzung implements Serializable {
     @JoinColumn(name="QID")
     private Quiz quiz;
 
-    public int getVoraussetzID() {
+    public String getVoraussetzID() {
         return VoraussetzID;
     }
 
-    public void setVoraussetzID(int VoraussetzID) {
+    public void setVoraussetzID(String VoraussetzID) {
         this.VoraussetzID = VoraussetzID;
     }
 

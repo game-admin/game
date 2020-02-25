@@ -6,6 +6,7 @@
 package org.game.trainee.testquiz;
 
 import java.io.Serializable;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -24,9 +25,9 @@ import org.game.trainee.kurs.Voraussetzung;
 @Entity
 @Table(name = "quizvoraussetzung", schema = "game")
 public class QuizVoraussetzung implements Serializable{
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
     @Column(name="QUIZVORAUSSETZID")
-    private int QuizVoraussetzID;
+    private String QuizVoraussetzID = UUID.randomUUID().toString();
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="QID")
     private Quiz quiz;
@@ -34,11 +35,11 @@ public class QuizVoraussetzung implements Serializable{
     @JoinColumn(name="VoraussetzID")
     private Voraussetzung voraussetzung;
 
-    public int getQuizVorraussetzID() {
+    public String getQuizVorraussetzID() {
         return QuizVoraussetzID;
     }
 
-    public void setQuizVorraussetzID(int QuizVorraussetzID) {
+    public void setQuizVorraussetzID(String QuizVorraussetzID) {
         this.QuizVoraussetzID = QuizVorraussetzID;
     }
 

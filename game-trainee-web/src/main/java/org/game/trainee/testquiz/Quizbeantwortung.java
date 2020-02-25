@@ -6,6 +6,7 @@
 package org.game.trainee.testquiz;
 
 import java.io.Serializable;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -25,8 +26,8 @@ import org.game.trainee.traineeview.Trainee;
 @Entity
 @Table(name = "quizbeantwortung", schema = "game")
 public class Quizbeantwortung implements Serializable {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    private int QBEID;
+    @Id @Column(name = "QBEID")
+    private String QBEID = UUID.randomUUID().toString();
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="QID")
     private Quiz quiz;
@@ -37,11 +38,11 @@ public class Quizbeantwortung implements Serializable {
     @Column(name="ERREICHTEPUNKTE")
     private int erreichtePunkte;
 
-    public int getQBEID() {
+    public String getQBEID() {
         return QBEID;
     }
 
-    public void setQBEID(int QBEID) {
+    public void setQBEID(String QBEID) {
         this.QBEID = QBEID;
     }
 

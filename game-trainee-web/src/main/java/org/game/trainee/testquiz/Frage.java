@@ -6,6 +6,7 @@
 package org.game.trainee.testquiz;
 
 import java.io.Serializable;
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -26,8 +27,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "frage", schema = "game")
 public class Frage implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int FID;
+    private String FID = UUID.randomUUID().toString();
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="QID")
     private Quiz quiz;
@@ -38,11 +38,11 @@ public class Frage implements Serializable {
     @Column(name="PUNKTEZAHL")
     private int punktezahl;
 
-    public int getFID() {
+    public String getFID() {
         return FID;
     }
 
-    public void setId(int FID) {
+    public void setId(String FID) {
         this.FID = FID;
     }
 
