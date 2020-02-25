@@ -1,5 +1,37 @@
 == Theoretische Aufgabenstellung: Jan Binder
 
 == Knowledge management
-
 === Knowledge
+
+Knowledge is omnipresent whereever we go. Everyone around has more or less knowledge about every kind of topic.
+
+The definition of knowledge is a problem since the early ages. Philosophers like Aristoteles or Platon, who lived ~400 years before christ, worried about what knowledge really is. It is connected to the search of truth. The approach of Platon says that knowledge is acquired by means of deduction, the absolut truth develops through thinking logically. Aristoteles opinion is, that the sensory perception is the only source of insight. The next assumption to this topic wanted to include both approaches and said it is a combination of both. Till now there is only an agreement of the fact, that knowledge is not static and not the absolut truth.
+
+_(vgl. Wissensmanagement in der Schulentwicklung-Theoretische Analyse und empirische Exploratio aus systematischer Sicht - Definitionsproblematik, Kaja Heitmann, 2012)_
+
+=== Knowledge management in context of the knowlegde socitey
+
+
+
+
+
+
+=== Knowledge management models
+
+
+
+=== Knowledge management methods and tools
+
+==== Repertory-Grid-Technique
+
+This technique is used to acquire knowledge and represent it graphically. People often use mental models to solve problems in their everyday life. These models can be collected and presented transparent with this technique.
+
+
+
+image::../img/RepertoryGridImage.png[]
+
+==== Critical-Incident-Technique (CIT)
+
+
+
+==== Balanced Scorecard (BSC)
