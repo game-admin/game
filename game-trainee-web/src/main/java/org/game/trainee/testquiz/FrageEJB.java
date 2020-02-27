@@ -31,6 +31,11 @@ public class FrageEJB {
         return em.find(Frage.class, FID);
     }
     
+    public List<Frage> findAll() {
+        return em.createNamedQuery(Frage.QUERY_FINDALL, Frage.class)
+                .getResultList();
+    }
+    
     public void update(Frage f) {
         em.merge(f);
     }

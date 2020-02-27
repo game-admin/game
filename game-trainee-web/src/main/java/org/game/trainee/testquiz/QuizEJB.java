@@ -28,6 +28,11 @@ public class QuizEJB {
         return em.find(Quiz.class, QID);
     }
     
+    public List<Quiz> findAll() {
+        return em.createNamedQuery(Quiz.QUERY_FINDALL, Quiz.class)
+                .getResultList();
+    }
+    
     public void update(Quiz q) {
         em.merge(q);
     }

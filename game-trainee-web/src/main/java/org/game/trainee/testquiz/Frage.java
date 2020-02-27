@@ -6,6 +6,7 @@
 package org.game.trainee.testquiz;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -25,7 +27,9 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "frage", schema = "game")
+@NamedQuery(name = "QUERY_FINDALL", query = "SELECT frage FROM Frage frage")
 public class Frage implements Serializable {
+    public static final String QUERY_FINDALL = "Frage.findAll";
     @Id
     private String FID;
     @ManyToOne(fetch = FetchType.LAZY)
@@ -37,6 +41,9 @@ public class Frage implements Serializable {
     @NotNull
     @Column(name="PUNKTEZAHL")
     private int punktezahl;
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name="ANTWID")
+    private List<Antwortmoeglichkeiten> antworten;
     
     public Frage() {
         
@@ -77,4 +84,14 @@ public class Frage implements Serializable {
     public void setQuiz(Quiz quiz) {
         this.quiz = quiz;
     }
+
+    public List<Antwortmoeglichkeiten> getAntworten() {
+        return antworten;
+    }
+
+    public void setAntworten(List<Antwortmoeglichkeiten> antworten) {
+        this.antworten = antworten;
+    }
+    
+    
 }

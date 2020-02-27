@@ -19,7 +19,7 @@ import org.game.trainee.traineeview.TraineeGenerator;
 @RequestScoped
 public class TestQuizController implements Serializable {
      
-    private List<TestQuiz> quiz;
+    private List<Quiz> quiz;
     private List<Results> results;
     private int score; //Der Score sollte später injected werden, und mit einer DB verbunden sein
     private int ricounter;
@@ -33,11 +33,14 @@ public class TestQuizController implements Serializable {
     private TestQuizSpeicher speicher;
     
     @Inject
+    private FrageEJB fragebean;
+    
+    @Inject
     private QuizEJB quizbean;
      
     @PostConstruct
     public void init() {
-        quiz = speicher.createQuiz(4, false); //hier sollte 1. mittels EJB das Quiz geholt werden
+        //quiz = speicher.createQuiz(4, false); //hier sollte 1. mittels EJB das Quiz geholt werden
                                               //und 2. sollte hier mittels qid das jeweilige quiz geholt werden
         score = (int)trainee.getProgressFromIndex(0); //sollte auch über EJB gehen
                                                       //und unten wenn score erhöht wird auch
@@ -81,6 +84,8 @@ public class TestQuizController implements Serializable {
     
     public void evaluateScoreRadio() {
         List<Integer> falsche = new ArrayList<>();
+        List<Frage> test = fragebean.findAll();
+        List<Antwortmoeglichkeiten> antworten = test.get(1).getAntworten();
         for(int i=0; i<quiz.size(); i++) {
             if(quiz.get(i).selectedAnswer.equals(quiz.get(i).antworten[quiz.get(i).indexrichtig])) {
                 score+=10;
@@ -137,7 +142,10 @@ public class TestQuizController implements Serializable {
         this.results = results;
     }
     
-    public List<TestQuiz> getQuiz() {
+    public List<Quiz> getQuizzes() {
+        if(quiz==null) {
+            quiz = quizbean.findAll();
+        }
         return quiz;
     }
  

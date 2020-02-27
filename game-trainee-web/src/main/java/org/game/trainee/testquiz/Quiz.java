@@ -7,13 +7,17 @@ package org.game.trainee.testquiz;
 
 import java.io.Serializable;
 import java.sql.Blob;
+import java.util.List;
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -22,10 +26,12 @@ import javax.validation.constraints.NotNull;
  * @author Jan
  */
 @NamedQuery(name = Quiz.QUERY_FINDBY_BESCHREIBUNG, query = "SELECT quiz FROM Quiz quiz WHERE quiz.beschreibung like :beschreibung")
+@NamedQuery(name = Quiz.QUERY_FINDALL, query = "SELECT quiz FROM Quiz quiz")
 @Entity
 @Table(name = "quiz", schema = "game")
 public class Quiz implements Serializable {
     public static final String QUERY_FINDBY_BESCHREIBUNG="Quiz.findByBeschreibung";
+    public static final String QUERY_FINDALL="Quiz.findAll";
     @Id @Column(name = "QID")
     private String QID;
     @NotNull @Column(name = "TITEL")
@@ -34,6 +40,9 @@ public class Quiz implements Serializable {
     private String beschreibung;
     @NotNull @Column(name = "REWARD")
     private String reward;
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "FID")
+    private List<Frage> fragen;
     
     public Quiz () {
         
