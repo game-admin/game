@@ -1,42 +1,52 @@
-  /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.game.trainee.testquiz;
 
+import java.io.Serializable;
 import java.util.List;
-import javax.inject.Inject;
 
 /**
  *
- * @author Jan
+ * @author Eric
  */
 public class FrageModell {
-    
-    @Inject
-    FrageEJB fragebean;
-    
-    public Boolean[] buttons;
-    public List<String> selectedAnswer;
-    
-    
-    public Frage getFrage(String index) {
-        return fragebean.find(index);
+        
+   public String frage;
+   public List<String> antworten;
+   public int indexrichtig;
+   public Boolean[] buttons; // for multiple choice
+   public String selectedAnswer; //for single choice radioButtons
+   
+   public FrageModell(String frage, List<String> antworten, int indexrichtig) {
+      this.frage=frage;
+      this.antworten=antworten;
+      this.indexrichtig=indexrichtig;
+      buttons = new Boolean[4];
+   }
+   
+    public String getFrage() {
+        return frage;
     }
-    
-    public List<Frage> getAllFragen() {
-        return fragebean.findAll();
+
+    public void setFrage(String fragen) {
+        this.frage = fragen;
     }
-    
-    public List<Antwortmoeglichkeiten> getAntwortenZuIndex(String index) {
-        return fragebean.find(index).getAntworten();
+
+    public List<String> getAntworten() {
+        return antworten;
+    }
+
+    public void setAntworten(List<String> antworten) {
+        this.antworten = antworten;
+    }
+
+    public int getIndexrichtig() {
+        return indexrichtig;
+    }
+
+    public void setIndexrichtig(int indexrichtig) {
+        this.indexrichtig = indexrichtig;
     }
 
     public Boolean[] getButtons() {
-        if(buttons==null){
-            buttons = new Boolean[4];
-        }
         return buttons;
     }
 
@@ -44,14 +54,11 @@ public class FrageModell {
         this.buttons = buttons;
     }
 
-    public List<String> getSelectedAnswer() {
+    public String getSelectedAnswer() {
         return selectedAnswer;
     }
 
-    public void setSelectedAnswer(List<String> selectedAnswer) {
+    public void setSelectedAnswer(String selectedAnswer) {
         this.selectedAnswer = selectedAnswer;
     }
-    
-    
-    
 }

@@ -28,6 +28,10 @@ public class TestQuizController implements Serializable {
     private int ricounter;
     private String emblem = "javapro.png";
     private List<String> selectedAnswer; //nur für Test -> ghört ins Model
+    private List<FrageModell> fragemodell;
+    
+    @Inject 
+    private ModellCreator creator;
     
     @Inject
     private TraineeEJB traineebean;
@@ -38,9 +42,6 @@ public class TestQuizController implements Serializable {
     @Inject
     private QuizEJB quizbean;
      
-    @Inject
-    private FrageModell fragemodell;
-    
     @PostConstruct
     public void init() {
         //quiz = speicher.createQuiz(4, false); //hier sollte 1. mittels EJB das Quiz geholt werden
@@ -48,6 +49,7 @@ public class TestQuizController implements Serializable {
                                                  //sollte auch über EJB gehen
                                                       //und unten wenn score erhöht wird auch
         //trainee = traineebean.find("1");
+        fragemodell = creator.createModell(4, false);
         results = new ArrayList<>();
         ricounter = 0;
     }
@@ -66,10 +68,9 @@ public class TestQuizController implements Serializable {
         List<Integer> falsche = new ArrayList<>();
         int richtige=0;  
         for(int i=0; i<4; i++ ) { //hier sollten dann zur fragensize durchgegeangen werden
-            int index = makeListToIndexRichtig(fragemodell.getAntwortenZuIndex(""+i));
-            List<Integer> indexrichtig = umwandler(index);
+            List<Integer> indexrichtig = umwandler(fragemodell.get(i).indexrichtig);
             for(int z=0; z<4; z++) {
-                if(indexrichtig.get(z) == 1 && !fragemodell.buttons[z] || indexrichtig.get(z) == 0 && fragemodell.buttons[z]) {
+                if(indexrichtig.get(z) == 1 && !fragemodell.get(i)buttons[z] || indexrichtig.get(z) == 0 && fragemodell.get(i)buttons[z]) {
                     falsche.add(i);
                     z=999;
                 } else {
@@ -92,7 +93,7 @@ public class TestQuizController implements Serializable {
         List<Frage> test = fragebean.findAll();
         List<Antwortmoeglichkeiten> antworten = test.get(1).getAntworten();
         for(int i=0; i<4; i++) { //hier sollten dann zur fragensize durchgegeangen werden
-            if(quiz.get(i).selectedAnswer.equals(quiz.get(i).antworten[quiz.get(i).indexrichtig])) {
+            if(fragemodell.get(i).selectedAnswer.equals(fragemodell.get(i).antworten[fragemodell.get(i).indexrichtig])) {
                 score+=10;
                 ricounter++;
                 falsche.add(9999);
@@ -107,7 +108,7 @@ public class TestQuizController implements Serializable {
     public String quizUebergabe(String qid) {
         //hier drin sollt auch nach Vorraussetzungen geschaut werden, wenn diese nicht erfüllt sind, kommt eine Fehlermeldung
         //hier kann gleich die Fragenliste gesetzt werden, zu dem Quiz auf das geklickt wurde!
-        if(qid == "1") {
+        if(qid.equals("1")) {
             return "takequiz.xhtml";
         } else {
             return "takequiz.xhtml"; 
@@ -117,6 +118,7 @@ public class TestQuizController implements Serializable {
     
     public List<Integer> umwandler(int indexrichtig) {
         List<Integer> liste = new ArrayList<>();
+        
         for(int i=0; i<4; i++)
             if(indexrichtig==i) {
                 liste.add(1);
@@ -124,6 +126,14 @@ public class TestQuizController implements Serializable {
                 liste.add(0);
             }
         return liste;
+    }
+    public int makeListToIndexRichtig(List<Antwortmoeglichkeiten> antworten) { //Used here?
+        for (int i = 0; i < 4; i++) {
+            if(antworten.get(i).isRichtigeAntwort()) {
+                return i;
+            }
+        }
+        return 0;
     }
     
     public void checkResults(List<Integer> falsche) {
@@ -163,14 +173,7 @@ public class TestQuizController implements Serializable {
         }
         return fragen;
     }
-    public int makeListToIndexRichtig(List<Antwortmoeglichkeiten> antworten) {
-        for (int i = 0; i < 4; i++) {
-            if(antworten.get(i).isRichtigeAntwort()) {
-                return i;
-            }
-        }
-        return 0;
-    }
+    
 
     public int getScore() {
         return score;

@@ -60,10 +60,10 @@ public class TestQuizSpeicher {
         indexrichtig.add(1); 
     }
     
-    public List<TestQuiz> createQuiz(int size, boolean isMultipleChoice) {
-        List<TestQuiz> list = new ArrayList<>();
+    public List<FrageModell> createQuiz(int size, boolean isMultipleChoice) {
+        List<FrageModell> list = new ArrayList<>();
         for(int i = 0 ; i < size ; i++) {
-            list.add(new TestQuiz(getFragenFromIndex(i), getAntwortenFromIndex(i), getIndexrichtigFromIndex(i) ));
+            list.add(new FrageModell(getFragenFromIndex(i), getAntwortenFromIndex(i), getIndexrichtigFromIndex(i) ));
         }
         return list;
     }
