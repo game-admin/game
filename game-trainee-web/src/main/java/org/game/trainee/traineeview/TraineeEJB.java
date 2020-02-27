@@ -35,6 +35,8 @@ public class TraineeEJB {
         em.merge(t);
     }
     
+    public 
+    
     public void delete(int MitID) {
         em.getTransaction().begin();
         Trainee t = em.getReference(Trainee.class, MitID);

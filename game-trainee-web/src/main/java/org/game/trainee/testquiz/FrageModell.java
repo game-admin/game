@@ -16,7 +16,10 @@ public class FrageModell {
     
     @Inject
     FrageEJB fragebean;
-
+    
+    public Boolean[] buttons;
+    
+    
     
     public Frage getFrage(String index) {
         return fragebean.find(index);
@@ -28,6 +31,17 @@ public class FrageModell {
     
     public List<Antwortmoeglichkeiten> getAntwortenZuIndex(String index) {
         return fragebean.find(index).getAntworten();
+    }
+
+    public Boolean[] getButtons() {
+        if(buttons==null){
+            buttons = new Boolean[4];
+        }
+        return buttons;
+    }
+
+    public void setButtons(Boolean[] buttons) {
+        this.buttons = buttons;
     }
     
     
