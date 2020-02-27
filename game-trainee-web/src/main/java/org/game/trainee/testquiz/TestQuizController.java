@@ -125,8 +125,8 @@ public class TestQuizController implements Serializable {
     }
     
     public String getQuizBezeichnung() {
-        return quizbean.find(1).getBeschreibung();
-    }
+        return quizbean.find(1).getBeschreibung(); //hier mit qid arbeiten
+    } 
 
     public List<Results> getResults() {
         return results;

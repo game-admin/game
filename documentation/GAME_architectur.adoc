@@ -22,6 +22,14 @@ include::chapters/Abstract.adoc[]
 // 1b. Requirements Overview
 include::chapters/Requirements.adoc[]
 
+//Vorstellung
+include::chapers/Vorstellung.adoc[]
+
+<<<<
+//Aufgabenteilung
+include::chapters/DivisionOfTasks.adoc[]
+
+<<<<
 // 1c. Qualitygoals
 include::chapters/Qualitygoals.adoc[]
 
