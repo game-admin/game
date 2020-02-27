@@ -33,7 +33,7 @@ public class FrageEJB {
     }
     
     public List<Frage> findAll() {
-        return em.createNamedQuery(Frage.QUERY_FINDALL, Frage.class)
+        return em.createNamedQuery(Frage.QUERY_FINDALLFRAGEN, Frage.class)
                 .getResultList();
     }
     

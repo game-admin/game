@@ -4,13 +4,13 @@ CREATE SCHEMA IF NOT EXISTS game AUTHORIZATION darbeit;
 
 CREATE TABLE game.antwortmoeglichkeiten(
     "antwid" text NOT NULL,
-    "fnr" text NOT NULL,
+    "fid" text NOT NULL,
     "antwort" text COLLATE pg_catalog."default" NOT NULL,
     "richtigeantwort" boolean
 );
 
 CREATE TABLE game.frage(
-    "fnr" text NOT NULL,
+    "fid" text NOT NULL,
     "qid" text NOT NULL,
     "frage" text COLLATE pg_catalog."default" NOT NULL,
     "punktezahl" bigint NOT NULL
@@ -78,7 +78,7 @@ CREATE TABLE game.voraussetzung(
 
 ALTER TABLE game.antwortmoeglichkeiten ADD CONSTRAINT "ANTWORTMOEGLICHKEITEN_pkey" PRIMARY KEY ("antwid");
     
-ALTER TABLE game.frage ADD CONSTRAINT "FRAGE_pkey" PRIMARY KEY ("fnr");
+ALTER TABLE game.frage ADD CONSTRAINT "FRAGE_pkey" PRIMARY KEY ("fid");
 
 ALTER TABLE game.kurs ADD CONSTRAINT "KURS_pkey" PRIMARY KEY ("kursid");
 
@@ -99,8 +99,8 @@ ALTER TABLE game.trainee ADD CONSTRAINT "NICKNAME" UNIQUE ("nickname");
 ALTER TABLE game.voraussetzung ADD CONSTRAINT "VORAUSSETZUNG_pkey" PRIMARY KEY ("voraussetzid");
 
 
-ALTER TABLE game.antwortmoeglichkeiten ADD CONSTRAINT "Frage" FOREIGN KEY ("fnr")
-        REFERENCES game.frage ("fnr") MATCH SIMPLE
+ALTER TABLE game.antwortmoeglichkeiten ADD CONSTRAINT "Frage" FOREIGN KEY ("fid")
+        REFERENCES game.frage ("fid") MATCH SIMPLE
         ON UPDATE CASCADE
         ON DELETE CASCADE
         NOT VALID;
