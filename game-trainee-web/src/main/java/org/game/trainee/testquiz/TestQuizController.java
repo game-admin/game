@@ -21,7 +21,7 @@ import org.game.trainee.traineeview.TraineeEJB;
 public class TestQuizController implements Serializable {
      
     private List<Quiz> quizzes;
-    private List<Frage> fragen;
+    //private List<Frage> fragen; used?
     private List<Results> results;
     private int score;
     private Trainee trainee;
@@ -70,7 +70,7 @@ public class TestQuizController implements Serializable {
         for(int i=0; i<4; i++ ) { //hier sollten dann zur fragensize durchgegeangen werden
             List<Integer> indexrichtig = umwandler(fragemodell.get(i).indexrichtig);
             for(int z=0; z<4; z++) {
-                if(indexrichtig.get(z) == 1 && !fragemodell.get(i)buttons[z] || indexrichtig.get(z) == 0 && fragemodell.get(i)buttons[z]) {
+                if(indexrichtig.get(z) == 1 && !fragemodell.get(i).buttons[z] || indexrichtig.get(z) == 0 && fragemodell.get(i).buttons[z]) {
                     falsche.add(i);
                     z=999;
                 } else {
@@ -93,7 +93,7 @@ public class TestQuizController implements Serializable {
         List<Frage> test = fragebean.findAll();
         List<Antwortmoeglichkeiten> antworten = test.get(1).getAntworten();
         for(int i=0; i<4; i++) { //hier sollten dann zur fragensize durchgegeangen werden
-            if(fragemodell.get(i).selectedAnswer.equals(fragemodell.get(i).antworten[fragemodell.get(i).indexrichtig])) {
+            if(fragemodell.get(i).selectedAnswer.equals(fragemodell.get(i).antworten.get(fragemodell.get(i).indexrichtig))) {
                 score+=10;
                 ricounter++;
                 falsche.add(9999);
@@ -167,12 +167,12 @@ public class TestQuizController implements Serializable {
         return quizzes;
     }
     
-    public List<Frage> getFragen() { //ich brauch hier nur die Fragen zu einem bestimmten Quiz!!
+    /*public List<Frage> getFragen() { //ich brauch hier nur die Fragen zu einem bestimmten Quiz!!
         if(fragen == null) {
             fragen = fragemodell.getAllFragen();
         }
         return fragen;
-    }
+    } */ 
     
 
     public int getScore() {

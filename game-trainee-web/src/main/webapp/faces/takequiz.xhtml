@@ -24,7 +24,7 @@
             <ui:repeat var="frage" value="#{testQuizController.fragen}">
                 <div class="question">
                     <h:outputLabel for="radio" value="#{frage.frage}"></h:outputLabel>
-                    <h:selectOneRadio id="radio" value="#{testQuizController.selectedAnswer}" layout="grid" required="true" >
+                    <h:selectOneRadio id="radio" value="#{frage.selectedAnswer}" layout="grid" required="true" >
                         <f:selectItem itemValue="#{frage.antworten.get(0)}" itemLabel="#{frage.antworten.get(0).antwort}"></f:selectItem>
                         <f:selectItem itemValue="#{frage.antworten.get(1).antwort}" itemLabel="#{frage.antworten.get(1).antwort}"></f:selectItem>
                         <f:selectItem itemValue="#{frage.antworten.get(2).antwort}" itemLabel="#{frage.antworten.get(2).antwort}"></f:selectItem>

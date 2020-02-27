@@ -29,8 +29,8 @@ public class ModellCreator {
     public ModellCreator() {
     }
     
-    public List<TestQuiz> createModell(int size, boolean isMultipleChoice) {
-        List<TestQuiz> list = new ArrayList<>();
+    public List<FrageModell> createModell(int size, boolean isMultipleChoice) {
+        List<FrageModell> list = new ArrayList<>();
         for(int i = 0 ; i < size ; i++) {
             list.add(new FrageModell(getFragenFromIndex(i), getAntwortenFromIndex(i), getIndexRichtigFromIndex(getAntwortenZuIndex(""+i))));
         }
@@ -48,8 +48,13 @@ public class ModellCreator {
         return fragebean.find(""+index).getFrage();
     }
     
-    public List<Antwortmoeglichkeiten> getAntwortenFromIndex(int index) {
-        return fragebean.find(""+index).getAntworten();
+    public List<String> getAntwortenFromIndex(int index) {
+        List<Antwortmoeglichkeiten> var = fragebean.find(""+index).getAntworten();
+        List<String> antworten = new ArrayList<>();
+        for(int i=0; i<var.size(); i++) {
+           antworten.add(var.get(i).getAntwort()); 
+        }
+        return antworten;
     }
     
     public List<Antwortmoeglichkeiten> getAntwortenZuIndex(String index) {
@@ -64,16 +69,4 @@ public class ModellCreator {
         }
         return 0;
     }
-
-    public List<String> getFragen() {
-        return fragen;
-    }
-
-    public String[][] getAntworten() {
-        return antworten;
-    }
-
-    public List<Integer> getIndexrichtig() {
-        return indexrichtig;
-    }   
 }
