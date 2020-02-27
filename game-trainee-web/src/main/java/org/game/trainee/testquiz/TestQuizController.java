@@ -153,7 +153,15 @@ public class TestQuizController implements Serializable {
         }
         return fragen;
     }
- 
+    public int makeListToIndexRichtig(List<Antwortmoeglichkeiten> antworten) {
+        for (int i = 0; i < 4; i++) {
+            if(antworten.get(i).isRichtigeAntwort()) {
+                return i;
+            }
+        }
+        return 0;
+    }
+
     public int getScore() {
         return score;
     }

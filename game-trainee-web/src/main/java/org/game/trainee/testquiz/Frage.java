@@ -28,8 +28,11 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "frage", schema = "game")
 @NamedQuery(name = "QUERY_FINDALL", query = "SELECT frage FROM Frage frage")
+//@NamedQuery(name = "QUERY_FINDALLANTWORTEN", query = "SELECT frage, antwort FROM Antwortmoeglichkeiten antwort INNER JOIN antwort.frage frage");
 public class Frage implements Serializable {
+    //public static final NAMED_QUERY = "SELECT antwort FROM Frage frage";
     public static final String QUERY_FINDALL = "Frage.findAll";
+    //public static final String QUERY_FINDALLANTWORTEN = "Frage.findAllAntworten";
     @Id
     private String FID;
     @ManyToOne(fetch = FetchType.LAZY)

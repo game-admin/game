@@ -26,6 +26,7 @@ import org.game.trainee.testquiz.Frage;
 public class FrageEJB {
     @PersistenceContext(unitName = "Diplomarbeit")
     private EntityManager em;
+    private Frage frage;
 
     public Frage find(String FID) {
         return em.find(Frage.class, FID);
@@ -39,6 +40,7 @@ public class FrageEJB {
     public void update(Frage f) {
         em.merge(f);
     }
+   
     
     public void delete(int FID) {
         em.getTransaction().begin();
@@ -55,4 +57,6 @@ public class FrageEJB {
         return newList;
     }
     */
+
+    
 }

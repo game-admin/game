@@ -61,7 +61,9 @@ CREATE TABLE game.trainee (
     "name" text COLLATE pg_catalog."default" NOT NULL,
     "vorname" text COLLATE pg_catalog."default",
     "nickname" text COLLATE pg_catalog."default" NOT NULL,
-    "abteilung" text COLLATE pg_catalog."default"
+    "abteilung" text COLLATE pg_catalog."default",
+    "progress" bigint NOT NULL,
+    "embleme" text COLLATE pg_catalog."default"
 );
 
 CREATE TABLE game.voraussetzung(
