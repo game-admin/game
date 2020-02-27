@@ -29,8 +29,7 @@ public class QuizEJB {
     }
     
     public List<Quiz> findAll() {
-        return em.createNamedQuery(Quiz.QUERY_FINDALL, Quiz.class)
-                .getResultList();
+        return em.createNamedQuery(Quiz.QUERY_FINDALL, Quiz.class).getResultList();
     }
     
     public void update(Quiz q) {
