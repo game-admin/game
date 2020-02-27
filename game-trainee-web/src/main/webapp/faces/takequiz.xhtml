@@ -21,20 +21,21 @@
         </p>
         <div id="questions">
         <h:form>
-            <ui:repeat var="quiz" value="#{testQuizController.quiz}">
+            <ui:repeat var="frage" value="#{testQuizController.fragen}">
                 <div class="question">
-                    <p:outputLabel for="radio" value="#{quiz.frage}"></p:outputLabel>
-                    <p:selectOneRadio id="radio" value="#{quiz.selectedAnswer}" unselectable="true" layout="grid" columns="1" required="true">
-                        <f:selectItem itemValue="#{quiz.antworten[0]}" itemLabel="#{quiz.antworten[0]}"></f:selectItem>
-                        <f:selectItem itemValue="#{quiz.antworten[1]}" itemLabel="#{quiz.antworten[1]}"></f:selectItem>
-                        <f:selectItem itemValue="#{quiz.antworten[2]}" itemLabel="#{quiz.antworten[2]}"></f:selectItem>
-                        <f:selectItem itemValue="#{quiz.antworten[3]}" itemLabel="#{quiz.antworten[3]}"></f:selectItem>
-                    </p:selectOneRadio>
+                    <h:outputLabel for="radio" value="#{frage.frage}"></h:outputLabel>
+                    <h:selectOneRadio id="radio" value="#{quiz.selectedAnswer}" layout="grid" required="true" >
+                        <f:selectItem itemValue="#{frage.antworten.get(0).antwort}" itemLabel="#{frage.antworten.get(0).antwort}"></f:selectItem>
+                        <f:selectItem itemValue="#{frage.antworten.get(1).antwort}" itemLabel="#{frage.antworten.get(1).antwort}"></f:selectItem>
+                        <f:selectItem itemValue="#{frage.antworten.get(2).antwort}" itemLabel="#{frage.antworten.get(2).antwort}"></f:selectItem>
+                        <f:selectItem itemValue="#{frage.antworten.get(3).antwort}" itemLabel="#{frage.antworten.get(3).antwort}"></f:selectItem>
+                    </h:selectOneRadio>
                     <br/>
+                    <!--unselectable="true", columns="1" -->
                 </div>    
                 <br/><br/>
             </ui:repeat>
-            <p:commandButton value="Check Answers" style="margin-left: 20%" action="#{testQuizController.checkAnswersSingleChoice}"></p:commandButton> 
+            <h:commandButton value="Check Answers" style="margin-left: 20%" action="#{testQuizController.checkAnswersSingleChoice}"></h:commandButton> 
         </h:form>
         </div>
     </ui:define>
