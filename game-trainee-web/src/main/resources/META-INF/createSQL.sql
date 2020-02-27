@@ -3,71 +3,71 @@ CREATE SCHEMA IF NOT EXISTS game AUTHORIZATION darbeit;
 
 
 CREATE TABLE game.antwortmoeglichkeiten(
-    antwid text NOT NULL,
-    fnr text NOT NULL,
-    antwort text COLLATE pg_catalog."default" NOT NULL,
-    richtigeantwort boolean
+    "antwid" text NOT NULL,
+    "fnr" text NOT NULL,
+    "antwort" text COLLATE pg_catalog."default" NOT NULL,
+    "richtigeantwort" boolean
 );
 
 CREATE TABLE game.frage(
-    "FNR" text NOT NULL,
-    "QID" text NOT NULL,
-    "FRAGE" text COLLATE pg_catalog."default" NOT NULL,
-    "PUNKTEZAHL" bigint NOT NULL
+    "fnr" text NOT NULL,
+    "qid" text NOT NULL,
+    "frage" text COLLATE pg_catalog."default" NOT NULL,
+    "punktezahl" bigint NOT NULL
 );
 
 CREATE TABLE game.kurs(
-    "KURSID" text NOT NULL,
-    "TITEL" text COLLATE pg_catalog."default" NOT NULL,
-    "LINK" text COLLATE pg_catalog."default" NOT NULL,
-    "BESCHREIBUNG" text COLLATE pg_catalog."default"
+    "kursid" text NOT NULL,
+    "titel" text COLLATE pg_catalog."default" NOT NULL,
+    "link" text COLLATE pg_catalog."default" NOT NULL,
+    "beschreibung" text COLLATE pg_catalog."default"
 );
 
 CREATE TABLE game.kursbesuch(
-    "KURSBESUCHID" text NOT NULL,
-    "KURSID" text NOT NULL,
-    "MITID" text NOT NULL,
-    "DATUM" date NOT NULL
+    "kursbesuchid" text NOT NULL,
+    "kursid" text NOT NULL,
+    "mitid" text NOT NULL,
+    "datum" date NOT NULL
 );
 
 CREATE TABLE game.kursvoraussetzung(
-    "KURSVORAUSSETZID" text NOT NULL,
-    "VORAUSSETZID" text NOT NULL,
-    "KURSID" text NOT NULL
+    "kursvoraussetzid" text NOT NULL,
+    "voraussetzid" text NOT NULL,
+    "kursid" text NOT NULL
 );
 
 CREATE TABLE game.quiz(
-    "QID" text NOT NULL,
-    "TITEL" text COLLATE pg_catalog."default" NOT NULL,
-    "BESCHREIBUNG" text COLLATE pg_catalog."default",
-    "REWARD" text COLLATE pg_catalog."default" NOT NULL
+    qid text NOT NULL,
+    "titel" text COLLATE pg_catalog."default" NOT NULL,
+    "beschreibung" text COLLATE pg_catalog."default",
+    "reward" text COLLATE pg_catalog."default" NOT NULL
 );
 
 CREATE TABLE game.quizbeantwortung(
-    "QBEID" text NOT NULL,
-    "QID" text NOT NULL,
-    "MITID" text NOT NULL,
-    "ERREICHTEPUNKTEZAHL" bigint NOT NULL
+    "qbeid" text NOT NULL,
+    "qid" text NOT NULL,
+    "mitid" text NOT NULL,
+    "erreichtepunktezahl" bigint NOT NULL
 );
 
 CREATE TABLE game.quizvoraussetzung(
-    "QUIZVORAUSSETZID" text NOT NULL,
-    "VORAUSSETZID" text NOT NULL,
-    "QID" text NOT NULL
+    "quizvoraussetzid" text NOT NULL,
+    "voraussetzid" text NOT NULL,
+    "qid" text NOT NULL
 );
 
 CREATE TABLE game.trainee (
-    "MITID" text NOT NULL,
-    "NAME" text COLLATE pg_catalog."default" NOT NULL,
-    "VORNAME" text COLLATE pg_catalog."default",
-    "NICKNAME" text COLLATE pg_catalog."default" NOT NULL,
-    "ABTEILUNG" text COLLATE pg_catalog."default"
+    "mitid" text NOT NULL,
+    "name" text COLLATE pg_catalog."default" NOT NULL,
+    "vorname" text COLLATE pg_catalog."default",
+    "nickname" text COLLATE pg_catalog."default" NOT NULL,
+    "abteilung" text COLLATE pg_catalog."default"
 );
 
 CREATE TABLE game.voraussetzung(
-    "VORAUSSETZID" text NOT NULL,
-    "KURSID" text,
-    "QID" text
+    "voraussetzid" text NOT NULL,
+    "kursid" text,
+    "qid" text
 );
 
 
