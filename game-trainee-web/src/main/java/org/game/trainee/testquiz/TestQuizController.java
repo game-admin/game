@@ -148,6 +148,18 @@ public class TestQuizController implements Serializable {
         }
         return quiz;
     }
+    
+    public int makeListToIndexRichtig(List<Antwortmoeglichkeiten> antworten) {
+        for (int i = 0; i < 4; i++) {
+            if(antworten.get(i).isRichtigeAntwort()) {
+                return i;
+            }
+        }
+        return 0;
+    }
+
+    
+    
  
     public void setSpeicher(TestQuizSpeicher speicher) {
         this.speicher = speicher;

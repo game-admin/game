@@ -14,6 +14,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -24,25 +25,28 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "trainee", schema = "game")
+@NamedQuery(name = "QUERY_FINDBY_PROGRESS", query = "SELECT trainee.progress FROM Trainee trainee")
 public class Trainee implements Serializable {
+    public static final String QUERY_FINDBY_PROGRESS = "Trainee.findProgress";
     @Id
-    @Column(name="MITID")
+    @Column(name="mitid")
     private String MitID;
-    @NotNull @Column(name="VORNAME")
+    @NotNull @Column(name="vorname")
     private String vorname;
-    @NotNull @Column(name="NACHNAME")
+    @NotNull @Column(name="nachname")
     private String nachname;
-    @NotNull @Column(unique = true, name="NICKNAME")
+    @NotNull @Column(unique = true, name="nickname")
     private String nickname;
-    @Column(name="ABTEILUNG")
+    @Column(name="abteilung")
     private String abteilung;
+    @Column(name="progress")
     private double progress;
+    @Column(name="embleme")
     public List<String> embleme;
-    public String name;
     
     public Trainee() {}
     
-    public Trainee(String name, String nickname, String abteilung, double progress) {
+ /*   public Trainee(String name, String nickname, String abteilung, double progress) {
         this.name=name;
         this.nickname=nickname;
         this.abteilung=abteilung;
@@ -55,7 +59,7 @@ public class Trainee implements Serializable {
         this.nickname=nickname;
         this.abteilung=abteilung;
     }
-    
+  */  
     public Trainee(String MitID) {
         this.MitID=MitID;
     }
@@ -114,14 +118,5 @@ public class Trainee implements Serializable {
 
     public void setNachname(String nachname) {
         this.nachname = nachname;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    
+    }    
 }
