@@ -63,12 +63,13 @@ public class TestQuizController implements Serializable {
     }
     
     public void evaluateScoreMultiple() {
-      /*  List<Integer> falsche = new ArrayList<>();
+        List<Integer> falsche = new ArrayList<>();
         int richtige=0;  
-        for(int i=0; i<quiz.size(); i++ ) {
-            List<Integer> indexrichtig = umwandler(quiz.get(i).indexrichtig);
+        for(int i=0; i<4; i++ ) { //hier sollten dann zur fragensize durchgegeangen werden
+            int index = makeListToIndexRichtig(fragemodell.getAntwortenZuIndex(""+i));
+            List<Integer> indexrichtig = umwandler(index);
             for(int z=0; z<4; z++) {
-                if(indexrichtig.get(z) == 1 && !quiz.get(i).buttons[z] || indexrichtig.get(z) == 0 && quiz.get(i).buttons[z]) {
+                if(indexrichtig.get(z) == 1 && !fragemodell.buttons[z] || indexrichtig.get(z) == 0 && fragemodell.buttons[z]) {
                     falsche.add(i);
                     z=999;
                 } else {
@@ -82,15 +83,15 @@ public class TestQuizController implements Serializable {
             }
             richtige = 0;
         } 
-        checkResults(falsche); */
+        checkResults(falsche); 
         //Hier sollte dann noch der Score der Trainees geupdated werden
     } 
     
     public void evaluateScoreRadio() {
-      /*  List<Integer> falsche = new ArrayList<>();
+        List<Integer> falsche = new ArrayList<>();
         List<Frage> test = fragebean.findAll();
         List<Antwortmoeglichkeiten> antworten = test.get(1).getAntworten();
-        for(int i=0; i<quiz.size(); i++) {
+        for(int i=0; i<4; i++) { //hier sollten dann zur fragensize durchgegeangen werden
             if(quiz.get(i).selectedAnswer.equals(quiz.get(i).antworten[quiz.get(i).indexrichtig])) {
                 score+=10;
                 ricounter++;
@@ -99,7 +100,7 @@ public class TestQuizController implements Serializable {
                 falsche.add(i);
             }
         }
-        checkResults(falsche); */
+        checkResults(falsche); 
         //Hier sollt dann noch der Score vom Trainee geupdated werden
     }
     

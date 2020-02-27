@@ -18,7 +18,7 @@ public class FrageModell {
     FrageEJB fragebean;
     
     public Boolean[] buttons;
-    
+    public List<String> selectedAnswer;
     
     
     public Frage getFrage(String index) {
@@ -42,6 +42,14 @@ public class FrageModell {
 
     public void setButtons(Boolean[] buttons) {
         this.buttons = buttons;
+    }
+
+    public List<String> getSelectedAnswer() {
+        return selectedAnswer;
+    }
+
+    public void setSelectedAnswer(List<String> selectedAnswer) {
+        this.selectedAnswer = selectedAnswer;
     }
     
     

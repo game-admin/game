@@ -68,7 +68,7 @@ public class TestQuizSpeicher {
         return list;
     }
     
-    public boolean[] createButtons(int size) {
+    public boolean[] createButtons(int size) { //Deprecated?
         boolean[] b = new boolean[size];
         for(int i=0; i<b.length; i++)
             b[i] = false;
