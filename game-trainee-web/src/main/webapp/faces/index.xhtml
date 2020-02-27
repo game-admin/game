@@ -15,17 +15,17 @@
     <ui:define name="content">                                      
         <h1>Activities</h1>
         <p>
-            <strong>User:</strong> #{traineeController.trainees.get(0).name} <br />
-            <strong>Nickname:</strong> #{traineeController.trainees.get(0).nickname} <br/>
+            <strong>User:</strong> {traineeController.trainees.get(0).name} <br />
+            <strong>Nickname:</strong> {traineeController.trainees.get(0).nickname} <br/>
             Progress: 50% out of 100% <br />
-            Badges: <h:graphicImage library="img" name="#{traineeController.trainees.get(0).embleme.get(0)}"></h:graphicImage>
+            Badges: <h:graphicImage library="img" name="{traineeController.trainees.get(0).embleme.get(0)}"></h:graphicImage>
             
         </p>
         <p>
             Your score (Quiz):
-            <h:outputText value="#{testQuizController.score}"></h:outputText> <br/>
+            <h:outputText value="{testQuizController.score}"></h:outputText> <br/>
             Your progress (Overall):
-            <h:outputText value="#{traineeGenerator.scores.get(0)}"></h:outputText>
+            <h:outputText value="test"></h:outputText>
         </p>
         <p>
             Hier sollte spezifisch zum User, dessen Aktivitäten und Fortschritt dargestellt werden.

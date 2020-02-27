@@ -18,23 +18,17 @@ public class TraineeController implements Serializable {
     private Trainee selectedTrainee;
     
     @Inject
-    private TraineeGenerator generator;
+    private TraineeEJB traineebean;
     
-    @PostConstruct
-    public void init() {
-        trainees=generator.createTrainees(4);
-    }
 
     public List<Trainee> getTrainees() {
+        if(trainees == null)
+            trainees = traineebean.findAll();
         return trainees;
     }
 
     public void setSelectedTrainee(Trainee selectedTrainee) {
         this.selectedTrainee = selectedTrainee;
-    }
-
-    public void setGenerator(TraineeGenerator generator) {
-        this.generator = generator;
     }
 
     public Trainee getSelectedTrainee() {

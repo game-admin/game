@@ -5,6 +5,7 @@
  */
 package org.game.trainee.traineeview;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -24,6 +25,10 @@ public class TraineeEJB {
 
     public Trainee find(String MitID) {
         return em.find(Trainee.class, MitID);
+    }
+    
+    public List<Trainee> findAll() {
+        return em.createNamedQuery(Trainee.QUERY_FINDALLTRAINEES, Trainee.class).getResultList();
     }
     
     public void update(Trainee t) {

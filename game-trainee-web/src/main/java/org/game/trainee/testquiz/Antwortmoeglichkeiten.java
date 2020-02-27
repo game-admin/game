@@ -69,6 +69,14 @@ public class Antwortmoeglichkeiten implements Serializable {
     public void setRichtigeAntwort(boolean richtigeAntwort) {
         this.richtigeAntwort = richtigeAntwort;
     }
+
+    public Frage getFrage() {
+        return frage;
+    }
+
+    public void setFrage(Frage frage) {
+        this.frage = frage;
+    }
     
     
 }

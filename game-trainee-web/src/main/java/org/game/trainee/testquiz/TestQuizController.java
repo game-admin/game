@@ -27,6 +27,7 @@ public class TestQuizController implements Serializable {
     private Trainee trainee;
     private int ricounter;
     private String emblem = "javapro.png";
+    private List<String> selectedAnswer; //nur für Test -> ghört ins Model
     
     @Inject
     private TraineeEJB traineebean;
@@ -37,6 +38,9 @@ public class TestQuizController implements Serializable {
     @Inject
     private QuizEJB quizbean;
      
+    @Inject
+    private FrageModell fragemodell;
+    
     @PostConstruct
     public void init() {
         //quiz = speicher.createQuiz(4, false); //hier sollte 1. mittels EJB das Quiz geholt werden
@@ -99,10 +103,15 @@ public class TestQuizController implements Serializable {
         //Hier sollt dann noch der Score vom Trainee geupdated werden
     }
     
-    public String quizUebergabe(String QID) {
+    public String quizUebergabe(String qid) {
         //hier drin sollt auch nach Vorraussetzungen geschaut werden, wenn diese nicht erfüllt sind, kommt eine Fehlermeldung
         //hier kann gleich die Fragenliste gesetzt werden, zu dem Quiz auf das geklickt wurde!
-        return "takequiz.xhtml";
+        if(qid == "1") {
+            return "takequiz.xhtml";
+        } else {
+            return "takequiz.xhtml"; 
+        }
+        
     }
     
     public List<Integer> umwandler(int indexrichtig) {
@@ -149,7 +158,7 @@ public class TestQuizController implements Serializable {
     
     public List<Frage> getFragen() { //ich brauch hier nur die Fragen zu einem bestimmten Quiz!!
         if(fragen == null) {
-            fragen = fragebean.findAll();
+            fragen = fragemodell.getAllFragen();
         }
         return fragen;
     }
@@ -185,5 +194,14 @@ public class TestQuizController implements Serializable {
     public void setEmblem(String emblem) {
         this.emblem = emblem;
     }
+
+    public List<String> getSelectedAnswer() {
+        return selectedAnswer;
+    }
+
+    public void setSelectedAnswer(List<String> selectedAnswer) {
+        this.selectedAnswer = selectedAnswer;
+    }
+    
     
 }

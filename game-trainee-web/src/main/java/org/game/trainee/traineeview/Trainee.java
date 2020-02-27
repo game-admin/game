@@ -25,9 +25,11 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "trainee", schema = "game")
-@NamedQuery(name = "QUERY_FINDBY_PROGRESS", query = "SELECT trainee.progress FROM Trainee trainee")
+@NamedQuery(name = Trainee.QUERY_FINDBY_PROGRESS, query = "SELECT trainee.progress FROM Trainee trainee")
+@NamedQuery(name = Trainee.QUERY_FINDALLTRAINEES, query = "SELECT trainee FROM Trainee trainee")
 public class Trainee implements Serializable {
     public static final String QUERY_FINDBY_PROGRESS = "Trainee.findProgress";
+    public static final String QUERY_FINDALLTRAINEES = "Trainee.findAll";
     @Id
     @Column(name="mitid")
     private String MitID;

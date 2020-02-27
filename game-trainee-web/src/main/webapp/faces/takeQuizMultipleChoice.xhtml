@@ -21,13 +21,13 @@
         </p>
         <div id="questions">
         <h:form>
-            <ui:repeat var="quiz" value="#{testQuizController.quiz}">
+            <ui:repeat var="frage" value="#{testQuizController.fragen}">
                 <div class="question">
-                    <h:outputText value="#{quiz.frage}"></h:outputText> <br />
+                    <h:outputText value="#{frage.frage}"></h:outputText> <br />
                     <table>
                         <tr>
                             <td>
-                                <h:outputText value="#{quiz.antworten[0]}"></h:outputText> 
+                                <h:outputText value="#{frage.antworten.get(0).antwort}"></h:outputText> 
                             </td>
                             <td>
                                 <p:selectBooleanCheckbox value="#{quiz.buttons[0]}"></p:selectBooleanCheckbox>
@@ -35,7 +35,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <h:outputText value="#{quiz.antworten[1]}"></h:outputText>
+                                <h:outputText value="#{frage.antworten.get(1).antwort}"></h:outputText>
                             </td>
                             <td>
                                 <p:selectBooleanCheckbox value="#{quiz.buttons[1]}"></p:selectBooleanCheckbox>
@@ -43,7 +43,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <h:outputText value="#{quiz.antworten[2]}"></h:outputText>
+                                <h:outputText value="#{frage.antworten.get(3).antwort}"></h:outputText>
                             </td>
                             <td>
                                 <p:selectBooleanCheckbox value="#{quiz.buttons[2]}"></p:selectBooleanCheckbox>
@@ -51,7 +51,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <h:outputText value="#{quiz.antworten[3]}"></h:outputText>
+                                <h:outputText value="#{frage.antworten.get(3).antwort}"></h:outputText>
                             </td>
                             <td>
                                 <p:selectBooleanCheckbox value="#{quiz.buttons[3]}"></p:selectBooleanCheckbox> 
