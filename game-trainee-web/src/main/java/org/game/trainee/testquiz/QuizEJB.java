@@ -24,7 +24,7 @@ public class QuizEJB {
     @PersistenceContext(unitName = "Diplomarbeit")
     private EntityManager em;
     
-    public Quiz find(int QID) {
+    public Quiz find(String QID) {
         return em.find(Quiz.class, QID);
     }
     
