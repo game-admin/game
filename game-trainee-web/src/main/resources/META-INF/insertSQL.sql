@@ -38,7 +38,7 @@ INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANT
 INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('17', '11', 'Multiple Inheritance', false);
 INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('18', '11', 'Classes&Methods', true);
 INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('19', '11', 'Functions', false);
-INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (20, 11, 'None of the above', false);
+INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('20', '11', 'None of the above', false);
 INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('21', '12', 'Classes', false);
 INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('22', '12', 'only state', false);
 INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('23', '12', 'only behaviour', false);
