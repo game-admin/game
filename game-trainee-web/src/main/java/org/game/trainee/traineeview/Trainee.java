@@ -40,7 +40,7 @@ public class Trainee implements Serializable {
     @Column(name="abteilung")
     private String abteilung;
     @Column(name="progress")
-    private double progress;
+    private int progress;
     @Column(name="embleme")
     public List<String> embleme;
     
@@ -88,11 +88,11 @@ public class Trainee implements Serializable {
         this.abteilung = abteilung;
     }
 
-    public double getProgress() {
+    public int getProgress() {
         return progress;
     }
 
-    public void setProgress(double progress) {
+    public void setProgress(int progress) {
         this.progress = progress;
     }
 
