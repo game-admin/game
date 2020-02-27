@@ -37,7 +37,7 @@ CREATE TABLE game.kursvoraussetzung(
 );
 
 CREATE TABLE game.quiz(
-    qid text NOT NULL,
+    "qid" text NOT NULL,
     "titel" text COLLATE pg_catalog."default" NOT NULL,
     "beschreibung" text COLLATE pg_catalog."default",
     "reward" text COLLATE pg_catalog."default" NOT NULL
@@ -86,7 +86,7 @@ ALTER TABLE game.kursvoraussetzung ADD CONSTRAINT "KURSVORAUSSETZUNG_pkey" PRIMA
 
 ALTER TABLE game.quiz ADD CONSTRAINT "QUIZ_pkey" PRIMARY KEY (qid);
 
-ALTER TABLE game.quizbeantwortung ADD CONSTRAINT "QUIZBEANTWORTUNG_pkey" PRIMARY KEY ("gbeid");
+ALTER TABLE game.quizbeantwortung ADD CONSTRAINT "QUIZBEANTWORTUNG_pkey" PRIMARY KEY ("qbeid");
 
 ALTER TABLE game.quizvoraussetzung ADD CONSTRAINT "QUIZVORAUSSETZUNG_pkey" PRIMARY KEY ("quizvoraussetzid");
 

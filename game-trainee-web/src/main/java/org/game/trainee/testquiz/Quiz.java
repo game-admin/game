@@ -33,7 +33,7 @@ public class Quiz implements Serializable {
     @Column(name = "BESCHREIBUNG")
     private String beschreibung;
     @NotNull @Column(name = "REWARD")
-    private Blob reward;
+    private String reward;
     
     public Quiz () {
         
@@ -67,11 +67,11 @@ public class Quiz implements Serializable {
         this.beschreibung = Beschreibung;
     }
 
-    public Blob getReward() {
+    public String getReward() {
         return reward;
     }
 
-    public void setReward(Blob reward) {
+    public void setReward(String reward) {
         this.reward = reward;
     }
     

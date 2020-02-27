@@ -4,8 +4,8 @@ INSERT INTO game.trainee ("mitid", "name", "vorname", "nickname", "abteilung") V
 INSERT INTO game.trainee ("mitid", "name", "vorname", "nickname", "abteilung") VALUES ('3', 'Saliger', 'Alex', 'SaAlexX_1010', NULL);
 INSERT INTO game.trainee ("mitid", "name", "vorname", "nickname", "abteilung") VALUES ('4', 'Wurst', 'Alexander', 'wursti', NULL);
 
-INSERT INTO game.quiz ("qid", "title", "beschreibung", "reward") VALUES ('1', 'Start', 'Quiz about the general knowledge of Java', 'test');
-INSERT INTO game.quiz ("qid", "title", "beschreibung", "reward") VALUES ('2', 'Object, Classes & Constructors', 'Quiz about Objects, Classes and Constructors in Java', 'test');
+INSERT INTO game.quiz ("qid", "titel", "beschreibung", "reward") VALUES ('1', 'Start', 'Quiz about the general knowledge of Java', 'test');
+INSERT INTO game.quiz ("qid", "titel", "beschreibung", "reward") VALUES ('2', 'Object, Classes & Constructors', 'Quiz about Objects, Classes and Constructors in Java', 'test');
 
 
 
@@ -56,9 +56,9 @@ INSERT INTO game.antwortmoeglichkeiten ("antwid", "fnr", "antwort", "richtigeant
 
 
 
-INSERT INTO game.kurs ("kursid", "title", "link", "beschreibung") VALUES ('1', 'Start-Kurs', 'https://www.tutorialspoint.com/java/index.htm', NULL);
-INSERT INTO game.kurs ("kursid", "title", "link", "beschreibung") VALUES ('2', 'Object & Classes', 'https://www.tutorialspoint.com/java/java_object_classes.htm', NULL);
-INSERT INTO game.kurs ("kursid", "title", "link", "beschreibung") VALUES ('3', 'Constructors', 'https://www.tutorialspoint.com/java/java_constructors.htm', NULL);
+INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('1', 'Start-Kurs', 'https://www.tutorialspoint.com/java/index.htm', NULL);
+INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('2', 'Object & Classes', 'https://www.tutorialspoint.com/java/java_object_classes.htm', NULL);
+INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('3', 'Constructors', 'https://www.tutorialspoint.com/java/java_constructors.htm', NULL);
 
 
 
