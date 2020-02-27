@@ -28,7 +28,7 @@ import javax.validation.constraints.NotNull;
 public class Antwortmoeglichkeiten implements Serializable {
     @Id
     @Column(name="ANTWID")
-    private String AntwID = UUID.randomUUID().toString();
+    private String AntwID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="FID")
     private Frage frage;
@@ -38,6 +38,14 @@ public class Antwortmoeglichkeiten implements Serializable {
     @Column(name="RICHTIGEANTWORT")
     private boolean richtigeAntwort;
 
+    public Antwortmoeglichkeiten() {
+        
+    }
+    
+    public Antwortmoeglichkeiten(String AntwID) {
+        this.AntwID = AntwID;
+    }
+    
     public String getAntwID() {
         return AntwID;
     }

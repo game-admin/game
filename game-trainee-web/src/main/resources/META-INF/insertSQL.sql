@@ -39,25 +39,25 @@ INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANT
 INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (18, 11, 'Classes&Methods', true);
 INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (19, 11, 'Functions', false);
 INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (20, 11, 'None of the above', false);
-INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (21, 12, 'Classes', false);
-INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (22, 12, 'only state', false);
-INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (23, 12, 'only behaviour', false);
-INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (24, 12, 'state and behaviour', true);
-INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (25, 13, 'Global', true);
-INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (26, 13, 'Local', false);
-INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (27, 13, 'Class', false);
-INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (28, 13, 'Instance', false);
-INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (29, 14, 'Different name as Class', false);
-INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (30, 14, 'Same name as attribute', false);
-INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (31, 14, 'Same name as Class', true);
-INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES (32, 14, 'Must contain attributes', false);
+INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('21', '12', 'Classes', false);
+INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('22', '12', 'only state', false);
+INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('23', '12', 'only behaviour', false);
+INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('24', '12', 'state and behaviour', true);
+INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('25', '13', 'Global', true);
+INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('26', '13', 'Local', false);
+INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('27', '13', 'Class', false);
+INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('28', '13', 'Instance', false);
+INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('29', '14', 'Different name as Class', false);
+INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('30', '14', 'Same name as attribute', false);
+INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('31', '14', 'Same name as Class', true);
+INSERT INTO game.antwortmoeglichkeiten ("ANTWID", "FNR", "ANTWORT", "RICHTIGEANTWORT") VALUES ('32', '14', 'Must contain attributes', false);
 
 
 
 
-INSERT INTO game.kurs ("KURSID", "TITEL", "LINK", "BESCHREIBUNG") VALUES (1, 'Start-Kurs', 'https://www.tutorialspoint.com/java/index.htm', NULL);
-INSERT INTO game.kurs ("KURSID", "TITEL", "LINK", "BESCHREIBUNG") VALUES (2, 'Object & Classes', 'https://www.tutorialspoint.com/java/java_object_classes.htm', NULL);
-INSERT INTO game.kurs ("KURSID", "TITEL", "LINK", "BESCHREIBUNG") VALUES (3, 'Constructors', 'https://www.tutorialspoint.com/java/java_constructors.htm', NULL);
+INSERT INTO game.kurs ("KURSID", "TITEL", "LINK", "BESCHREIBUNG") VALUES ('1', 'Start-Kurs', 'https://www.tutorialspoint.com/java/index.htm', NULL);
+INSERT INTO game.kurs ("KURSID", "TITEL", "LINK", "BESCHREIBUNG") VALUES ('2', 'Object & Classes', 'https://www.tutorialspoint.com/java/java_object_classes.htm', NULL);
+INSERT INTO game.kurs ("KURSID", "TITEL", "LINK", "BESCHREIBUNG") VALUES ('3', 'Constructors', 'https://www.tutorialspoint.com/java/java_constructors.htm', NULL);
 
 
 

@@ -26,13 +26,21 @@ import javax.persistence.Table;
 public class KursVoraussetzung implements Serializable {
     @Id
     @Column(name="KURSVORAUSSETZID")
-    private String KursVoraussetzID = UUID.randomUUID().toString();
+    private String KursVoraussetzID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="KursID")
     private Kurs kurs;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="VoraussetzID")
     private Voraussetzung voraussetzung;
+    
+    public KursVoraussetzung() {
+        
+    }
+    
+    public KursVoraussetzung(String KursVoraussetzID) {
+        this.KursVoraussetzID=KursVoraussetzID;
+    }
 
     public String getKursVoraussetzID() {
         return KursVoraussetzID;

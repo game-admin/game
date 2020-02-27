@@ -27,7 +27,7 @@ import org.game.trainee.traineeview.Trainee;
 @Table(name = "quizbeantwortung", schema = "game")
 public class Quizbeantwortung implements Serializable {
     @Id @Column(name = "QBEID")
-    private String QBEID = UUID.randomUUID().toString();
+    private String QBEID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="QID")
     private Quiz quiz;
@@ -38,6 +38,15 @@ public class Quizbeantwortung implements Serializable {
     @Column(name="ERREICHTEPUNKTE")
     private int erreichtePunkte;
 
+    public Quizbeantwortung() {
+        
+    }
+    
+    public Quizbeantwortung(String QBEID) {
+        this.QBEID = QBEID;
+    }
+    
+    
     public String getQBEID() {
         return QBEID;
     }

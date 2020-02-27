@@ -27,13 +27,22 @@ import org.game.trainee.kurs.Voraussetzung;
 public class QuizVoraussetzung implements Serializable{
     @Id
     @Column(name="QUIZVORAUSSETZID")
-    private String QuizVoraussetzID = UUID.randomUUID().toString();
+    private String QuizVoraussetzID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="QID")
     private Quiz quiz;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="VoraussetzID")
     private Voraussetzung voraussetzung;
+    
+    public QuizVoraussetzung() {
+        
+    }
+    
+    public QuizVoraussetzung(String QuizVoraussetzID) {
+        this.QuizVoraussetzID = QuizVoraussetzID;
+    }
+    
 
     public String getQuizVorraussetzID() {
         return QuizVoraussetzID;

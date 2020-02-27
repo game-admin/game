@@ -27,7 +27,7 @@ import javax.validation.constraints.NotNull;
 public class Trainee implements Serializable {
     @Id
     @Column(name="MITID")
-    private String MitID = UUID.randomUUID().toString();
+    private String MitID;
     @NotNull @Column(name="VORNAME")
     private String vorname;
     @NotNull @Column(name="NACHNAME")
@@ -54,6 +54,10 @@ public class Trainee implements Serializable {
         this.name=name;
         this.nickname=nickname;
         this.abteilung=abteilung;
+    }
+    
+    public Trainee(String MitID) {
+        this.MitID=MitID;
     }
 
     public String getMitID() {

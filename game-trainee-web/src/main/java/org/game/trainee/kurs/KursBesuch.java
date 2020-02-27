@@ -30,7 +30,7 @@ import org.game.trainee.traineeview.Trainee;
 public class KursBesuch implements Serializable {
     @Id
     @Column(name="KURSBESUCHID")
-    private String KursBesuchID = UUID.randomUUID().toString();
+    private String KursBesuchID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="MitID")
     @NotNull
@@ -42,6 +42,14 @@ public class KursBesuch implements Serializable {
     @NotNull
     @Column(name="DATUM")
     private Date datum;
+    
+    public KursBesuch(){
+    
+    }
+    
+    public KursBesuch(String KursBesuchID) {
+        this.KursBesuchID=KursBesuchID;
+    }
 
     public String getKursBesuchID() {
         return KursBesuchID;

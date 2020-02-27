@@ -27,13 +27,21 @@ import org.game.trainee.testquiz.Quiz;
 @Table(name="voraussetzung", schema = "game")
 public class Voraussetzung implements Serializable {
     @Id @Column(name="VORAUSSETZID")
-    private String VoraussetzID = UUID.randomUUID().toString();
+    private String VoraussetzID;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="KursID")
     private Kurs kurs;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="QID")
     private Quiz quiz;
+    
+    public Voraussetzung() {
+        
+    }
+    
+    public Voraussetzung(String VoraussetzID) {
+        this.VoraussetzID=VoraussetzID;
+    }
 
     public String getVoraussetzID() {
         return VoraussetzID;

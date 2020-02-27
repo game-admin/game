@@ -27,7 +27,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "frage", schema = "game")
 public class Frage implements Serializable {
     @Id
-    private String FID = UUID.randomUUID().toString();
+    private String FID;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="QID")
     private Quiz quiz;
@@ -37,6 +37,14 @@ public class Frage implements Serializable {
     @NotNull
     @Column(name="PUNKTEZAHL")
     private int punktezahl;
+    
+    public Frage() {
+        
+    }
+    
+    public Frage(String FID) {
+        this.FID = FID;
+    }
 
     public String getFID() {
         return FID;

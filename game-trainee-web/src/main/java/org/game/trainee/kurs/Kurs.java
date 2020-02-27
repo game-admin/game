@@ -25,7 +25,7 @@ import javax.validation.constraints.NotNull;
 public class Kurs implements Serializable {
     @Id
     @Column(name="KURSID")
-    private String KursID = UUID.randomUUID().toString();
+    private String KursID;
     @NotNull
     @Column(name="TITEL")
     private String titel;
@@ -34,6 +34,14 @@ public class Kurs implements Serializable {
     private URL link;
     @Column(name="BESCHREIBUNG")
     private String beschreibung;
+    
+    public Kurs() {
+        
+    }
+    
+    public Kurs(String KursID) {
+        this.KursID=KursID;
+    }
 
     public String getKursID() {
         return KursID;

@@ -27,14 +27,22 @@ import javax.validation.constraints.NotNull;
 public class Quiz implements Serializable {
     public static final String QUERY_FINDBY_BESCHREIBUNG="Quiz.findByBeschreibung";
     @Id @Column(name = "QID")
-    private String QID = UUID.randomUUID().toString();
+    private String QID;
     @NotNull @Column(name = "TITEL")
     private String titel;
     @Column(name = "BESCHREIBUNG")
     private String beschreibung;
     @NotNull @Column(name = "REWARD")
     private Blob reward;
+    
+    public Quiz () {
+        
+    }
 
+    public Quiz(String QID) {
+        this.QID = QID;
+    }
+    
     public String getQID() {
         return QID;
     }
