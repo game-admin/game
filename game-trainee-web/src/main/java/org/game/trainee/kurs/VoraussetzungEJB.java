@@ -22,7 +22,7 @@ public class VoraussetzungEJB {
     @PersistenceContext(unitName = "Diplomarbeit")
     private EntityManager em;
     
-    public Voraussetzung find(int VoraussetzID) {
+    public Voraussetzung find(String VoraussetzID) {
         return em.find(Voraussetzung.class, VoraussetzID);
     }
     

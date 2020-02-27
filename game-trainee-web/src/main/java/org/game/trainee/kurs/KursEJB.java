@@ -22,7 +22,7 @@ public class KursEJB {
     @PersistenceContext(unitName = "Diplomarbeit")
     private EntityManager em;
     
-    public Kurs find(int KursID) {
+    public Kurs find(String KursID) {
         return em.find(Kurs.class, KursID);
     }
     
