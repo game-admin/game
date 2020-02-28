@@ -49,7 +49,7 @@ public class TestQuizController implements Serializable {
                                                  //sollte auch über EJB gehen
                                                       //und unten wenn score erhöht wird auch
         //trainee = traineebean.find("1");
-        fragemodell = creator.createModell(4, false);
+        
         results = new ArrayList<>();
         ricounter = 0;
     }
@@ -90,8 +90,8 @@ public class TestQuizController implements Serializable {
     
     public void evaluateScoreRadio() {
         List<Integer> falsche = new ArrayList<>();
-        List<Frage> test = fragebean.findAll();
-        List<Antwortmoeglichkeiten> antworten = test.get(1).getAntworten();
+        //List<Frage> test = fragebean.findAll();
+        //List<Antwortmoeglichkeiten> antworten = test.get(1).getAntworten();
         for(int i=0; i<4; i++) { //hier sollten dann zur fragensize durchgegeangen werden
             if(fragemodell.get(i).selectedAnswer.equals(fragemodell.get(i).antworten.get(fragemodell.get(i).indexrichtig))) {
                 score+=10;
@@ -173,8 +173,7 @@ public class TestQuizController implements Serializable {
         }
         return fragen;
     } */ 
-    
-
+   
     public int getScore() {
         return score;
     }
@@ -205,6 +204,17 @@ public class TestQuizController implements Serializable {
 
     public void setSelectedAnswer(List<String> selectedAnswer) {
         this.selectedAnswer = selectedAnswer;
+    }
+
+    public List<FrageModell> getFragemodell() {
+        if(fragemodell==null) {
+           fragemodell = creator.createModell(4, false);
+        }
+        return fragemodell;
+    }
+
+    public void setFragemodell(List<FrageModell> fragemodell) {
+        this.fragemodell = fragemodell;
     }
     
     

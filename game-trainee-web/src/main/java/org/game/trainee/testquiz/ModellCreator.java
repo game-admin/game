@@ -45,24 +45,27 @@ public class ModellCreator {
     }
     
     public String getFragenFromIndex(int index) {
-        return fragebean.find(""+index).getFrage();
+        int i = index+1;
+        return fragebean.find(""+i).getFrage();
     }
     
     public List<String> getAntwortenFromIndex(int index) {
-        List<Antwortmoeglichkeiten> var = fragebean.find(""+index).getAntworten();
+        int j = index+1;
+        List<Antwortmoeglichkeiten> var = fragebean.find(""+j).getAntworten(); //Hier kommt eine Liste mit der Size 1
         List<String> antworten = new ArrayList<>();
         for(int i=0; i<var.size(); i++) {
            antworten.add(var.get(i).getAntwort()); 
         }
-        return antworten;
+        return antworten; //dh hier wird auch eine Liste mit size 1 zurückgegeben, sollte eig size 4 sein
     }
     
     public List<Antwortmoeglichkeiten> getAntwortenZuIndex(String index) {
-        return fragebean.find(index).getAntworten();
+        int j = Integer.parseInt(index)+1;
+        return fragebean.find(""+j).getAntworten();
     }
     
     public int getIndexRichtigFromIndex(List<Antwortmoeglichkeiten> antworten) {
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < antworten.size(); i++) {
             if(antworten.get(i).isRichtigeAntwort()) {
                 return i;
             }

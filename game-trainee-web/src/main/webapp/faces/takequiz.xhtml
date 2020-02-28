@@ -21,15 +21,15 @@
         </p>
         <div id="questions">
         <h:form>
-            <ui:repeat var="frage" value="#{testQuizController.fragen}">
+            <ui:repeat var="frage" value="#{testQuizController.fragemodell}">
                 <div class="question">
                     <h:outputLabel for="radio" value="#{frage.frage}"></h:outputLabel>
-                    <h:selectOneRadio id="radio" value="#{frage.selectedAnswer}" layout="grid" required="true" >
-                        <f:selectItem itemValue="#{frage.antworten.get(0)}" itemLabel="#{frage.antworten.get(0).antwort}"></f:selectItem>
-                        <f:selectItem itemValue="#{frage.antworten.get(1).antwort}" itemLabel="#{frage.antworten.get(1).antwort}"></f:selectItem>
-                        <f:selectItem itemValue="#{frage.antworten.get(2).antwort}" itemLabel="#{frage.antworten.get(2).antwort}"></f:selectItem>
-                        <f:selectItem itemValue="#{frage.antworten.get(3).antwort}" itemLabel="#{frage.antworten.get(3).antwort}"></f:selectItem>
-                    </h:selectOneRadio>
+                    <p:selectOneRadio id="radio" value="#{frage.selectedAnswer}" layout="grid" required="true" unselectable="true" columns="1">
+                        <f:selectItem itemValue="#{frage.antworten.get(0)}" itemLabel="#{frage.antworten.get(0)}"></f:selectItem>
+                        <f:selectItem itemValue="#{frage.antworten.get(0)}" itemLabel="#{frage.antworten.get(0)}"></f:selectItem>
+                        <f:selectItem itemValue="#{frage.antworten.get(0)}" itemLabel="#{frage.antworten.get(0)}"></f:selectItem>
+                        <f:selectItem itemValue="#{frage.antworten.get(0)}" itemLabel="#{frage.antworten.get(0)}"></f:selectItem>
+                    </p:selectOneRadio>
                     <br/>
                     <!--unselectable="true", columns="1" -->
                 </div>    
