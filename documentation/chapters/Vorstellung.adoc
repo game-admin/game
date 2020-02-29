@@ -18,3 +18,10 @@ image::../img/eric.png[]
 
 
 === Jan Binder
+
+* Place of residence: Sonnberg
+* Born: 09.04.2001
+* Education
+** Volksschule Hollabrunn
+** Bundesgymnasium Hollabrunn
+** HTL Hollabrunn, Wirtschaftsingenieure-Betriebsinformatik

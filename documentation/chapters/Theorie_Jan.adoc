@@ -28,7 +28,15 @@ This technique is used to acquire knowledge and represent it graphically. People
 
 
 
-image::../img/RepertoryGridImage.png[]
+image::../img/ReprtoryGridImage.png[]
+
+===== Origin and Background
+
+Der Ursprung der Critical-Incident-Technik geht auf Sir Francis Galton zurück, der bereits Ende des 19. Jahrhunderts Studien in diese Richtung durchführte. In weiterer Folge wurden kontrollierte Beobachtungstests entwickelt sowie Studien zu Erholungstätigkeiten durchgeführt und anekdotische Aufzeichnungen geführt. Der Grundstein der Critical-Incident-Technik zu ihrer heutigen Form wurde erst Mitte des Zweiten Weltkriegs gesetzt. Im Sommer 1941 führte John Flanagan Studien im Rahmen eines Flugpsychologieprogramms der US-Luftwaffe durch. Zweck des Programms war es, ein Verfahren zur Auswahl und Klassifikation von Besatzungen zu entwickeln. Die Critical-Incident-Technik hat sich seither stetig weiterentwickelt und wird mittlerweile in einer Vielzahl anderer Bereiche verwendet.
+
+_(vgl. Wissensmanagement in der Praxis-Herkunft und Hintergrund, Christian Stary, Monika Moschner, Edith Stary, 2013)_
+
+
 
 ==== Critical-Incident-Technique (CIT)
 
