@@ -40,7 +40,7 @@ public class Quiz implements Serializable {
     private String beschreibung;
     @NotNull @Column(name = "REWARD")
     private String reward;
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "FID")
     private List<Frage> fragen;
     

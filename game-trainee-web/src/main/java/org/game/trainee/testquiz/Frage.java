@@ -35,7 +35,7 @@ public class Frage implements Serializable {
     //public static final String QUERY_FINDALLANTWORTEN = "Frage.findAllAntworten";
     @Id
     private String FID;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="QID")
     private Quiz quiz;
     @NotNull
@@ -44,7 +44,7 @@ public class Frage implements Serializable {
     @NotNull
     @Column(name="PUNKTEZAHL")
     private int punktezahl;
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name="ANTWID")
     private List<Antwortmoeglichkeiten> antworten;
     
@@ -89,7 +89,8 @@ public class Frage implements Serializable {
     }
 
     public List<Antwortmoeglichkeiten> getAntworten() {
-        System.out.println(antworten.size());
+        System.out.println("Die größe der Antwortenliste zur Frage "+FID+", ist: "+antworten.size());
+        System.out.println("Die Antwort hat die ANTWID von: "+antworten.get(0).getAntwID());
         return antworten;
     }
 

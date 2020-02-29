@@ -29,7 +29,7 @@ public class Antwortmoeglichkeiten implements Serializable {
     @Id
     @Column(name="ANTWID")
     private String AntwID;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="FID")
     private Frage frage;
     @NotNull
