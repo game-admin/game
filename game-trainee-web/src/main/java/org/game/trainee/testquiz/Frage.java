@@ -89,6 +89,7 @@ public class Frage implements Serializable {
     }
 
     public List<Antwortmoeglichkeiten> getAntworten() {
+        System.out.println(antworten.size());
         return antworten;
     }
 

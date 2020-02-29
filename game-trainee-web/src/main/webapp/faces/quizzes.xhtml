@@ -56,6 +56,20 @@
                 </h:commandButton>                                  
             </h:form>
         </ui:repeat>
+        <p:dataTable var="quiz" value="#{testQuizController.quizzes}">
+            <p:column headerText="Title">
+                <h:outputText value="#{quiz.titel}"></h:outputText>
+            </p:column>
+            <p:column headerText="Beschreibung">
+                <h:outputText value="#{quiz.beschreibung}"></h:outputText>
+            </p:column>
+            <p:column headerText="">
+                <h:form>
+                    <h:commandButton action="#{testQuizController.quizUebergabe(quiz.QID)}" value="Take Quiz!" >       
+                    </h:commandButton>                                  
+                </h:form>
+            </p:column>
+        </p:dataTable>
         <hr/>
         <p>
             If you want to create a quiz, 
