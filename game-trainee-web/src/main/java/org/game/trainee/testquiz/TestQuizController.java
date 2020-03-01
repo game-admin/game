@@ -115,6 +115,7 @@ public class TestQuizController implements Serializable {
         //-> ein boolean Feld isDone -> when done true is, dann is die Vorraussetzung erledigt, dann sols weitergehen
         //-> wenn false drinsteht in dem Wert zur QID dann wurde die Vorrausetzung nicht erledigt -> Fehler
         this.qid = qid;
+        fragemodell = creator.createModell(4, qid, false);
         if(quizbean.find(qid).getMultiplechoice()) {
             return "takeQuizMultipleChoice.xhtml";
         } else {

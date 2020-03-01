@@ -44,7 +44,7 @@ public class Trainee implements Serializable {
     @Column(name="progress")
     private int progress;
     @Column(name="embleme")
-    public List<String> embleme;
+    private List<String> embleme;
     
     public Trainee() {}
     

@@ -38,13 +38,6 @@ public class ModellCreator {
         return list;
     }
     
-    public boolean[] createButtons(int size) { //Deprecated?
-        boolean[] b = new boolean[size];
-        for(int i=0; i<b.length; i++)
-            b[i] = false;
-        return b;
-    }
-    
     public String getFragenFromIndex(int index) {
         int i = index+1;
         return fragebean.find(""+i).getFrage();
