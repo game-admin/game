@@ -48,14 +48,7 @@
                 </td>
             </tr>
         </table>
-        <ui:repeat var="quiz" value="#{testQuizController.quizzes}" >
-            <h:outputText value="#{quiz.titel}"></h:outputText> <br/>
-            <h:outputText value="#{quiz.beschreibung}"></h:outputText> <br/>
-            <h:form>
-                <h:commandButton action="#{testQuizController.quizUebergabe(quiz.QID)}" value="Take Quiz!" >       
-                </h:commandButton>                                  
-            </h:form>
-        </ui:repeat>
+       
         <p:dataTable var="quiz" value="#{testQuizController.quizzes}">
             <p:column headerText="Title">
                 <h:outputText value="#{quiz.titel}"></h:outputText>

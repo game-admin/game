@@ -19,28 +19,6 @@
             Hier kannst du Kurse nehmen, die dich auf die Quizzes vorbereiten. Nachdem du dir einen Kurs angeschaut hast,
             wird das jeweilige Quiz freigeschalten!
         </p>
-        <p>
-            <strong>Java SE Learning Beginner Course</strong> <br/>
-            This course will give you some basic knowledge of Java SE.
-            <h:form>
-                <h:commandButton action="#{kursController.takeKurs}" value="Take Course!" ></h:commandButton>
-            </h:form>
-        </p>
-        <p>
-            <strong>Creating a GUI with Swing</strong> <br/>
-            A comprehensive introduction to GUI creation on the Java platform.
-            <p:button href="https://docs.oracle.com/javase/tutorial/uiswing/index.html" value="Take Course!"></p:button>
-        </p>
-        <p>
-            <strong>A Guide for JavaBeans</strong> <br/>
-            The Java platform's component technology.
-            <a href="https://docs.oracle.com/javase/tutorial/javabeans/index.html">Take Course!</a>
-        </p>
-        <p>
-            <strong>JDBC Database Access Course</strong> <br/>
-            Introduces an API for connectivity between the Java applications and a wide range of databases and data sources.
-            <a href="https://docs.oracle.com/javase/tutorial/jdbc/index.html">Take Course!</a>
-        </p>
         <p:dataTable var="kurs" value="#{kursController.kurse}">
             <p:column headerText="Titel">
                 <h:outputText value="#{kurs.titel}"></h:outputText>

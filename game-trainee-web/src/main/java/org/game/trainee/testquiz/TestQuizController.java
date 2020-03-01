@@ -103,13 +103,18 @@ public class TestQuizController implements Serializable {
         }
         checkResults(falsche); 
         //Hier sollt dann noch der Score vom Trainee geupdated werden
+        //hier muss der isDone Wert, von dem Quiz in Vorrausetzung auf true gesetzt werden
+        //EJB."Methode"(quid) -> damit wird der Wert auf true gesetzt
     }
     
     public String quizUebergabe(String qid) {
         //hier drin sollt auch nach Vorraussetzungen geschaut werden, wenn diese nicht erfüllt sind, kommt eine Fehlermeldung
         //hier kann gleich die Fragenliste gesetzt werden, zu dem Quiz auf das geklickt wurde!
-        if(qid.equals("1")) {
-            return "takequiz.xhtml";
+        //-> QuizVorraussetzungEJB -> bean.find(qid), -> wenn null: keine Vorraussetzung, 
+        //-> ein boolean Feld isDone -> when done true is, dann is die Vorraussetzung erledigt, dann sols weitergehen
+        //-> wenn false drinsteht in dem Wert zur QID dann wurde die Vorrausetzung nicht erledigt -> Fehler
+        if(quizbean.find(qid).getMultiplechoice()) {
+            return "takeQuizMultipleChoice.xhtml";
         } else {
             return "takequiz.xhtml"; 
         }

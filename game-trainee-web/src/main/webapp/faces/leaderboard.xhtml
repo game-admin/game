@@ -21,6 +21,7 @@
         <p:dataTable var="trainee" value="#{traineeController.trainees}">
             <p:column headerText="Name">
                 <h:outputText value="#{trainee.vorname}"></h:outputText>
+                <h:outputText value="#{trainee.nachname}"></h:outputText>
             </p:column>
             
             <p:column headerText="Nickname">
@@ -32,7 +33,7 @@
             </p:column>
             
             <p:column headerText="Emblems">
-                <h:graphicImage library="img" name="#{trainee.embleme.get(0)}"></h:graphicImage>
+                <h:graphicImage value="data:image/png;base64,#{trainee.embleme.get(0)}"></h:graphicImage>
             </p:column>
         </p:dataTable>
     </ui:define>
