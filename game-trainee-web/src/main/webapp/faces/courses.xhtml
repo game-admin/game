@@ -14,7 +14,11 @@
     </ui:define>
    
     <ui:define name="content">
-        <h1 align="center">Courses</h1>
+        <h1 align="center">Kurse</h1>
+        <p>
+            Hier kannst du Kurse nehmen, die dich auf die Quizzes vorbereiten. Nachdem du dir einen Kurs angeschaut hast,
+            wird das jeweilige Quiz freigeschalten!
+        </p>
         <p>
             <strong>Java SE Learning Beginner Course</strong> <br/>
             This course will give you some basic knowledge of Java SE.
@@ -37,6 +41,20 @@
             Introduces an API for connectivity between the Java applications and a wide range of databases and data sources.
             <a href="https://docs.oracle.com/javase/tutorial/jdbc/index.html">Take Course!</a>
         </p>
+        <p:dataTable var="kurs" value="#{kursController.kurse}">
+            <p:column headerText="Titel">
+                <h:outputText value="#{kurs.titel}"></h:outputText>
+            </p:column>
+            <p:column headerText="Beschreibung">
+                <h:outputText value="#{kurs.beschreibung}"></h:outputText>
+            </p:column>
+            <p:column>
+                <h:form>
+                    <p:commandButton action="#{kursController.takeKurs(kurs.kursID)}" value="Take Course!" >       
+                    </p:commandButton>                                  
+                </h:form>
+            </p:column>
+        </p:dataTable>
     </ui:define>      
 </ui:composition>
 

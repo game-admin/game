@@ -1,0 +1,19 @@
+2 Konstruktoren:
+
+-> ein default Konstruktor, und einer der einen Key annimmt (den verwendet)
+
+-> JavaBeans pattern:
+
+bei value/prpoerties macht er imemr autom. get davor
+
+bei action: da kann man jetzt die Methoden normal verwenden
+
+für emblems: jave image base64
+-> How to convert image to base 64 string
+-> daraus kann man auch ein bytearrray
+
+-> Daten nicht direkt aus der Datenbank in JSF anzeigen
+-> erst im Controller Daten ins Fragenmodell spielen
+-> dann von JSF auf dieses Fragenmodell zugreifen (das sind dann die buttons)
+
+ui:repeat -> ist wie forEach, geht über ne Liste drüber

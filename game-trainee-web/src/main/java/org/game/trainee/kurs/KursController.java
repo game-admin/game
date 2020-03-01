@@ -5,7 +5,10 @@
  */
 package org.game.trainee.kurs;
 
+import java.net.URL;
+import java.util.List;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
@@ -16,11 +19,30 @@ import javax.inject.Named;
 @RequestScoped
 public class KursController {
     //hier soll, wenn man auf einen Kurs klickt, die Vorraussetzung geupdated werden
+    private List<Kurs> kurse;
     
-    public String takeKurs() {
+    @Inject
+    private KursEJB kursbean;
+    
+    
+    public URL takeKurs(String kursid) {
         //Vorraussetzung checken, und Vorraussetzung updated
-        return "https://www.tutorialspoint.com/java/index.htm/";
+        return kursbean.find(kursid).getLink();
+        //return "https://www.tutorialspoint.com/java/index.htm/";
         //je nachdem welcher Kurs geklick wurde, sollte hier auch der richtige Link zurückgegeben werden
         //ideal aus der Datenbank raus mittels KursID
     }
+
+    public List<Kurs> getKurse() {
+        if(kurse == null) {
+            kurse = kursbean.findAll();
+        }
+        return kurse;
+    }
+
+    public void setKurse(List<Kurs> kurse) {
+        this.kurse = kurse;
+    }
+    
+    
 }
