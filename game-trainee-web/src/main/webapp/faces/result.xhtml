@@ -23,13 +23,12 @@
                 <div id="results">
                     <h:outputText value="#{result.frage}" style="#{result.istfalsch? 'color:red; font-weight: bold;' : 'color:green; font-weight: bold;'}"></h:outputText> 
                     <i class="#{result.istfalsch? 'fa fa-fw fa-close' : 'fa fa-fw fa-check'}"></i><br/>
-                    <h:outputText value="#{result.antworten[0]}" style="#{result.richtigeAntworten.get(0) == 1? 'color:green' : 'color:red'}"></h:outputText> <br/>
-                    <h:outputText value="#{result.antworten[1]}" style="#{result.richtigeAntworten.get(1) == 1? 'color:green' : 'color:red'}"></h:outputText> <br/>
-                    <h:outputText value="#{result.antworten[2]}" style="#{result.richtigeAntworten.get(2) == 1? 'color:green' : 'color:red'}"></h:outputText> <br/>
-                    <h:outputText value="#{result.antworten[3]}" style="#{result.richtigeAntworten.get(3) == 1? 'color:green' : 'color:red'}"></h:outputText> <br/>
+                    <h:outputText value="#{result.antworten.get(0)}" style="#{result.richtigeAntworten.get(0) == 1? 'color:green' : 'color:red'}"></h:outputText> <br/>
+                    <h:outputText value="#{result.antworten.get(1)}" style="#{result.richtigeAntworten.get(1) == 1? 'color:green' : 'color:red'}"></h:outputText> <br/>
+                    <h:outputText value="#{result.antworten.get(2)}" style="#{result.richtigeAntworten.get(2) == 1? 'color:green' : 'color:red'}"></h:outputText> <br/>
+                    <h:outputText value="#{result.antworten.get(3)}" style="#{result.richtigeAntworten.get(3) == 1? 'color:green' : 'color:red'}"></h:outputText> <br/>
                 </div>
             </ui:repeat>
-        </p> 
-        <h:outputText value="Diesen Score hast du jetzt: #{testQuizController.score} Punkte"></h:outputText>
+        </p>
     </ui:define>
 </ui:composition>

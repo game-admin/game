@@ -21,14 +21,13 @@ import org.game.trainee.traineeview.TraineeEJB;
 public class TestQuizController implements Serializable {
      
     private List<Quiz> quizzes;
-    //private List<Frage> fragen; used?
     private List<Results> results;
     private int score;
     private Trainee trainee;
     private int ricounter;
     private String emblem = "javapro.png";
-    private List<String> selectedAnswer; //nur für Test -> ghört ins Model
     private List<FrageModell> fragemodell;
+    private String qid;
     
     @Inject 
     private ModellCreator creator;
@@ -86,6 +85,7 @@ public class TestQuizController implements Serializable {
         } 
         checkResults(falsche); 
         //Hier sollte dann noch der Score der Trainees geupdated werden
+        //Hier sollte bei QuizBesuch das geaddet werden
     } 
     
     public void evaluateScoreRadio() {
@@ -102,6 +102,7 @@ public class TestQuizController implements Serializable {
             }
         }
         checkResults(falsche); 
+        //Hier sollte bei Quizbesuch alles geaddet werden 
         //Hier sollt dann noch der Score vom Trainee geupdated werden
         //hier muss der isDone Wert, von dem Quiz in Vorrausetzung auf true gesetzt werden
         //EJB."Methode"(quid) -> damit wird der Wert auf true gesetzt
@@ -113,11 +114,13 @@ public class TestQuizController implements Serializable {
         //-> QuizVorraussetzungEJB -> bean.find(qid), -> wenn null: keine Vorraussetzung, 
         //-> ein boolean Feld isDone -> when done true is, dann is die Vorraussetzung erledigt, dann sols weitergehen
         //-> wenn false drinsteht in dem Wert zur QID dann wurde die Vorrausetzung nicht erledigt -> Fehler
+        this.qid = qid;
         if(quizbean.find(qid).getMultiplechoice()) {
             return "takeQuizMultipleChoice.xhtml";
         } else {
             return "takequiz.xhtml"; 
         }
+        
         
     }
     
@@ -142,20 +145,15 @@ public class TestQuizController implements Serializable {
     }
     
     public void checkResults(List<Integer> falsche) {
-     /*  for(int i=0; i<quiz.size(); i++) {
-            List<Integer> indexrichtig = umwandler(quiz.get(i).indexrichtig);
+     for(int i=0; i<fragemodell.size(); i++) {
+            List<Integer> indexrichtig = umwandler(fragemodell.get(i).indexrichtig);
             if(falsche.get(i) == i) {
-                results.add(new Results(quiz.get(i).frage, quiz.get(i).antworten, indexrichtig, true));
+                results.add(new Results(fragemodell.get(i).frage, fragemodell.get(i).antworten, indexrichtig, true));
             } else {
-                results.add(new Results(quiz.get(i).frage, quiz.get(i).antworten, indexrichtig, false));
+                results.add(new Results(fragemodell.get(i).frage, fragemodell.get(i).antworten, indexrichtig, false));
             }
-        } */
+        } 
     }
-    
-    public String getQuizBezeichnung() {
-        return quizbean.find("1").getBeschreibung(); //hier mit qid arbeiten
-
-    } 
 
     public List<Results> getResults() {
         return results;
@@ -171,14 +169,7 @@ public class TestQuizController implements Serializable {
         }
         return quizzes;
     }
-    
-    /*public List<Frage> getFragen() { //ich brauch hier nur die Fragen zu einem bestimmten Quiz!!
-        if(fragen == null) {
-            fragen = fragemodell.getAllFragen();
-        }
-        return fragen;
-    } */ 
-   
+
     public int getScore() {
         return score;
     }
@@ -203,17 +194,9 @@ public class TestQuizController implements Serializable {
         this.emblem = emblem;
     }
 
-    public List<String> getSelectedAnswer() {
-        return selectedAnswer;
-    }
-
-    public void setSelectedAnswer(List<String> selectedAnswer) {
-        this.selectedAnswer = selectedAnswer;
-    }
-
     public List<FrageModell> getFragemodell() {
         if(fragemodell==null) {
-           fragemodell = creator.createModell(4, false);
+           fragemodell = creator.createModell(4, qid, false);
         }
         return fragemodell;
     }
@@ -221,6 +204,13 @@ public class TestQuizController implements Serializable {
     public void setFragemodell(List<FrageModell> fragemodell) {
         this.fragemodell = fragemodell;
     }
-    
+
+    public String getQid() {
+        return qid;
+    }
+
+    public void setQid(String qid) {
+        this.qid = qid;
+    }
     
 }

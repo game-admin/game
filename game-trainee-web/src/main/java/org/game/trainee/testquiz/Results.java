@@ -13,11 +13,11 @@ import java.util.List;
  */
 public class Results {
     private String frage;
-    private String[] antworten;
+    private List<String> antworten;
     private List<Integer> richtigeAntworten;
     private boolean istfalsch;
     
-    public Results(String frage, String[] antworten, List<Integer> richtigeAntworten, boolean istfalsch) {
+    public Results(String frage, List<String> antworten, List<Integer> richtigeAntworten, boolean istfalsch) {
         this.frage=frage;
         this.antworten=antworten;
         this.richtigeAntworten=richtigeAntworten;
@@ -32,11 +32,11 @@ public class Results {
         this.frage = frage;
     }
 
-    public String[] getAntworten() {
+    public List<String> getAntworten() {
         return antworten;
     }
 
-    public void setAntworten(String[] antworten) {
+    public void setAntworten(List<String> antworten) {
         this.antworten = antworten;
     }
 

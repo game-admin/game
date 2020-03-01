@@ -14,41 +14,6 @@
 
     <ui:define name="content">
         <h1 align="center">Quizzes</h1>               
-        <table id="quizzes">
-            <tr>
-                <th>
-                    Title
-                </th>
-                <th>
-                    Description
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    Java Learning Quiz - Basics (Single Choice)
-                </td>
-                <td>
-                    <h:outputText value="#{testQuizController.quizBezeichnung}"></h:outputText>
-                </td>
-                <td>
-                    <!-- <h:form>
-                        <h:commandButton action="{testQuizController.quizUebergabe("1")}" value="Take Quiz!"></h:commandButton>                                 
-                    </h:form> -->
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Java Learning Quiz - Advanced (Multiple Choice)
-                </td>
-                <td>
-                    This quiz will check, if you have enough in depth knowledge with java.
-                </td>
-                <td>
-                    <p:button outcome="takeQuizMultipleChoice.xhtml" value="Take Quiz!"></p:button>
-                </td>
-            </tr>
-        </table>
-       
         <p:dataTable var="quiz" value="#{testQuizController.quizzes}">
             <p:column headerText="Title">
                 <h:outputText value="#{quiz.titel}"></h:outputText>

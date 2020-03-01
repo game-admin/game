@@ -5,7 +5,6 @@
  */
 package org.game.trainee.kurs;
 
-import java.net.URL;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -28,9 +27,6 @@ public class KursController {
     public String takeKurs(String kursid) {
         //Vorraussetzung checken, und Vorraussetzung updated
         return kursbean.find(kursid).getLink();
-        //return "https://www.tutorialspoint.com/java/index.htm/";
-        //je nachdem welcher Kurs geklick wurde, sollte hier auch der richtige Link zurückgegeben werden
-        //ideal aus der Datenbank raus mittels KursID
     }
 
     public List<Kurs> getKurse() {
