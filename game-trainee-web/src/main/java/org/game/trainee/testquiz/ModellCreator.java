@@ -24,7 +24,8 @@ public class ModellCreator {
     @Inject
     FrageEJB fragebean;
     
-    
+    @Inject
+    AntwortmoeglichkeitenEJB antwortbean;
          
     public ModellCreator() {
     }
@@ -51,7 +52,7 @@ public class ModellCreator {
     
     public List<String> getAntwortenFromIndex(int index) {
         int j = index+1;
-        List<Antwortmoeglichkeiten> var = fragebean.find(""+j).getAntworten(); //Hier kommt eine Liste mit der Size 1
+        List<Antwortmoeglichkeiten> var = antwortbean.findAntwortenByFID(""+j); //Hier kommt eine Liste mit der Size 1
         List<String> antworten = new ArrayList<>();
         for(int i=0; i<var.size(); i++) {
            antworten.add(var.get(i).getAntwort()); 
@@ -61,7 +62,7 @@ public class ModellCreator {
     
     public List<Antwortmoeglichkeiten> getAntwortenZuIndex(String index) {
         int j = Integer.parseInt(index)+1;
-        return fragebean.find(""+j).getAntworten();
+        return antwortbean.findAntwortenByFID(""+j);
     }
     
     public int getIndexRichtigFromIndex(List<Antwortmoeglichkeiten> antworten) {

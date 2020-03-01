@@ -40,7 +40,8 @@ CREATE TABLE game.quiz(
     "qid" text NOT NULL,
     "titel" text COLLATE pg_catalog."default" NOT NULL,
     "beschreibung" text COLLATE pg_catalog."default",
-    "reward" text COLLATE pg_catalog."default" NOT NULL
+    "reward" text COLLATE pg_catalog."default" NOT NULL,
+    "multiplechoice" boolean
 );
 
 CREATE TABLE game.quizbeantwortung(
@@ -58,7 +59,7 @@ CREATE TABLE game.quizvoraussetzung(
 
 CREATE TABLE game.trainee (
     "mitid" text NOT NULL,
-    "name" text COLLATE pg_catalog."default" NOT NULL,
+    "nachname" text COLLATE pg_catalog."default" NOT NULL,
     "vorname" text COLLATE pg_catalog."default",
     "nickname" text COLLATE pg_catalog."default" NOT NULL,
     "abteilung" text COLLATE pg_catalog."default",

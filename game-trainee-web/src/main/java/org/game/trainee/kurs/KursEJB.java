@@ -5,6 +5,7 @@
  */
 package org.game.trainee.kurs;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -35,5 +36,9 @@ public class KursEJB {
         Kurs k = em.getReference(Kurs.class, KursID);
         em.remove(k);
         em.getTransaction().commit();
+    }
+    
+    public List<Kurs> findAll() {
+        return em.createNamedQuery(Kurs.QUERY_FINDALLKURSE, Kurs.class).getResultList();
     }
 }

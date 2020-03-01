@@ -36,16 +36,16 @@ public class Frage implements Serializable {
     @Id
     private String FID;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="QID")
+    @JoinColumn(name="qid")
     private Quiz quiz;
     @NotNull
-    @Column(name="FRAGE")
+    @Column(name="frage")
     private String Frage;
     @NotNull
-    @Column(name="PUNKTEZAHL")
+    @Column(name="punktezahl")
     private int punktezahl;
     @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name="ANTWID")
+    @JoinColumn(name="antwid")
     private List<Antwortmoeglichkeiten> antworten;
     
     public Frage() {

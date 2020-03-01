@@ -32,14 +32,16 @@ import javax.validation.constraints.NotNull;
 public class Quiz implements Serializable {
     public static final String QUERY_FINDBY_BESCHREIBUNG="Quiz.findByBeschreibung";
     public static final String QUERY_FINDALL="Quiz.findAll";
-    @Id @Column(name = "QID")
+    @Id @Column(name = "qid")
     private String QID;
-    @NotNull @Column(name = "TITEL")
+    @NotNull @Column(name = "titel")
     private String titel;
-    @Column(name = "BESCHREIBUNG")
+    @Column(name = "beschreibung")
     private String beschreibung;
-    @NotNull @Column(name = "REWARD")
+    @NotNull @Column(name = "reward")
     private String reward;
+    @Column(name="multiplechoice")
+    private Boolean multiplechoice;
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "FID")
     private List<Frage> fragen;
@@ -82,6 +84,22 @@ public class Quiz implements Serializable {
 
     public void setReward(String reward) {
         this.reward = reward;
+    }
+
+    public List<Frage> getFragen() {
+        return fragen;
+    }
+
+    public void setFragen(List<Frage> fragen) {
+        this.fragen = fragen;
+    }
+
+    public Boolean getMultiplechoice() {
+        return multiplechoice;
+    }
+
+    public void setMultiplechoice(Boolean multiplechoice) {
+        this.multiplechoice = multiplechoice;
     }
     
     

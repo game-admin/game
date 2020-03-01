@@ -5,6 +5,7 @@
  */
 package org.game.trainee.testquiz;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -36,5 +37,10 @@ public class AntwortmoeglichkeitenEJB {
         Antwortmoeglichkeiten antw = em.getReference(Antwortmoeglichkeiten.class, AntwID);
         em.remove(antw);
         em.getTransaction().commit();
+    }
+    
+    public List<Antwortmoeglichkeiten> findAntwortenByFID(String fid) {
+        return em.createNamedQuery(Antwortmoeglichkeiten.QUERY_FINDANTWORTEN_BYFID, Antwortmoeglichkeiten.class)
+                .setParameter("fid", fid).getResultList();
     }
 }

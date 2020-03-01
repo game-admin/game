@@ -1,11 +1,11 @@
 
-INSERT INTO game.trainee ("mitid", "name", "vorname", "nickname", "abteilung", "progress", "embleme") VALUES ('1', 'Binder', 'Jan', 'Syreax', NULL, 500, NULL);
-INSERT INTO game.trainee ("mitid", "name", "vorname", "nickname", "abteilung", "progress", "embleme") VALUES ('2', 'Haneder', 'Eric', 'ericbensi', NULL, 600, NULL);
-INSERT INTO game.trainee ("mitid", "name", "vorname", "nickname", "abteilung", "progress", "embleme") VALUES ('3', 'Saliger', 'Alex', 'SaAlexX_1010', NULL, 400, NULL);
-INSERT INTO game.trainee ("mitid", "name", "vorname", "nickname", "abteilung", "progress", "embleme") VALUES ('4', 'Wurst', 'Alexander', 'wursti', NULL, 300, NULL);
+INSERT INTO game.trainee ("mitid", "nachname", "vorname", "nickname", "abteilung", "progress", "embleme") VALUES ('1', 'Binder', 'Jan', 'Syreax', NULL, 500, NULL);
+INSERT INTO game.trainee ("mitid", "nachname", "vorname", "nickname", "abteilung", "progress", "embleme") VALUES ('2', 'Haneder', 'Eric', 'ericbensi', NULL, 600, NULL);
+INSERT INTO game.trainee ("mitid", "nachname", "vorname", "nickname", "abteilung", "progress", "embleme") VALUES ('3', 'Saliger', 'Alex', 'SaAlexX_1010', NULL, 400, NULL);
+INSERT INTO game.trainee ("mitid", "nachname", "vorname", "nickname", "abteilung", "progress", "embleme") VALUES ('4', 'Wurst', 'Alexander', 'wursti', NULL, 300, NULL);
 
-INSERT INTO game.quiz ("qid", "titel", "beschreibung", "reward") VALUES ('1', 'Start', 'Quiz about the general knowledge of Java', 'test');
-INSERT INTO game.quiz ("qid", "titel", "beschreibung", "reward") VALUES ('2', 'Object, Classes & Constructors', 'Quiz about Objects, Classes and Constructors in Java', 'test');
+INSERT INTO game.quiz ("qid", "titel", "beschreibung", "reward", "multiplechoice") VALUES ('1', 'Start', 'Quiz about the general knowledge of Java', 'test', false);
+INSERT INTO game.quiz ("qid", "titel", "beschreibung", "reward", "multiplechoice") VALUES ('2', 'Object, Classes & Constructors', 'Quiz about Objects, Classes and Constructors in Java', 'test', false);
 
 
 

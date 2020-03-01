@@ -15,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -25,7 +26,9 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "antwortmoeglichkeiten", schema = "game")
+@NamedQuery(name = Antwortmoeglichkeiten.QUERY_FINDANTWORTEN_BYFID, query = "SELECT antwort FROM Antwortmoeglichkeiten antwort WHERE antwort.frage := FID")
 public class Antwortmoeglichkeiten implements Serializable {
+    public static final String QUERY_FINDANTWORTEN_BYFID="Antwortmoeglichkeiten.findAntwortenByFID";
     @Id
     @Column(name="ANTWID")
     private String AntwID;

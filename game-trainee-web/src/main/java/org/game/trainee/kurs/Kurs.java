@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -22,7 +23,9 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "kurs", schema = "game")
+@NamedQuery(name = Kurs.QUERY_FINDALLKURSE, query = "SELECT kurs FROM Kurs kurs")
 public class Kurs implements Serializable {
+    public static final String QUERY_FINDALLKURSE = "Kurs.findAll";
     @Id
     @Column(name="KURSID")
     private String KursID;
