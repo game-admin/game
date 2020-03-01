@@ -25,7 +25,7 @@ public class KursController {
     private KursEJB kursbean;
     
     
-    public URL takeKurs(String kursid) {
+    public String takeKurs(String kursid) {
         //Vorraussetzung checken, und Vorraussetzung updated
         return kursbean.find(kursid).getLink();
         //return "https://www.tutorialspoint.com/java/index.htm/";

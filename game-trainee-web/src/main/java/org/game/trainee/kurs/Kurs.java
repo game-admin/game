@@ -27,15 +27,15 @@ import javax.validation.constraints.NotNull;
 public class Kurs implements Serializable {
     public static final String QUERY_FINDALLKURSE = "Kurs.findAll";
     @Id
-    @Column(name="KURSID")
+    @Column(name="kursid")
     private String KursID;
     @NotNull
-    @Column(name="TITEL")
+    @Column(name="titel")
     private String titel;
     @NotNull
-    @Column(name="LINK")
-    private URL link;
-    @Column(name="BESCHREIBUNG")
+    @Column(name="link")
+    private String link;
+    @Column(name="beschreibung")
     private String beschreibung;
     
     public Kurs() {
@@ -62,11 +62,11 @@ public class Kurs implements Serializable {
         this.titel = titel;
     }
 
-    public URL getLink() {
+    public String getLink() {
         return link;
     }
 
-    public void setLink(URL link) {
+    public void setLink(String link) {
         this.link = link;
     }
 
