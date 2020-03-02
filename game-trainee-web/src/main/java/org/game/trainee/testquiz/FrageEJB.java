@@ -48,6 +48,12 @@ public class FrageEJB {
         em.remove(f);
         em.getTransaction().commit();
     }
+    
+    public List<Frage> findFrageByQID(String qid) {
+        return em.createNamedQuery(Frage.QUERY_FINDFRAGENZUQID, Frage.class)
+                .setParameter("QID", qid).getResultList();
+    }
+    
     /*
     public List<Frage> findQuizFragen(int index) {
         Query query = em.createQuery("SELECT * FROM frage f WHERE QID ="+index+";");

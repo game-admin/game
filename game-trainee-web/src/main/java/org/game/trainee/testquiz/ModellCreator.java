@@ -33,29 +33,33 @@ public class ModellCreator {
     public List<FrageModell> createModell(int size, String qid, boolean isMultipleChoice) {
         List<FrageModell> list = new ArrayList<>();
         for(int i = 0 ; i < size ; i++) {
-            list.add(new FrageModell(getFragenFromIndex(i), getAntwortenFromIndex(i), getIndexRichtigFromIndex(getAntwortenZuIndex(""+i))));
+            list.add(new FrageModell(getFragenFromIndex(qid,i), getAntwortenFromIndex(i,qid), getIndexRichtigFromIndex(getAntwortenZuIndex(i))));
         }
         return list;
     }
     
-    public String getFragenFromIndex(int index) {
-        int i = index+1;
-        return fragebean.find(""+i).getFrage();
+    public String getFragenFromIndex(String qid, int index) {
+        return fragebean.findFrageByQID(qid).get(index).getFrage();
     }
     
-    public List<String> getAntwortenFromIndex(int index) {
-        int j = index+1;
-        List<Antwortmoeglichkeiten> var = antwortbean.findAntwortenByFID(""+j); //Hier kommt eine Liste mit der Size 1
+    public List<String> getAntwortenFromIndex(int index, String qid) {
+        String test = "2";
+        if(qid==test) {
+            index = index + 5;
+        } else {
+            index = index +1;
+        }
+        List<Antwortmoeglichkeiten> var = antwortbean.findAntwortenByFID(""+index);    //hier bekommt er eine 0er Liste wenn ich nach qid und fid suche
         List<String> antworten = new ArrayList<>();
         for(int i=0; i<var.size(); i++) {
            antworten.add(var.get(i).getAntwort()); 
         }
-        return antworten; //dh hier wird auch eine Liste mit size 1 zurückgegeben, sollte eig size 4 sein
+        return antworten; 
     }
     
-    public List<Antwortmoeglichkeiten> getAntwortenZuIndex(String index) {
-        int j = Integer.parseInt(index)+1;
-        return antwortbean.findAntwortenByFID(""+j);
+    public List<Antwortmoeglichkeiten> getAntwortenZuIndex(int index) {
+        index++;
+        return antwortbean.findAntwortenByFID(""+index);
     }
     
     public int getIndexRichtigFromIndex(List<Antwortmoeglichkeiten> antworten) {
