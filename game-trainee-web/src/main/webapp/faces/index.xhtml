@@ -8,31 +8,40 @@
                     xmlns:p="http://primefaces.org/ui">
     
     <ui:define name="header">
-        <title>Activities</title> 
+        <title>Home</title> 
         <h:outputStylesheet library="css" name="stylesheet.css" />
     </ui:define>
     
     <ui:define name="content">                                      
         <h1>Activities</h1>
-        <p>
-            <strong>User:</strong> #{traineeController.trainees.get(0).vorname} 
+        <p id="start">
+            Hallo #{traineeController.trainees.get(0).vorname}, auf dieser Plattform kannst du deine Java-Kenntnisse überprüfen und ausbesseren.
+            Auf der Kurs-Seite findest du eine Vielzahl an Kursen, die unterschiedliche Bereiche von Java abdecken.
+            Du wirst einige Kurse brauchen, um bestimmte Quizzes zu nehmen.<br/>
+            Diese findest du unter dem "Quizzes"-Reiter.
+            Die dort angezeigten Aufgaben passen auf bestimmte Kurse.<br/>
+            Wenn du Hilfe benötigst, oder dir etwas unklar ist, kannst du einen Trainer kontaktieren.
+            Diese findest du auf der "Trainer"-Seite.<br/>
+            Zu guter Letzt gibt es noch eine "Emblemtafel". Auf dieser sind alle Mitarbeiter verzeichnet,
+            die auf der Plattform unterwegs sind. Des weiteren werden hier die gesammelten Embleme aller 
+            Mitspieler angezeigt. Du kannst dich so mit deinen Kollegen messen, und versuchen derjenige zu sein,
+            der die meisten Embleme gewonnen hat.
+        </p>
+        <hr/>
+        <p id="data">
+            <strong>Benutzer:</strong> #{traineeController.trainees.get(0).vorname} 
             #{traineeController.trainees.get(0).nachname}<br />
             <strong>Nickname:</strong> #{traineeController.trainees.get(0).nickname} <br/>
-            Progress: 50% out of 100% <br />
-            Badges: <h:graphicImage library="img" name="#{traineeController.trainees.get(0).embleme.get(0)}"></h:graphicImage>
-        </p>
-        <p>
+            Fortschritt: 50% von 100% <br />
+            Embleme: <h:graphicImage library="img" name="#{traineeController.trainees.get(0).embleme.get(0)}"></h:graphicImage>
+            <br/><br/>
             Your score (Quiz):
             <h:outputText value="#{testQuizController.score}"></h:outputText> <br/>
             Your progress (Overall):
             <h:outputText value="test"></h:outputText>
-        </p>
-        <p>
+            <br/><br/>
             Hier sollte spezifisch zum User, dessen Aktivitäten und Fortschritt dargestellt werden.
-            Weiters können hier Kurse vorgeschlagen werden.
         </p>
-        
         <br />
-        
     </ui:define>                      
 </ui:composition>

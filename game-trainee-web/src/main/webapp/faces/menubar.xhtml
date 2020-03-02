@@ -9,24 +9,16 @@
     <body>
         <h:form id="menubar">
             <div id="menu">
-                <p:tabMenu activeIndex="#{param.i}" style="width:133.2%">
+                <p:tabMenu style="width:133.2%">
                     <p:menuitem value="Home" outcome="index.xhtml" style="width:5em" icon="fa fa-home">
-                        <f:param name="i" value="0" />
                     </p:menuitem>
                     <p:menuitem value="Courses" outcome="courses.xhtml" style="width:7em" icon="fa fa-book">
-                        <f:param name="i" value="1" />
                     </p:menuitem>
                     <p:menuitem value="Quizzes" outcome="quizzes.xhtml" style="width:7em" icon="fa fa-question">
-                        <f:param name="i" value="2" />
                     </p:menuitem>
                     <p:menuitem value="Trainers" outcome="trainers.xhtml" style="width:6em" icon="fa fa-users">
-                        <f:param name="i" value="3" />
                     </p:menuitem>
                     <p:menuitem value="Emblemtafel" outcome="leaderboard.xhtml" style="width:8em" icon="fa fa-eye">
-                        <f:param name="i" value="4" />
-                    </p:menuitem>
-                    <p:menuitem value="Help" outcome="help.xhtml" icon="fa fa-question" style="width:5em">
-                        <f:param name="i" value="5" />
                     </p:menuitem>
                 </p:tabMenu>
             </div>

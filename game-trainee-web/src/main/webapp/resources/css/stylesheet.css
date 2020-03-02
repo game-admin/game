@@ -37,11 +37,30 @@ footer {
     position:relative;
     left:1140px;
     top:-2.65em;
-    
     width:200px;
     height:70px;
     
 }
+#start {
+    margin-left:10%;
+    background-color: white;
+    width: 70%;
+    color: black;
+    padding: 4px;
+    border: solid black;
+}
+#data {
+    margin-left:10%;
+    width:70%;
+}
+
+.description {
+    margin-left: 10%; 
+    width:70%; 
+    border: solid black; 
+    padding:4px;
+}
+
 
 #header {
     position:relative;

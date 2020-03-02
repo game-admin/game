@@ -13,7 +13,14 @@
     </ui:define>
 
     <ui:define name="content">
-        <h1 align="center">Quizzes</h1>               
+        <h1 align="center">Quizzes</h1> 
+        <p class="description">
+            Hier kannst du ein Quiz deiner Wahl absolvieren. <br/>
+            Anhand dem Titel und der Beschreibung kannst du dir ausmalen, in welche
+            Richtung das Quiz gehen wird. <br/>
+            Falls du ein Quiz nicht nehmen kannst, musst du noch eine Vorraussetzung dafür erfüllen.<br/>
+            Dir wird in diesem Fall mitgeteilt, was du noch erfüllen musst.
+        </p>
         <p:dataTable var="quiz" value="#{testQuizController.quizzes}">
             <p:column headerText="Title">
                 <h:outputText value="#{quiz.titel}"></h:outputText>
@@ -29,11 +36,10 @@
             </p:column>
         </p:dataTable>
         <hr/>
-        <p>
-            If you want to create a quiz, 
-            <p:button outcome="createquiz.xhtml" value="click here!"></p:button>
-        </p>
-        <hr/>
+        <!--<p>
+            Wenn du ein neues Quiz erstellen willst, 
+            <p:button outcome="createquiz.xhtml" value="klicke hier!"></p:button>
+        </p> -->
         <br/><br/>
     </ui:define>
 </ui:composition>

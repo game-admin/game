@@ -15,12 +15,12 @@
        
     <ui:define name="content">         
         <h1 align="center">Emblemtafel</h1>
-        <p>
-            Hier siehst du eine Auflistung aller Trainees, mit ihren Nicknames und ihren Fortschritt.
+        <p class="description">
+            Hier siehst du eine Auflistung aller Trainees, mit ihren Nicknames und ihren Emblemen.
         </p>
         <p:dataTable var="trainee" value="#{traineeController.trainees}">
             <p:column headerText="Name">
-                <h:outputText value="#{trainee.vorname}"></h:outputText>
+                <h:outputText value="#{trainee.vorname} "></h:outputText>
                 <h:outputText value="#{trainee.nachname}"></h:outputText>
             </p:column>
             
