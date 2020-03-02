@@ -43,4 +43,9 @@ public class AntwortmoeglichkeitenEJB {
         return em.createNamedQuery(Antwortmoeglichkeiten.QUERY_FINDANTWORTEN_BYFID, Antwortmoeglichkeiten.class)
                 .setParameter("FID", fid).getResultList();
     }
+    
+    public List<Antwortmoeglichkeiten> findAntwortenByFIDAndQID(String fid, String qid) {
+        return em.createNamedQuery(Antwortmoeglichkeiten.QUERY_FINDANTWORTEN_BYFIDANDQID, Antwortmoeglichkeiten.class)
+                .setParameter("FID", fid).setParameter("QID", qid).getResultList();
+    }
 }

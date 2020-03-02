@@ -26,9 +26,11 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "antwortmoeglichkeiten", schema = "game")
+@NamedQuery(name = Antwortmoeglichkeiten.QUERY_FINDANTWORTEN_BYFIDANDQID, query = "SELECT antwort FROM Antwortmoeglichkeiten antwort WHERE antwort.frage.FID = :FID AND antwort.frage.quiz.QID = :QID")
 @NamedQuery(name = Antwortmoeglichkeiten.QUERY_FINDANTWORTEN_BYFID, query = "SELECT antwort FROM Antwortmoeglichkeiten antwort WHERE antwort.frage.FID = :FID")
 public class Antwortmoeglichkeiten implements Serializable {
     public static final String QUERY_FINDANTWORTEN_BYFID="Antwortmoeglichkeiten.findAntwortenByFID";
+    public static final String QUERY_FINDANTWORTEN_BYFIDANDQID="Antwortmoeglichkeiten.findAntwortenByFIDAndQID";
     @Id
     @Column(name="ANTWID")
     private String AntwID;
