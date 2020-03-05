@@ -130,7 +130,22 @@ Niegemann and Hofer (1997) or Büser (2003) define that in self-directed learnin
 
 _(vgl. Selbstreguliertes Lernen in der dualen Ausbildung - Lerntypen und Bedingungen, Johannes Rosendahl, 2010)_
 
-Beim selbstregulierten Lernen spielt die eigene Motivation eine große Rolle. Hierbei kann die Bildung von Zielintentionen(Lernzielen) helfen. Die Wahl des Lernziels muss aber nicht zwingend selbstbestimmt erfolgen. 
+Beim selbstregulierten Lernen spielt die eigene Motivation eine große Rolle. Hierbei kann die Bildung von Zielintentionen(Lernzielen) helfen. (Die Wahl des Lernziels muss aber nicht zwingend selbstbestimmt erfolgen.)
+In diesen Zielintentionen kommen persönliche Standards und Referenzleistungen zum Ausdruck.
+
+Ausgehend von diesem Ziel werden Handlungen durchgeführt, ihre Ausführung wird überwacht und ihr Ergebnis mit dem Ziel verglichen. Als Reaktion auf das Vergleichsergebnis wird das Handeln entweder angepasst oder eingestellt.
+Die eigentliche Selbstregulation umfasst die interagierenden Subprozesse Selbstbeobachtung, Bewertungsprozesse und Selbstreaktion (Bandura 1986, S. 337), die in Ansätzen zum selbstregulierten Lernen häufig gemeinsam mit Planungsaktivitäten unter dem Begriff der Metakognition zusammengefasst werden (Weinstein & Mayer 1986, Pintrich & De Groot 1990; Pintrich, Smith, Garcia & McKeachie 1993).
+Während der Selbstbeobachtung registriert der Lernende seine Leistung im Hinblick auf verschiedene Leisungsdimensionen wie Qualität, Originalität, Quantität und Moralität sowie Richtigkeit und Genauigkeit. 
+
+(S. 20)
+Der Begriff Selbstregulation betont, dass eine Person ihr Handeln in wesentlichem Ausmaß beeinflusst (Weinert 1982). 
+Dies schließt allerding nicht aus, dass eine zwischenzeitliche Lernkontrolle (Vergleich Soll/Ist) durch den Asubilder/Lehrer erolgen kann.
+
+
+
+
+
+
 
 image:../img/dipl1.pdf[page=1] 
 
