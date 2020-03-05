@@ -42,6 +42,12 @@ public class TestQuizController implements Serializable {
     
     @Inject
     private QuizEJB quizbean;
+    
+    @Inject
+    private QuizbeantwortungEJB quizbeantw;
+    
+    @Inject
+    private QuizVoraussetzungEJB quizvoraussetzung;
      
     @PostConstruct
     public void init() {
@@ -156,7 +162,29 @@ public class TestQuizController implements Serializable {
             } else {
                 results.add(new Results(fragemodell.get(i).frage, fragemodell.get(i).antworten, indexrichtig, false));
             }
-        } 
+        }
+     Trainee trainee = traineebean.find("1");
+     trainee.setProgress(trainee.getProgress()+score);
+     traineebean.update(trainee);
+     List<Quizbeantwortung> list =  quizbeantw.findByQIDAndMITID(qid, "1");
+     list.get(0).setErreichtePunkte(score);
+     if(score > fragemodell.size()*10/2) {
+        list.get(0).setIstbestanden(true);
+     }
+     quizbeantw.update(list.get(0));
+    }
+    
+    public boolean isTakeable(String qid, String mitid) {
+        List<QuizVoraussetzung> quizvor = quizvoraussetzung.findAllQuizVoraussetzzungen(qid);
+        if(quizvor.isEmpty()) {
+            return true;
+        }
+        List<Quizbeantwortung> list = quizbeantw.findByQIDAndMITID(qid, mitid);
+        if(list.get(0).isIstbestanden()) {
+            return true;
+        }
+        return false;
+            
     }
 
     public List<Results> getResults() {

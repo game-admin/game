@@ -11,12 +11,16 @@ import java.util.List;
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import org.game.trainee.testquiz.Quizbeantwortung;
 
 /**
  *
@@ -45,6 +49,9 @@ public class Trainee implements Serializable {
     private int progress;
     @Column(name="embleme")
     private List<String> embleme;
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name="mitid")
+    private List<Quizbeantwortung> quizbeantwortung;
     
     public Trainee() {}
     
@@ -120,5 +127,15 @@ public class Trainee implements Serializable {
 
     public void setNachname(String nachname) {
         this.nachname = nachname;
-    }    
+    }
+
+    public List<Quizbeantwortung> getQuizbeantwortung() {
+        return quizbeantwortung;
+    }
+
+    public void setQuizbeantwortung(List<Quizbeantwortung> quizbeantwortung) {
+        this.quizbeantwortung = quizbeantwortung;
+    }
+    
+    
 }
