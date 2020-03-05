@@ -47,7 +47,7 @@ public class Frage implements Serializable {
     @Column(name="punktezahl")
     private int punktezahl;
     @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name="antwid")
+    @JoinColumn(name="fid")
     private List<Antwortmoeglichkeiten> antworten;
     
     public Frage() {

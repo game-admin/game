@@ -31,9 +31,16 @@ public class ModellCreator {
     }
     
     public List<FrageModell> createModell(int size, String qid, boolean isMultipleChoice) {
-        List<FrageModell> list = new ArrayList<>();
-        for(int i = 0 ; i < size ; i++) {
-            list.add(new FrageModell(getFragenFromIndex(qid,i), getAntwortenFromIndex(i,qid), getIndexRichtigFromIndex(getAntwortenZuIndex(i))));
+        List<Frage> fragen = fragebean.findFrageByQID(qid);
+        List<FrageModell> list = new ArrayList<>(fragen.size());
+        
+        for(Frage frage : fragen){
+            List<Antwortmoeglichkeiten> antwortMoeglichkeiten = frage.getAntworten();
+            List<String> antwortTexte = new ArrayList<>(antwortMoeglichkeiten.size());
+            for(Antwortmoeglichkeiten moeglichkeit : antwortMoeglichkeiten){
+                antwortTexte.add(moeglichkeit.getAntwort());
+            }
+            list.add(new FrageModell(frage.getFrage(), antwortTexte, getIndexRichtigFromIndex(antwortMoeglichkeiten)));
         }
         return list;
     }
@@ -42,19 +49,14 @@ public class ModellCreator {
         return fragebean.findFrageByQID(qid).get(index).getFrage();
     }
     
-    public List<String> getAntwortenFromIndex(int index, String qid) {
-        String test = "2";
-        if(qid==test) {
-            index = index + 5;
-        } else {
-            index = index +1;
-        }
-        List<Antwortmoeglichkeiten> var = antwortbean.findAntwortenByFID(""+index);    //hier bekommt er eine 0er Liste wenn ich nach qid und fid suche
+    public List<String> getAntwortenFromIndex(int i, String qid) {
+        Frage frage = fragebean.find(Integer.toString(i));
+        List<Antwortmoeglichkeiten> var = frage.getAntworten();    //hier bekommt er eine 0er Liste wenn ich nach qid und fid suche
         List<String> antworten = new ArrayList<>();
-        for(int i=0; i<var.size(); i++) {
-           antworten.add(var.get(i).getAntwort()); 
+        for(int j=0; j < var.size(); j++) {
+           antworten.add(var.get(j).getAntwort());
         }
-        return antworten; 
+        return antworten;
     }
     
     public List<Antwortmoeglichkeiten> getAntwortenZuIndex(int index) {

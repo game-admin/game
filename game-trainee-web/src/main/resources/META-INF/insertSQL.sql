@@ -25,7 +25,7 @@ INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeant
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('5', '2', '"."', false);
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('6', '2', '"{ or } "', false);
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('7', '2', '";"', true);
-INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('8','2', 'Java RE', false);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('8','2', '"/>"', false);
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('9', '3', 'Object is a addon for Java', false);
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('10', '3', 'You have to use the program Object to run Java.', false);
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('11', '3', 'Java can be extended with Objects.', true);

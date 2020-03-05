@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
 import org.game.trainee.traineeview.Trainee;
 import org.game.trainee.traineeview.TraineeEJB;
 
@@ -17,7 +19,7 @@ import org.game.trainee.traineeview.TraineeEJB;
  * @author Eric
  */
 @Named
-@RequestScoped
+@SessionScoped
 public class TestQuizController implements Serializable {
      
     private List<Quiz> quizzes;
@@ -92,6 +94,7 @@ public class TestQuizController implements Serializable {
         List<Integer> falsche = new ArrayList<>();
         //List<Frage> test = fragebean.findAll();
         //List<Antwortmoeglichkeiten> antworten = test.get(1).getAntworten();
+        getFragemodell();
         for(int i=0; i<4; i++) { //hier sollten dann zur fragensize durchgegeangen werden
             if(fragemodell.get(i).selectedAnswer.equals(fragemodell.get(i).antworten.get(fragemodell.get(i).indexrichtig))) {
                 score+=10;
@@ -196,11 +199,13 @@ public class TestQuizController implements Serializable {
     }
 
     public List<FrageModell> getFragemodell() {
-        if(fragemodell==null) {
+        if(fragemodell==null || fragemodell.isEmpty()) {
            fragemodell = creator.createModell(4, qid, false);
         }
         return fragemodell;
     }
+    
+
 
     public void setFragemodell(List<FrageModell> fragemodell) {
         this.fragemodell = fragemodell;
