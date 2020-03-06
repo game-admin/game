@@ -29,16 +29,16 @@ import org.game.trainee.traineeview.Trainee;
 @NamedQuery(name = Quizbeantwortung.QUERY_FINDBY_QIDANDMITID, query="SELECT quizbeantw FROM Quizbeantwortung quizbeantw WHERE quizbeantw.quiz.QID = :QID AND quizbeantw.trainee.MitID = :MitID")
 public class Quizbeantwortung implements Serializable {
     public static final String QUERY_FINDBY_QIDANDMITID="Quizbeantwortung.findByQIDAndMITID";
-    @Id @Column(name = "QBEID")
+    @Id @Column(name = "qbeid")
     private String QBEID;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="QID")
+    @JoinColumn(name="qid")
     private Quiz quiz;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="MitID")
+    @JoinColumn(name="mitid")
     private Trainee trainee;
     @NotNull
-    @Column(name="ERREICHTEPUNKTE")
+    @Column(name="erreichtepunktezahl")
     private int erreichtePunkte;
     @Column(name="istbestanden")
     private boolean istbestanden;

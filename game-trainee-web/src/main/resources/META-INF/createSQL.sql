@@ -48,7 +48,8 @@ CREATE TABLE game.quizbeantwortung(
     "qbeid" text NOT NULL,
     "qid" text NOT NULL,
     "mitid" text NOT NULL,
-    "erreichtepunktezahl" bigint NOT NULL
+    "erreichtepunktezahl" bigint NOT NULL,
+    "istbestanden" boolean
 );
 
 CREATE TABLE game.quizvoraussetzung(

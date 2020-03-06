@@ -21,10 +21,14 @@ public class TraineeController implements Serializable {
     private TraineeEJB traineebean;
     
 
-    public List<Trainee> getTrainees() {
+    public List<Trainee> getTraineesByID(String mitid) {
         if(trainees == null)
-            trainees = traineebean.findAll();
+            trainees.set(0, traineebean.find(mitid));
         return trainees;
+    }
+    
+    public List<Trainee> getTrainees() {
+        return trainees;    
     }
 
     public void setSelectedTrainee(Trainee selectedTrainee) {

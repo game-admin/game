@@ -49,8 +49,7 @@ public class Trainee implements Serializable {
     private int progress;
     @Column(name="embleme")
     private List<String> embleme;
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name="mitid")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "trainee")
     private List<Quizbeantwortung> quizbeantwortung;
     
     public Trainee() {}
