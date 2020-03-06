@@ -162,7 +162,7 @@ public class TestQuizController implements Serializable {
                 results.add(new Results(fragemodell.get(i).frage, fragemodell.get(i).antworten, indexrichtig, false));
             }
         }
-     Trainee trainee = traineebean.find("1");
+     trainee = traineebean.find("1");
      trainee.setProgress(trainee.getProgress()+score);
      traineebean.update(trainee);
      List<Quizbeantwortung> list =  quizbeantw.findByQIDAndMITID(qid, "1");
@@ -245,5 +245,12 @@ public class TestQuizController implements Serializable {
     public void setQid(String qid) {
         this.qid = qid;
     }
-    
+
+    public Trainee getTrainee() {
+        return trainee;
+    }
+
+    public void setTrainee(Trainee trainee) {
+        this.trainee = trainee;
+    }   
 }
