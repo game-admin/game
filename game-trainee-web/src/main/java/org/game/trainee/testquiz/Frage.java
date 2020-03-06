@@ -91,8 +91,6 @@ public class Frage implements Serializable {
     }
 
     public List<Antwortmoeglichkeiten> getAntworten() {
-        System.out.println("Die größe der Antwortenliste zur Frage "+FID+", ist: "+antworten.size());
-        System.out.println("Die Antwort hat die ANTWID von: "+antworten.get(0).getAntwID());
         return antworten;
     }
 

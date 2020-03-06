@@ -32,7 +32,7 @@ public class Voraussetzung implements Serializable {
     @JoinColumn(name="KursID")
     private Kurs kurs;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="QID")
+    @JoinColumn(name="qid")
     private Quiz quiz;
     
     public Voraussetzung() {

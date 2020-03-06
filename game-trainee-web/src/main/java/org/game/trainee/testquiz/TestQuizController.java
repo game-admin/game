@@ -1,6 +1,8 @@
 package org.game.trainee.testquiz;
 
 import java.io.Serializable;
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
 import java.util.ArrayList;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -155,7 +157,7 @@ public class TestQuizController implements Serializable {
     }
     
     public void checkResults(List<Integer> falsche) {
-     for(int i=0; i<fragemodell.size(); i++) {
+        for(int i=0; i<fragemodell.size(); i++) {
             List<Integer> indexrichtig = umwandler(fragemodell.get(i).indexrichtig);
             if(falsche.get(i) == i) {
                 results.add(new Results(fragemodell.get(i).frage, fragemodell.get(i).antworten, indexrichtig, true));
@@ -163,28 +165,28 @@ public class TestQuizController implements Serializable {
                 results.add(new Results(fragemodell.get(i).frage, fragemodell.get(i).antworten, indexrichtig, false));
             }
         }
-     Trainee trainee = traineebean.find("1");
-     trainee.setProgress(trainee.getProgress()+score);
-     traineebean.update(trainee);
-     List<Quizbeantwortung> list =  quizbeantw.findByQIDAndMITID(qid, "1");
-     list.get(0).setErreichtePunkte(score);
-     if(score > fragemodell.size()*10/2) {
-        list.get(0).setIstbestanden(true);
-     }
-     quizbeantw.update(list.get(0));
+        trainee = traineebean.find("1");
+        trainee.setProgress(trainee.getProgress()+score);
+        traineebean.update(trainee);
+        List<Quizbeantwortung> list =  quizbeantw.findByQIDAndMITID(qid, "1");
+        list.get(0).setErreichtePunkte(score);
+        if(score > fragemodell.size()*10/2) {
+            list.get(0).setIstbestanden(true);
+        }
+        quizbeantw.update(list.get(0));
     }
     
-    public boolean isTakeable(String qid, String mitid) {
+    public Boolean isTakeable(String qid, String mitid) {
         List<QuizVoraussetzung> quizvor = quizvoraussetzung.findAllQuizVoraussetzzungen(qid);
         if(quizvor.isEmpty()) {
-            return true;
+            return TRUE;
         }
         List<Quizbeantwortung> list = quizbeantw.findByQIDAndMITID(qid, mitid);
         if(list.get(0).isIstbestanden()) {
-            return true;
+            return TRUE;
         }
-        return false;
-            
+        
+        return FALSE;
     }
 
     public List<Results> getResults() {

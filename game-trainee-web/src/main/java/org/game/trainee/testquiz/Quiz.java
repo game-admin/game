@@ -44,14 +44,11 @@ public class Quiz implements Serializable {
     private String reward;
     @Column(name="multiplechoice")
     private Boolean multiplechoice;
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "qid")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "quiz")
     private List<Frage> fragen;
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "qid")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "quiz")
     private List<Quizbeantwortung> quizbeantwortung;
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "qid")
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "quiz")
     private Voraussetzung voraussetzung;
     
     public Quiz () {
