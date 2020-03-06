@@ -138,7 +138,6 @@ public class TestQuizController implements Serializable {
     
     public List<Integer> umwandler(int indexrichtig) {
         List<Integer> liste = new ArrayList<>();
-        
         for(int i=0; i<4; i++)
             if(indexrichtig==i) {
                 liste.add(1);
@@ -152,7 +151,7 @@ public class TestQuizController implements Serializable {
             if(antworten.get(i).isRichtigeAntwort()) {
                 return i;
             }
-        }
+        }  
         return 0;
     }
     
