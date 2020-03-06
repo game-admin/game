@@ -18,8 +18,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import org.game.trainee.kurs.Voraussetzung;
 
 /**
  *
@@ -43,8 +45,14 @@ public class Quiz implements Serializable {
     @Column(name="multiplechoice")
     private Boolean multiplechoice;
     @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "FID")
+    @JoinColumn(name = "qid")
     private List<Frage> fragen;
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "qid")
+    private List<Quizbeantwortung> quizbeantwortung;
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "qid")
+    private Voraussetzung voraussetzung;
     
     public Quiz () {
         
@@ -101,6 +109,21 @@ public class Quiz implements Serializable {
     public void setMultiplechoice(Boolean multiplechoice) {
         this.multiplechoice = multiplechoice;
     }
-    
-    
+
+    public List<Quizbeantwortung> getQuizbeantwortung() {
+        return quizbeantwortung;
+    }
+
+    public void setQuizbeantwortung(List<Quizbeantwortung> quizbeantwortung) {
+        this.quizbeantwortung = quizbeantwortung;
+    }
+
+    public Voraussetzung getVoraussetzung() {
+        return voraussetzung;
+    }
+
+    public void setVoraussetzung(Voraussetzung voraussetzung) {
+        this.voraussetzung = voraussetzung;
+    }
+
 }

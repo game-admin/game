@@ -51,11 +51,17 @@ INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeant
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('31', '8', 'Same name as Class', true);
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('32', '8', 'Must contain attributes', false);
 
+INSERT INTO game.quizbeantwortung ("qbeid", "qid", "mitid", "erreichtepunktezahl", "istbestanden") VALUES ('1', '1', '1', 0, false);
+INSERT INTO game.quizbeantwortung ("qbeid", "qid", "mitid", "erreichtepunktezahl", "istbestanden") VALUES ('2', '2', '1', 0, false);
+
 
 INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('1', 'Start-Kurs', 'https://www.tutorialspoint.com/java/index.htm', 'Dieser Kurs ist der erste Kurs der abgelegt werden muss. Er erklärt dir die Basics von Java.');
 INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('2', 'Object & Classes', 'https://www.tutorialspoint.com/java/java_object_classes.htm', 'In diesem Kurs geht es um Objekte und Klassen die in Java sehr wichig sind. Der Kurs erklärt dir die Grundlagen, die du über dieses Thema wisse musst.');
 INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('3', 'Constructors', 'https://www.tutorialspoint.com/java/java_constructors.htm', 'Das ist ein Kurs über die Konstruktoren in Java. Konstruktoren sind wichtig um ordentlich mit Objekten und Klassen arbeiten zu können.');
 
+INSERT INTO game.voraussetzung("voraussetzid", "kursid", "qid") VALUES ('1', null, '1');
+
+INSERT INTO game.quizvoraussetzung("quizvoraussetzid", "voraussetzid", "qid") VALUES ('1', '1', '2');
 
 
 

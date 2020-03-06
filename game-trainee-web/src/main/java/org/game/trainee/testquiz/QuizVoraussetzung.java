@@ -15,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import org.game.trainee.kurs.Voraussetzung;
 
@@ -24,7 +25,9 @@ import org.game.trainee.kurs.Voraussetzung;
  */
 @Entity
 @Table(name = "quizvoraussetzung", schema = "game")
+@NamedQuery(name = QuizVoraussetzung.QUERY_FINDALLVORAUSSETZUNGEN, query = "SELECT quizvor FROM QuizVoraussetzung quizvor WHERE quizvor.quiz.QID = :QID")
 public class QuizVoraussetzung implements Serializable{
+    public static final String QUERY_FINDALLVORAUSSETZUNGEN = "QuizVoraussetung.findAllQuizVoraussetzzungen";
     @Id
     @Column(name="QUIZVORAUSSETZID")
     private String QuizVoraussetzID;
