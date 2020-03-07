@@ -14,16 +14,16 @@ Fragen: What concept of the following is Java supporting?	!Classes&Methods!		Fun
 	How can you access instance variables and methods?	Object.variable & Object.methode()	Object.variable & Object.methode	variable.Object & methode.Object()	Object.variable() & Object.methode()
 	What does the import statement do?	gives the location to a class	imports a methode	creates a database connection		imports a variable from another class
 	-----
-	What does a constructor do?	initializes an object when its created		
-	Which classes contain a constructor?
-	What is a correct constructor head (considering the name of the programm is MyClass)?
+	What does a constructor do?	initializes an object when its created		Nothing		It functions as a Getter/Setter Method		None of the above
+	Which classes contain a constructor?	Only classes with defined constructors		No class has a constructor	Only classes which specific settings	Every class
+	What is a correct constructor head (considering the name of the programm is MyClass)?	public static void MyClass()		public constructor()		public MyClass()	public String MyClass()		
 
 Kurs über Datentypen	https://www.tutorialspoint.com/java/java_basic_datatypes.htm
-Fragen: How many primitive datatypes exist in Java?
-	What is not a data type in Java?	int	double	String	text
-	What are reference datatypes
-
-
+Fragen: How many primitive datatypes exist in Java?	6	7	8	9
+	What is/are a data type in Java?	int	double	String	text
+	What is true about reference datatypes?	Class objects and various type of array variables are reference datatype, The default value is null, They cannot be used to refer any object or any compatible type,	None of the above	
+	What is true about the datatype "int"?	It is generally used for integral values,	the default value is 0		It is used for decimal numbers		None of the above
+	Which of these is/are no supported special escape sequence?	\n	\m	\a	\b
 
 
 Kurs über Variable und modifier Types	https://www.tutorialspoint.com/java/java_variable_types.htm	https://www.tutorialspoint.com/java/java_modifier_types.htm
