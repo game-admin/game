@@ -29,6 +29,8 @@ public class TraineeController implements Serializable {
     }
     
     public List<Trainee> getTrainees() {
+        if(trainees == null)
+            trainees = traineebean.findAll();
         return trainees;    
     }
 

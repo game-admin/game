@@ -21,7 +21,7 @@ import org.game.trainee.traineeview.TraineeEJB;
  * @author Eric
  */
 @Named
-@SessionScoped
+@ViewScoped
 public class TestQuizController implements Serializable {
      
     private List<Quiz> quizzes;
