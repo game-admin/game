@@ -23,11 +23,13 @@ public class TraineeController implements Serializable {
 
     public List<Trainee> getTraineesByID(String mitid) {
         if(trainees == null)
-            trainees.set(0, traineebean.find(mitid));
+            trainees.set(0, traineebean.find(mitid)); //hier kommt er nie rein, und wenn doch, dann gehts nicht
         return trainees;
     }
     
     public List<Trainee> getTrainees() {
+        if(trainees == null)
+            trainees = traineebean.findAll();
         return trainees;    
     }
 
