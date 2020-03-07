@@ -22,9 +22,9 @@ public class TraineeController implements Serializable {
     
 
     public List<Trainee> getTraineesByID(String mitid) {
-        List<Trainee> list = new ArrayList();
+        List<Trainee> list = new ArrayList<>(1);
         Trainee trainee = traineebean.find(mitid);
-        list.set(0, trainee);
+        list.add(trainee);
         return list;
     }
     
