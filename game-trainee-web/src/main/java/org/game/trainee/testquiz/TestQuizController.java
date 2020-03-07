@@ -94,14 +94,10 @@ public class TestQuizController implements Serializable {
             richtige = 0;
         } 
         checkResults(falsche); 
-        //Hier sollte dann noch der Score der Trainees geupdated werden
-        //Hier sollte bei QuizBesuch das geaddet werden
     } 
     
     public void evaluateScoreRadio() {
         List<Integer> falsche = new ArrayList<>();
-        //List<Frage> test = fragebean.findAll();
-        //List<Antwortmoeglichkeiten> antworten = test.get(1).getAntworten();
         getFragemodell();
         for(int i=0; i<4; i++) { //hier sollten dann zur fragensize durchgegeangen werden
             if(fragemodell.get(i).selectedAnswer.equals(fragemodell.get(i).antworten.get(fragemodell.get(i).indexrichtig))) {
@@ -113,10 +109,6 @@ public class TestQuizController implements Serializable {
             }
         }
         checkResults(falsche); 
-        //Hier sollte bei Quizbesuch alles geaddet werden 
-        //Hier sollt dann noch der Score vom Trainee geupdated werden
-        //hier muss der isDone Wert, von dem Quiz in Vorrausetzung auf true gesetzt werden
-        //EJB."Methode"(quid) -> damit wird der Wert auf true gesetzt
     }
     
     public String quizUebergabe(String qid) {

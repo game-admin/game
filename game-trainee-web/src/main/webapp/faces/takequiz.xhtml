@@ -20,6 +20,7 @@
             <h:graphicImage library="img" name="#{testQuizController.emblem}"></h:graphicImage>
         </p>
         <div id="questions">
+            <h:outputText value="#{testQuizController.fragemodell.size}"></h:outputText>
         <h:form>
             <ui:repeat var="frage" value="#{testQuizController.fragemodell}">
                 <div class="question">
