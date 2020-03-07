@@ -1,8 +1,12 @@
-= image:./img/doclogo2.png[Logo] Game
+<<<<
+image::./DiplomarbeitSeite1NEU.pdf[]
+
+<<<<
+//image:./img/doclogo2.png[Logo] Game
 // toc-title definition MUST follow document title without blank line!
 :toc-title: Table of Contents
 
-//backend: 'docbook'
+
 
 //keyword: book
 
@@ -70,4 +74,8 @@ include::chapters/Theorie_Jan.adoc[]
 //Praxis Jan
 include::chapters/Praxis_Jan.adoc[]
 
-
+<<<<
+[format=csv, separator=;]
+|===
+include::./ZeittabelleDA.csv[]
+|===
