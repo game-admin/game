@@ -30,7 +30,7 @@ public class ModellCreator {
     public ModellCreator() {
     }
     
-    public List<FrageModell> createModell(int size, String qid, boolean isMultipleChoice) {
+    public List<FrageModell> createModell(String qid) {
         List<Frage> fragen = fragebean.findFrageByQID(qid);
         List<FrageModell> list = new ArrayList<>(fragen.size());
         
@@ -40,7 +40,7 @@ public class ModellCreator {
             for(Antwortmoeglichkeiten moeglichkeit : antwortMoeglichkeiten){
                 antwortTexte.add(moeglichkeit.getAntwort());
             }
-            list.add(new FrageModell(frage.getFrage(), antwortTexte, getIndexRichtigFromIndex(antwortMoeglichkeiten)));
+            list.add(new FrageModell(frage.getFrage(), antwortTexte, getIndexRichtigFromIndex(antwortMoeglichkeiten), qid));
         }
         return list;
     }

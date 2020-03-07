@@ -20,23 +20,25 @@
             <h:graphicImage library="img" name="#{testQuizController.emblem}"></h:graphicImage>
         </p>
         <div id="questions">
-            <h:outputText value="#{testQuizController.fragemodell.size}"></h:outputText>
         <h:form>
             <ui:repeat var="frage" value="#{testQuizController.fragemodell}">
                 <div class="question">
                     <h:outputLabel for="radio" value="#{frage.frage}"></h:outputLabel>
-                    <h:selectOneRadio id="radio" value="#{frage.selectedAnswer}" layout="grid" required="true">
+                    <p:selectOneRadio id="radio" value="#{frage.selectedAnswer}" layout="grid" required="true" unselectable="true" columns="1">
                         <f:selectItem itemValue="#{frage.antworten.get(0)}" itemLabel="#{frage.antworten.get(0)}"></f:selectItem>
                         <f:selectItem itemValue="#{frage.antworten.get(1)}" itemLabel="#{frage.antworten.get(1)}"></f:selectItem>
                         <f:selectItem itemValue="#{frage.antworten.get(2)}" itemLabel="#{frage.antworten.get(2)}"></f:selectItem>
                         <f:selectItem itemValue="#{frage.antworten.get(3)}" itemLabel="#{frage.antworten.get(3)}"></f:selectItem>
-                    </h:selectOneRadio>
+                    </p:selectOneRadio>
                     <br/>
                 </div>    
-                <!-- unselectable="true" columns="1" -->
+                <!--  -->
                 <br/><br/>
             </ui:repeat>
-            <h:commandButton value="Check Answers" style="margin-left: 20%" action="#{testQuizController.checkAnswersSingleChoice}"></h:commandButton> 
+            <ui:param name="varqid" value="#{testQuizController.qid}"></ui:param>
+            <h:commandButton value="Check Answers" style="margin-left: 20%" action="#{testQuizController.checkAnswersSingleChoice()}">
+                <f:param name="qid" value="#{varqid}"></f:param>
+            </h:commandButton> 
         </h:form>
         </div>
     </ui:define>

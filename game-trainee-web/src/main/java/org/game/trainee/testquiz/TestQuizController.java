@@ -21,7 +21,7 @@ import org.game.trainee.traineeview.TraineeEJB;
  * @author Eric
  */
 @Named
-@ViewScoped
+@RequestScoped
 public class TestQuizController implements Serializable {
      
     private List<Quiz> quizzes;
@@ -53,30 +53,34 @@ public class TestQuizController implements Serializable {
      
     @PostConstruct
     public void init() {
-        //quiz = speicher.createQuiz(4, false); //hier sollte 1. mittels EJB das Quiz geholt werden
-                                              //und 2. sollte hier mittels qid das jeweilige quiz geholt werden
-                                                 //sollte auch über EJB gehen
-                                                      //und unten wenn score erhöht wird auch
-        //trainee = traineebean.find("1");
-        
+        fragemodell = creator.createModell(qid);
         results = new ArrayList<>();
         ricounter = 0;
     }
     
     public String checkAnswersSingleChoice() {
+        FacesContext fc = FacesContext.getCurrentInstance();
+        Map<String,String> params = fc.getExternalContext().getRequestParameterMap();
+        String varqid = params.get("qid");
+        this.qid = varqid;
         evaluateScoreRadio();
         return "result.xhtml";
     }
     
     public String checkAnswersMultipleChoice() {
+        FacesContext fc = FacesContext.getCurrentInstance();
+        Map<String,String> params = fc.getExternalContext().getRequestParameterMap();
+        String varqid = params.get("qid");
+        this.qid = varqid;
         evaluateScoreMultiple();
         return "result.xhtml";
     }
     
     public void evaluateScoreMultiple() {
         List<Integer> falsche = new ArrayList<>();
+        fragemodell = creator.createModell(qid);
         int richtige=0;  
-        for(int i=0; i<4; i++ ) { //hier sollten dann zur fragensize durchgegeangen werden
+        for(int i=0; i<fragemodell.size(); i++ ) {
             List<Integer> indexrichtig = umwandler(fragemodell.get(i).indexrichtig);
             for(int z=0; z<4; z++) {
                 if(indexrichtig.get(z) == 1 && !fragemodell.get(i).buttons[z] || indexrichtig.get(z) == 0 && fragemodell.get(i).buttons[z]) {
@@ -98,8 +102,8 @@ public class TestQuizController implements Serializable {
     
     public void evaluateScoreRadio() {
         List<Integer> falsche = new ArrayList<>();
-        getFragemodell();
-        for(int i=0; i<4; i++) { //hier sollten dann zur fragensize durchgegeangen werden
+        fragemodell = creator.createModell(qid);
+        for(int i=0; i<fragemodell.size(); i++) {
             if(fragemodell.get(i).selectedAnswer.equals(fragemodell.get(i).antworten.get(fragemodell.get(i).indexrichtig))) {
                 score+=10;
                 ricounter++;
@@ -118,14 +122,12 @@ public class TestQuizController implements Serializable {
         //-> ein boolean Feld isDone -> when done true is, dann is die Vorraussetzung erledigt, dann sols weitergehen
         //-> wenn false drinsteht in dem Wert zur QID dann wurde die Vorrausetzung nicht erledigt -> Fehler
         this.qid = qid;
-        fragemodell = creator.createModell(4, qid, false);
+        fragemodell = creator.createModell(qid);
         if(quizbean.find(qid).getMultiplechoice()) {
             return "takeQuizMultipleChoice.xhtml";
         } else {
             return "takequiz.xhtml"; 
         }
-        
-        
     }
     
     public List<Integer> umwandler(int indexrichtig) {
@@ -221,13 +223,11 @@ public class TestQuizController implements Serializable {
 
     public List<FrageModell> getFragemodell() {
         if(fragemodell==null || fragemodell.isEmpty()) {
-           fragemodell = creator.createModell(4, qid, false);
+           fragemodell = creator.createModell(qid);
         }
         return fragemodell;
     }
     
-
-
     public void setFragemodell(List<FrageModell> fragemodell) {
         this.fragemodell = fragemodell;
     }
