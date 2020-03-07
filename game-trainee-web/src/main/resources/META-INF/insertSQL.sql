@@ -80,10 +80,10 @@ INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeant
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('53', '14', 'Only classes with defined contructors', false);
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('54', '14', 'No class has a contructor', false);
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('55', '14', 'Only classes with specific settings', false);
-INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('56', '14', 'Every class ', false);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('56', '14', 'Every class ', true);
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('57', '15', 'public static void MyClass()', false);
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('58', '15', 'public constructor()', false);
-INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('59', '15', 'public MyClass()', false);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('59', '15', 'public MyClass()', true);
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('60', '15', 'public String MyClass()', false);
 
 INSERT INTO game.quizbeantwortung ("qbeid", "qid", "mitid", "erreichtepunktezahl", "istbestanden") VALUES ('1', '1', '1', 0, false);

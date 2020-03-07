@@ -14,7 +14,7 @@
     <ui:define name="content">
         <h1>Results</h1>
         <p style="font-size: 1.2em; margin-left:25%;">
-            Du hast #{testQuizController.ricounter}/4 Fragen richtig beantwortet! <br/>
+            Du hast #{testQuizController.ricounter}/#{testQuizController.fragemodell.size()} Fragen richtig beantwortet! <br/>
             Damit bekommst du #{testQuizController.ricounter*10} Punkte! <br/>
             Die von dir richtig/falsch beantworteten Fragen siehst du hier mit den richtigen Antworten:
         </p>

@@ -13,6 +13,8 @@ import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
+import org.game.trainee.kurs.Voraussetzung;
+import org.game.trainee.kurs.VoraussetzungEJB;
 import org.game.trainee.traineeview.Trainee;
 import org.game.trainee.traineeview.TraineeEJB;
 
@@ -21,7 +23,7 @@ import org.game.trainee.traineeview.TraineeEJB;
  * @author Eric
  */
 @Named
-@RequestScoped
+@SessionScoped
 public class TestQuizController implements Serializable {
      
     private List<Quiz> quizzes;
@@ -50,7 +52,10 @@ public class TestQuizController implements Serializable {
     
     @Inject
     private QuizVoraussetzungEJB quizvoraussetzung;
-     
+    
+    @Inject
+    private VoraussetzungEJB voraussetzungejb;
+    
     @PostConstruct
     public void init() {
         fragemodell = creator.createModell(qid);
@@ -78,7 +83,7 @@ public class TestQuizController implements Serializable {
     
     public void evaluateScoreMultiple() {
         List<Integer> falsche = new ArrayList<>();
-        fragemodell = creator.createModell(qid);
+        //fragemodell = creator.createModell(qid);
         int richtige=0;  
         for(int i=0; i<fragemodell.size(); i++ ) {
             List<Integer> indexrichtig = umwandler(fragemodell.get(i).indexrichtig);
@@ -102,7 +107,7 @@ public class TestQuizController implements Serializable {
     
     public void evaluateScoreRadio() {
         List<Integer> falsche = new ArrayList<>();
-        fragemodell = creator.createModell(qid);
+        //fragemodell = creator.createModell(qid);
         for(int i=0; i<fragemodell.size(); i++) {
             if(fragemodell.get(i).selectedAnswer.equals(fragemodell.get(i).antworten.get(fragemodell.get(i).indexrichtig))) {
                 score+=10;
@@ -123,6 +128,8 @@ public class TestQuizController implements Serializable {
         //-> wenn false drinsteht in dem Wert zur QID dann wurde die Vorrausetzung nicht erledigt -> Fehler
         this.qid = qid;
         fragemodell = creator.createModell(qid);
+        ricounter = 0;
+        score=0;
         if(quizbean.find(qid).getMultiplechoice()) {
             return "takeQuizMultipleChoice.xhtml";
         } else {
@@ -150,6 +157,7 @@ public class TestQuizController implements Serializable {
     }
     
     public void checkResults(List<Integer> falsche) {
+        results = new ArrayList<>();
         for(int i=0; i<fragemodell.size(); i++) {
             List<Integer> indexrichtig = umwandler(fragemodell.get(i).indexrichtig);
             if(falsche.get(i) == i) {
@@ -174,7 +182,11 @@ public class TestQuizController implements Serializable {
         if(quizvor.isEmpty()) {
             return TRUE;
         }
-        List<Quizbeantwortung> list = quizbeantw.findByQIDAndMITID(qid, mitid);
+        
+        //Von quizvor das vorrausgesetzte Quiz/die id des vorrausgesetzten Quiz  holen und rauslesen
+        Voraussetzung vor = voraussetzungejb.find(quizvor.get(0).getQuizVorraussetzID());
+        String id = vor.getQuiz().getQID();
+        List<Quizbeantwortung> list = quizbeantw.findByQIDAndMITID(id, mitid);
         if(list.get(0).isIstbestanden()) {
             return TRUE;
         }

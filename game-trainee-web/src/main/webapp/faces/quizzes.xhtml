@@ -22,13 +22,13 @@
             Dir wird in diesem Fall mitgeteilt, was du noch erfüllen musst.
         </p>
         <p:dataTable var="quiz" value="#{testQuizController.quizzes}">
-            <p:column headerText="Titel">
+            <p:column headerText="Titel" rendered="#{testQuizController.isTakeable(quiz.QID, &quot;1&quot;)}">
                 <h:outputText value="#{quiz.titel}"></h:outputText>
             </p:column>
-            <p:column headerText="Beschreibung">
+            <p:column headerText="Beschreibung" rendered="#{testQuizController.isTakeable(quiz.QID, &quot;1&quot;)}">
                 <h:outputText value="#{quiz.beschreibung}"></h:outputText>
             </p:column>
-            <p:column>
+            <p:column rendered="#{testQuizController.isTakeable(quiz.QID, &quot;1&quot;)}">
                 <h:form>
                     <h:commandButton action="#{testQuizController.quizUebergabe(quiz.QID)}" value="Take Quiz!" >       
                     </h:commandButton>                                  
