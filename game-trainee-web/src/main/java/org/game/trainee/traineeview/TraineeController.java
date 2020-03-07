@@ -1,8 +1,8 @@
 package org.game.trainee.traineeview;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -22,9 +22,10 @@ public class TraineeController implements Serializable {
     
 
     public List<Trainee> getTraineesByID(String mitid) {
-        if(trainees == null)
-            trainees.set(0, traineebean.find(mitid)); //hier kommt er nie rein, und wenn doch, dann gehts nicht
-        return trainees;
+        List<Trainee> list = new ArrayList();
+        Trainee trainee = traineebean.find(mitid);
+        list.set(0, trainee);
+        return list;
     }
     
     public List<Trainee> getTrainees() {

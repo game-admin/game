@@ -15,7 +15,7 @@
     <ui:define name="content">                                      
         <h1>Activities</h1>
         <p id="start">
-            Hallo #{traineeController.trainees.get(0).vorname}, auf dieser Plattform kannst du deine Java-Kenntnisse überprüfen und ausbesseren.
+            Hallo #{traineeController.getTraineesByID(Integer.toString(1)).get(0).vorname}, auf dieser Plattform kannst du deine Java-Kenntnisse überprüfen und ausbesseren.
             Auf der Kurs-Seite findest du eine Vielzahl an Kursen, die unterschiedliche Bereiche von Java abdecken.
             Du wirst einige Kurse brauchen, um bestimmte Quizzes zu nehmen.<br/>
             Diese findest du unter dem "Quizzes"-Reiter.
@@ -29,7 +29,7 @@
         </p>
         <hr/>
         <p id="data">
-            <strong>Benutzer:</strong> #{traineeController.getTraineesByID(Integer.toString(1)).get(0).vorname} 
+            <strong>Benutzer:</strong> #{traineeController.getTraineesByID(Integer.toString(1)).get(0).vorname}
             #{traineeController.getTraineesByID("1").get(0).nachname}<br />
             <strong>Nickname:</strong> #{traineeController.getTraineesByID(Integer.toString(1)).get(0).nickname} <br/>
             Fortschritt: 50% von 100% <br />
