@@ -92,6 +92,8 @@ ALTER TABLE game.quiz ADD CONSTRAINT "QUIZ_pkey" PRIMARY KEY (qid);
 
 ALTER TABLE game.quizbeantwortung ADD CONSTRAINT "QUIZBEANTWORTUNG_pkey" PRIMARY KEY ("qbeid");
 
+ALTER TABLE game.quizbeantwortung ADD CONSTRAINT "QIDMITID" UNIQUE (qid, mitid);
+
 ALTER TABLE game.quizvoraussetzung ADD CONSTRAINT "QUIZVORAUSSETZUNG_pkey" PRIMARY KEY ("quizvoraussetzid");
 
 ALTER TABLE game.trainee ADD CONSTRAINT "TRAINEE_pkey" PRIMARY KEY ("mitid");
@@ -153,6 +155,7 @@ ALTER TABLE game.quizbeantwortung ADD CONSTRAINT "Quiz" FOREIGN KEY ("qid")
         ON UPDATE CASCADE
         ON DELETE CASCADE
         NOT VALID;
+
 
 ALTER TABLE game.quizbeantwortung ADD CONSTRAINT "Trainee" FOREIGN KEY ("mitid")
         REFERENCES game.trainee ("mitid") MATCH SIMPLE
