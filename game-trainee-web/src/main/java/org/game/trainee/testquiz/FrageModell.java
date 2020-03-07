@@ -7,20 +7,24 @@ import java.util.List;
  *
  * @author Eric
  */
-public class FrageModell {
+public class FrageModell implements Serializable {
         
    public String frage;
    public List<String> antworten;
    public int indexrichtig;
    public Boolean[] buttons; // for multiple choice
    public String selectedAnswer; //for single choice radioButtons
+   public String qid;
    
-   public FrageModell(String frage, List<String> antworten, int indexrichtig) {
+   public FrageModell(String frage, List<String> antworten, int indexrichtig, String qid) {
       this.frage=frage;
       this.antworten=antworten;
       this.indexrichtig=indexrichtig;
       buttons = new Boolean[4];
+      this.qid = qid;
    }
+   
+   public FrageModell() {}
    
     public String getFrage() {
         return frage;
@@ -60,5 +64,15 @@ public class FrageModell {
 
     public void setSelectedAnswer(String selectedAnswer) {
         this.selectedAnswer = selectedAnswer;
+        
     }
+
+    public String getQid() {
+        return qid;
+    }
+
+    public void setQid(String qid) {
+        this.qid = qid;
+    }
+    
 }

@@ -4,7 +4,8 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 template="./../mainlayout.xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:p="http://primefaces.org/ui">
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:define name="header">
         <title>Test - JavaQuiz</title>
@@ -21,13 +22,13 @@
         </p>
         <div id="questions">
         <h:form>
-            <ui:repeat var="frage" value="#{testQuizController.fragen}">
+            <ui:repeat var="frage" value="#{testQuizController.fragemodell}">
                 <div class="question">
                     <h:outputText value="#{frage.frage}"></h:outputText> <br />
                     <table>
                         <tr>
                             <td>
-                                <h:outputText value="#{frage.antworten.get(0).antwort}"></h:outputText> 
+                                <h:outputText value="#{frage.antworten.get(0)}"></h:outputText> 
                             </td>
                             <td>
                                 <p:selectBooleanCheckbox value="#{quiz.buttons[0]}"></p:selectBooleanCheckbox>
@@ -35,7 +36,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <h:outputText value="#{frage.antworten.get(1).antwort}"></h:outputText>
+                                <h:outputText value="#{frage.antworten.get(1)}"></h:outputText>
                             </td>
                             <td>
                                 <p:selectBooleanCheckbox value="#{quiz.buttons[1]}"></p:selectBooleanCheckbox>
@@ -43,7 +44,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <h:outputText value="#{frage.antworten.get(3).antwort}"></h:outputText>
+                                <h:outputText value="#{frage.antworten.get(2)}"></h:outputText>
                             </td>
                             <td>
                                 <p:selectBooleanCheckbox value="#{quiz.buttons[2]}"></p:selectBooleanCheckbox>
@@ -51,7 +52,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <h:outputText value="#{frage.antworten.get(3).antwort}"></h:outputText>
+                                <h:outputText value="#{frage.antworten.get(3)}"></h:outputText>
                             </td>
                             <td>
                                 <p:selectBooleanCheckbox value="#{quiz.buttons[3]}"></p:selectBooleanCheckbox> 
@@ -73,7 +74,10 @@
                     <br/><br/>
                 </div>    
             </ui:repeat>
-            <p:commandButton value="Check Answers" style="margin-left: 20%" action="#{testQuizController.checkAnswersMultipleChoice()}"></p:commandButton> 
+            <ui:param name="varqid" value="#{testQuizController.qid}"></ui:param>
+            <p:commandButton value="Check Answers" style="margin-left: 20%" action="#{testQuizController.checkAnswersMultipleChoice}">
+                <f:param name="qid" value="#{varqid}"></f:param>
+            </p:commandButton> 
         </h:form>
         </div>
     </ui:define>
