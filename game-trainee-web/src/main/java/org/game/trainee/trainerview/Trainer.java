@@ -17,7 +17,6 @@ public class Trainer implements Serializable {
     public String branch;
     public String role;
     
- 
     public Trainer() {}
      
     public Trainer(String name) {

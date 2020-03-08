@@ -9,28 +9,32 @@
                     xmlns:p="http://primefaces.org/ui">
     
     <ui:define name="header">
-        <title>Kurse und Quizze</title>  
+        <title>Kurse</title>  
         <h:outputStylesheet library="css" name="stylesheet.css" />
     </ui:define>
-    
    
     <ui:define name="content">
-        <h2>Kurse und Quizze</h2>               
-        <p>
-            <strong>Java Learning Quiz - Basics</strong> <br />
-            This quiz will check your knowledge on basic java skills.
-            <h:link outcome="takequiz" value="Take Quiz!"></h:link>
+        <h1 align="center">Kurse</h1>
+        <p class="description">
+            Hier kannst du Kurse nehmen, die dich auf die Quizzes vorbereiten. <br/>
+            Nachdem du dir einen Kurs angeschaut hast,
+            wird das jeweilige Quiz freigeschalten!
         </p>
-        <p>
-            <strong>Java Learning Quiz - Advanced</strong> <br />
-            This quiz will check, if you have enough in depth knowledge with java.
-        </p>
-        <p>
-            <h:link value="Take Quiz!" target="takequiz.xhtml" /> 
-        </p>
+        <p:dataTable var="kurs" value="#{kursController.kurse}">
+            <p:column headerText="Titel">
+                <h:outputText value="#{kurs.titel}"></h:outputText>
+            </p:column>
+            <p:column headerText="Beschreibung">
+                <h:outputText value="#{kurs.beschreibung}"></h:outputText>
+            </p:column>
+            <p:column>
+                <h:form>
+                    <h:commandButton action="#{kursController.takeKurs(kurs.kursID)}" value="Take Course!" >       
+                    </h:commandButton>                                  
+                </h:form>
+            </p:column>
+        </p:dataTable>
     </ui:define>      
-    
-    
 </ui:composition>
 
 

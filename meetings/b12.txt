@@ -1,0 +1,39 @@
+Kurses und Quizzes auf eigene REiter aufteilen
+
+
+Tabellenränder und Zeilenfinder (in versch. Farben)
+
+
+Fragen Eigenschaft Multiple Choice true/false
+
+
+einem sollte es egal sein wie viele Fagen man zurück bekommt -> man bekommt Array bzw. Liste zurück das wird dann mit richtigeAntworten verglichen
+
+bei Fragenübersicht	anstatt nur die falschen herzuzeigen -> alle herzeigen und grünes Häcken bzw roter Kreuz zu den richtigen/falschen Antworten
+
+DB:
+EJB -> sind keine EJBs
+die müssen richtig annotiert werden: Stateful, Stateless, MessageDrive
+Stateful: EJB lebt so lange wie session
+am besten -> Steless beans verwenden, dann geht die bean so lange wie der request gehts
+
+CleanARchitecture!
+
+EJB brauchen einen leeren DefaultCOntructor!
+shutdown überall weg
+factory und tx braucht man ned
+über den EntityManger > @PersistenceContext(unitName = "Diplomarbeit")
+
+delete, find, update braucht man nur
+
+KursEJB ist schon die Vorlage
+
+JPA kann die Datenbank befüllen
+
+Persitence.xml -> transaction type
+
+https://github.com/konradrenner/kore-swarm-demo/blob/master/kore-swarm-demo-ee/src/main/resources/META-INF/persistence.xml
+https://github.com/konradrenner/kore-swarm-demo/blob/master/kore-swarm-demo-ee/src/main/resources/META-INF/load.sql
+
+
+jsf parameter passing => Befehle um Parameter über z.B. Quizzes zu bekommen bzw. mitzugeben

@@ -1,7 +1,7 @@
-[[section-System_Scope_and_Context]]
+[[section-SystemScopeandContext]]
 
 == System, Scope and Context
-[role = "System_Scope_and_Context]
+[role="System_Scope_and_Context"]
 
 === Technical Context
 

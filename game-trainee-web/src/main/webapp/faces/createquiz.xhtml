@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">     
+    <ui:composition template="./../mainlayout.xhtml"
+                    xmlns="http://www.w3.org/1999/xhtml"
+                    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                    xmlns:f="http://java.sun.com/jsf/core"
+                    xmlns:h="http://java.sun.com/jsf/html"
+                    xmlns:p="http://primefaces.org/ui">
+        <ui:define name="header">
+            <title>Eine Frage erstellen</title>
+            <h:outputStylesheet library="css" name="stylesheet.css"></h:outputStylesheet>
+        </ui:define>
+         
+        <ui:define name="content">
+            <h1 align="center">Hier kannst du eine neue Frage definieren!</h1>
+            <h:form id="createquestion">
+                <table style="margin-left: 25%; font-family: 'Arial', sans-serif; font-size: 1.3em">
+                    <tr>
+                        <td>
+                            Frage:
+                        </td>
+                        <td>
+                           <!-- <h:inputTextarea value="{buttonView.test}"></h:inputTextarea> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Richtige Antwort:
+                        </td>
+                        <td>
+                           <!-- <h:inputText value="{buttonView.test}"></h:inputText> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Falsche Antwort:
+                        </td>
+                        <td>
+                            <!-- <h:inputText value="{buttonView.test}"></h:inputText>-->
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+                <!-- <p:commandButton action="{buttonView.buttonSubmit}" value="Submit" style="margin-left: 25%"></p:commandButton>-->
+            </h:form>
+            
+        </ui:define>
+      
+    </ui:composition>

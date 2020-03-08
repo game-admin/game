@@ -1,9 +1,9 @@
-= ADR001-BuildingFromScratch
+=== ADR001-BuildingFromScratch
 
-== Status
+==== Status
 accpeted
 
-== Context
+==== Context
 The ARZ wants to create a learning platform for their members. The project team evaluated possibly alternatives to adapt from. An alternative needs to be able to run on-premise, be up to date with todays standards and preferably be opensource. The evaluated systems are the following:
 
 http://www.javaranch.com
@@ -35,10 +35,10 @@ http://www.javapassion.com
  -> therefore no viable option
 
 
-== Decision
+==== Decision
 None of the evaluated systems meet the requirements, so the system will be build up from scratch by the project team.
 
 
-== Consequences
+==== Consequences
 
 Development of a web application based on Java/Java Enterprise.

@@ -3,27 +3,43 @@
 <ui:composition template="./../mainlayout.xhtml"
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                xmlns:h="http://xmlns.jcp.org/jsf/html">
-
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:define name="header">
         <title>Test-JavaQuiz</title>
         <h:outputStylesheet library="css" name="stylesheet.css"></h:outputStylesheet>
     </ui:define>
 
     <ui:define name="content">
-        <h2>Dies ist ein Quiz um dein Java-Wissen zu testen!</h2><br />
+        <h1 align="center">Java Learning Quiz!</h1>
+        <p style="margin-left: 20%; font-family: 'Arial', sans-serif;">
+            Für jede richitg beantwortete Frage bekommst du 10 Punkte! <br/>
+            Es ist immer nur eine Antwort richtig! <br/>
+            Wenn du alle Fragen richtig beantwortest, bekommst du dieses Emblem: 
+            <h:graphicImage library="img" name="#{testQuizController.emblem}"></h:graphicImage>
+        </p>
+        <div id="questions">
         <h:form>
-        <ui:repeat var="quiz" value="#{testQuizAnzeigen.quiz}">
-            <p class="frage">
-                <h:outputText value="#{quiz.fragen}"></h:outputText> <br />
-                <h:outputText value="#{quiz.antworten[0]}"></h:outputText>
-                <h:commandButton action="#{testQuizAnzeigen.check(button1)}"></h:commandButton><br />
-                <h:outputText value="#{quiz.antworten[1]}"></h:outputText>
-                <h:commandButton action="#{testQuizAnzeigen.check(button2)}"></h:commandButton>
-            </p>      
-        </ui:repeat>
-            <h:commandButton type="submit" action="#{testQuizAnzeigen.check}"  ></h:commandButton>
+            <ui:repeat var="frage" value="#{testQuizController.fragemodell}">
+                <div class="question">
+                    <h:outputLabel for="radio" value="#{frage.frage}"></h:outputLabel>
+                    <p:selectOneRadio id="radio" value="#{frage.selectedAnswer}" layout="grid" required="true" unselectable="true" columns="1">
+                        <f:selectItem itemValue="#{frage.antworten.get(0)}" itemLabel="#{frage.antworten.get(0)}"></f:selectItem>
+                        <f:selectItem itemValue="#{frage.antworten.get(1)}" itemLabel="#{frage.antworten.get(1)}"></f:selectItem>
+                        <f:selectItem itemValue="#{frage.antworten.get(2)}" itemLabel="#{frage.antworten.get(2)}"></f:selectItem>
+                        <f:selectItem itemValue="#{frage.antworten.get(3)}" itemLabel="#{frage.antworten.get(3)}"></f:selectItem>
+                    </p:selectOneRadio>
+                    <br/>
+                </div>    
+                <!--  -->
+                <br/><br/>
+            </ui:repeat>
+            <ui:param name="varqid" value="#{testQuizController.qid}"></ui:param>
+            <h:commandButton value="Check Answers" style="margin-left: 20%" action="#{testQuizController.checkAnswersSingleChoice()}">
+                <f:param name="qid" value="#{varqid}"></f:param>
+            </h:commandButton> 
         </h:form>
+        </div>
     </ui:define>
-    
 </ui:composition>

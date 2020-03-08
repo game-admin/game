@@ -1,16 +1,16 @@
-= ADR004-UI technology stack
+=== ADR004-UI technology stack
 
-== Status
+==== Status
 accpeted
 
-== Context
+==== Context
 
 The primary user interface of the GAME application will be web based. Therefore a web UI Toolkit is needed for an efficient development of the UI and seamless integration with the backend systems.
 
-== Decision
+==== Decision
 
 As described in link:ADR002-Technologystack.adoc[ADR002-Technology stack] Java EE is the base technology stack for the GAME application. The Java EE standard defines the JSF substandard as its UI Framework/Toolkit for web based applications. Therefore the web based UI of the GAME application will be developed with the JSF framework.
 
-== Consequences
+==== Consequences
 
 For some parts of a modern web based UI, the JSF framework doesn't have components to develop the UI efficient. For these parts it is allowed to use components of the link:https://www.primefaces.org/[Primefaces] UI library.

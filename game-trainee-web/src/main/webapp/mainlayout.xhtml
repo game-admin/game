@@ -6,43 +6,26 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <h:head> 
+        <!--<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+            rel="stylesheet"  type='text/css'></link> -->
+        <link rel="shortcut icon" type="image/x-icon" href="faces/favicon.ico" />
     </h:head>
     <h:body>
-        <div id="logo">
-            <h:graphicImage library="img" name="game_logo.png" width="150" height="150" /> 
+        <div id="header">
+            <h:graphicImage library="img" name="header.png" style="width: 100%"></h:graphicImage>
         </div>
-        <header>
-            <h1>GAME-Gamificated ARZ Member Education</h1>
-        </header>
-        
         <ui:insert name="menubar">
             <ui:include src="./faces/menubar.xhtml"></ui:include>
         </ui:insert>
-        
         <ui:insert name="header">
             <h:outputStylesheet library="resources" name="css/stylesheet.css"></h:outputStylesheet>
         </ui:insert>
         <br />
-        
         <ui:insert name="content">
             Content
         </ui:insert> 
         <br />
-        
-        <footer> <!--style="background-image: url('test.gif'); background-size:cover;"-->
-            <ui:insert name="footer" >
-                <hr />
-                <!--<h:graphicImage library="img" name="background.jpg" width="10" height="10" /> -->
-                <br />
-                <p>Kontakt: <a href="http://www.arz.at">ARZ Wien</a> </p>
-                <p>Grasbergergasse 13 </p>
-                <p>1030 Wien </p>
-                <br />
-                <br />
-                <br />          
-            </ui:insert>
-        </footer>
-        <br />
+        <h:graphicImage library="img" name="footer1.jpg" style="top:100%; margin-bottom: 0px; padding-bottom: 0px;"></h:graphicImage>
     </h:body>
 </html>
 

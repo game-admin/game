@@ -13,19 +13,35 @@
     </ui:define>
     
     <ui:define name="content">                                      
-        <p>
-            <strong>Java Learning Quiz - Basics</strong> <br />
-            This quiz will check your knowledge on basic java skills.
+        <h1>Activities</h1>
+        <p id="start">
+            Hallo #{traineeController.getTraineesByID("1").get(0).vorname}, auf dieser Plattform kannst du deine Java-Kenntnisse überprüfen und ausbesseren.
+            Auf der Kurs-Seite findest du eine Vielzahl an Kursen, die unterschiedliche Bereiche von Java abdecken.
+            Du wirst einige Kurse brauchen, um bestimmte Quizzes zu nehmen.<br/>
+            Diese findest du unter dem "Quizzes"-Reiter.
+            Die dort angezeigten Aufgaben passen auf bestimmte Kurse.<br/>
+            Wenn du Hilfe benötigst, oder dir etwas unklar ist, kannst du einen Trainer kontaktieren.
+            Diese findest du auf der "Trainer"-Seite.<br/>
+            Zu guter Letzt gibt es noch eine "Emblemtafel". Auf dieser sind alle Mitarbeiter verzeichnet,
+            die auf der Plattform unterwegs sind. Des weiteren werden hier die gesammelten Embleme aller 
+            Mitspieler angezeigt. Du kannst dich so mit deinen Kollegen messen, und versuchen derjenige zu sein,
+            der die meisten Embleme gewonnen hat.
         </p>
-        <p>
-            <strong>Java Learning Quiz - Advanced</strong> <br />
-            This quiz will check, if you have enough in depth knowledge with java.
+        <hr/>
+        <p id="data">
+            <strong>Benutzer:</strong> #{traineeController.getTraineesByID("1").get(0).vorname}
+            #{traineeController.getTraineesByID("1").get(0).nachname}<br />
+            <strong>Nickname:</strong> #{traineeController.getTraineesByID("1").get(0).nickname} <br/>
+            Fortschritt: 50% von 100% <br />
+            Embleme: <h:graphicImage library="img" name="#{traineeController.getTraineesByID(&quot;1&quot;).get(0).embleme.get(0)}"></h:graphicImage>
+            <br/><br/>
+            Your score (Quiz):
+            <h:outputText value="#{testQuizController.score}"></h:outputText> <br/>
+            Your progress (Overall):
+            <h:outputText value="#{traineeController.getTraineesByID(&quot;1&quot;).get(0).progress}"></h:outputText>
+            <br/><br/>
+            Hier sollte spezifisch zum User, dessen Aktivitäten und Fortschritt dargestellt werden.
         </p>
         <br />
-        <p>If you want to create a quiz, 
-            <p:link outcome="quiz" value="click here!">
-            <f:param name="id" value="50" />
-            </p:link>
-        </p>
     </ui:define>                      
 </ui:composition>

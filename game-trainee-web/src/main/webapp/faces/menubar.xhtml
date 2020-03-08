@@ -9,27 +9,25 @@
     <body>
         <h:form id="menubar">
             <div id="menu">
-            <p:tabMenu activeIndex="#{param.i}">
-                <p:menuitem value="Home" outcome="index.xhtml" icon="pi pi-star">
-                    <f:param name="i" value="0" />
-                </p:menuitem>
-                <p:menuitem value="Courses and Quizzes" outcome="courses.xhtml" icon="pi pi-search">
-                    <f:param name="i" value="1" />
-                </p:menuitem>
-                <p:menuitem value="Trainers" outcome="trainers.xhtml" icon="pi pi-file">
-                    <f:param name="i" value="2" />
-                </p:menuitem>
-                <p:menuitem value="Leaderboard" outcome="leaderboard.xhtml" icon="pi pi-briefcase">
-                    <f:param name="i" value="3" />
-                </p:menuitem>
-            </p:tabMenu>
+                <p:tabMenu style="width:133.2%">
+                    <p:menuitem value="Home" outcome="index.xhtml" style="width:5em" icon="fa fa-home">
+                    </p:menuitem>
+                    <p:menuitem value="Courses" outcome="courses.xhtml" style="width:7em" icon="fa fa-book">
+                    </p:menuitem>
+                    <p:menuitem value="Quizzes" outcome="quizzes.xhtml" style="width:7em" icon="fa fa-question">
+                    </p:menuitem>
+                    <p:menuitem value="Trainers" outcome="trainers.xhtml" style="width:6em" icon="fa fa-users">
+                    </p:menuitem>
+                    <p:menuitem value="Emblemtafel" outcome="leaderboard.xhtml" style="width:8em" icon="fa fa-eye">
+                    </p:menuitem>
+                </p:tabMenu>
             </div>
             <br />
             
             <div id="logout">
-                <p:splitButton id="basic" value="Account" action="#{buttonView.save}" icon="pi pi-save">
-                    <p:menuitem value="Points" action="#{buttonView.update}" icon="pi pi-refresh" />
-                    <p:menuitem value="Courses" action="#{buttonView.delete}" ajax="false" icon="pi pi-times" />
+                <p:splitButton id="basic" value="Account" action="index.html"   icon="pi pi-save">
+                    <p:menuitem value="Points" action="index.html" icon="pi pi-refresh" />
+                    <p:menuitem value="Courses" action="courses.xhtml" ajax="false" icon="pi pi-times" />
                     <p:separator />
                     <p:menuitem value="Logout" url="http://www.google.com" icon="pi pi-home" />
                 </p:splitButton>

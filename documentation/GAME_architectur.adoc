@@ -1,41 +1,37 @@
-// header file for arc42-template,
-// including all help texts
-//
-// ====================================
+<<<<
+image::./DiplomarbeitSeite1NEU.pdf[]
 
-= image:game_logo.png[Logo] Game
+<<<<
+//image:./img/doclogo2.png[Logo] Game
 // toc-title definition MUST follow document title without blank line!
 :toc-title: Table of Contents
 
-//additional style for arc42 help callouts
-ifdef::basebackend-html[]
-++++
-<style>
-.arc42help {font-size:small; width: 14px; height: 16px; overflow: hidden; position: absolute; right: 0px; padding: 2px 0px 3px 2px;}
-.arc42help::before {content: "?";}
-.arc42help:hover {width:auto; height: auto; z-index: 100; padding: 10px;}
-.arc42help:hover::before {content: "";}
-@media print {
-	.arc42help {display:hidden;}
-}
-</style>
-++++
-endif::basebackend-html[]
 
+
+//keyword: book
 
 ***
-
 
 // numbering from here on
 :numbered:
 
-<<<<
 // 1a. Introduction and Goals
 include::chapters/Introduction.adoc[]
 
 <<<<
+// Abstract
+include::chapters/Abstract.adoc[]
+
+<<<<
 // 1b. Requirements Overview
 include::chapters/Requirements.adoc[]
+
+//Vorstellung
+include::chapers/Vorstellung.adoc[]
+
+<<<<
+//Aufgabenteilung
+include::chapters/DivisionOfTasks.adoc[]
 
 <<<<
 // 1c. Qualitygoals
@@ -54,33 +50,32 @@ include::chapters/System_Scope_and_Context.adoc[]
 include::chapters/Solution_Strategy.adoc[]
 
 <<<<
-// 6. Runtime View
-include::chapters/06_runtime_view.adoc[]
-
-<<<<
-// 7. Deployment View
-include::chapters/07_deployment_view.adoc[]
-
-<<<<
-// 8. Concepts
-include::chapters/08_concepts.adoc[]
-
-<<<<
 [[id_designdecisions]]
 // 9. Design Decisions
 include::chapters/Design_Decisions.adoc[]
 
 <<<<
-// 10. Quality Scenarios
-include::chapters/10_quality_scenarios.adoc[]
+// ER-Modell
+include::chapters/ER-Modell.adoc[]
 
 <<<<
-// 11. Technical Risks
-include::chapters/11_technical_risks.adoc[]
+//Theorie Eric
+include::chapters/Theorie_Eric.adoc[]
 
 <<<<
-// 12. Glossary
-include::chapters/12_glossary.adoc[]
+//Praxis Eric
+include::chapters/Praxis_Eric.adoc[]
 
+<<<<
+//Theorie Jan
+include::chapters/Theorie_Jan.adoc[]
 
+<<<<
+//Praxis Jan
+include::chapters/Praxis_Jan.adoc[]
 
+<<<<
+[format=csv, separator=;]
+|===
+include::./ZeittabelleDA.csv[]
+|===

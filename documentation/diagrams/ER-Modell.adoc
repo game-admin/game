@@ -3,69 +3,103 @@
 ' avoid problems with angled crows feet
 skinparam linetype ortho
 
-entity Punktezahl {
-    * **PunktID: Int**
-    --
-    * Punkteanzahl: Int/Long
-}
+
 together {
 
     entity Quiz {
         * **QID: Int**
-        * FNR: Int
-        * PID: Int
         --
-        * Namen: String
+        * Titel: String
+        Beschreibung: String
+        * Reward: Blob
+        * MultipleChoice: Boolean
     }
     
-    entity QuizMitarbeiter {
+    entity Quizbeantwortung {
+        * **QBEID: Int**
         * QID:   Int
-        * MitID: Int  
+        * MitID: Int
         --
+        * erreichtePunktezahl: Int
+        * istbestanden: Boolean
     }
     
-    entity Mitarbeiter {
+    entity Trainee {
         * **MitID:  Int**
-        * FortID: Int
         --
-        * Name: String
+        * Nachname: String
         Vorname: String
         * Nickname: String UNIQUE
-        Abteilung
+        Abteilung: String
+        * Progress: Int
+        Embleme: String
     }
     
 }
 
-entity Fortschritt {
-    * **FortID: Int**
-    --
-    * Button: Int
-}
-
-entity Fragen {
-    * **FNR: Int**
+entity Frage {
+    * **FID: Int**
+    * QID: Int
     --
     * Frage: String
+    * Punkteanzahl: Int/Long
 }
 
-entity Antworten {
-    * FNR:      Int
+entity Antwortmoeglichkeit {
+    * FID:      Int
     * **AntwID: Int**
     --
     * Antwort: String
     Richtige Antwort
 }
 
+entity Kurs {
+    * **KursID: Int**
+    --
+    * Titel: String
+    * Link: String/URL
+    Beschreibung: String
+}
+
+entity KursBesuch {
+    * KursID: Int
+    * MitID: Int
+    * **KursBesuchID: Int**
+    --
+    * Datum: Date
+
+}
+
+entity KursVorraussetzung {
+    * VorraussetzID: Int
+    * KursID: Int
+    * **KursVorraussetzID: Int**
+}
+
+entity Vorraussetzung {
+    * **VorraussetzID: Int**
+    --
+    KursID: Int
+    QuizID: Int
+}
+
+entity QuizVorraussetzung {
+    * VorraussetzID: Int
+    * QID: Int
+    * **QuizVorraussetzID: Int**
+}
 
 
-
-
-Antworten}|--||Fragen
-Fragen}|--||Quiz
-Quiz|o--o{QuizMitarbeiter
-QuizMitarbeiter|o--|{Mitarbeiter
-Quiz}|--||Punktezahl
-Punktezahl}|--||Fortschritt
-Fortschritt|o--o|Mitarbeiter
-
+Antwortmoeglichkeit}|--||Frage
+Frage}|--||Quiz
+Quiz||--|{Quizbeantwortung
+Quizbeantwortung}|--||Trainee
+Trainee||--|{KursBesuch
+Kurs||--|{KursBesuch
+Kurs|o--|{KursVorraussetzung
+Vorraussetzung||--|{KursVorraussetzung
+Vorraussetzung|o--||Quiz
+Vorraussetzung|o--||Kurs
+Quiz|o--|{QuizVorraussetzung
+Vorraussetzung||--|{QuizVorraussetzung
 ....

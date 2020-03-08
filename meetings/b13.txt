@@ -1,0 +1,16 @@
+die Namedquery sind um nach irgendeinem Text zu suchen (mit %text%)
+
+den Text in MessagedBundles
+
+jetzt die DescSuche ist nur n Test
+
+nacher schon im Controller holen, und dann nur noch auf die Variable zugreifen
+
+bei allen Entities muss @Table dabeistehen
+mit Name und Schema
+
+wir haben 1mal die library mitm Treiber gmacht (im asadmin)
+und in der Adminconsole den Datenbanknamen eingeben
+
+https://blog.payara.fish/using-postgresql-with-payara-server
+

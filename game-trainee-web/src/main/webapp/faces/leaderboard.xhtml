@@ -10,26 +10,31 @@
     
     <ui:define name="header">
         <h:outputStylesheet library="css" name="stylesheet.css" />
-        <title>Leaderboard</title>  
+        <title>Emblemtafel</title>  
     </ui:define>
        
     <ui:define name="content">         
-        <h2>Leaderboard</h2>
-        <table>
-        <tr>
-            <td>
-                <p>Max Mustermann | Rang: Advaced Java Developer | Abzeichern: 
-                <h:graphicImage library="img" name="icon2.jpg" height="50" width="70" /></p>
-            </td>
-        </tr>
-        <tr>
-            <td> 
-                <p>Eric Bensi |Rang: Gott | Abzeichen: 
-                <h:graphicImage library="img" name="icon1.jpg" height="50" width="50" /></p>
-            </td>
-        </tr>
-                        
-        </table>
+        <h1 align="center">Emblemtafel</h1>
+        <p class="description">
+            Hier siehst du eine Auflistung aller Trainees, mit ihren Nicknames und ihren Emblemen.
+        </p>
+        <p:dataTable var="trainee" value="#{traineeController.trainees}">
+            <p:column headerText="Name">
+                <h:outputText value="#{trainee.vorname} "></h:outputText>
+                <h:outputText value="#{trainee.nachname}"></h:outputText>
+            </p:column>
+            
+            <p:column headerText="Nickname">
+                <h:outputText value="#{trainee.nickname}"></h:outputText>
+            </p:column>
+            
+            <p:column headerText="Abteilung">
+                <h:outputText value="#{trainee.abteilung}"></h:outputText>
+            </p:column>
+            
+            <p:column headerText="Emblems">
+                <h:graphicImage value="data:image/png;base64,#{trainee.embleme.get(0)}"></h:graphicImage>
+            </p:column>
+        </p:dataTable>
     </ui:define>
-         
 </ui:composition>

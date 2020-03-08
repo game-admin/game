@@ -1,0 +1,7 @@
+=== ER-Model
+
+image::diagrams/diagram-classes.png[]
+
+==== Declaration
+
+The ER-Model in general is a diagram, which shows the relationships between the entities of a database. 

@@ -1,0 +1,27 @@
+== Presentation of the project team
+
+=== Eric Haneder
+
+image::../img/eric.png[] 
+
+* Place of residence: Untergrub
+* Born: 17.05.2001
+* Education
+** Volkschule Göllersdorf
+** Hauptschule Göllersdorf
+** HTL Hollabrunn, Wirtschaftsingenieure-Betriebsinformatik
+
+
+
+
+
+
+
+=== Jan Binder
+
+* Place of residence: Sonnberg
+* Born: 09.04.2001
+* Education
+** Volksschule Hollabrunn
+** Bundesgymnasium Hollabrunn
+** HTL Hollabrunn, Wirtschaftsingenieure-Betriebsinformatik

@@ -10,47 +10,147 @@ and open the template in the editor.
 
 body {
     
-    /*background-color: beige; */
+    background-color: #585858;
+    color: black;
+    padding-bottom: 0px;
 }
 
 p {
     font-family: "Times New Roman", Times, serif;
     font-size: 20px;
+    color:white;
 }
 
 footer {
-    background-image: url("background.gif");
-    background-size: cover;
-    bottom: 0px;
-       
+    background-image: url("#{resource['img:background.gif']}");
+    margin: 0px 0px 0px 0px;
+    background-size:cover;
+    /*margin-bottom: 0px; */
 }
 
 #menu {
     width:1000px;
-  
-    background-color: red;
     float:left;
 }
 
 #logout {
     position:relative;
-    left:800px;
-    top:-2.6em;
-    
+    left:1140px;
+    top:-2.65em;
     width:200px;
     height:70px;
     
 }
-
-header {
-    position:relative;
-    margin-left: 15%;
-    margin-top:0%;
+#start {
+    margin-left:10%;
+    background-color: white;
+    width: 70%;
+    color: black;
+    padding: 4px;
+    border: solid black;
+}
+#data {
+    margin-left:10%;
+    width:70%;
 }
 
-#logo {
-    position:relative;
-    margin-left:20%;
-    margin-top:0%;
+.description {
+    margin-left: 10%; 
+    width:70%; 
+    border: solid black; 
+    padding:4px;
 }
 
+
+#header {
+    position:relative;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+#questions {
+    margin-left: 25%;
+    font-size: 1.5em;
+    /*width: 60%; */
+    background-color: white;
+    border-radius: 5px;
+    width: fit-content;
+    color: black;
+}
+
+
+#quizzes {
+    font-size: 1.3em;
+    border: 5px;
+    width: 100%;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: white;
+    
+}
+
+#radio {
+    font-size:0.8em;
+    color: black;
+}
+
+h1 {
+    margin-top: -1em;
+    max-width: 40%;
+    width: fit-content;
+    background-image: url("#{resource['img:board.png']}");
+    margin-left: 33%;
+    font-family: "Arial Black", sans-serif;
+}
+
+.question {
+    background-color: white;
+    font-family: "Arial", sans-serif;
+    width: fit-content;
+    border-radius: 5px;
+    color:black;
+}
+
+.fa-home {
+        margin-right: 9px;
+        margin-top: 5px;
+        width: 1.2em;
+        height: 1.2em;
+}
+
+.fa-book {
+    margin-right:9px;
+    margin-top: 5px;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.fa-question {
+    margin-right:9px;
+    margin-top: 5px;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.fa-eye {
+    margin-right:9px;
+    margin-top: 5px; 
+    width: 1.2em;
+    height: 1.2em; 
+}
+
+.fa-users {
+    margin-right:9px;
+    margin-top: 5px; 
+    width: 1.2em;
+    height: 1.2em;
+}
+
+#results {
+    border: solid black;
+    margin-bottom: 1.5em;
+    width:33%;
+    margin-left:30%;
+    background-color: grey;
+    font-size: 1.2em;
+    padding: 5px;
+}

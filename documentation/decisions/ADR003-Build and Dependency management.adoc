@@ -1,13 +1,13 @@
-= ADR003-Build and dependency managament
+=== ADR003-Build and dependency managament
 
-== Status
+==== Status
 
 accpeted
 
-== Context
+==== Context
 
 The GAME application consists of different subsystems. To make it possible, that these subsystems can be automatically built and bundled a build and dependency management tool ist needed.
 
-== Decision
+==== Decision
 
 link:https://maven.apache.org/[Apache Maven] will be used for build and dependency management. This tool is well-proven and can be extended with many plugins. Its convention-over-configuration paradigma lets a developer focus on creating the software.
