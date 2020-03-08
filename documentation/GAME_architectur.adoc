@@ -56,7 +56,7 @@ include::chapters/Design_Decisions.adoc[]
 
 <<<<
 // ER-Modell
-image::diagrams/diagram-classes.png[]
+include::chapters/ER-Modell.adoc[]
 
 <<<<
 //Theorie Eric

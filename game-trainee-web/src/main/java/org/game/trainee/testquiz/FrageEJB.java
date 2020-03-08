@@ -54,15 +54,4 @@ public class FrageEJB {
                 .setParameter("QID", qid).getResultList();
     }
     
-    /*
-    public List<Frage> findQuizFragen(int index) {
-        Query query = em.createQuery("SELECT * FROM frage f WHERE QID ="+index+";");
-        Collection<Frage> collection;
-        collection = (Collection<Frage>) query.getResultList();
-        ArrayList<Frage> newList = collection.stream().collect(toCollection(ArrayList::new));
-        return newList;
-    }
-    */
-
-    
 }

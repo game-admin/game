@@ -21,25 +21,28 @@ SQL is short for "Structured Query Language". It is used to insert, change and d
 .Beispielcode von SQL
 [source, SQL]
 ----
-CREATE TABLE mitarbeiter (
+<1>
+CREATE TABLE mitarbeiter ( 
     id integer,
     nachname text,
     vorname text,
     gehalt integer
 );
 
-
+<2>
 INSERT INTO mitarbeiter (id, nachname, vorname, gehalt)
 VALUES (1, Mustermann, Max, 2000);
 
 
-
+<3>
 SELECT * FROM mitarbeiter;
 
 ----
-All this code does is it creates a new table called "mitarbeiter" which contains the columns "id", "nachname", "vorname" and "gehalt". Every column has its datatype next to it. Optionally there are constraints to the columns, such as "NOT NULL". which tells the database that this column cannot be empty or "UNIQUE", which means that a data set must be unique in this column.
-The next command is INSERT INTO. This code tells the database to write data into the table. First you need to set the table with all its columns and then the values like shown.
-Last there is the "SELECT * FROM mitarbeiter;" command which picks out every data set from the table "mitarbeiter". Further there is a possibility to only select a few specific data sets.
+<1> All this code does is it creates a new table called "mitarbeiter" which contains the columns "id", "nachname", "vorname" and "gehalt". Every column has its datatype next to it. Optionally there are constraints to the columns, such as "NOT NULL". which tells the database that this column cannot be empty or "UNIQUE", which means that a data set must be unique in this column.
+
+<2> The next command is INSERT INTO. This code tells the database to write data into the table. First you need to set the table with all its columns and then the values like shown.
+
+<3> Last there is the "SELECT * FROM mitarbeiter;" command which picks out every data set from the table "mitarbeiter". Further there is a possibility to only select a few specific data sets.
 
 ==== JPA
 
@@ -63,7 +66,7 @@ Last there is the "SELECT * FROM mitarbeiter;" command which picks out every dat
 .Kurs.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/Kurs.java[lines=17..36]
+include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/Kurs.java[lines=19..40]
 //Getter, Setter
 ----
 
@@ -84,7 +87,7 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursBesuch.j
 ----
 
 The entity "KursBesuch" is a table, which splits the many-to-many relationship between "trainee" and "kurs".
-That means it has the PK of both tables as a foreign key and it also provides a column named "datum" which indicates the date the user has visited the course.
+That means it has the PK (primary key) of both tables as a foreign key and it also provides a column named "datum" which indicates the date the user has visited the course. The function of this entity is to show which trainee has done which course and when.
 
 
 ===== Vorausetzung Entities
@@ -103,21 +106,18 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/Voraussetzun
 .KursVorausetzung.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursVoraussetzung.java[lines=18..35]
+include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursVoraussetzung.java[lines=19..36]
 //Getter, Setter
 ----
 
 The function of "KursVoraussetzung" is that a course can have a course or a quiz as a requirement to take this course. This table contains courses and their required quizzes or courses.
 
 
-"KursVoraussetzung" is another entity which splits up a many-to-many relationship. 
-This time it is between "kurs" and "voraussetzung". Since there is no column other than the two foreign keys and the primary key "KursVoraussetzID" this table has no function except as a middle table for "kurs" and "voraussetzung".
-
 
 .QuizVorausetzung.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/QuizVoraussetzung.java[lines=19..36]
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/QuizVoraussetzung.java[lines=21..36]
 
 //Getter, Setter
 ----
@@ -130,58 +130,62 @@ This table has the same function as "KursVoraussetzung", but instead of courses 
 .Quiz.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Quiz.java[lines=19..36]
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Quiz.java[lines=25..53]
 
 //Getter, Setter
 ----
 
-This is the table for all quizzes. It contains the "QID", which is the primary key, a title, a description and a reward. The title has a constraint called NOT NULL because every quiz must have a specification which topic it has, since the description is optional the title is the only differentiation between the quizzes.
-
+This is the table for all quizzes. It contains the "QID", which is the primary key, a title, a description and a reward. The title has a constraint called NOT NULL because every quiz must have a specification which topic it has.
+There are also so called queries to find data with specific parameters from the database.
 
 
 .Quizbeantwortung.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Quizbeantwortung.java[lines=21..39]
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Quizbeantwortung.java[lines=22..45]
 
 
 //Getter, Setter
 ----
 
-
+This entity is essential for the implementation of the "Voraussetzungs-Logik". We need this table to check if a trainee has already done a quiz. This is done with the column "istbestanden".
 
 
 .Frage.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Frage.java[lines=21..40]
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Frage.java[lines=21..52]
 
 //Getter, Setter
 ----
 
-Every Quiz contains of many questions. These questions are stored in the table "Frage". Each question has a "FID", a "QID", so it can be ... to a quiz. A question also has the question itself, set points you get for each question.
+Every Quiz contains of many questions. These questions are stored in the table "Frage". Each question has a "FID", a "QID", so it can be connected to a quiz. A question also has the question itself and points you get for each question.
 
 .Antwortmoeglichkeiten.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Antwortmoeglichkeiten.java[lines=20..40]
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/Antwortmoeglichkeiten.java[lines=20..45]
 
 //Getter, Setter
 ----
-
+Every question has 4 answers. These answers are stored in this table. Each answer is connected to its question. Also the answertext itself is stored here, as well as a boolean value if the answer is correct or not.
 
 ===== Trainee Entity
 
 .Trainee.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/Trainee.java[lines=19..41]
+include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/Trainee.java[lines=25..53]
 
 //Getter, Setter
 ----
 
+This table contains all trainees. It contains their first name, last name, the nickname they use on the website, their
+department in the company and their progress they have by doing quizzes.
 
 ==== EJBs
+
+EJBs are components that summarize the business logic and take care of transactions and security. 
 
 .KursEJB.java
 [source, java]
@@ -196,6 +200,7 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursEJB.java
 include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/FrageEJB.java[lines=21..]
 ----
 
+The use of the "FrageEJB" is for example to find all questions connected to a qid. This is used to show the questions when you take a quiz. Also you can only find one question or all questions in form of a list.
 
 .QuizEJB.java
 [source, java]
@@ -208,6 +213,30 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/QuizEJB.
 [source, java]
 ----
 include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/TraineeEJB.java[lines=16..]
+----
+
+.AntwortmoeglichkeitenEJB.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/AntwortmoeglichkeitenEJB.java[lines=16..]
+----
+
+.QuizVoraussetzungEJB.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/QuizVoraussetzungEJB.java[lines=13..]
+----
+
+.VoraussetzungEJB.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/VoraussetzungEJB.java[lines=16..]
+----
+
+.QuizbeantwortungEJB.java
+[source, java]
+----
+include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/QuizbeantwortungEJB.java[lines=13..]
 ----
 
 ==== Persistence.xml
@@ -224,13 +253,6 @@ The "persistence.xml" is used to configure many things, such as the source of th
 In this chapter I will introduce all SQL-files used in this project int he order they are when the program is started.
 
 
-.dropSeqSQL.sql
-[source, SQL]
-----
-include::../../game-trainee-web/src/main/resources/META-INF/dropSeqSQL.sql[]
-----
-
-Before everything is created, you need to make sure that there is no existing sequence, because otherwise there would be errors when creating the sequences. This script drops every sequence at the start.
 
 .dropSQL.sql
 [source, SQL]
@@ -240,13 +262,6 @@ include::../../game-trainee-web/src/main/resources/META-INF/dropSQL.sql[]
 
 This script has the function of dropping every table before creating so there are no errors. 
 
-.createSeqSQL.sql
-[source, SQL]
-----
-include::../../game-trainee-web/src/main/resources/META-INF/createSeqSQL.sql[lines=1..10]
-----
-
-This SQL-file is used to create all the sequences for the primary keys of the tables, so it automatically goes to the next number whenever a new data row is created. I only included one sequence because it repeats for every table.
 
 .createSQL.sql
 [source, SQL]
@@ -254,15 +269,9 @@ This SQL-file is used to create all the sequences for the primary keys of the ta
 include::../../game-trainee-web/src/main/resources/META-INF/createSQL.sql[]
 ----
 
-This file is used to create all the tables we are using. It produces every table with its associated columns. 
+This file is used to create all the tables we are using. It produces every table with its associated columns.
+This file is also used to give all the tables its associated primary keys and foreign keys.
 
-.alterTableSQL.sql
-[source, SQL]
-----
-include::../../game-trainee-web/src/main/resources/META-INF/alterTableSQL.sql[]
-----
-
-This file is used to give all the tables its associated primary keys and foreign keys. This is not done in the "createSQL" file, because it would generate errors. 
 
 .insertSQL.sql
 [source, SQL]

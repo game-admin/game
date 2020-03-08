@@ -12,6 +12,7 @@ together {
         * Titel: String
         Beschreibung: String
         * Reward: Blob
+        * MultipleChoice: Boolean
     }
     
     entity Quizbeantwortung {
@@ -20,21 +21,24 @@ together {
         * MitID: Int
         --
         * erreichtePunktezahl: Int
+        * istbestanden: Boolean
     }
     
-    entity Mitarbeiter {
+    entity Trainee {
         * **MitID:  Int**
         --
-        * Name: String
+        * Nachname: String
         Vorname: String
         * Nickname: String UNIQUE
-        Abteilung
+        Abteilung: String
+        * Progress: Int
+        Embleme: String
     }
     
 }
 
 entity Frage {
-    * **FNR: Int**
+    * **FID: Int**
     * QID: Int
     --
     * Frage: String
@@ -42,17 +46,11 @@ entity Frage {
 }
 
 entity Antwortmoeglichkeit {
-    * FNR:      Int
+    * FID:      Int
     * **AntwID: Int**
     --
     * Antwort: String
     Richtige Antwort
-}
-
-entity Antwort {
-    * **GewaehlteAntwortID: Int**
-    --
-    * GewaehlteAntwort: String
 }
 
 entity Kurs {
@@ -95,9 +93,8 @@ entity QuizVorraussetzung {
 Antwortmoeglichkeit}|--||Frage
 Frage}|--||Quiz
 Quiz||--|{Quizbeantwortung
-Quizbeantwortung}|--||Mitarbeiter
-Quizbeantwortung||--|{Antwort
-Mitarbeiter||--|{KursBesuch
+Quizbeantwortung}|--||Trainee
+Trainee||--|{KursBesuch
 Kurs||--|{KursBesuch
 Kurs|o--|{KursVorraussetzung
 Vorraussetzung||--|{KursVorraussetzung
