@@ -276,7 +276,21 @@ This file is also used to give all the tables its associated primary keys and fo
 .insertSQL.sql
 [source, SQL]
 ----
-include::../../game-trainee-web/src/main/resources/META-INF/insertSQL.sql[]
+INSERT INTO game.trainee ("mitid", "nachname", "vorname", "nickname", "abteilung", "progress", "embleme") VALUES ('1', 'Binder', 'Jan', 'Syreax', 'Projektmanagement', 500, NULL);
+
+INSERT INTO game.quiz ("qid", "titel", "beschreibung", "reward", "multiplechoice") VALUES ('1', 'Start', 'Quiz about the general knowledge of Java', 'test', false);
+
+INSERT INTO game.frage ("fid", "qid", "frage", "punktezahl") VALUES ('1', '1', 'What are advantages of Java?', 10);
+
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('1', '1', 'Flawless', false);
+
+INSERT INTO game.quizbeantwortung ("qbeid", "qid", "mitid", "erreichtepunktezahl", "istbestanden") VALUES ('1', '1', '1', 0, false);
+
+INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('1', 'Start-Kurs', 'https://www.tutorialspoint.com/java/index.htm', 'Dieser Kurs ist der erste Kurs der abgelegt werden muss. Er erklärt dir die Basics von Java.');
+
+INSERT INTO game.voraussetzung("voraussetzid", "kursid", "qid") VALUES ('1', null, '1');
+
+INSERT INTO game.quizvoraussetzung("quizvoraussetzid", "voraussetzid", "qid") VALUES ('1', '1', '2');
 ----
 
-At last the "insertSQL" script is used to insert all the data we want into the belonging table. the order of the commands is very important because, if you insert "antwortmoeglichkeiten" at first there would be no existing matching "FNR" or with "frage " no fitting "QID".
+Last there is the "insertSQL" script, which is used to insert all the data we want into the belonging table. The order of the commands is very important because, if you insert "antwortmoeglichkeiten" at first there would be no existing matching "FNR" or with "frage " no fitting "QID". Here are only the first insert of every table because otherwise there would be too much code, which would make it too complex.

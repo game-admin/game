@@ -1,6 +1,4 @@
-
 CREATE SCHEMA IF NOT EXISTS game AUTHORIZATION darbeit;
-
 
 CREATE TABLE game.antwortmoeglichkeiten(
     "antwid" text NOT NULL,
@@ -74,10 +72,6 @@ CREATE TABLE game.voraussetzung(
     "qid" text
 );
 
-
-
-
-
 ALTER TABLE game.antwortmoeglichkeiten ADD CONSTRAINT "ANTWORTMOEGLICHKEITEN_pkey" PRIMARY KEY ("antwid");
     
 ALTER TABLE game.frage ADD CONSTRAINT "FRAGE_pkey" PRIMARY KEY ("fid");
@@ -102,22 +96,18 @@ ALTER TABLE game.trainee ADD CONSTRAINT "NICKNAME" UNIQUE ("nickname");
 
 ALTER TABLE game.voraussetzung ADD CONSTRAINT "VORAUSSETZUNG_pkey" PRIMARY KEY ("voraussetzid");
 
-
 ALTER TABLE game.antwortmoeglichkeiten ADD CONSTRAINT "Frage" FOREIGN KEY ("fid")
         REFERENCES game.frage ("fid") MATCH SIMPLE
         ON UPDATE CASCADE
         ON DELETE CASCADE
         NOT VALID;
-
-
-    
+ 
 ALTER TABLE game.frage ADD CONSTRAINT "Quiz" FOREIGN KEY ("qid")
         REFERENCES game.quiz ("qid") MATCH SIMPLE
         ON UPDATE CASCADE
         ON DELETE CASCADE
         NOT VALID;
-
-    
+ 
 ALTER TABLE game.kursbesuch ADD CONSTRAINT "Kurs" FOREIGN KEY ("kursid")
         REFERENCES game.kurs ("kursid") MATCH SIMPLE
         ON UPDATE CASCADE
@@ -130,10 +120,6 @@ ALTER TABLE game.kursbesuch ADD CONSTRAINT "Trainee" FOREIGN KEY ("mitid")
         ON DELETE CASCADE
         NOT VALID;
 
-
-
-
-    
 ALTER TABLE game.kursvoraussetzung ADD CONSTRAINT "Kurs" FOREIGN KEY ("kursid")
         REFERENCES game.kurs ("kursid") MATCH SIMPLE
         ON UPDATE CASCADE
@@ -146,10 +132,6 @@ ALTER TABLE game.kursvoraussetzung ADD CONSTRAINT "Voraussetzung" FOREIGN KEY ("
         ON DELETE CASCADE
         NOT VALID;
 
-
-
-
-    
 ALTER TABLE game.quizbeantwortung ADD CONSTRAINT "Quiz" FOREIGN KEY ("qid")
         REFERENCES game.quiz ("qid") MATCH SIMPLE
         ON UPDATE CASCADE
@@ -163,10 +145,6 @@ ALTER TABLE game.quizbeantwortung ADD CONSTRAINT "Trainee" FOREIGN KEY ("mitid")
         ON DELETE CASCADE
         NOT VALID;
 
-
-
-
-    
 ALTER TABLE game.quizvoraussetzung ADD CONSTRAINT "Quiz" FOREIGN KEY ("qid")
         REFERENCES game.quiz ("qid") MATCH SIMPLE
         ON UPDATE CASCADE
@@ -179,7 +157,6 @@ ALTER TABLE game.quizvoraussetzung ADD CONSTRAINT "Voraussetzung" FOREIGN KEY ("
         ON DELETE CASCADE
         NOT VALID;
 
-
 ALTER TABLE game.voraussetzung ADD CONSTRAINT "Kurs" FOREIGN KEY ("kursid")
         REFERENCES game.kurs ("kursid") MATCH SIMPLE
         ON UPDATE CASCADE
@@ -191,4 +168,3 @@ ALTER TABLE game.voraussetzung ADD CONSTRAINT "Quiz" FOREIGN KEY ("qid")
         ON UPDATE CASCADE
         ON DELETE CASCADE
         NOT VALID;
-
