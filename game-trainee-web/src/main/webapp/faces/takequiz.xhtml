@@ -36,9 +36,9 @@
                 <br/><br/>
             </ui:repeat>
             <ui:param name="varqid" value="#{quizController.qid}"></ui:param>
-            <h:commandButton value="Check Answers" style="margin-left: 20%" action="#{quizController.checkAnswersSingleChoice()}">
+            <p:commandButton value="Check Answers" style="margin-left: 20%" action="#{quizController.checkAnswersSingleChoice()}">
                 <f:param name="qid" value="#{varqid}"></f:param>
-            </h:commandButton> 
+            </p:commandButton> 
         </h:form>
         </div>
     </ui:define>
