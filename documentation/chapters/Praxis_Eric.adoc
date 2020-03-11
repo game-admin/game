@@ -17,6 +17,9 @@ Nachdem auch das Design abgeklärt war, konnte nun die Erstellung der Interfaces
 === Grundlagen
 Um eine Website zu programmieren, benötigt man ein Menge an umfangreichen Wissen. Man muss html, javascript und css beherschen. Darüber hinaus sollte man auch wissen, wie aus dem Code eine fertige Seite erzeugt wird, und wie Requests vom User ausgewertet und darauf geantwortet werden kann.
 
+==== JSF
+"JSF Theorie einbinden"
+
 ==== HTML
 Hypertext Markup Language (HTML) is the common used language for building web pages. A HTML page is a text document (with a .html or .htm extension) used by browsers to present text and graphics. A web page is made of content, tags to change some aspects of the content, and external objects such as images, videos, JavaScript, or CSS files.
 
@@ -67,68 +70,56 @@ h1 {
 
 === Getting Started
 ==== Projektstruktur erstellen
-Um mit dem Programmieren zu beginnen, muss erst eine stabile Projektstruktur gegeben sein. Dafür haben wir in NetBeans auf "Projekt erstellen" geklickt, alle benötigten Resourcen vereinbart, und mit Maven wurde dann automatisch eine passende Projektstruktur erstellt.
-Nun muss man auch darauf achten, dass diese Struktur befolgt.
-Java-Dateien sollten unter src\main\java abgelegt werden.
-Everything regarding JSF should lie in src\main\webapp. That includes the xhtml-files, the CSS, JavaScript and Images should lie in a untergeordnetem resources folder. This is needed, for JSF to locate the resources faster.
-<Bild einfügen, welches die Projektstruktur zeigt>
+To start with a project like this, you need a clean project structure. The project structure has been automatically created with Maven. Our project is "Open Source", that means it is available online for free. That includes our whole project structure and all of the files used to create the website.
+The complete GAME project can be viewed under: https://github.com/game-admin/game
 
-==== Layout erstellen
-Um die Erstellung mehrerer UIs zu vereinfachen, wird ein Layout erstellt, welches als ein Template für die Pages dient.
-Dieses Layout habe ich in der mainlayout.xhtml realisiert.
+==== Creating a layout
+To simplify the creation of the UIs, I prepared a layout which servers every page as a template. This layou is realised in "mainlyaout.xhtml".
 
 .mainlyout.xhtml
 [source,html]
 ----
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml" <1>
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-      
-    <h:head> 
+    <h:head>
         <link rel="shortcut icon" type="image/x-icon" href="faces/favicon.ico" />
     </h:head>
-    
     <h:body>
         <div id="header">
-            <h:graphicImage library="img" name="header.png" style="width: 100%"></h:graphicImage>
+            <h:graphicImage library="img" name="header.png" style="width: 100%">
+            </h:graphicImage>
         </div>
-        
         <ui:insert name="menubar">
-            <ui:include src="./faces/menubar.xhtml"></ui:include>
+            <ui:include src="./faces/menubar.xhtml"></ui:include> <2>
         </ui:insert>
-        
         <ui:insert name="header">
-            <h:outputStylesheet library="resources" name="css/stylesheet.css"></h:outputStylesheet>
+            <h:outputStylesheet library="resources" name="css/stylesheet.css">
+            </h:outputStylesheet>
         </ui:insert>
         <br />
-        
         <ui:insert name="content">
             Content
         </ui:insert> 
         <br />
-        
         <h:graphicImage library="img" name="footer1.jpg" style="top:100%; margin-bottom: 0px; padding-bottom: 0px;"></h:graphicImage>
     </h:body>
 </html>
 ----
+<1> Implementation of taglibrarys
+<2> Here, information from another page is built into the layou-page. Specifically, the menubar is implemented.
 
-Diese Seite wird dem Benutzer nicht direkt angezeigt, sondern sie stellt eine Vorlage für alle User-Interfaces dar. Andere Seiten können diese Seite als template definieren, und übernehmen dann diesen Inhalt. Indem man in dem Template-file <ui:insert> benutzt, kann man den Template-Clients die Möglichkeit geben, den Inhalt dieses Tags mit <ui:define> selbst zu bestimmen.
+This page is not displayed directly to the user, but rather represents a template for all user interfaces. Other pages can define this page as a template and then adopt its content. By using <ui:insert> in the template file, you can give the template clients the possibility to define the content of this tag themselves with <ui:define>. This is shown in any of the actual user interfaces.
 
-<Bild einfügen>
+This is how the top of every page looks like:
 
-.Erklärung
- Anfangs wird dem Browser die Information weitergegeben, dass es sich um eine xhtml Datei handelt. Weiters werden die Buchstaben h, ui, f und p definiert, die alle auf eine jsf-library verweisen (Diese Verweise sind nötig, damit der Browser die JSF-Tags lesen kann.
- Im head wird hier keine Information definiert (!).
- Im body wird eine Logo angezeigt, mit einer Überschrift daneben (<h1>).
- Der div-tag ist nur dazu da, um einen Bereich abzugrenzen, und diesen dann mit CSS zu positionieren/formatieren.
- Mit <ui:insert> gibt man im mainlayout Informationen an, die die Clients des Layouts individuell einbauen, oder überschreiben wollen.
- <h:outputStylesheet> wird zum Verknüpfen der CSS-Datei verwendet.
- Mit <ui:include> können wir Informationen einer anderen Page, in diese Page einbauen.
- Im footer-Bereich werden noch Kontaktdaten angezeigt.
+image::../img/layout1.png[]
+
+The included menubar-file looks like the following:
 
 .menubar.xhtml
 [source,html]
@@ -136,56 +127,52 @@ Diese Seite wird dem Benutzer nicht direkt angezeigt, sondern sie stellt eine Vo
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"   
-      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:p="http://primefaces.org/ui">
    
     <body>
         <h:form id="menubar">
             <div id="menu">
-                <p:tabMenu activeIndex="#{param.i}" style="width:133.2%">
-                    <p:menuitem value="Home" outcome="index.xhtml" style="width:5em" icon="fa fa-home">
-                        <f:param name="i" value="0" />
+                <p:tabMenu style="width:133.2%">
+                    <p:menuitem value="Home" outcome="index.xhtml"
+                    style="width:5em" icon="fa fa-home">
                     </p:menuitem>
-                    <p:menuitem value="Courses" outcome="courses.xhtml" style="width:7em" icon="fa fa-book">
-                        <f:param name="i" value="1" />
+                    <p:menuitem value="Courses" outcome="courses.xhtml"
+                    style="width:7em" icon="fa fa-book">
                     </p:menuitem>
-                    <p:menuitem value="Quizzes" outcome="quizzes.xhtml" style="width:7em" icon="fa fa-question">
-                        <f:param name="i" value="2" />
+                    <p:menuitem value="Quizzes" outcome="quizzes.xhtml"
+                    style="width:7em" icon="fa fa-question">
                     </p:menuitem>
-                    <p:menuitem value="Trainers" outcome="trainers.xhtml" style="width:5em" icon="fa fa-users">
-                        <f:param name="i" value="3" />
+                    <p:menuitem value="Trainers" outcome="trainers.xhtml"
+                    style="width:6em" icon="fa fa-users">
                     </p:menuitem>
-                    <p:menuitem value="Emblemtafel" outcome="leaderboard.xhtml" style="width:8em" icon="fa fa-eye">
-                        <f:param name="i" value="4" />
-                    </p:menuitem>
-                    <p:menuitem value="Help" outcome="help.xhtml" icon="fa fa-question" style="width:5em">
-                        <f:param name="i" value="5" />
+                    <p:menuitem value="Emblemtafel" outcome="leaderboard.xhtml"
+                    style="width:8em" icon="fa fa-eye">
                     </p:menuitem>
                 </p:tabMenu>
             </div>
             <br />
-            
             <div id="logout">
-                <p:splitButton id="basic" value="Account" action="index.html"   icon="pi pi-save">
-                    <p:menuitem value="Points" action="index.html" icon="pi pi-refresh" />
-                    <p:menuitem value="Courses" action="courses.xhtml" ajax="false" icon="pi pi-times" />
-                    <p:separator />
-                    <p:menuitem value="Logout" url="http://www.google.com" icon="pi pi-home" />
+                <p:splitButton id="basic" value="Account" action="index.html">
+                    <p:menuitem value="Quizzes" action="quizzes.xhtml"/>
+                    <p:menuitem value="Courses" action="courses.xhtml"/>
+                    <p:separator/>
+                    <p:menuitem value="Logout" url="http://www.google.com"/>
                 </p:splitButton>
             </div>
+            
         </h:form>
     </body>
 </html>
 ----
-This page is unique, because its only purpose is to build the menubar, which is displayed on every Page. I had to split the menubar from the mainlyout, because of interferences with the formulars.
+
+This page is unique, because its only purpose is to build the menubar, which is displayed on every Page. This is done by usind the Primefaces-tags: <p:tabMenu> and <p:splitButton>. I had to separate the menubar from the mainlyout, because of interferences with the formulars.
 
 === User-Interfaces
 Die UIs liegen hier unter src\main\webapp\faces. "ev. noch was zu UIs sagen"
 
 The index-page is the standard page the browser will run, if you enter a website. On this page, the user should get an overwiev about his statistics, and he should be able to navigate to other pages.
-====
+
 .index.xhtml
 [source,html]
 ----
@@ -199,28 +186,36 @@ The index-page is the standard page the browser will run, if you enter a website
                     xmlns:p="http://primefaces.org/ui">
 <2>    
     <ui:define name="header"> <3>
-        <title>Activities</title> 
+        <title>Home</title> 
         <h:outputStylesheet library="css" name="stylesheet.css" />
     </ui:define>
     
-    <ui:define name="content">                                      
+    <ui:define name="content"> <3>                                     
         <h1>Activities</h1>
-        <p>
-            <strong>User:</strong> #{traineeController.trainees.get(0).name} <br />
-            <strong>Nickname:</strong> #{traineeController.trainees.get(0).nickname} <br/>
-            Progress: 50% out of 100% <br />
-            Badges: <h:graphicImage library="img" name="#{traineeController.trainees.get(0).embleme.get(0)}"></h:graphicImage>
-            
+        <p class="description">
+            Hallo #{traineeController.getTraineesByID("1").get(0).vorname},
+            auf dieser Plattform ...
         </p>
-        <p>
-            Your score (Quiz):
-            <h:outputText value="#{testQuizController.score}"></h:outputText> <br/>
-            Your progress (Overall):
-            <h:outputText value="#{traineeGenerator.scores.get(0)}"></h:outputText>
-        </p>
-        <p>
+        <hr/>
+        <p id="data">
+            <strong>Benutzer:</strong> 
+            #{traineeController.getTraineesByID("1").get(0).vorname}
+            #{traineeController.getTraineesByID("1").get(0).nachname}
+            <br />
+            <strong>Nickname:</strong> 
+            #{traineeController.getTraineesByID("1").get(0).nickname} 
+            <br/>
+            <strong>Fortschritt:</strong> 50% von 100% 
+            <br />
+            <strong>Embleme:</strong> 
+            <h:graphicImage library="img"
+            name="#{traineeController.getTraineesByID(&quot;1&quot;).get(0).embleme.get(0)}">
+            </h:graphicImage>
+            <br/><br/>
+            Dein gesamter Fortschritt:
+            <h:outputText value="#{traineeController.getTraineesByID(&quot;1&quot;).get(0).progress}" />
+            <br/><br/>
             Hier sollte spezifisch zum User, dessen Aktivitäten und Fortschritt dargestellt werden.
-            Weiters können hier Kurse vorgeschlagen werden.
         </p>
         <br />
     </ui:define>                      
@@ -228,313 +223,372 @@ The index-page is the standard page the browser will run, if you enter a website
 ----
 <1> As you can see, the index-page is using the mainlayout with the "template" attribute. 
 <2> Everything above this callout will be same for every template client. I will therefore only include it here, to shorten the other code-snippets.
-<3> I defined an individual title with <ui:define>. The content of this page is enclose in <ui:define> too.
+<3> I defined an individual title with <ui:define>. The content of this page is enclosed in <ui:define> too.
 
 We dont need to set a footer here, because in the template page, there is already an universal footer defined.
-====
 
 ==== Courses-page
 
 The Courses-page should display a list of courses the trainee can go through. These courses can be mandatory to complete Quizzes.
 
 .courses.xhtml
-[source,xhtml]
+[source,html]
 ----
-include::../../game-trainee-web/src/main/webapp/faces/courses.xhtml[]
+    <ui:define name="header">
+        <title>Kurse</title>  
+        <h:outputStylesheet library="css" name="stylesheet.css" />
+    </ui:define>
+   
+    <ui:define name="content">
+        <h1 align="center">Kurse</h1>
+        <p class="description">
+            Hier kannst du Kurse nehmen, die dich auf die Quizzes vorbereiten. <br/>
+            Nachdem du dir einen Kurs angeschaut hast,
+            wird das jeweilige Quiz freigeschalten!
+        </p>
+        <p:dataTable var="kurs" value="#{kursController.kurse}"> <1>
+            <p:column headerText="Titel">
+                <h:outputText value="#{kurs.titel}"></h:outputText>
+            </p:column>
+            <p:column headerText="Beschreibung">
+                <h:outputText value="#{kurs.beschreibung}"></h:outputText>
+            </p:column>
+            <p:column>
+                <h:form>
+                    <p:commandButton  
+                    action="#{kursController.takeKurs(kurs.kursID)}"
+                    value="Take Course!" >  <2>     
+                    </p:commandButton>                                  
+                </h:form>
+            </p:column>
+        </p:dataTable>
+    </ui:define>      
 ----
+<1> The Primefaces tag <p:dataTable> take a List and knows how to display its content throught the columns. Here, I put in a List of courses and every course in the list has a titel, description and a link which is displayed in separated columns.
 
-At the the end there is a <h:link> tag. This is a JSF tag that resolves in to an <a> tag, leading to another page.
-There is a link that leads to a page where you can take a quiz, and there is a link where you can create a quiz. More on that later.
+<2> The <p:commandButton invokes the takeKurs-method when pressed. In this method, a link of the selected course is returned.
 
-==== Quiz-pages
+This is how the courses interface looks like:
+
+image::../img/kurs1.png[]
+
+==== Quiz pages
+The quiz pages include a interface, where every takeable quiz is displayed, two pages for taking a quiz and a page where the results are shown. Every quiz has its own emblem, which can be won if they quiz is taken succesfully. This means the user has to has at least half of the questions right.
 
 .quizzes.xhtml
 [source,html]
 ----
-<!-- <ui:composition ... -->
+    <ui:define name="header">
+        <title>Quizzes</title>
+        <h:outputStylesheet library="css" name="stylesheet.css" />
+    </ui:define>
 
- <ui:define name="header">
-    <title>Quizzes</title>
-    <h:outputStylesheet library="css" name="stylesheet.css" />
-</ui:define>
-
-<ui:define name="content">
-    <h1 align="center">Quizzes</h1>               
-    <table id="quizzes">
-        <tr>
-            <th>
-                Title
-            </th>
-            <th>
-                Description
-            </th>
-        </tr>
-        <tr>
-            <td>
-                Java Learning Quiz - Basics (Single Choice)
-            </td>
-            <td>
-                This quiz will check your knowledge on basic java skills.
-                <h:outputText value="#{testQuizController.quizBezeichnung}"></h:outputText>
-            </td>
-            <td>
+    <ui:define name="content">
+        <h1 align="center">Quizzes</h1> 
+        <p class="description">
+            Hier kannst du ein Quiz deiner Wahl absolvieren. <br/>
+            Anhand dem Titel und der Beschreibung kannst du dir ausmalen, in welche
+            Richtung das Quiz gehen wird. <br/>
+            Falls du ein Quiz nicht nehmen kannst, musst du noch eine Vorraussetzung 
+            dafür erfüllen.<br/>
+            Dir wird in diesem Fall mitgeteilt, was du noch erfüllen musst.
+        </p>
+        <p:dataTable var="quiz" value="#{quizController.quizzes}"> <1>
+            <p:column headerText="Titel"
+            rendered="#{quizController.isTakeable(quiz.QID, &quot;1&quot;)}">
+                <h:outputText value="#{quiz.titel}" />
+            </p:column>
+            <p:column headerText="Beschreibung"
+            rendered="#{quizController.isTakeable(quiz.QID, &quot;1&quot;)}">
+                <h:outputText value="#{quiz.beschreibung}" />
+            </p:column>
+            <p:column 
+            rendered="#{quizController.isTakeable(quiz.QID, &quot;1&quot;)}">
                 <h:form>
-                    <p:commandButton action="#{testQuizController.quizUebergabe()}" value="Take Quiz!">
-                        <f:param name="QID" value="1"></f:param>        <!-- value sollte dann mit ui:repeat raufgezogen werden und alle Quizzes sollen so nacheinander angezeigt werden -->
-                    </p:commandButton>                                  <!--value="{QuizEJB.getQUID"}-->
+                    <p:commandButton 
+                    action="#{quizController.quizUebergabe(quiz.QID)}"
+                    value="Take Quiz!">       
+                    </p:commandButton>                                  
                 </h:form>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Java Learning Quiz - Advanced (Multiple Choice)
-            </td>
-            <td>
-                This quiz will check, if you have enough in depth knowledge with java.
-            </td>
-            <td>
-                <p:button outcome="takeQuizMultipleChoice.xhtml" value="Take Quiz!"></p:button>
-            </td>
-        </tr>
-    </table>
-    <hr/>
-    <p>
-        If you want to create a quiz, 
-        <p:button outcome="createquiz.xhtml" value="click here!"></p:button>
-    </p>
-    <hr/>
-    <br/><br/>
-</ui:define>
-
-<!-- </ui:composition> -->
+            </p:column>
+        </p:dataTable>
+        <hr/>
+        <br/><br/>
+    </ui:define>
 ----
+<1> Here, <p:dataTable> is used again, this time to show all available quizzes. It gets a list of quizzes and displays a quiz whether or not it is takeable. This is evaluated in the isTakeable-method in the QuizController Bean.
 
-On the quizzes-site, all the different quizzes are displayed in a table format. By clicking on the buttons, the user can take the quiz.
+This is how it looks like, when the user has not fulfilled the requirements to take a quiz:
+
+image::../img/quiz1.png[]
+
+In this picture below, the trainee has met all the requirements needed for the second quiz. To take the second quiz, the user must succesfully take the first quiz.
+
+image::../img/quiz2.png[]
+
+By clicking on the <p:commandButton>, the user can take the quiz.
 
 .takequiz.xhtml
 [source,html]
 ----
-<!-- <ui:composition ... -->
+    <ui:define name="header">
+        <title>Test-JavaQuiz</title>
+        <h:outputStylesheet library="css" name="stylesheet.css"></h:outputStylesheet>
+    </ui:define>
 
-<ui:define name="header">
-    <title>Test-JavaQuiz</title>
-    <h:outputStylesheet library="css" name="stylesheet.css"></h:outputStylesheet>
-</ui:define>
-
-<ui:define name="content">
-    <h1 align="center">Java Learning Quiz!</h1>
-    <p style="margin-left: 20%; font-family: 'Arial', sans-serif;">
-        Für jede richitg beantwortete Frage bekommst du 10 Punkte! <br/>
-        Es ist immer nur eine Antwort richtig! <br/>
-        Wenn du alle Fragen richtig beantwortest, bekommst du dieses Emblem: 
-        <h:graphicImage library="img" name="#{testQuizController.emblem}"></h:graphicImage>
-    </p>
-    <div id="questions">
+    <ui:define name="content">
+        <h1 align="center">Java Learning Quiz!</h1>
+        <p style="margin-left: 20%; font-family: 'Arial', sans-serif;">
+            Für jede richitg beantwortete Frage bekommst du 10 Punkte! <br/>
+            Es ist immer nur eine Antwort richtig! <br/>
+            Wenn du alle Fragen richtig beantwortest, bekommst du dieses Emblem: 
+            <h:graphicImage library="img" name="#{quizController.emblem}">
+            </h:graphicImage>
+        </p>
+        <div id="questions">
         <h:form>
-            <ui:repeat var="quiz" value="#{testQuizController.quiz}">
+            <ui:repeat var="frage" value="#{quizController.fragemodell}">
                 <div class="question">
-                    <p:outputLabel for="radio" value="#{quiz.frage}"></p:outputLabel>
-                    <p:selectOneRadio id="radio" value="#{quiz.selectedAnswer}" unselectable="true" layout="grid" columns="1" required="true">
-                        <f:selectItem itemValue="#{quiz.antworten[0]}" itemLabel="#{quiz.antworten[0]}"></f:selectItem>
-                        <f:selectItem itemValue="#{quiz.antworten[1]}" itemLabel="#{quiz.antworten[1]}"></f:selectItem>
-                        <f:selectItem itemValue="#{quiz.antworten[2]}" itemLabel="#{quiz.antworten[2]}"></f:selectItem>
-                        <f:selectItem itemValue="#{quiz.antworten[3]}" itemLabel="#{quiz.antworten[3]}"></f:selectItem>
+                    <h:outputLabel for="radio" value="#{frage.frage}" />
+                    <p:selectOneRadio id="radio" value="#{frage.selectedAnswer}" layout="grid" required="true" unselectable="true" columns="1">
+                    
+                        <f:selectItem itemValue="#{frage.antworten.get(0)}" 
+                        itemLabel="#{frage.antworten.get(0)}"></f:selectItem>
+                        <f:selectItem itemValue="#{frage.antworten.get(1)}" 
+                        itemLabel="#{frage.antworten.get(1)}"></f:selectItem>
+                        <f:selectItem itemValue="#{frage.antworten.get(2)}" 
+                        itemLabel="#{frage.antworten.get(2)}"></f:selectItem>
+                        <f:selectItem itemValue="#{frage.antworten.get(3)}" 
+                        itemLabel="#{frage.antworten.get(3)}"></f:selectItem>
+                        
                     </p:selectOneRadio>
                     <br/>
                 </div>    
+                <!--  -->
                 <br/><br/>
             </ui:repeat>
-            <p:commandButton value="Check Answers" style="margin-left: 20%" action="#{testQuizController.checkAnswersSingleChoice}"></p:commandButton> 
+            <ui:param name="varqid" value="#{quizController.qid}"></ui:param>
+            <p:commandButton value="Check Answers" style="margin-left: 20%" 
+            action="#{quizController.checkAnswersSingleChoice()}">
+                <f:param name="qid" value="#{varqid}"></f:param>
+            </p:commandButton> 
         </h:form>
-    </div>
-</ui:define>
-
-<!-- </ui:comosition> -->
+        </div>
+    </ui:define>
 ----
-This is the page for taking singlechoice-quizzes. The questions are repeatadly display by the <ui:repeat> tag. This tag runs through a given list, and displays the wanted data.
+This is the page for taking singlechoice-quizzes. The questions are repeatadly displayed by the <ui:repeat> tag. This tag runs through a given list, and displays the wanted data.
+
+image::../img/takequiz1.png[]
+image::../img/takequiz2.png[]
+
+By clicking on the "Check Answers" button, the trainee is redirected to the results page.
 
 .takeQuizMultipleChoice.xhtml
 [source,html]
 ----
-<!-- <ui:composition ... -->
+    <ui:define name="header">
+        <title>Test - JavaQuiz</title>
+        <h:outputStylesheet library="css" name="stylesheet.css"></h:outputStylesheet>
+    </ui:define>
 
-<ui:define name="header">
-    <title>Test - JavaQuiz</title>
-    <h:outputStylesheet library="css" name="stylesheet.css"></h:outputStylesheet>
-</ui:define>
-
-<ui:define name="content">
-    <h1 align="center">Java Learning Quiz!</h1>
-    <p style="margin-left: 20%; font-family: 'Arial', sans-serif;">
-        Für jede richitg beantwortete Frage bekommst du 20 Punkte! <br/>
-        Es können mehrere Antworten richtig sein! <br/>
-        Wenn du alle Fragen richtig beantwortest, bekommst du dieses Emblem: 
-        <h:graphicImage library="img" name="#{testQuizController.emblem}"></h:graphicImage>
-    </p>
-    <div id="questions">
+    <ui:define name="content">
+        <h1 align="center">Java Learning Quiz!</h1>
+        <p style="margin-left: 20%; font-family: 'Arial', sans-serif;">
+            Für jede richitg beantwortete Frage bekommst du 10 Punkte! <br/>
+            Es können mehrere Antworten richtig sein! <br/>
+            Wenn du alle Fragen richtig beantwortest, bekommst du dieses Emblem: 
+            <h:graphicImage library="img" name="#{quizController.emblem}"></h:graphicImage>
+        </p>
+        <div id="questions">
         <h:form>
-            <ui:repeat var="quiz" value="#{testQuizController.quiz}">
+            <ui:repeat var="frage" value="#{quizController.fragemodell}">
                 <div class="question">
-                    <h:outputText value="#{quiz.frage}"></h:outputText> <br />
+                    <h:outputText value="#{frage.frage}" />
+                    <br />
                     <table>
                         <tr>
                             <td>
-                                <h:outputText value="#{quiz.antworten[0]}"></h:outputText> 
+                                <h:outputText value="#{frage.antworten.get(0)}" /> 
                             </td>
                             <td>
-                                <p:selectBooleanCheckbox value="#{quiz.buttons[0]}"></p:selectBooleanCheckbox>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h:outputText value="#{quiz.antworten[1]}"></h:outputText>
-                            </td>
-                            <td>
-                                <p:selectBooleanCheckbox value="#{quiz.buttons[1]}"></p:selectBooleanCheckbox>
+                                <p:selectBooleanCheckbox value="#{quiz.buttons[0]}" />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <h:outputText value="#{quiz.antworten[2]}"></h:outputText>
+                                <h:outputText value="#{frage.antworten.get(1)}" />
                             </td>
                             <td>
-                                <p:selectBooleanCheckbox value="#{quiz.buttons[2]}"></p:selectBooleanCheckbox>
+                                <p:selectBooleanCheckbox value="#{quiz.buttons[1]}" />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <h:outputText value="#{quiz.antworten[3]}"></h:outputText>
+                                <h:outputText value="#{frage.antworten.get(2)}" />
                             </td>
                             <td>
-                                <p:selectBooleanCheckbox value="#{quiz.buttons[3]}"></p:selectBooleanCheckbox> 
+                                <p:selectBooleanCheckbox value="#{quiz.buttons[2]}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:outputText value="#{frage.antworten.get(3)}" />
+                            </td>
+                            <td>
+                                <p:selectBooleanCheckbox value="#{quiz.buttons[3]}" /> 
                             </td>
                         </tr>
                     </table>
                     <br/><br/>
                 </div>    
             </ui:repeat>
-            <p:commandButton value="Check Answers" style="margin-left: 20%" action="#{testQuizController.checkAnswersMultipleChoice()}"></p:commandButton> 
+            <ui:param name="varqid" value="#{quizController.qid}"></ui:param>
+            <p:commandButton value="Check Answers" style="margin-left: 20%" 
+            action="#{quizController.checkAnswersMultipleChoice}">
+                <f:param name="qid" value="#{varqid}"></f:param>
+            </p:commandButton> 
         </h:form>
-    </div>
-</ui:define>
-
-<!-- </ui:composition> -->
+        </div>
+    </ui:define>
 ----
 On this page, multiplechoice quizzes are displayed. The questions are dislayed in the same way, as mentioned above. The difference here is, that I had to create every button seperately (<p:selectBooleanCheckBox>). Each of these buttons hast to be bound to a _Boolean_-variable.
+
+"Bilder für takeQuizMultipleChoice"
 
 .results.xhtml
 [source,html]
 ----
-<!-- <ui:composition ... -->
+    <ui:define name="header">
+        <title>Results</title>
+        <h:outputStylesheet library="css" name="stylesheet.css"></h:outputStylesheet>
+    </ui:define>
 
-<ui:define name="header">
-    <title>Results</title>
-    <h:outputStylesheet library="css" name="stylesheet.css"></h:outputStylesheet>
-</ui:define>
-
-<ui:define name="content">
-    <h1>Results</h1>
-    <p style="font-size: 1.2em; margin-left:25%;">
-        Du hast #{testQuizController.ricounter}/4 Fragen richtig beantwortet! <br/>
-        Damit bekommst du #{testQuizController.ricounter*10} Punkte! <br/>
-        Die von dir richtig/falsch beantworteten Fragen siehst du hier mit den richtigen Antworten:
-    </p>
-    <p>
-        <ui:repeat var="result" value="#{testQuizController.results}">
-            <div id="results">
-                <h:outputText value="#{result.frage}" style="#{result.istfalsch? 'color:red; font-weight: bold;' : 'color:green; font-weight: bold;'}"></h:outputText> 
-                <i class="#{result.istfalsch? 'fa fa-fw fa-close' : 'fa fa-fw fa-check'}"></i><br/>
-                <h:outputText value="#{result.antworten[0]}" style="#{result.richtigeAntworten.get(0) == 1? 'color:green' : 'color:red'}"></h:outputText> <br/>
-                <h:outputText value="#{result.antworten[1]}" style="#{result.richtigeAntworten.get(1) == 1? 'color:green' : 'color:red'}"></h:outputText> <br/>
-                <h:outputText value="#{result.antworten[2]}" style="#{result.richtigeAntworten.get(2) == 1? 'color:green' : 'color:red'}"></h:outputText> <br/>
-                <h:outputText value="#{result.antworten[3]}" style="#{result.richtigeAntworten.get(3) == 1? 'color:green' : 'color:red'}"></h:outputText> <br/>
-            </div>
-        </ui:repeat>
-    </p> 
-    <h:outputText value="Diesen Score hast du jetzt: #{testQuizController.score} Punkte"></h:outputText>
-</ui:define>
-
-<!-- </ui:composition> -->
+    <ui:define name="content">
+        <h1>Results</h1>
+        <p style="font-size: 1.2em; margin-left:25%;">
+            Du hast #{quizController.ricounter}/#{quizController.fragemodell.size()}
+            Fragen richtig beantwortet! <br/>
+            Damit bekommst du #{quizController.ricounter*10} Punkte! <br/>
+            Die von dir richtig/falsch beantworteten Fragen siehst du hier mit den
+            richtigen Antworten:
+        </p>
+        <p>
+            <ui:repeat var="result" value="#{quizController.results}">
+                <div id="results">
+                    <h:outputText value="#{result.frage}" 
+                    style="#{result.istfalsch?
+                    'color:red; font-weight: bold;' :
+                    'color:green; font-weight: bold;'}"></h:outputText> 
+                    <i class="#{result.istfalsch?
+                    'fa fa-fw fa-close' : 'fa fa-fw fa-check'}"></i><br/>
+                    
+                    <h:outputText value="#{result.antworten.get(0)}" 
+                    style="#{result.richtigeAntworten.get(0) == 1?
+                    'color:green' : 'color:red'}"></h:outputText>
+                    <br/>
+                    <h:outputText value="#{result.antworten.get(1)}" 
+                    style="#{result.richtigeAntworten.get(1) == 1?
+                    'color:green' : 'color:red'}"></h:outputText>
+                    <br/>
+                    <h:outputText value="#{result.antworten.get(2)}" 
+                    style="#{result.richtigeAntworten.get(2) == 1?
+                    'color:green' : 'color:red'}"></h:outputText>
+                    <br/>
+                    <h:outputText value="#{result.antworten.get(3)}" 
+                    style="#{result.richtigeAntworten.get(3) == 1?
+                    'color:green' : 'color:red'}"></h:outputText>
+                    <br/>
+                </div>
+            </ui:repeat>
+        </p>
+    </ui:define>
 ----
 
+image::../img/results.png[]
+
+==== Trainer page
 The Trainers page should display all the trainers associated with the GAME platform. The trainees can contact these trainers if they need help.
 
 .trainers.xhtml
 [source,html]
 ----
-<!-- <ui:composition ...> -->
-
-<ui:define name="header">
-    <title>Trainers</title>  
-    <h:outputStylesheet library="css" name="stylesheet.css" />
-</ui:define>>
+    <ui:define name="header">
+        <title>Trainers</title>  
+        <h:outputStylesheet library="css" name="stylesheet.css" />
+    </ui:define>>
           
-<ui:define name="content">
-    <h1 align="center">Trainers</h1>
-    <h:form id="trainerform">
-        <p:carousel value="#{trainerController.trainers}" headerText="Trainers" var="trainer" itemStyle="text-align:center" responsive="true"> <1>
-                <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+    <ui:define name="content">
+        <h1 align="center">Trainers</h1>
+        <p class="description">
+            Hier siehst du alle Trainer, die dir im Falle von Problemen helfen können,
+            aufgelistet.
+        </p>
+        <h:form id="trainerform">
+            <p:carousel value="#{trainerController.trainers}" headerText="Trainers"
+            var="trainer" itemStyle="text-align:center" responsive="true">
+                <p:panelGrid columns="2" style="width:100%;margin:10px 0px"
+                columnClasses="label,value" layout="grid" 
+                styleClass="ui-panelgrid-blank">
                     <f:facet name="header">
                         <p:graphicImage library="img" name="trainer.jpg"/> 
                     </f:facet>
-
                     <h:outputText value="Name:"  />
                     <h:outputText value="#{trainer.name}" />
-
-                    <h:outputText value="Role:" />
+                    <h:outputText value="Rolle:" />
                     <h:outputText value="#{trainer.role}" />
-
-                    <h:outputText value="Branch:" />
+                    <h:outputText value="Abteilung:" />
                     <h:outputText value="#{trainer.branch}" />
                 </p:panelGrid>    
-        </p:carousel>
-    </h:form>
-</ui:define>
-    
-<!-- </ui:composition> -->
+            </p:carousel>
+        </h:form>
+    </ui:define>
 ----
 <1> Here we used a primefaces tag called <p:carousel>. This tag is used to create a carousel. The <panelGrid> tag is used to display data in a grid. The <p:graphicImage> is just like the JSF tag <h:graphicImage>. <h:outputText> is used to display text, with the function to call a Backing Bean. For easier explanation here is a picture:
-Bild einfügen
+
+image::../img/trainers.png[]
  
+==== Leaderboard page
 The leaderboard page is used to diplay all the trainees with their names, nicknames, branches and Icons they got. You should be able to sort them by their names.
  
 .leaderboard.xhtml
 [source,html]
 ----
-<!-- <ui composition ...> -->
-
-<ui:define name="header">
+    <ui:define name="header">
         <h:outputStylesheet library="css" name="stylesheet.css" />
         <title>Emblemtafel</title>  
-</ui:define>
+    </ui:define>
        
-<ui:define name="content">         
-    <h1 align="center">Emblemtafel</h1>
-    <p>
-        Hier siehst du eine Auflistung aller Trainees, mit ihren Nicknames und ihren Fortschritt.
-    </p>
-    <p:dataTable var="trainee" value="#{traineeController.trainees}"> <1>
-        <p:column headerText="Name">
-            <h:outputText value="#{trainee.name}"></h:outputText>
-        </p:column>
+    <ui:define name="content">         
+        <h1 align="center">Emblemtafel</h1>
+        <p class="description">
+            Hier siehst du eine Auflistung aller Trainees, mit ihren Nicknames
+            und ihren Emblemen.
+        </p>
+        <p:dataTable var="trainee" value="#{traineeController.trainees}">
+            <p:column headerText="Name">
+                <h:outputText value="#{trainee.vorname} " />
+                <h:outputText value="#{trainee.nachname}" />
+            </p:column>
             
-        <p:column headerText="Nickname">
-            <h:outputText value="#{trainee.nickname}"></h:outputText>
-        </p:column>
+            <p:column headerText="Nickname">
+                <h:outputText value="#{trainee.nickname}" />
+            </p:column>
             
-        <p:column headerText="Abteilung">
-            <h:outputText value="#{trainee.abteilung}"></h:outputText>
-        </p:column>
+            <p:column headerText="Abteilung">
+                <h:outputText value="#{trainee.abteilung}" />
+            </p:column>
             
-        <p:column headerText="Emblems">
-            <h:graphicImage library="img" name="#{trainee.embleme.get(0)}"></h:graphicImage>
-        </p:column>
-    </p:dataTable>
-</ui:define>
-
-<!-- </ui:composition> -->
+            <p:column headerText="Embleme">
+                <h:graphicImage 
+                value="data:image/png;base64,#{trainee.embleme.get(0)}">
+                </h:graphicImage>
+            </p:column>
+        </p:dataTable>
+    </ui:define>
 ----
 <1> Here, the <p:dataTable> tag is used, which is rendered as a <table> tag, with some style-modifications. If you give it a list, it will know to diplay all elements of the list.
+
+image::../img/emblemtafel.png[]
 
 === Java Classes
 
@@ -543,76 +597,162 @@ The leaderboard page is used to diplay all the trainees with their names, nickna
 .TrainerController.java
 [source,java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/trainerview/TrainerController.java[]
+@Named
+@ViewScoped
+public class TrainerController implements Serializable {
+     
+    private List<Trainer> trainers;
+     
+    private Trainer selectedTrainer;
+     
+    @Inject
+    private TrainerService service;
+     
+    @PostConstruct
+    public void init() {
+        trainers = service.createTrainers(6);
+    }
+ 
+    //Getters & Setters
+}
+
 ----
 
-The TrainerView-Class is used to diplay all the trainers on the trainers.xhtml page.
+The TrainerController-Class is used to diplay all the trainers on the trainers.xhtml page.
+
+.TrainerService.java
+[source,java]
+----
+@Named
+@ApplicationScoped
+public class TrainerService {
+     
+    private final static String[] roles; 
+    private final static String[] branches;
+    private final static String[] names;
+     
+    static {
+        roles = new String[4];
+        roles[0] = "Abteilungsleiter";
+        roles[1] = "Gruppenleiter";
+        roles[2] = "Projektleiter";
+        roles[3] = "Projektmitglied";
+         
+        branches = new String[3];
+        branches[0] = "Development";
+        branches[1] = "Architecture";
+        branches[2] = "Design";
+        
+        names = new String[10];
+        names[0] = "Max";
+        names[1] = "Peter";
+        names[2] = "Tim";
+        names[3] = "Tom";
+        names[4] = "Alex";
+        names[5] = "Josef";
+        names[6] = "Tobias";
+        names[7] = "Benji";
+        names[8] = "Michael";
+        names[9] = "Martin";
+      
+    }
+     
+    public List<Trainer> createTrainers(int size) {
+        List<Trainer> list = new ArrayList<>();
+        for(int i = 0 ; i < size ; i++) {
+            list.add(new Trainer(getRandomName(), getRandomBranch(), getRandomRole()));
+        }
+        return list;
+    }
+     
+    //Getters
+}
+----
+
+The TrainerService class is used to create dummy data, that can be displayed on the trainers page.
 
 ==== Trainee Classes
 
 .TraineeController.java
 [source,java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/traineeview/TraineeController.java[]
+@Named
+@ViewScoped
+public class TraineeController implements Serializable {
+    private List<Trainee> trainees;
+    private Trainee selectedTrainee;
+    
+    @Inject
+    private TraineeEJB traineebean;
+    
+
+    public List<Trainee> getTraineesByID(String mitid) {
+        List<Trainee> list = new ArrayList<>(1);
+        Trainee trainee = traineebean.find(mitid);
+        list.add(trainee);
+        return list;
+    }
+    
+    //Getters & Setters
+}
+
 ----
-The TraineeView-Class is used to display all trainees on the leaderboard-page.
+The TraineeController-Class is used to display all trainees on the leaderboard-page.
 
 ==== Quiz Classes
 
 .QuizController
 [source,java]
 ----
-package org.game.trainee.testquiz;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-import javax.inject.Inject;
-import javax.inject.Named;
-import java.util.List;
-import java.util.Map;
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
-import javax.faces.context.FacesContext;
-import org.game.trainee.traineeview.TraineeGenerator;
-
-/**
- *
- * @author Eric
- */
 @Named
-@RequestScoped
-public class TestQuizController implements Serializable {
+@SessionScoped
+public class QuizController implements Serializable {
      
-    private List<TestQuiz> quiz;
+    private List<Quiz> quizzes;
     private List<Results> results;
     private int score;
+    private Trainee trainee;
     private int ricounter;
     private String emblem = "javapro.png";
-    private int qid;
+    private List<FrageModell> fragemodell;
+    private String qid;
     
     @Inject 
-    private TraineeGenerator trainee;
-          
+    private ModellCreator creator;
     @Inject
-    private TestQuizSpeicher speicher;
-    
+    private TraineeEJB traineebean;
+    @Inject
+    private FrageEJB fragebean;
     @Inject
     private QuizEJB quizbean; <1>
-     
-    @PostConstruct  <2>
-    public void init() { 
-        quiz = speicher.createQuiz(4, false); 
-        score = (int)trainee.getProgressFromIndex(0); 
+    @Inject
+    private QuizbeantwortungEJB quizbeantw;
+    @Inject
+    private QuizVoraussetzungEJB quizvoraussetzung;
+    @Inject
+    private VoraussetzungEJB voraussetzungejb;
+
+    @PostConstruct <2>
+    public void init() {
+        fragemodell = creator.createModell(qid);
         results = new ArrayList<>();
         ricounter = 0;
     }
     
     public String checkAnswersSingleChoice() {
+        FacesContext fc = FacesContext.getCurrentInstance();
+        Map<String,String> params = fc.getExternalContext().getRequestParameterMap();
+        String varqid = params.get("qid");
+        this.qid = varqid;
         evaluateScoreRadio();
         return "result.xhtml";
     }
     
     public String checkAnswersMultipleChoice() {
+        FacesContext fc = FacesContext.getCurrentInstance();
+        Map<String,String> params = fc.getExternalContext().getRequestParameterMap();
+        String varqid = params.get("qid");
+        this.qid = varqid;
         evaluateScoreMultiple();
         return "result.xhtml";
     }
@@ -620,10 +760,10 @@ public class TestQuizController implements Serializable {
     public void evaluateScoreMultiple() { <3>
         List<Integer> falsche = new ArrayList<>();
         int richtige=0;  
-        for(int i=0; i<quiz.size(); i++ ) {
-            List<Integer> indexrichtig = umwandler(quiz.get(i).indexrichtig);
+        for(int i=0; i<fragemodell.size(); i++ ) {
+            List<Integer> indexrichtig = umwandler(fragemodell.get(i).indexrichtig);
             for(int z=0; z<4; z++) {
-                if(indexrichtig.get(z) == 1 && !quiz.get(i).buttons[z] || indexrichtig.get(z) == 0 && quiz.get(i).buttons[z]) {
+                if(indexrichtig.get(z) == 1 && !fragemodell.get(i).buttons[z] || indexrichtig.get(z) == 0 && fragemodell.get(i).buttons[z]) {
                     falsche.add(i);
                     z=999;
                 } else {
@@ -637,13 +777,13 @@ public class TestQuizController implements Serializable {
             }
             richtige = 0;
         } 
-        checkResults(falsche);
-    }
+        checkResults(falsche); 
+    } 
     
     public void evaluateScoreRadio() { <4>
         List<Integer> falsche = new ArrayList<>();
-        for(int i=0; i<quiz.size(); i++) {
-            if(quiz.get(i).selectedAnswer.equals(quiz.get(i).antworten[quiz.get(i).indexrichtig])) {
+        for(int i=0; i<fragemodell.size(); i++) {
+            if(fragemodell.get(i).selectedAnswer.equals(fragemodell.get(i).antworten.get(fragemodell.get(i).indexrichtig))) {
                 score+=10;
                 ricounter++;
                 falsche.add(9999);
@@ -651,14 +791,19 @@ public class TestQuizController implements Serializable {
                 falsche.add(i);
             }
         }
-        checkResults(falsche);
+        checkResults(falsche); 
     }
     
-    public String quizUebergabe() {
-        FacesContext fc = FacesContext.getCurrentInstance();
-        Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
-        this.qid = Integer.parseInt(params.get("QID"));
-        return "takequiz.xhtml";
+    public String quizUebergabe(String qid) {
+        this.qid = qid;
+        fragemodell = creator.createModell(qid);
+        ricounter = 0;
+        score=0;
+        if(quizbean.find(qid).getMultiplechoice()) {
+            return "takeQuizMultipleChoice.xhtml";
+        } else {
+            return "takequiz.xhtml"; 
+        }
     }
     
     public List<Integer> umwandler(int indexrichtig) {
@@ -671,23 +816,52 @@ public class TestQuizController implements Serializable {
             }
         return liste;
     }
-    
-    public void checkResults(List<Integer> falsche) { <5>
-       for(int i=0; i<quiz.size(); i++) {
-            List<Integer> indexrichtig = umwandler(quiz.get(i).indexrichtig);
-            if(falsche.get(i) == i) {
-                results.add(new Results(quiz.get(i).frage, quiz.get(i).antworten, indexrichtig, true));
-            } else {
-                results.add(new Results(quiz.get(i).frage, quiz.get(i).antworten, indexrichtig, false));
+    public int makeListToIndexRichtig(List<Antwortmoeglichkeiten> antworten) { //Used here?
+        for (int i = 0; i < 4; i++) {
+            if(antworten.get(i).isRichtigeAntwort()) {
+                return i;
             }
-        } 
+        }  
+        return 0;
     }
     
-    public String getQuizBezeichnung() {
-        return quizbean.find(1).getBeschreibung();
+    public void checkResults(List<Integer> falsche) {
+        results = new ArrayList<>();
+        for(int i=0; i<fragemodell.size(); i++) {
+            List<Integer> indexrichtig = umwandler(fragemodell.get(i).indexrichtig);
+            if(falsche.get(i) == i) {
+                results.add(new Results(fragemodell.get(i).frage, fragemodell.get(i).antworten, indexrichtig, true));
+            } else {
+                results.add(new Results(fragemodell.get(i).frage, fragemodell.get(i).antworten, indexrichtig, false));
+            }
+        }
+     trainee = traineebean.find("1");
+     trainee.setProgress(trainee.getProgress()+score);
+     traineebean.update(trainee);
+     List<Quizbeantwortung> list =  quizbeantw.findByQIDAndMITID(qid, "1");
+     list.get(0).setErreichtePunkte(score);
+     if(score > fragemodell.size()*10/2) {
+        list.get(0).setIstbestanden(true);
+     }
+     quizbeantw.update(list.get(0));
+    }
+    
+    public Boolean isTakeable(String qid, String mitid) {
+        List<QuizVoraussetzung> quizvor = quizvoraussetzung.findAllQuizVoraussetzzungen(qid);
+        if(quizvor.isEmpty()) {
+            return TRUE;
+        }
+        Voraussetzung vor = voraussetzungejb.find(quizvor.get(0).getQuizVorraussetzID());
+        String id = vor.getQuiz().getQID();
+        List<Quizbeantwortung> list = quizbeantw.findByQIDAndMITID(id, mitid);
+        if(list.get(0).isIstbestanden()) {
+            return TRUE;
+        }
+        
+        return FALSE;
     }
 
-    //Getters and Setters
+    //Getters & Setters
 }
 ----
 <1> Here, the QuizEJB is injected via the Jave EE Dependy Injection System. This way, we can use everything from the injected Class, without the need of calling a contructor.
@@ -699,7 +873,8 @@ In _checkResults_, a _Results-List_ is generated. This list is used to diplay th
 
 The QuizController is used to handle everything surrounding the action of taking a quiz. It is responsible for displaying the content on the quizzes-, takequiz- and results-page. It will forward the user from the quizzes page to the takequizpage, where he/she can take the quiz. By clicking on th Submit button, the user is forwarded to the results-site, where their results are shown. 
 
-
+=== Summary
+"was ghört hir hin?"
 
 
 
