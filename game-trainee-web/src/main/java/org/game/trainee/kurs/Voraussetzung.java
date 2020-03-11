@@ -16,7 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import org.game.trainee.testquiz.Quiz;
+import org.game.trainee.quiz.Quiz;
 
 /**
  *

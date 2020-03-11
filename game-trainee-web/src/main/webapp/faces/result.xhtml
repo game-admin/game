@@ -14,12 +14,12 @@
     <ui:define name="content">
         <h1>Results</h1>
         <p style="font-size: 1.2em; margin-left:25%;">
-            Du hast #{testQuizController.ricounter}/#{testQuizController.fragemodell.size()} Fragen richtig beantwortet! <br/>
-            Damit bekommst du #{testQuizController.ricounter*10} Punkte! <br/>
+            Du hast #{quizController.ricounter}/#{quizController.fragemodell.size()} Fragen richtig beantwortet! <br/>
+            Damit bekommst du #{quizController.ricounter*10} Punkte! <br/>
             Die von dir richtig/falsch beantworteten Fragen siehst du hier mit den richtigen Antworten:
         </p>
         <p>
-            <ui:repeat var="result" value="#{testQuizController.results}">
+            <ui:repeat var="result" value="#{quizController.results}">
                 <div id="results">
                     <h:outputText value="#{result.frage}" style="#{result.istfalsch? 'color:red; font-weight: bold;' : 'color:green; font-weight: bold;'}"></h:outputText> 
                     <i class="#{result.istfalsch? 'fa fa-fw fa-close' : 'fa fa-fw fa-check'}"></i><br/>

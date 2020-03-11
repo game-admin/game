@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"   
-      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
    
     <body>
         <h:form id="menubar">
@@ -23,15 +21,13 @@
                     </p:menuitem>
                 </p:tabMenu>
             </div>
-            
             <br />
-            
             <div id="logout">
-                <p:splitButton id="basic" value="Account" action="index.html"   icon="pi pi-save">
-                    <p:menuitem value="Points" action="index.html" icon="pi pi-refresh" />
-                    <p:menuitem value="Courses" action="courses.xhtml" ajax="false" icon="pi pi-times" />
-                    <p:separator />
-                    <p:menuitem value="Logout" url="http://www.google.com" icon="pi pi-home" />
+                <p:splitButton id="basic" value="Account" action="index.html">
+                    <p:menuitem value="Quizzes" action="quizzes.xhtml"/>
+                    <p:menuitem value="Courses" action="courses.xhtml"/>
+                    <p:separator/>
+                    <p:menuitem value="Logout" url="http://www.google.com"/>
                 </p:splitButton>
             </div>
             

@@ -1,4 +1,4 @@
-package org.game.trainee.trainerview;
+package org.game.trainee.trainer;
 
 import java.io.Serializable;
 import java.util.List;

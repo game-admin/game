@@ -3,17 +3,17 @@
   <!-- Define Persistence Unit -->
   <persistence-unit name="Diplomarbeit" transaction-type="JTA">
     <jta-data-source>jdbc/postgrespool</jta-data-source>
-    <class>org.game.trainee.testquiz.Frage</class>
-    <class>org.game.trainee.testquiz.Antwortmoeglichkeiten</class>
     <class>org.game.trainee.kurs.Kurs</class>
     <class>org.game.trainee.kurs.KursBesuch</class>
-    <class>org.game.trainee.testquiz.Quizbeantwortung</class>
-    <class>org.game.trainee.testquiz.Quiz</class>
-    <class>org.game.trainee.traineeview.Trainee</class>
     <class>org.game.trainee.testquiz.Antwort</class>
-    <class>org.game.trainee.testquiz.QuizVoraussetzung</class>
     <class>org.game.trainee.kurs.Voraussetzung</class>
     <class>org.game.trainee.kurs.KursVoraussetzung</class>
+    <class>org.game.trainee.quiz.Quiz</class>
+    <class>org.game.trainee.quiz.Frage</class>
+    <class>org.game.trainee.quiz.Quizbeantwortung</class>
+    <class>org.game.trainee.quiz.Antwortmoeglichkeiten</class>
+    <class>org.game.trainee.quiz.QuizVoraussetzung</class>
+    <class>org.game.trainee.trainee.Trainee</class>
     <properties>
       <!--<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
       <property name="javax.persistence.schema-generation.create-source" value="script"/>
@@ -21,8 +21,6 @@
       <property name="javax.persistence.schema-generation.drop-script-source" value="META-INF/dropSQL.sql"/>
       <property name="javax.persistence.schema-generation.create-script-source" value="META-INF/createSQL.sql"/> 
       <property name="javax.persistence.sql-load-script-source" value="META-INF/insertSQL.sql"/>  -->
-      
-      
     </properties>
   </persistence-unit>
 </persistence>

@@ -18,11 +18,11 @@
             Für jede richitg beantwortete Frage bekommst du 10 Punkte! <br/>
             Es können mehrere Antworten richtig sein! <br/>
             Wenn du alle Fragen richtig beantwortest, bekommst du dieses Emblem: 
-            <h:graphicImage library="img" name="#{testQuizController.emblem}"></h:graphicImage>
+            <h:graphicImage library="img" name="#{quizController.emblem}"></h:graphicImage>
         </p>
         <div id="questions">
         <h:form>
-            <ui:repeat var="frage" value="#{testQuizController.fragemodell}">
+            <ui:repeat var="frage" value="#{quizController.fragemodell}">
                 <div class="question">
                     <h:outputText value="#{frage.frage}"></h:outputText> <br />
                     <table>
@@ -74,8 +74,8 @@
                     <br/><br/>
                 </div>    
             </ui:repeat>
-            <ui:param name="varqid" value="#{testQuizController.qid}"></ui:param>
-            <p:commandButton value="Check Answers" style="margin-left: 20%" action="#{testQuizController.checkAnswersMultipleChoice}">
+            <ui:param name="varqid" value="#{quizController.qid}"></ui:param>
+            <p:commandButton value="Check Answers" style="margin-left: 20%" action="#{quizController.checkAnswersMultipleChoice}">
                 <f:param name="qid" value="#{varqid}"></f:param>
             </p:commandButton> 
         </h:form>

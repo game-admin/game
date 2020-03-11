@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.game.trainee.testquiz;
+package org.game.trainee.quiz;
 
 import java.util.List;
 import javax.ejb.Stateless;

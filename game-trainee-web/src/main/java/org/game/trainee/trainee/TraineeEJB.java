@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.game.trainee.traineeview;
+package org.game.trainee.trainee;
 
 import java.util.List;
 import javax.ejb.Stateless;
@@ -12,7 +12,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
-import org.game.trainee.traineeview.Trainee;
+import org.game.trainee.trainee.Trainee;
 
 /**
  *

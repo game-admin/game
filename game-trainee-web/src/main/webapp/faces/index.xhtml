@@ -14,7 +14,7 @@
     
     <ui:define name="content">                                      
         <h1>Activities</h1>
-        <p id="start">
+        <p class="description">
             Hallo #{traineeController.getTraineesByID("1").get(0).vorname}, auf dieser Plattform kannst du deine Java-Kenntnisse überprüfen und ausbesseren.
             Auf der Kurs-Seite findest du eine Vielzahl an Kursen, die unterschiedliche Bereiche von Java abdecken.
             Du wirst einige Kurse brauchen, um bestimmte Quizzes zu nehmen.<br/>
@@ -32,12 +32,12 @@
             <strong>Benutzer:</strong> #{traineeController.getTraineesByID("1").get(0).vorname}
             #{traineeController.getTraineesByID("1").get(0).nachname}<br />
             <strong>Nickname:</strong> #{traineeController.getTraineesByID("1").get(0).nickname} <br/>
-            Fortschritt: 50% von 100% <br />
-            Embleme: <h:graphicImage library="img" name="#{traineeController.getTraineesByID(&quot;1&quot;).get(0).embleme.get(0)}"></h:graphicImage>
+            <strong>Fortschritt:</strong> 50% von 100% <br />
+            <strong>Embleme:</strong> <h:graphicImage library="img" name="#{traineeController.getTraineesByID(&quot;1&quot;).get(0).embleme.get(0)}"></h:graphicImage>
             <br/><br/>
-            Your score (Quiz):
-            <h:outputText value="#{testQuizController.score}"></h:outputText> <br/>
-            Your progress (Overall):
+            <!--Your score (Quiz):
+            <h:outputText value="{testQuizController.score}"></h:outputText> <br/>-->
+            Dein gesamter Fortschritt:
             <h:outputText value="#{traineeController.getTraineesByID(&quot;1&quot;).get(0).progress}"></h:outputText>
             <br/><br/>
             Hier sollte spezifisch zum User, dessen Aktivitäten und Fortschritt dargestellt werden.

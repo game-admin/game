@@ -1,4 +1,4 @@
-package org.game.trainee.testquiz;
+package org.game.trainee.quiz;
 
 import java.io.Serializable;
 import java.util.List;

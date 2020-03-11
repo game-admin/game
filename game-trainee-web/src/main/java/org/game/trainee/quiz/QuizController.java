@@ -1,4 +1,4 @@
-package org.game.trainee.testquiz;
+package org.game.trainee.quiz;
 
 import java.io.Serializable;
 import static java.lang.Boolean.FALSE;
@@ -15,8 +15,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import org.game.trainee.kurs.Voraussetzung;
 import org.game.trainee.kurs.VoraussetzungEJB;
-import org.game.trainee.traineeview.Trainee;
-import org.game.trainee.traineeview.TraineeEJB;
+import org.game.trainee.trainee.Trainee;
+import org.game.trainee.trainee.TraineeEJB;
 
 /**
  *
@@ -24,7 +24,7 @@ import org.game.trainee.traineeview.TraineeEJB;
  */
 @Named
 @SessionScoped
-public class TestQuizController implements Serializable {
+public class QuizController implements Serializable {
      
     private List<Quiz> quizzes;
     private List<Results> results;

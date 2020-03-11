@@ -18,7 +18,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import org.game.trainee.traineeview.Trainee;
+import org.game.trainee.trainee.Trainee;
 
 /**
  *

@@ -1,4 +1,4 @@
-package org.game.trainee.traineeview;
+package org.game.trainee.trainee;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -41,7 +41,4 @@ public class TraineeController implements Serializable {
     public Trainee getSelectedTrainee() {
         return selectedTrainee;
     }
-    
-    
-    
 }

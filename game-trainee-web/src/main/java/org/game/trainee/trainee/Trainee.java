@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.game.trainee.traineeview;
+package org.game.trainee.trainee;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import org.game.trainee.testquiz.Quizbeantwortung;
+import org.game.trainee.quiz.Quizbeantwortung;
 
 /**
  *
