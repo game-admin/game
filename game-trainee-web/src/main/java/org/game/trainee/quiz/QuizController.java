@@ -86,7 +86,7 @@ public class QuizController implements Serializable {
         //fragemodell = creator.createModell(qid);
         int richtige=0;  
         for(int i=0; i<fragemodell.size(); i++ ) {
-            List<Integer> indexrichtig = umwandler(fragemodell.get(i).indexrichtig);
+            List<Integer> indexrichtig = fragemodell.get(i).indexrichtig;
             for(int z=0; z<4; z++) {
                 if(indexrichtig.get(z) == 1 && !fragemodell.get(i).buttons[z] || indexrichtig.get(z) == 0 && fragemodell.get(i).buttons[z]) {
                     falsche.add(i);
@@ -109,7 +109,7 @@ public class QuizController implements Serializable {
         List<Integer> falsche = new ArrayList<>();
         //fragemodell = creator.createModell(qid);
         for(int i=0; i<fragemodell.size(); i++) {
-            if(fragemodell.get(i).selectedAnswer.equals(fragemodell.get(i).antworten.get(fragemodell.get(i).indexrichtig))) {
+            if(fragemodell.get(i).selectedAnswer.equals(fragemodell.get(i).antworten.get(fragemodell.get(i).indexrichtig.get(i)))) {
                 score+=10;
                 ricounter++;
                 falsche.add(9999);
@@ -136,7 +136,7 @@ public class QuizController implements Serializable {
             return "takequiz.xhtml"; 
         }
     }
-    
+    /*
     public List<Integer> umwandler(int indexrichtig) {
         List<Integer> liste = new ArrayList<>();
         for(int i=0; i<4; i++)
@@ -147,6 +147,7 @@ public class QuizController implements Serializable {
             }
         return liste;
     }
+*/
     public int makeListToIndexRichtig(List<Antwortmoeglichkeiten> antworten) { //Used here?
         for (int i = 0; i < 4; i++) {
             if(antworten.get(i).isRichtigeAntwort()) {
@@ -159,7 +160,7 @@ public class QuizController implements Serializable {
     public void checkResults(List<Integer> falsche) {
         results = new ArrayList<>();
         for(int i=0; i<fragemodell.size(); i++) {
-            List<Integer> indexrichtig = umwandler(fragemodell.get(i).indexrichtig);
+            List<Integer> indexrichtig = fragemodell.get(i).indexrichtig;
             if(falsche.get(i) == i) {
                 results.add(new Results(fragemodell.get(i).frage, fragemodell.get(i).antworten, indexrichtig, true));
             } else {
