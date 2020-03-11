@@ -64,12 +64,14 @@ public class ModellCreator {
         return antwortbean.findAntwortenByFID(""+index);
     }
     
-    public int getIndexRichtigFromIndex(List<Antwortmoeglichkeiten> antworten) {
+    public List<Integer> getIndexRichtigFromIndex(List<Antwortmoeglichkeiten> antworten) {
+        List<Integer> list = new ArrayList<>(antworten.size());
         for (int i = 0; i < antworten.size(); i++) {
             if(antworten.get(i).isRichtigeAntwort()) {
-                return i;
+                list.add(1);
             }
+            list.add(0);
         }
-        return 0;
+        return list;
     }
 }

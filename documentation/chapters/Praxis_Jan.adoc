@@ -231,7 +231,7 @@ The use of this class is to provide all the trainees deposited on the database t
 include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/AntwortmoeglichkeitenEJB.java[lines=16..]
 ----
 
-
+This EJB provides the page where you take the quiz with all the corresponding answers to the questions. This is done by the methode "findAntwortenByFID" which starts a query when invoked. This query is defined in the "Antwortmoeglichkeiten" entity.
 
 .QuizVoraussetzungEJB.java
 [source, java]
@@ -239,17 +239,23 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/Antwortmoegl
 include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/QuizVoraussetzungEJB.java[lines=13..]
 ----
 
+The "QuizVoraussetzungsEJB" allocates all "QuizVoraussetzungen" with the "findAllQuizVoraussetzungen" methode. It is used in the "Voraussetzungs-Logic".
+
 .VoraussetzungEJB.java
 [source, java]
 ----
 include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/VoraussetzungEJB.java[lines=16..]
 ----
 
+This EJB is used for the requirements logic. It contains a find methode where you can search for a requirement via a "VoraussetzID", which then returns a "Voraussetzung"-Entity. Also it has a update and delete methode.
+
 .QuizbeantwortungEJB.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/testquiz/QuizbeantwortungEJB.java[lines=13..]
+include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/QuizbeantwortungEJB.java[lines=13..]
 ----
+
+The use of this bean is to provide information to all the quizzes a specific trainee has taken and when. This is done by a query, which is defined in the entity of this bean and it is required in the requirement logic.
 
 ==== Persistence.xml
 
@@ -260,6 +266,8 @@ include::../../game-trainee-web/src/main/resources/META-INF/persistence.xml[]
 ----
 
 The "persistence.xml" is used to configure many things, such as the source of the scipt used for dropping, if the database should always drop and then create all tables, and much more.
+
+
 
 ==== SQL-Files
 

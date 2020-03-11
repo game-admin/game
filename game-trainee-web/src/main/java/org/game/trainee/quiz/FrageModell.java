@@ -11,12 +11,12 @@ public class FrageModell implements Serializable {
         
    public String frage;
    public List<String> antworten;
-   public int indexrichtig;
+   public List<Integer> indexrichtig;
    public Boolean[] buttons; // for multiple choice
    public String selectedAnswer; //for single choice radioButtons
    public String qid;
    
-   public FrageModell(String frage, List<String> antworten, int indexrichtig, String qid) {
+   public FrageModell(String frage, List<String> antworten, List<Integer> indexrichtig, String qid) {
       this.frage=frage;
       this.antworten=antworten;
       this.indexrichtig=indexrichtig;
@@ -42,11 +42,11 @@ public class FrageModell implements Serializable {
         this.antworten = antworten;
     }
 
-    public int getIndexrichtig() {
+    public List<Integer> getIndexrichtig() {
         return indexrichtig;
     }
 
-    public void setIndexrichtig(int indexrichtig) {
+    public void setIndexrichtig(List<Integer> indexrichtig) {
         this.indexrichtig = indexrichtig;
     }
 

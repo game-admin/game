@@ -4,8 +4,9 @@ INSERT INTO game.trainee ("mitid", "nachname", "vorname", "nickname", "abteilung
 INSERT INTO game.trainee ("mitid", "nachname", "vorname", "nickname", "abteilung", "progress", "embleme") VALUES ('3', 'Saliger', 'Alex', 'SaAlexX_1010', 'Hausmeister', 400, NULL);
 INSERT INTO game.trainee ("mitid", "nachname", "vorname", "nickname", "abteilung", "progress", "embleme") VALUES ('4', 'Wurst', 'Alexander', 'wursti', 'Front-End Development', 300, NULL);
 
-INSERT INTO game.quiz ("qid", "titel", "beschreibung", "reward", "multiplechoice") VALUES ('1', 'Start', 'Quiz about the general knowledge of Java', 'test', false);
-INSERT INTO game.quiz ("qid", "titel", "beschreibung", "reward", "multiplechoice") VALUES ('2', 'Object, Classes & Constructors', 'Quiz about Objects, Classes and Constructors in Java', 'test', false);
+INSERT INTO game.quiz ("qid", "titel", "beschreibung", "reward", "multiplechoice") VALUES ('1', 'Start', 'Quiz über das generelle Wissen über Java.', 'test', false);
+INSERT INTO game.quiz ("qid", "titel", "beschreibung", "reward", "multiplechoice") VALUES ('2', 'Objekte, Klassen & Konstruktoren', 'Das ist ein Quiz über eine Grundlage in Java. Die Objekte & Klassen und deren Konstruktoren.', 'test', false);
+INSERT INTO game.quiz ("qid", "titel", "beschreibung", "reward", "multiplechoice") VALUES ('3', 'Datentypen', 'Das ist ein Quiz über die verschiedenen Datentypen in Java. Dies verschafft dir einen guten Überblick über die Typen und hilft dir sie besser anwenden/verstehen zu können', 'test', true);
 
 
 INSERT INTO game.frage ("fid", "qid", "frage", "punktezahl") VALUES ('1', '1', 'What are advantages of Java?', 10);
@@ -23,6 +24,11 @@ INSERT INTO game.frage ("fid", "qid", "frage", "punktezahl") VALUES ('12', '2', 
 INSERT INTO game.frage ("fid", "qid", "frage", "punktezahl") VALUES ('13', '2', 'What does a constructor do?', 10);
 INSERT INTO game.frage ("fid", "qid", "frage", "punktezahl") VALUES ('14', '2', 'Which classes contain a contructor?', 10);
 INSERT INTO game.frage ("fid", "qid", "frage", "punktezahl") VALUES ('15', '2', 'What is a correct contructor head(considering the name of the class is MyClass)?', 10);
+INSERT INTO game.frage ("fid", "qid", "frage", "punktezahl") VALUES ('16', '3', 'How many primitive datatypes exist in Java?', 10);
+INSERT INTO game.frage ("fid", "qid", "frage", "punktezahl") VALUES ('17', '3', 'What is/are a data type in Java?', 10);
+INSERT INTO game.frage ("fid", "qid", "frage", "punktezahl") VALUES ('18', '3', 'What is true about reference datatypes?', 10);
+INSERT INTO game.frage ("fid", "qid", "frage", "punktezahl") VALUES ('19', '3', 'What is true about the datatype "int"?', 10);
+INSERT INTO game.frage ("fid", "qid", "frage", "punktezahl") VALUES ('20', '3', 'Which of these is/are no supported special escape sequence?', 10);
 
 
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('1', '1', 'Flawless', false);
@@ -85,14 +91,36 @@ INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeant
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('58', '15', 'public constructor()', false);
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('59', '15', 'public MyClass()', true);
 INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('60', '15', 'public String MyClass()', false);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('61', '16', '6', false);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('62', '16', '7', false);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('63', '16', '8', true);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('64', '16', '9', false);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('65', '17', 'int', true);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('66', '17', 'double', true);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('67', '17', 'String', true);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('68', '17', 'text', false);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('69', '18', 'Class objects and various type of array variables are reference datatype', true);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('70', '18', 'The default value is null', true);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('71', '18', 'They cannot be used to refer any object or any compatible type', false);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('72', '18', 'None of the above', false);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('73', '19', 'It is generally used for integral values', true);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('74', '19', 'the default value is 0', true);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('75', '19', 'It is used for decimal numbers', false);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('76', '19', 'None of the above', false);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('77', '20', '\n', true);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('78', '20', '\m', false);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('79', '20', '\a', false);
+INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('80', '20', '\b', true);
 
 INSERT INTO game.quizbeantwortung ("qbeid", "qid", "mitid", "erreichtepunktezahl", "istbestanden") VALUES ('1', '1', '1', 0, false);
 INSERT INTO game.quizbeantwortung ("qbeid", "qid", "mitid", "erreichtepunktezahl", "istbestanden") VALUES ('2', '2', '1', 0, false);
 
 
 INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('1', 'Start-Kurs', 'https://www.tutorialspoint.com/java/index.htm', 'Dieser Kurs ist der erste Kurs der abgelegt werden muss. Er erklärt dir die Basics von Java.');
-INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('2', 'Object & Classes', 'https://www.tutorialspoint.com/java/java_object_classes.htm', 'In diesem Kurs geht es um Objekte und Klassen die in Java sehr wichig sind. Der Kurs erklärt dir die Grundlagen, die du über dieses Thema wisse musst.');
-INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('3', 'Constructors', 'https://www.tutorialspoint.com/java/java_constructors.htm', 'Das ist ein Kurs über die Konstruktoren in Java. Konstruktoren sind wichtig um ordentlich mit Objekten und Klassen arbeiten zu können.');
+INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('2', 'Objekte & Klassen', 'https://www.tutorialspoint.com/java/java_object_classes.htm', 'In diesem Kurs geht es um Objekte und Klassen die in Java sehr wichig sind. Der Kurs erklärt dir die Grundlagen, die du über dieses Thema wisse musst.');
+INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('3', 'Konstruktor', 'https://www.tutorialspoint.com/java/java_constructors.htm', 'Das ist ein Kurs über die Konstruktoren in Java. Konstruktoren sind wichtig um ordentlich mit Objekten und Klassen arbeiten zu können.');
+INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('4', 'Datentypen', 'https://www.tutorialspoint.com/java/java_constructors.htm', 'Das ist ein Kurs über die Datentypen in Java.');
+
 
 INSERT INTO game.voraussetzung("voraussetzid", "kursid", "qid") VALUES ('1', null, '1');
 
