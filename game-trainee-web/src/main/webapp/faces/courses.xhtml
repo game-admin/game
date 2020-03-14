@@ -29,8 +29,9 @@
             </p:column>
             <p:column>
                 <h:form>
-                    <p:commandButton action="#{kursController.takeKurs(kurs.kursID)}" value="Take Course!" >       
-                    </p:commandButton>                                  
+                    <!--<p:commandButton action="{kursController.takeKurs(kurs.kursID)}" value="Take Course!" >       
+                    </p:commandButton>-->     
+                    <h:commandLink action="#{kursController.kursbean.find(kurs.kursID).getLink()}" value="Take Course!"></h:commandLink>
                 </h:form>
             </p:column>
         </p:dataTable>

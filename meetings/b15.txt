@@ -1,0 +1,46 @@
+bei courses um die Kurse zu nehmen:
+-> nur h:commandLink und direkt aus der Datenbank den String rauslesen
+
+base64 String: 
+Embleme: daweil kann nur ein Trainee ein Emblem haben
+sodass ein Trainee mehrere Embleme haben kann, braucht er eine 1 zu n Beziehung zu 
+einer Embleme Tabelle
+
+=> Embleme nur auf Quiz speichern, (nicht auf trainee), dann über die Quizbeantwortung auslesen, und
+dann anzeigen
+
+Internationlaizaten: default is english und dann noch deutsch (is einfach)
+
+bei der Abfrage nach den trainees: order by mitid und dann desc oder asc für aufsteigend oder aufsteigens
+
+Navigationsleiste sollte bis ganz drüben gehen: width von 100%
+
+Callouts: Variante: Kommentare im Quellcode reinschreiben
+-> Callouts gleich in das File reinschreiben
+-> oder Häppchenweise erklären
+
+-> Tag xyz dann macht man n callout hin, dann machst das nächste include bis zum nächsten Callout
+-> asciidoctor user manual: inlcude, by tagged regions, Kommentar: tag::
+
+dann nimmt er nur den codeausschnitt der zwischen die 2 Kommentare
+
+Maven
+git bash, 
+ls -l
+cd documentation
+mvn
+
+
+Error: line 546, 589
+
+Relevanz: keine Inserts und altertable etc. -> ER-Modell reicht, und da erklärt man 
+dann die ganzen Abhängigkeiten
+WICHTIG: ER-MODELL
+
+Abklären: Wie MUSS das Format sein!  -> mit Betreuer
+
+https://github.com/asciidoctor/asciidoctor-pdf/blob/master/docs/theming-guide.adoc
+-> wenn das nicht geht: exportieren als docbook und dann halt irgendwie ins word einebringen
+
+Code-Snippets eher nicht anzeigen:
+-> eher Screenshots von den Seiten und diese dann erklären/beschreiben
