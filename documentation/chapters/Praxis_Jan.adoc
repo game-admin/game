@@ -40,6 +40,7 @@ SELECT * FROM mitarbeiter;
 <4>
 ALTER TABLE mitarbeiter ADD CONSTRAINT "MITARBEITER_pkey" PRIMARY KEY ("id");
 ----
+
 <1> All this code does is it creates a new table called "mitarbeiter" which contains the columns "id", "nachname", "vorname" and "gehalt". Every column has its datatype next to it. Optionally there are constraints to the columns, such as "NOT NULL". which tells the database that this column cannot be empty or "UNIQUE", which means that a data set must be unique in this column.
 
 <2> The next command is INSERT INTO. This code tells the database to write data into the table. First you need to set the table with all its columns and then the values like shown.
@@ -103,121 +104,25 @@ The last column is "beschreibung", which is the description of the course.
 This column can be empty, but it is not recommended since it helps the user specify which course contains what information.
 
 
+===== Quiz
 
-==== Entities
-===== Kurs Entities
-
-.Kurs.java
-[source, java]
-----
-include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/Kurs.java[lines=19..40]
-//Getter, Setter
-----
+This is the table for all quizzes. It contains the "QID", which is the primary key, a title, a description and a reward. The title has a constraint called NOT NULL because every quiz must have a specification which topic it has. There is also a option if the quiz is multiple choice.
+There are also so called queries to find data with specific parameters from the database. These queries are defined in the associated entity class.
 
 
-
-.KursBesuch.java
-[source, java]
-----
-include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursBesuch.java[lines=22..44]
-
-//Getter, Setter
-----
-
-
-
-
-===== Vorausetzung Entities
-
-.Vorausetzung.java
-[source, java]
-----
-include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/Voraussetzung.java[lines=19..37]
-
-//Getter, Setter
-----
+===== Voraussetzung
 
 This table defines the requirement a course or a quiz can have. Therefor it containes a "KursId" and a "qid". The primary key of this table is then given to "KursVoraussetzung" or "QuizVoraussetzung" respectively. 
 
 
+===== Frage
 
-.KursVorausetzung.java
-[source, java]
-----
-include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursVoraussetzung.java[lines=19..36]
-//Getter, Setter
-----
+Every Quiz contains many questions this means that "Frage" and "Quiz" have a Many-To-One relationship.  The questions are stored in the table "Frage". Each question has a "FID", a "QID", so it can be connected to a quiz. A question also has the questiontext itself and points you get for each question.
 
 
+===== Antwortmoeglichkeiten
 
-
-
-.QuizVorausetzung.java
-[source, java]
-----
-include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/QuizVoraussetzung.java[lines=21..36]
-
-//Getter, Setter
-----
-
-
-
-
-===== Quiz Entities
-
-.Quiz.java
-[source, java]
-----
-include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/Quiz.java[lines=25..53]
-
-//Getter, Setter
-----
-
-This is the table for all quizzes. It contains the "QID", which is the primary key, a title, a description and a reward. The title has a constraint called NOT NULL because every quiz must have a specification which topic it has.
-There are also so called queries to find data with specific parameters from the database.
-
-
-.Quizbeantwortung.java
-[source, java]
-----
-include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/Quizbeantwortung.java[lines=22..45]
-
-
-//Getter, Setter
-----
-
-
-
-
-.Frage.java
-[source, java]
-----
-include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/Frage.java[lines=21..52]
-
-//Getter, Setter
-----
-
-Every Quiz contains of many questions. These questions are stored in the table "Frage". Each question has a "FID", a "QID", so it can be connected to a quiz. A question also has the question itself and points you get for each question.
-
-.Antwortmoeglichkeiten.java
-[source, java]
-----
-include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/Antwortmoeglichkeiten.java[lines=20..45]
-
-//Getter, Setter
-----
-Every question has 4 answers. These answers are stored in this table. Each answer is connected to its question. Also the answertext itself is stored here, as well as a boolean value if the answer is correct or not.
-
-===== Trainee Entity
-
-.Trainee.java
-[source, java]
-----
-include::../../game-trainee-web/src/main/java/org/game/trainee/trainee/Trainee.java[lines=25..53]
-
-//Getter, Setter
-----
-
+Every question has 4 answers this means that there is a Many-To-One relationship between "Antwortmoeglichkeiten" and "Frage". These answers are stored in this table. Each answer is connected to its question. Also the answertext itself is stored here, as well as a boolean value if the answer is correct or not.
 
 
 ==== EJBs
@@ -230,7 +135,7 @@ EJBs are components that summarize the business logic and take care of transacti
 include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursEJB.java[lines=16..]
 ----
 
-The main use of the EJB is to provide the courses page with all the courses within the database. This is done with the "findAll" methode.
+The main use of the EJB is to provide the courses page with all the courses within the database. This is done with the "findAll" methode. It is used on the courses page where all courses available are shown.
 
 .FrageEJB.java
 [source, java]
