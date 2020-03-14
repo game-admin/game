@@ -21,6 +21,7 @@
             Falls du ein Quiz nicht nehmen kannst, musst du noch eine Vorraussetzung dafür erfüllen.<br/>
             Dir wird in diesem Fall mitgeteilt, was du noch erfüllen musst.
         </p>
+        <!-- tag::dataTable[] -->
         <p:dataTable var="quiz" value="#{quizController.quizzes}">
             <p:column headerText="Titel" rendered="#{quizController.isTakeable(quiz.QID, &quot;1&quot;)}">
                 <h:outputText value="#{quiz.titel}"></h:outputText>
@@ -35,6 +36,7 @@
                 </h:form>
             </p:column>
         </p:dataTable>
+        <!-- end::dataTable[] -->
         <hr/>
         <!--<p>
             Wenn du ein neues Quiz erstellen willst, 

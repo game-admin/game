@@ -8,6 +8,7 @@
         <h:form id="menubar">
             
             <div id="menu">
+            <!-- tag::menubar[] -->
                 <p:tabMenu style="width:133.2%">
                     <p:menuitem value="Home" outcome="index.xhtml" style="width:5em" icon="fa fa-home">
                     </p:menuitem>
@@ -20,17 +21,19 @@
                     <p:menuitem value="Emblemtafel" outcome="leaderboard.xhtml" style="width:8em" icon="fa fa-eye">
                     </p:menuitem>
                 </p:tabMenu>
+            <!-- end::menubar[] -->
             </div>
             <br />
             <div id="logout">
+            <!-- tag::splitButton[] -->
                 <p:splitButton id="basic" value="Account" action="index.html">
                     <p:menuitem value="Quizzes" action="quizzes.xhtml"/>
                     <p:menuitem value="Courses" action="courses.xhtml"/>
                     <p:separator/>
                     <p:menuitem value="Logout" url="http://www.google.com"/>
                 </p:splitButton>
+            <!-- end::splitButton[] -->
             </div>
-            
         </h:form>
     </body>
 </html>

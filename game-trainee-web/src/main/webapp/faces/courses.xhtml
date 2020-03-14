@@ -20,7 +20,8 @@
             Nachdem du dir einen Kurs angeschaut hast,
             wird das jeweilige Quiz freigeschalten!
         </p>
-        <p:dataTable var="kurs" value="#{kursController.kurse}">
+        <!-- tag::dataTable[] -->
+        <p:dataTable var="kurs" value="#{kursController.kurse}"> <1>
             <p:column headerText="Titel">
                 <h:outputText value="#{kurs.titel}"></h:outputText>
             </p:column>
@@ -35,6 +36,7 @@
                 </h:form>
             </p:column>
         </p:dataTable>
+        <!-- end::dataTable[] -->
     </ui:define>      
 </ui:composition>
 

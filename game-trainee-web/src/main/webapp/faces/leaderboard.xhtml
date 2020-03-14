@@ -18,6 +18,7 @@
         <p class="description">
             Hier siehst du eine Auflistung aller Trainees, mit ihren Nicknames und ihren Emblemen.
         </p>
+        <!-- tag::dataTable[] -->
         <p:dataTable var="trainee" value="#{traineeController.trainees}">
             <p:column headerText="Name">
                 <h:outputText value="#{trainee.vorname} "></h:outputText>
@@ -36,5 +37,6 @@
                 <h:graphicImage value="data:image/png;base64,#{trainee.embleme}"></h:graphicImage>
             </p:column>
         </p:dataTable>
+        <!-- end::dataTable[] -->
     </ui:define>
 </ui:composition>

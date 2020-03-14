@@ -21,6 +21,7 @@
         </p>
         <div id="questions">
         <h:form>
+        <!-- tag::repeat[] -->
             <ui:repeat var="frage" value="#{quizController.fragemodell}">
                 <div class="question">
                     <h:outputLabel for="radio" value="#{frage.frage}"></h:outputLabel>
@@ -32,9 +33,9 @@
                     </p:selectOneRadio>
                     <br/>
                 </div>    
-                <!--  -->
-                <br/><br/>
+                <br/>
             </ui:repeat>
+         <!-- end::repeat[] -->
             <ui:param name="varqid" value="#{quizController.qid}"></ui:param>
             <p:commandButton value="Check Answers" style="margin-left: 20%" action="#{quizController.checkAnswersSingleChoice()}">
                 <f:param name="qid" value="#{varqid}"></f:param>

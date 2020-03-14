@@ -19,6 +19,7 @@
             Hier siehst du alle Trainer, die dir im Falle von Problemen helfen können, aufgelistet.
         </p>
         <h:form id="trainerform">
+        <!-- tag::trainer[] -->
             <p:carousel value="#{trainerController.trainers}" headerText="Trainers" var="trainer" itemStyle="text-align:center" responsive="true">
                 <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
                     <f:facet name="header">
@@ -32,6 +33,7 @@
                     <h:outputText value="#{trainer.branch}" />
                 </p:panelGrid>    
             </p:carousel>
+         <!-- end::trainer[] -->
         </h:form>
     </ui:define>
 </ui:composition>
