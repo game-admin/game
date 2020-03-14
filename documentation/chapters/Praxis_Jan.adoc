@@ -52,14 +52,16 @@ ALTER TABLE mitarbeiter ADD CONSTRAINT "MITARBEITER_pkey" PRIMARY KEY ("id");
 
 ==== JPA
 
+Applications are made up of business logic, interaction with other systems, user interfaces and data. Most of the data that our applications manipulate have to be stored in databases, retrieved, and analyzed. Databases are important: they store business data, act as a central point between applications, and process data through triggers or stored procedures. Persistent data are everywhere, and most of the time they use relational databases as the underlying persistence engine (as opposed to schemaless databases). Relational databases store data in tables made of rows and columns. Data are identified by primary keys, which are special columns with uniqueness constraints
+and, sometimes, indexes. The relationships between tables use foreign keys and join tables with integrity constraints.
 
+All this vocabulary is completely unknown in an object-oriented language such as Java. In Java, we manipulate objects that are instances of classes. Objects inherit from others, have references to collections of other objects, and sometimes point to themselves in a recursive manner. We have concrete classes, abstract classes, interfaces, enumerations, annotations, methods, attributes, and so on. Objects encapsulate state and behavior in a nice way, but this state is only accessible when the Java Virtual Machine (JVM) is running: if the JVM stops or the garbage collector cleans its memory content, objects disappear, as well as their state. Some objects need to be persistent. By persistent data, I mean data that are deliberately stored in a permanent form on magnetic media, flash memory, and so forth. An object that can store its state to get reused later is said to be persistent. The principle of object-relational mapping (ORM) is to bring the world of database and objects together. It involves delegating access to relational databases to external tools or frameworks, which in turn give an objectoriented view of relational data, and vice versa. Mapping tools have a bidirectional correspondence between the database and objects. Java Persistence API (JPA) is the preferred technology and is part of Java EE 7.
 
-
+_(vgl. Beginning Java EE-Java Persistence API, Antonio Goncalves, 2013)_
 
 === Getting Started
 
-
-
+The first task was to visually showcase how all the tables needed, connect with each other, so we can understand what we need to do, and how everything should look and interact. Here we used the diagram called ER-Modell which does exactly that for us.
 
 ==== ER-Modell
 
