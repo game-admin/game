@@ -176,7 +176,7 @@ public class QuizController implements Serializable {
      trainee.setProgress(trainee.getProgress()+score);
      traineebean.update(trainee);
      List<Quizbeantwortung> list =  quizbeantw.findByQIDAndMITID(qid, "1");
-     list.get(0).setErreichtePunkte(score); //IndexOutOfBoundsException, Array index out of range 0
+     list.get(0).setErreichtePunkte(score); 
      if(score > fragemodell.size()*10/2) {
         list.get(0).setIstbestanden(true);
      }

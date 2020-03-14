@@ -39,6 +39,8 @@ public class KursController {
     public void setKurse(List<Kurs> kurse) {
         this.kurse = kurse;
     }
-    
-    
+
+    public KursEJB getKursbean() {
+        return kursbean;
+    }
 }
