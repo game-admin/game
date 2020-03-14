@@ -88,6 +88,7 @@ This column can be empty, but it is not recommended since it helps the user spec
 [source, java]
 ----
 include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursBesuch.java[lines=22..44]
+
 //Getter, Setter
 ----
 

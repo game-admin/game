@@ -30,7 +30,7 @@ import org.game.trainee.quiz.Quizbeantwortung;
 @Entity
 @Table(name = "trainee", schema = "game")
 @NamedQuery(name = Trainee.QUERY_FINDBY_PROGRESS, query = "SELECT trainee.progress FROM Trainee trainee")
-@NamedQuery(name = Trainee.QUERY_FINDALLTRAINEES, query = "SELECT trainee FROM Trainee trainee")
+@NamedQuery(name = Trainee.QUERY_FINDALLTRAINEES, query = "SELECT trainee FROM Trainee trainee ORDER BY trainee.MitID")
 public class Trainee implements Serializable {
     public static final String QUERY_FINDBY_PROGRESS = "Trainee.findProgress";
     public static final String QUERY_FINDALLTRAINEES = "Trainee.findAll";
@@ -48,7 +48,7 @@ public class Trainee implements Serializable {
     @Column(name="progress")
     private int progress;
     @Column(name="embleme")
-    private List<String> embleme;
+    private String embleme;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "trainee")
     private List<Quizbeantwortung> quizbeantwortung;
     
@@ -104,11 +104,11 @@ public class Trainee implements Serializable {
         this.progress = progress;
     }
 
-    public List<String> getEmbleme() {
+    public String getEmbleme() {
         return embleme;
     }
 
-    public void setEmbleme(List<String> embleme) {
+    public void setEmbleme(String embleme) {
         this.embleme = embleme;
     }
 

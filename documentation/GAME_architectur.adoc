@@ -1,7 +1,6 @@
 
 = image:./img/doclogo2.png[Logo] Game
 // toc-title definition MUST follow document title without blank line!
-
 :toc-title: Table of Contents
 :numbered:
 
