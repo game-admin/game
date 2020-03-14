@@ -60,8 +60,47 @@ ALTER TABLE mitarbeiter ADD CONSTRAINT "MITARBEITER_pkey" PRIMARY KEY ("id");
 
 
 
+==== ER-Modell
+
+image::../diagrams/diagram-classes.png[]
+
+The ER-Model in general is a diagram, which shows the relationships between the entities of a database.
+
+In this chapter I will showcase all the tables with their attributes and their respective meanings. Starting from the bottom to the top.
+
+===== Trainee
+
+The first table is the table "Trainee". This table contains all trainees. It contains their first name, last name, the nickname they use on the website, their department in the company and their progress they have by doing quizzes. Also every Trainee can get emblemes by completing quizzes.
+It has a One-To-Many relationship to the table "Quizbeantwortung" and to the table "KursBesuch".
+
+===== KursBesuch
+
+The entity "KursBesuch" is a table, which splits the many-to-many relationship between "trainee" and "kurs" into two seperate One-To-Many relationships therefor its relationships are Many-To-One to "Trainee" and to "Kurs".
+That means it has the PK (primary key) of both tables as a foreign key. It also provides a column named "datum" which indicates the date the user has visited the course. The function of this entity is to show which trainee has done which course and when. 
+
+===== KursVoraussetzung
+
+The function of "KursVoraussetzung" is that a course can have a course or a quiz as a requirement to take this course. This table contains courses and their required quizzes or courses. Therefor it contains the "KursVoraussetzID", the "KursID" and the "VoraussetzID" as columns.
 
 
+===== QuizVoraussetzung
+
+This table has the same function as "KursVoraussetzung", but instead of courses with quizzes. So this table contains quizzes and the requirements to take this quiz, which can be courses or  previous quizzes.
+
+
+===== Quizbeantwortung
+
+This entity is essential for the implementation of the "Voraussetzungs-Logik". We need this table to check if a trainee has already done a quiz. This is done with the column "istbestanden". Also it stores the points a trainee has achieved in the quiz. It also splits up a Many-To-Many relationship between "Quiz" and "Trainee" into two One-To-Many relationships.
+
+===== Kurs
+
+Here is the Kurs-Entity, it has the primary key "KursID", which helps to find a specific course from the table. 
+The table also has a column "titel" which is basically the title of this course. 
+It also has the constraint NOT NULL so if there is a new course there must be a title as well.
+The next column is the "link" it contains the links of the courses so the visitors can be redirected to the page with the explanation of the topic.
+This cannot be empty too. 
+The last column is "beschreibung", which is the description of the course. 
+This column can be empty, but it is not recommended since it helps the user specify which course contains what information.
 
 
 
@@ -75,13 +114,6 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/Kurs.java[li
 //Getter, Setter
 ----
 
-Here is the Kurs-Entity, it has the primary key "KursID", which helps to find a specific course from the table. 
-The table also has a column "titel" which is basically the title of this course. 
-It also has the constraint NOT NULL so if there is a new course there must be a title as well.
-The next column is the "link" it contains the links of the courses so the visitors can be redirected to the page with the explanation of the topic.
-This cannot be empty too. 
-The last column is "beschreibung", which is the description of the course. 
-This column can be empty, but it is not recommended since it helps the user specify which course contains what information.
 
 
 .KursBesuch.java
@@ -91,8 +123,7 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursBesuch.j
 //Getter, Setter
 ----
 
-The entity "KursBesuch" is a table, which splits the many-to-many relationship between "trainee" and "kurs".
-That means it has the PK (primary key) of both tables as a foreign key and it also provides a column named "datum" which indicates the date the user has visited the course. The function of this entity is to show which trainee has done which course and when.
+
 
 
 ===== Vorausetzung Entities
@@ -116,7 +147,7 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursVorausse
 //Getter, Setter
 ----
 
-The function of "KursVoraussetzung" is that a course can have a course or a quiz as a requirement to take this course. This table contains courses and their required quizzes or courses.
+
 
 
 
@@ -128,7 +159,7 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/QuizVorausse
 //Getter, Setter
 ----
 
-This table has the same function as "KursVoraussetzung", but instead of courses with quizzes. So this table contains quizzes and their required courses or quizzes.
+
 
 
 ===== Quiz Entities
@@ -154,7 +185,7 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/Quizbeantwor
 //Getter, Setter
 ----
 
-This entity is essential for the implementation of the "Voraussetzungs-Logik". We need this table to check if a trainee has already done a quiz. This is done with the column "istbestanden".
+
 
 
 .Frage.java
@@ -186,8 +217,7 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/trainee/Trainee.j
 //Getter, Setter
 ----
 
-This table contains all trainees. It contains their first name, last name, the nickname they use on the website, their
-department in the company and their progress they have by doing quizzes.
+
 
 ==== EJBs
 
@@ -260,10 +290,6 @@ The use of this bean is to provide information to all the quizzes a specific tra
 ==== Persistence.xml
 
 .persistence.xml
-[source, XML]
-----
-include::../../game-trainee-web/src/main/resources/META-INF/persistence.xml[]
-----
 
 The "persistence.xml" is used to configure many things, such as the source of the scipt used for dropping, if the database should always drop and then create all tables, and much more.
 
@@ -271,47 +297,20 @@ The "persistence.xml" is used to configure many things, such as the source of th
 
 ==== SQL-Files
 
-In this chapter I will introduce all SQL-files used in this project int he order they are when the program is started.
-
+In this chapter I will introduce all SQL-files used in this project in the order they are runned when the program is started.
 
 
 .dropSQL.sql
-[source, SQL]
-----
-include::../../game-trainee-web/src/main/resources/META-INF/dropSQL.sql[]
-----
 
 This script has the function of dropping every table before creating so there are no errors. 
 
 
 .createSQL.sql
-[source, SQL]
-----
-include::../../game-trainee-web/src/main/resources/META-INF/createSQL.sql[]
-----
 
 This file is used to create all the tables we are using. It produces every table with its associated columns.
 This file is also used to give all the tables its associated primary keys and foreign keys.
 
 
 .insertSQL.sql
-[source, SQL]
-----
-INSERT INTO game.trainee ("mitid", "nachname", "vorname", "nickname", "abteilung", "progress", "embleme") VALUES ('1', 'Binder', 'Jan', 'Syreax', 'Projektmanagement', 500, NULL);
-
-INSERT INTO game.quiz ("qid", "titel", "beschreibung", "reward", "multiplechoice") VALUES ('1', 'Start', 'Quiz about the general knowledge of Java', 'test', false);
-
-INSERT INTO game.frage ("fid", "qid", "frage", "punktezahl") VALUES ('1', '1', 'What are advantages of Java?', 10);
-
-INSERT INTO game.antwortmoeglichkeiten ("antwid", "fid", "antwort", "richtigeantwort") VALUES ('1', '1', 'Flawless', false);
-
-INSERT INTO game.quizbeantwortung ("qbeid", "qid", "mitid", "erreichtepunktezahl", "istbestanden") VALUES ('1', '1', '1', 0, false);
-
-INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('1', 'Start-Kurs', 'https://www.tutorialspoint.com/java/index.htm', 'Dieser Kurs ist der erste Kurs der abgelegt werden muss. Er erklärt dir die Basics von Java.');
-
-INSERT INTO game.voraussetzung("voraussetzid", "kursid", "qid") VALUES ('1', null, '1');
-
-INSERT INTO game.quizvoraussetzung("quizvoraussetzid", "voraussetzid", "qid") VALUES ('1', '1', '2');
-----
 
 Last there is the "insertSQL" script, which is used to insert all the data we want into the belonging table. The order of the commands is very important because, if you insert "antwortmoeglichkeiten" at first there would be no existing matching "FNR" or with "frage " no fitting "QID". Here are only the first insert of every table because otherwise there would be too much code, which would make it too complex.
