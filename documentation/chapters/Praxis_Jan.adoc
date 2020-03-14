@@ -120,6 +120,7 @@ include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/Kurs.java[li
 [source, java]
 ----
 include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursBesuch.java[lines=22..44]
+
 //Getter, Setter
 ----
 
