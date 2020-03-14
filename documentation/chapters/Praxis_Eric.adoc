@@ -3,27 +3,46 @@
 == Front End: Design und Graphic User Interface
 
 === Beginning
-Nachdem die Technologie festgelegt war, mit der die Website programmiert werden sollte, konnten wir anfangen.
-Zuerst muss aber mit dem Auftraggeber ein Design abgeklärt werden, welches ihm zusagt, und für uns umsetzbar ist.
+To start with designing user interfaces (= front end), a design must be agreed with the client which suits the client an is realizable for us. The front end is the most important part for the user, because it includes everything the user can see and interact with. I discussed this topic with the client and we came to a conclusion
 
-Hier ist ein abstraktes Diagramm der User-Interfaces:
-<Bild einfügen>
+Here is an abstract picture, how the user interfaces should look like:
 
-//image::Trainee Interface (1).png[]
+.User interfaces
+image::../img/UserInterfaces.png[]
 
+After the design was agreed upon, the programming of the interfaces could begin.
 
-Nachdem auch das Design abgeklärt war, konnte nun die Erstellung der Interfaces beginnen.
-
-=== Grundlagen
-Um eine Website zu programmieren, benötigt man ein Menge an umfangreichen Wissen. Man muss html, javascript und css beherschen. Darüber hinaus sollte man auch wissen, wie aus dem Code eine fertige Seite erzeugt wird, und wie Requests vom User ausgewertet und darauf geantwortet werden kann.
+=== Fundamentals
+Um eine Website zu programmieren, benötigt man ein Menge an umfangreichen Wissen. Man muss html, javascript und css beherrschen. Darüber hinaus sollte man auch wissen, wie aus dem Code eine fertige Seite erzeugt wird, und wie Requests vom User ausgewertet und darauf geantwortet werden kann.
+To program a website, you need a lot of extensive knowledge. You have to know HTML, Javascript and CSS. In addition, you should also know how a finished page is generated from the code you programmed and how requests from the user can be evaluated and responded to.
 
 ==== JSF
-"JSF Theorie einbinden"
+Java Server Faces (JSF) is a programming framwork for the development of graphical user interfaces (GUIs). JSF is a part of the web-technologies of _Java Enterprise Edition_ (Java EE). 
+The following graphic shows the architecture of JSF:
+
+.JSF architecture
+image::../img/Architektur.png[]
+
+ * The Browser is there, to display the websites to the user. Through the browser, users can navigate through the interfaces, make requests to the server and get a respone back.
+* The Faces Servlet handles user interactions that may lead to changes in the data structure (back en) or on the user interfaces (front end). It can be seen as a controller between the front end and the back end. Every request runs through the Faces Servlet which takes action accordingly. It can optionally be configured by a _faces-config.xml_ file.
+* The Renderers are responsible for displaying a component an translating a user's input into the component property values.
+* Converters convert a component's value (Integer, Boolean, etc.) to and from markup values (String).
+* Validators are responsible for ensuring that the value entered by a user is valid.
+* The business logic is made in backing beans, which also control the navigation between pages.
+* Facelets describes the language in which JSF files are written (XHTML). Every page has certain components which will be displayed by the browser with the help of renderers.
+
+
+
+
+
+
+_(vgl. Goncalves A. (2013). Beginning Java EE 7. Apress.)_
+
 
 ==== HTML
 Hypertext Markup Language (HTML) is the common used language for building web pages. A HTML page is a text document (with a .html or .htm extension) used by browsers to present text and graphics. A web page is made of content, tags to change some aspects of the content, and external objects such as images, videos, JavaScript, or CSS files.
 
-.Beispielcode für eine html page
+.Sample code for a HTML page
 [source, html]
 ----
 <html>
@@ -69,12 +88,12 @@ h1 {
 
 
 === Getting Started
-==== Projektstruktur erstellen
+==== Creating a project structure
 To start with a project like this, you need a clean project structure. The project structure has been automatically created with Maven. Our project is "Open Source", that means it is available online for free. That includes our whole project structure and all of the files used to create the website.
 The complete GAME project can be viewed under: https://github.com/game-admin/game
 
 ==== Creating a layout
-To simplify the creation of the UIs, I prepared a layout which servers every page as a template. This layou is realised in "mainlyaout.xhtml".
+To simplify the creation of the UIs, I prepared a layout which servers every page as a template. This layout is realised in "mainlyaout.xhtml".
 
 .mainlyout.xhtml
 [source,html]
@@ -364,7 +383,6 @@ By clicking on the <p:commandButton>, the user can take the quiz.
                     </p:selectOneRadio>
                     <br/>
                 </div>    
-                <!--  -->
                 <br/><br/>
             </ui:repeat>
             <ui:param name="varqid" value="#{quizController.qid}"></ui:param>
@@ -869,11 +887,11 @@ public class QuizController implements Serializable {
 <3> This method is used to evaluate the results of a MultipleChoice-Quiz. Each button is bound to a boolean-wert of the buttons[]. Every Question is checked, if every button matches the right answers. The user only gets points, if he answers the question correctly. 
 <4> Here, the singlechoice-quizzes get evaluated. This is much easier, because the radiobuttons function differently than the normal buttons. Every set of radiobuttons is bound to one value (selectedAnswer). We only need to check if the selected Answer matches the correct Answer. 
 <5>
-In _checkResults_, a _Results-List_ is generated. This list is used to diplay the results on the results.xhtml page.
+In _checkResults_, a _Results-List_ i s generated. This list is used to diplay the results on the results.xhtml page.
 
 The QuizController is used to handle everything surrounding the action of taking a quiz. It is responsible for displaying the content on the quizzes-, takequiz- and results-page. It will forward the user from the quizzes page to the takequizpage, where he/she can take the quiz. By clicking on th Submit button, the user is forwarded to the results-site, where their results are shown. 
 
-=== Summary
+=== Summary/Conclusion
 "was ghört hir hin?"
 
 

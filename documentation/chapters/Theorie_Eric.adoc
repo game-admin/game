@@ -1,6 +1,6 @@
 == Theoretische Aufgabenstellung: Eric Haneder
 
-== (Lernen,) Lerntypen, Lernstile, Lernpräferenzen und selbstreguliertes Lernen
+== Lernen, Lerntypen, Lernstile, Lernpräferenzen und selbstreguliertes Lernen
 === Lernen
 
 Everyone has to learn, both actively and passively. Whether at school or in professional life, further education is part of the essence of man. The term "learning" usually means the acquisition of knowledge, the development of skills or the practice of motor processes. However, "learning" also refers to activities that are carried out with the aim of changing internal conditions.
@@ -11,13 +11,19 @@ _(vgl. Selbstreguliertes Lernen in der dualen Ausbildung - Lerntypen und Bedingu
 Regardless of the theoretical approach to learning, it is true that learning is linked to the ability to modify the central nervous system (CNS) (Birbaumer & Schmidt 1996, 2006). The central nervous system consists of the brain and spinal cord, whose impulse-transmitting cells (neurons) receive and process signals from the peripheral nervous system and generate and transmit signals for the regulation of organs such as muscles. 
 
 Despite the large amount of signals that are constantly received by the sense organs from the environment and transmitted to the CNS, the number of connections between the peripheral nervous system and the CNS is relatively small. Most of the estimated 100 billion neurons (Goldstein 1997, S. 11) serve to process information (pattern recognition, linking), they receive their input from cortical neurons and deliver their output to other cortical neurons.
+
+Lernen beruht auf der Plastizität der Synapsen und Dendriten. Die Plastizizät umfasst u. a. Aktivierung oder Abbruch von Verbindungen zwischen Nervenzellen, Aufhebung hemmender Verbindungen, Erhöhungen der Transmitterausschüttung, Erhöhung der Reaktion auf dasselbe Ausmaß von Transmittersubstanz, Veränderungen der synaptischen Dichte sowie Verzweigung und Verdickung der Dendriten. Nicht ein, sondern mehrere dieser Vorgänge sind an den verschiedenen Formen des Lernens beteiligt.
+
+Dendriten: wurzelartige Verästelungen, aus denen die impulübertragenden Zellen des CNS bestehen
+Synapsen: (S22)  
+
 _(vgl. Selbstreguliertes Lernen in der dualen Ausbildung - Lerntypen und Bedingungen, Johannes Rosendahl, 2010, S.22)_
 
 There are many people who have tried to classify different learning preferences and learning types. I will discuss these classifications in more detail below.
 
 === Learning type classification according to Vester
 
-In the book "Denken, Lernen, Vergessen. Was geht in unserem Kopf vor, wie lernt das Gehirn und wann lässt es uns im Stich?" (1975, Stuttgart), Frederick Vester defined four types of learning. However, his book was interpreted differently, so that different versions of his classification can be found. At least on the fact that there is an auditory, a visual and a haptic learning type, there is agreement. Though there are some people who think that the fourth learning type after Frederik Vester is the communicative learning type and others think that it is an intellectual learning type.
+In the book "Denken, Lernen, Vergessen" (Vester, 1998), Frederick Vester defined four types of learning. However, his book was interpreted differently, so that different versions of his classification can be found. At least on the fact that there is an auditory, a visual and a haptic learning type, there is agreement. Though there are some people who think that the fourth learning type after Frederik Vester is the communicative learning type and others think that it is an intellectual learning type.
 
 NOTE: One also comes across terms like "cognitive learning type" ≙ "intellectual learning type", or the "kinesthetic learning type" ≙ "haptic learning type.
 
@@ -132,12 +138,40 @@ _(vgl. Selbstreguliertes Lernen in der dualen Ausbildung - Lerntypen und Bedingu
 
 Beim selbstregulierten Lernen spielt die eigene Motivation eine große Rolle. Hierbei kann die Bildung von Zielintentionen(Lernzielen) helfen. (Die Wahl des Lernziels muss aber nicht zwingend selbstbestimmt erfolgen.)
 In diesen Zielintentionen kommen persönliche Standards und Referenzleistungen zum Ausdruck.
+In self-regulated learning, the own motivation plays an important role. Here the formation of learning goals can help.
+In these learning goals personal standards and reference achievements are expressed.
 
-Ausgehend von diesem Ziel werden Handlungen durchgeführt, ihre Ausführung wird überwacht und ihr Ergebnis mit dem Ziel verglichen. Als Reaktion auf das Vergleichsergebnis wird das Handeln entweder angepasst oder eingestellt.
-Die eigentliche Selbstregulation umfasst die interagierenden Subprozesse Selbstbeobachtung, Bewertungsprozesse und Selbstreaktion (Bandura 1986, S. 337), die in Ansätzen zum selbstregulierten Lernen häufig gemeinsam mit Planungsaktivitäten unter dem Begriff der Metakognition zusammengefasst werden (Weinstein & Mayer 1986, Pintrich & De Groot 1990; Pintrich, Smith, Garcia & McKeachie 1993).
-Während der Selbstbeobachtung registriert der Lernende seine Leistung im Hinblick auf verschiedene Leisungsdimensionen wie Qualität, Originalität, Quantität und Moralität sowie Richtigkeit und Genauigkeit. 
+Based on this goal, actions are taken, their execution is monitored and their results are compared with the goal. In response to the comparison result, the actions are either adjusted or stopped.
+The actual self-regulation includes the interacting sub-processes self-observation, evaluation processes and self-reaction (Bandura 1986, S. 337).
+During self-observation, the learner registers his performance in terms of various performance dimensions such as quality, originality, quantity and morality as well as correctness and accuracy. Based on this, he will have to take action, as mentioned above. Subsequent results are again observed and evaluated, thus creating a cyclical loop (Bandura 1989).
 
 (S. 20)
-Der Begriff Selbstregulation betont, dass eine Person ihr Handeln in wesentlichem Ausmaß beeinflusst (Weinert 1982). 
-Dies schließt allerding nicht aus, dass eine zwischenzeitliche Lernkontrolle (Vergleich Soll/Ist) durch den Asubilder/Lehrer erolgen kann.
+The term self-regulation emphasizes that a person influences his or her own actions to a considerable extent (Weinert 1982). 
+However, this does not exclude the possibility that the trainer/teacher may carry out an occasional learning check (comparison of target and actual learning).
+Purely self-regulated action is theoretically possible, such as the creation of an artificial language and its practice through inner speech, but in professional reality there will usually be a greater degree of external control.
+
+
+=== Gamificated Learning
+Gamificated learning is a unique way for learners to remember their learning material. The goal is to maximize enjoyment and egagement through capturing the interest of learners and inspiring them to continue learning (Huang 2013). Gamification in particular means implementing game-elements, to a non-game environment.
+
+Some elements of games that can be used to motivate leaners and ease learning include:
+
+* Progress mechanics (points, badges, leaderboards, etc.)
+* Immediate feedback
+* Increasing challenges
+* Social connection
+* Opportunities for mastery, and leveling up
+
+When a learning platform contains the use of some of these elements, it can be considered "gamified". A gamificated system, which is often used in classrooms, is Kahoot. Kahoot is a website, where the teacher can create quizzes, and let the students participate in them via their smartphones. The quiz gets display e.g. with a beamer, so every student can see the questions. The principle is easy: Every student gets to answer the same question in the same timeframe, and whoever answered the fastest, gets the most points. If the student answers incorrectly, he/she will not get any points. At the end of the quiz, a leaderboard is displayed with the best scoring players on the top. This system embraces progress mechanics, immediate feedback and social connection.
+
+
+=== Conclusion
+
+
+
+
+
+
+
+
 
