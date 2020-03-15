@@ -134,7 +134,10 @@ Every EJB has a methode to find exactly one entity, persist/merge an entity or d
 .KursEJB.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursEJB.java[lines=41..]
+public List<Kurs> findAll() {
+    return em.createNamedQuery(Kurs.QUERY_FINDALLKURSE, Kurs.class)
+    .getResultList();
+}
 ----
 
 The main use of this EJB is to provide the courses page with all the courses within the database. This is done with the "findAll" methode. It is used on the courses page where all courses available are shown.
@@ -142,7 +145,39 @@ The main use of this EJB is to provide the courses page with all the courses wit
 .FrageEJB.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/FrageEJB.java[lines=21..]
+@Stateless
+public class FrageEJB {
+    @PersistenceContext(unitName = "Diplomarbeit")
+    private EntityManager em;
+    private Frage frage;
+
+    public Frage find(String FID) {
+        return em.find(Frage.class, FID);
+    }
+    
+    public List<Frage> findAll() {
+        return em.createNamedQuery(Frage.QUERY_FINDALLFRAGEN, Frage.class)
+                .getResultList();
+    }
+    
+    public void update(Frage f) {
+        em.merge(f);
+    }
+   
+    
+    public void delete(int FID) {
+        em.getTransaction().begin();
+        Frage f = em.getReference(Frage.class, FID);
+        em.remove(f);
+        em.getTransaction().commit();
+    }
+    
+    public List<Frage> findFrageByQID(String qid) {
+        return em.createNamedQuery(Frage.QUERY_FINDFRAGENZUQID, Frage.class)
+                .setParameter("QID", qid).getResultList();
+    }
+    
+}
 ----
 
 The use of the "FrageEJB" is for example to find all questions connected to a qid. This is used to show the questions when you take a quiz. Also it is available to only find one question or all questions in form of a list.
@@ -150,7 +185,30 @@ The use of the "FrageEJB" is for example to find all questions connected to a qi
 .QuizEJB.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/QuizEJB.java[lines=16..]
+@Stateless
+public class QuizEJB {
+    @PersistenceContext(unitName = "Diplomarbeit")
+    private EntityManager em;
+    
+    public Quiz find(String QID) {
+        return em.find(Quiz.class, QID);
+    }
+    
+    public List<Quiz> findAll() {
+        return em.createNamedQuery(Quiz.QUERY_FINDALL, Quiz.class).getResultList();
+    }
+    
+    public void update(Quiz q) {
+        em.merge(q);
+    }
+    
+    public void delete(int QID) {
+        em.getTransaction().begin();
+        Quiz q = em.getReference(Quiz.class, QID);
+        em.remove(q);
+        em.getTransaction().commit();
+    }
+}
 ----
 
 The function of this EJB is to find all quizzes from the database and return them in a list to the website. Also you can find single quizzes with the methode "find", you can delete and update quizzes.
@@ -158,7 +216,30 @@ The function of this EJB is to find all quizzes from the database and return the
 .TraineeEJB.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/trainee/TraineeEJB.java[lines=16..]
+@Stateless
+public class TraineeEJB {
+    @PersistenceContext(unitName = "Diplomarbeit")
+    private EntityManager em;
+
+    public Trainee find(String MitID) {
+        return em.find(Trainee.class, MitID);
+    }
+    
+    public List<Trainee> findAll() {
+        return em.createNamedQuery(Trainee.QUERY_FINDALLTRAINEES, Trainee.class).getResultList();
+    }
+    
+    public void update(Trainee t) {
+        em.merge(t);
+    }
+    
+    public void delete(int MitID) {
+        em.getTransaction().begin();
+        Trainee t = em.getReference(Trainee.class, MitID);
+        em.remove(t);
+        em.getTransaction().commit();
+    }
+}
 ----
 
 The use of this class is to provide all the trainees deposited on the database to the associated web page. As in every other EJB there is an opportunity to find, update or delete a trainee.
@@ -166,7 +247,32 @@ The use of this class is to provide all the trainees deposited on the database t
 .AntwortmoeglichkeitenEJB.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/AntwortmoeglichkeitenEJB.java[lines=16..]
+@Stateless
+public class AntwortmoeglichkeitenEJB {
+    @PersistenceContext(unitName = "Diplomarbeit")
+    private EntityManager em;
+    
+    public Antwortmoeglichkeiten find(int AntwID) {
+        return em.find(Antwortmoeglichkeiten.class, AntwID);
+    }
+    
+    public void update(Antwortmoeglichkeiten antw) {
+        em.merge(antw);
+    }
+    
+    public void delete(int AntwID) {
+        em.getTransaction().begin();
+        Antwortmoeglichkeiten antw = em.getReference(Antwortmoeglichkeiten.class, AntwID);
+        em.remove(antw);
+        em.getTransaction().commit();
+    }
+    
+    public List<Antwortmoeglichkeiten> findAntwortenByFID(String fid) {
+        return em.createNamedQuery(Antwortmoeglichkeiten.QUERY_FINDANTWORTEN_BYFID, Antwortmoeglichkeiten.class)
+                .setParameter("FID", fid).getResultList();
+    }
+    
+}
 ----
 
 This EJB provides the page where you take the quiz with all the corresponding answers to the questions. This is done by the methode "findAntwortenByFID" which starts a query when invoked. This query is defined in the "Antwortmoeglichkeiten" entity.
@@ -174,7 +280,33 @@ This EJB provides the page where you take the quiz with all the corresponding an
 .QuizVoraussetzungEJB.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/QuizVoraussetzungEJB.java[lines=13..]
+@Stateless
+public class QuizVoraussetzungEJB {
+    @PersistenceContext(unitName = "Diplomarbeit")
+    private EntityManager em;
+    
+    public QuizVoraussetzung find(String QuizVoraussetzID) {
+        return em.find(QuizVoraussetzung.class, QuizVoraussetzID);
+    }
+    
+    
+    
+    public void update(QuizVoraussetzung QuizVoraussetzID) {
+        em.merge(QuizVoraussetzID);
+    }
+    
+    public void delete(String QuizVoraussetzID) {
+        em.getTransaction().begin();
+        QuizVoraussetzung quizvoraussetzung = em.getReference(QuizVoraussetzung.class, QuizVoraussetzID);
+        em.remove(quizvoraussetzung);
+        em.getTransaction().commit();
+    }
+    
+    public List<QuizVoraussetzung> findAllQuizVoraussetzzungen(String qid) {
+        return em.createNamedQuery(QuizVoraussetzung.QUERY_FINDALLVORAUSSETZUNGEN, QuizVoraussetzung.class)
+                .setParameter("QID", qid).getResultList();
+    }
+}
 ----
 
 The "QuizVoraussetzungsEJB" allocates all "QuizVoraussetzungen" with the "findAllQuizVoraussetzungen" methode. It is used in the "Voraussetzungs-Logic".
@@ -182,7 +314,26 @@ The "QuizVoraussetzungsEJB" allocates all "QuizVoraussetzungen" with the "findAl
 .VoraussetzungEJB.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/VoraussetzungEJB.java[lines=16..]
+@Stateless
+public class VoraussetzungEJB {
+    @PersistenceContext(unitName = "Diplomarbeit")
+    private EntityManager em;
+    
+    public Voraussetzung find(String VoraussetzID) {
+        return em.find(Voraussetzung.class, VoraussetzID);
+    }
+    
+    public void update(Voraussetzung v) {
+        em.merge(v);
+    }
+    
+    public void delete(int VoraussetzID) {
+        em.getTransaction().begin();
+        Voraussetzung v = em.getReference(Voraussetzung.class, VoraussetzID);
+        em.remove(v);
+        em.getTransaction().commit();
+    }
+}
 ----
 
 This EJB is used for the requirements logic. It contains a find methode where you can search for a requirement via a "VoraussetzID", which then returns a "Voraussetzung"-Entity.
@@ -190,7 +341,33 @@ This EJB is used for the requirements logic. It contains a find methode where yo
 .QuizbeantwortungEJB.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/QuizbeantwortungEJB.java[lines=13..]
+@Stateless
+public class QuizbeantwortungEJB {
+    @PersistenceContext(unitName = "Diplomarbeit")
+    private EntityManager em;
+    
+    public Quizbeantwortung find(String qbeid) {
+        return em.find(Quizbeantwortung.class, qbeid);
+    }
+    
+    
+    
+    public void update(Quizbeantwortung quizbeantw) {
+        em.merge(quizbeantw);
+    }
+    
+    public void delete(String qbeid) {
+        em.getTransaction().begin();
+        Quizbeantwortung quizbeantw = em.getReference(Quizbeantwortung.class, qbeid);
+        em.remove(quizbeantw);
+        em.getTransaction().commit();
+    }
+    
+    public List<Quizbeantwortung> findByQIDAndMITID(String qid, String mitid) {
+        return em.createNamedQuery(Quizbeantwortung.QUERY_FINDBY_QIDANDMITID, Quizbeantwortung.class)
+                .setParameter("QID", qid).setParameter("MitID", mitid).getResultList();
+    }
+}
 ----
 
 The use of this bean is to provide information to all the quizzes a specific trainee has taken and when. This is done by a query, which is defined in the entity of this bean. It is required in the requirement logic.
