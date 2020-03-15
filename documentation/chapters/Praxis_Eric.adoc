@@ -31,17 +31,13 @@ image::../img/Architektur.png[]
 * The business logic is made in backing beans, which also control the navigation between pages.
 * Facelets describes the language in which JSF files are written (XHTML). Every page has certain components which will be displayed by the browser with the help of renderers.
 
-
-
-
-
 _(vgl. Goncalves A. (2013). Beginning Java EE 7. Apress.)_
 
 
 ==== HTML
 Hypertext Markup Language (HTML) is the common used language for building web pages. A HTML page is a text document (with a .html or .htm extension) used by browsers to present text and graphics. A web page is made of content, tags to change some aspects of the content, and external objects such as images, videos, JavaScript, or CSS files.
 
-.Sample code for a HTML page
+.Sample HTML code
 [source, html]
 ----
 <html>
@@ -73,7 +69,7 @@ Cascading Style Sheets (CSS) is a styling language used to describe the presenta
 To embedd a .css file in your html or xhtml page, use the <link> tag.
 (e.g. <link rel="stylesheet" type="text/css" ?
 
-.Your css file could look like this:
+.Sample CSS code
 [source,css]
 ----
 p {
@@ -222,7 +218,7 @@ image::../img/emblemtafel.png[]
 === Java classes
 Java Classes contain business logic that are need for the application. For example, if you want to display data on a page, you have to fetch data. This is done with Java files. To be more specific, Java classes which communicate with pages are called _Backing Beans_.  
 
-==== Trainer Classes
+Backing Beans are identified by their @Named annotations. Furthermore, every bean has to have a scope annotated. An example for this is the TrainerController class I programmed.
 
 .TrainerController.java
 [source,java]
@@ -235,7 +231,7 @@ public class TrainerController implements Serializable {
      
     private Trainer selectedTrainer;
      
-    @Inject
+    @Inject <1>
     private TrainerService service;
      
     @PostConstruct
@@ -247,265 +243,38 @@ public class TrainerController implements Serializable {
 }
 
 ----
+<1> Here, the TrainerService class is injected via the Jave EE Dependy Injection System. This way, we can use everything from the injected Class, without the need of calling a contructor. The TrainerServe generates a list of trainers to be displayed by the trainers page.
 
-The TrainerController-Class is used to diplay all the trainers on the trainers.xhtml page.
+The TrainerController class is used to diplay all the trainers on the trainers.xhtml page. The list of trainees is used in the <p:carousel> tag. 
 
-.TrainerService.java
-[source,java]
-----
-@Named
-@ApplicationScoped
-public class TrainerService {
-     
-    private final static String[] roles; 
-    private final static String[] branches;
-    private final static String[] names;
-     
-    static {
-        roles = new String[4];
-        roles[0] = "Abteilungsleiter";
-        roles[1] = "Gruppenleiter";
-        roles[2] = "Projektleiter";
-        roles[3] = "Projektmitglied";
-         
-        branches = new String[3];
-        branches[0] = "Development";
-        branches[1] = "Architecture";
-        branches[2] = "Design";
-        
-        names = new String[10];
-        names[0] = "Max";
-        names[1] = "Peter";
-        names[2] = "Tim";
-        names[3] = "Tom";
-        names[4] = "Alex";
-        names[5] = "Josef";
-        names[6] = "Tobias";
-        names[7] = "Benji";
-        names[8] = "Michael";
-        names[9] = "Martin";
-      
-    }
-     
-    public List<Trainer> createTrainers(int size) {
-        List<Trainer> list = new ArrayList<>();
-        for(int i = 0 ; i < size ; i++) {
-            list.add(new Trainer(getRandomName(), getRandomBranch(), getRandomRole()));
-        }
-        return list;
-    }
-     
-    //Getters
-}
-----
 
-The TrainerService class is used to create dummy data, that can be displayed on the trainers page.
+Another class I developed is the TraineeController. This class is used to display all the trainees on the emblemboard. It looks quite similar to the TrainerController. The only difference is that the data is created by the TraineeEJB class.
 
-==== Trainee Classes
-
-.TraineeController.java
-[source,java]
-----
-@Named
-@ViewScoped
-public class TraineeController implements Serializable {
-    private List<Trainee> trainees;
-    private Trainee selectedTrainee;
-    
-    @Inject
-    private TraineeEJB traineebean;
-    
-
-    public List<Trainee> getTraineesByID(String mitid) {
-        List<Trainee> list = new ArrayList<>(1);
-        Trainee trainee = traineebean.find(mitid);
-        list.add(trainee);
-        return list;
-    }
-    
-    //Getters & Setters
-}
-
-----
-The TraineeController-Class is used to display all trainees on the leaderboard-page.
+The last class I programmed, is the biggest one. It is called QuizController.java and it handles all of the interactions regarding the quizzes. This means it is responsible for forwarding the trainee from the quizzes page to the takquiz page, and from the takequiz page to the results page. Furthermore, it evaluates if a trainee meets all the requirements to take a quiz and it evaluates the results of a taken quiz.
 
 ==== Quiz Classes
 
 .QuizController
 [source,java]
 ----
-@Named
-@SessionScoped
-public class QuizController implements Serializable {
-     
-    private List<Quiz> quizzes;
-    private List<Results> results;
-    private int score;
-    private Trainee trainee;
-    private int ricounter;
-    private String emblem = "javapro.png";
-    private List<FrageModell> fragemodell;
-    private String qid;
-    
-    @Inject 
-    private ModellCreator creator;
-    @Inject
-    private TraineeEJB traineebean;
-    @Inject
-    private FrageEJB fragebean;
-    @Inject
-    private QuizEJB quizbean; <1>
-    @Inject
-    private QuizbeantwortungEJB quizbeantw;
-    @Inject
-    private QuizVoraussetzungEJB quizvoraussetzung;
-    @Inject
-    private VoraussetzungEJB voraussetzungejb;
-
-    @PostConstruct <2>
-    public void init() {
-        fragemodell = creator.createModell(qid);
-        results = new ArrayList<>();
-        ricounter = 0;
-    }
-    
-    public String checkAnswersSingleChoice() {
-        FacesContext fc = FacesContext.getCurrentInstance();
-        Map<String,String> params = fc.getExternalContext().getRequestParameterMap();
-        String varqid = params.get("qid");
-        this.qid = varqid;
-        evaluateScoreRadio();
-        return "result.xhtml";
-    }
-    
-    public String checkAnswersMultipleChoice() {
-        FacesContext fc = FacesContext.getCurrentInstance();
-        Map<String,String> params = fc.getExternalContext().getRequestParameterMap();
-        String varqid = params.get("qid");
-        this.qid = varqid;
-        evaluateScoreMultiple();
-        return "result.xhtml";
-    }
-    
-    public void evaluateScoreMultiple() { <3>
-        List<Integer> falsche = new ArrayList<>();
-        int richtige=0;  
-        for(int i=0; i<fragemodell.size(); i++ ) {
-            List<Integer> indexrichtig = umwandler(fragemodell.get(i).indexrichtig);
-            for(int z=0; z<4; z++) {
-                if(indexrichtig.get(z) == 1 && !fragemodell.get(i).buttons[z] || indexrichtig.get(z) == 0 && fragemodell.get(i).buttons[z]) {
-                    falsche.add(i);
-                    z=999;
-                } else {
-                    richtige++;
-                }
-            }
-            if(richtige==4) {
-                score+=10;
-                ricounter++;
-                falsche.add(9999);
-            }
-            richtige = 0;
-        } 
-        checkResults(falsche); 
-    } 
-    
-    public void evaluateScoreRadio() { <4>
-        List<Integer> falsche = new ArrayList<>();
-        for(int i=0; i<fragemodell.size(); i++) {
-            if(fragemodell.get(i).selectedAnswer.equals(fragemodell.get(i).antworten.get(fragemodell.get(i).indexrichtig))) {
-                score+=10;
-                ricounter++;
-                falsche.add(9999);
-            } else {
-                falsche.add(i);
-            }
-        }
-        checkResults(falsche); 
-    }
-    
-    public String quizUebergabe(String qid) {
-        this.qid = qid;
-        fragemodell = creator.createModell(qid);
-        ricounter = 0;
-        score=0;
-        if(quizbean.find(qid).getMultiplechoice()) {
-            return "takeQuizMultipleChoice.xhtml";
-        } else {
-            return "takequiz.xhtml"; 
-        }
-    }
-    
-    public List<Integer> umwandler(int indexrichtig) {
-        List<Integer> liste = new ArrayList<>();
-        for(int i=0; i<4; i++)
-            if(indexrichtig==i) {
-                liste.add(1);
-            } else {
-                liste.add(0);
-            }
-        return liste;
-    }
-    public int makeListToIndexRichtig(List<Antwortmoeglichkeiten> antworten) { //Used here?
-        for (int i = 0; i < 4; i++) {
-            if(antworten.get(i).isRichtigeAntwort()) {
-                return i;
-            }
-        }  
-        return 0;
-    }
-    
-    public void checkResults(List<Integer> falsche) {
-        results = new ArrayList<>();
-        for(int i=0; i<fragemodell.size(); i++) {
-            List<Integer> indexrichtig = umwandler(fragemodell.get(i).indexrichtig);
-            if(falsche.get(i) == i) {
-                results.add(new Results(fragemodell.get(i).frage, fragemodell.get(i).antworten, indexrichtig, true));
-            } else {
-                results.add(new Results(fragemodell.get(i).frage, fragemodell.get(i).antworten, indexrichtig, false));
-            }
-        }
-     trainee = traineebean.find("1");
-     trainee.setProgress(trainee.getProgress()+score);
-     traineebean.update(trainee);
-     List<Quizbeantwortung> list =  quizbeantw.findByQIDAndMITID(qid, "1");
-     list.get(0).setErreichtePunkte(score);
-     if(score > fragemodell.size()*10/2) {
-        list.get(0).setIstbestanden(true);
-     }
-     quizbeantw.update(list.get(0));
-    }
-    
-    public Boolean isTakeable(String qid, String mitid) {
-        List<QuizVoraussetzung> quizvor = quizvoraussetzung.findAllQuizVoraussetzzungen(qid);
-        if(quizvor.isEmpty()) {
-            return TRUE;
-        }
-        Voraussetzung vor = voraussetzungejb.find(quizvor.get(0).getQuizVorraussetzID());
-        String id = vor.getQuiz().getQID();
-        List<Quizbeantwortung> list = quizbeantw.findByQIDAndMITID(id, mitid);
-        if(list.get(0).isIstbestanden()) {
-            return TRUE;
-        }
-        
-        return FALSE;
-    }
-
-    //Getters & Setters
-}
+include::../game-trainee-web/src/main/java/org/game/trainee/quiz/QuizController.java[tag=multiple]
 ----
-<1> Here, the QuizEJB is injected via the Jave EE Dependy Injection System. This way, we can use everything from the injected Class, without the need of calling a contructor.
-<2> The annotation _PostContruct_ functions as a note to the container, that this method must be run, before the construction of the Class.
-<3> This method is used to evaluate the results of a MultipleChoice-Quiz. Each button is bound to a boolean-wert of the buttons[]. Every Question is checked, if every button matches the right answers. The user only gets points, if he answers the question correctly. 
-<4> Here, the singlechoice-quizzes get evaluated. This is much easier, because the radiobuttons function differently than the normal buttons. Every set of radiobuttons is bound to one value (selectedAnswer). We only need to check if the selected Answer matches the correct Answer. 
-<5>
+This method is used to evaluate the results of a MultipleChoice-Quiz. Each button is bound to a boolean-wert of the buttons[]. Every Question is checked, if every button matches the right answers. The user only gets points, if he answers the question correctly.
+
+.QuizController
+[source, java]
+----
+include::../game-trainee-web/src/main/java/org/game/trainee/quiz/QuizController.java[tag=radio]
+----
+Here, the singlechoice-quizzes get evaluated. This is much easier, because the radiobuttons function differently than the normal buttons. Every set of radiobuttons is bound to one value (selectedAnswer). We only need to check if the selected Answer matches the correct Answer. 
+
+.QuizController
+[source, java]
+----
+include::../game-trainee-web/src/main/java/org/game/trainee/quiz/QuizController.java[tag=checkResults]
+----
 In _checkResults_, a _Results-List_ i s generated. This list is used to diplay the results on the results.xhtml page.
 
 The QuizController is used to handle everything surrounding the action of taking a quiz. It is responsible for displaying the content on the quizzes-, takequiz- and results-page. It will forward the user from the quizzes page to the takequizpage, where he/she can take the quiz. By clicking on th Submit button, the user is forwarded to the results-site, where their results are shown. 
-
-=== Summary/Conclusion
-"was ghört hir hin?"
-
-
 
 

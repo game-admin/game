@@ -110,6 +110,7 @@ In 1984 David Kolb took a completely different approach to classifying learning 
 (orthogonal -> two straight lines are called orthogonal if they enclose a 90 degree angle)
 The following figure shows the dimensions:
 
+.Learning styles according to Kolb
 image::../img/dimensions.png[Learning styles according to Kolb]
 
 Quelle (https://selfdirectedlearning.webnode.es/learning-styles-by-kolb/; letzter Zugriff 28.01.2020)
