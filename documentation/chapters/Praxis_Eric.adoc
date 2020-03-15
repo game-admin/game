@@ -116,7 +116,18 @@ The menubar is created by usind the <p:tabMenu> tag of the Primefaces library. I
 .menubar.xhtml
 [source,html]
 ----
-include::../game-trainee-web/src/main/webapp/faces/menubar.xhtml[tag=menubar]
+<p:tabMenu style="width:100%">
+    <p:menuitem value="Home" outcome="index.xhtml" style="width:5em" icon="fa fa-home">
+    </p:menuitem>
+    <p:menuitem value="Courses" outcome="courses.xhtml" style="width:7em" icon="fa fa-book">
+    </p:menuitem>
+    <p:menuitem value="Quizzes" outcome="quizzes.xhtml" style="width:7em" icon="fa fa-question">
+    </p:menuitem>
+    <p:menuitem value="Trainers" outcome="trainers.xhtml" style="width:6em" icon="fa fa-users">
+    </p:menuitem>
+    <p:menuitem value="Emblemtafel" outcome="leaderboard.xhtml" style="width:8em" icon="fa fa-eye">
+    </p:menuitem>
+</p:tabMenu>
 ----
 
 The "Logout" button on the far left is done with the <p:splitButton> tag. It is placed in the menubar with CSS.
@@ -124,7 +135,12 @@ The "Logout" button on the far left is done with the <p:splitButton> tag. It is 
 .menubar.xhtml
 [source, html]
 ----
-include::../game-trainee-web/src/main/webapp/faces/menubar.xhtml[tag=splitButton]
+<p:splitButton id="basic" value="Account" action="index.html">
+    <p:menuitem value="Quizzes" action="quizzes.xhtml"/>
+    <p:menuitem value="Courses" action="courses.xhtml"/>
+    <p:separator/>
+    <p:menuitem value="Logout" url="http://www.google.com"/>
+</p:splitButton>
 ----
 
 I had to separate the menubar from the mainlyout, because of interferences with the formulars.
@@ -149,7 +165,22 @@ The Courses-page should display a list of courses the trainee can go through. Th
 .courses.xhtml
 [source,html]
 ----
-include::../game-trainee-web/src/main/webapp/faces/courses.xhtml[tag=dataTable]   
+<p:dataTable var="kurs" value="#{kursController.kurse}">
+            <p:column headerText="Titel">
+                <h:outputText value="#{kurs.titel}"></h:outputText>
+            </p:column>
+            <p:column headerText="Beschreibung">
+                <h:outputText value="#{kurs.beschreibung}"></h:outputText>
+            </p:column>
+            <p:column>
+                <h:form>
+                    <!--<p:commandButton action="{kursController.takeKurs(kurs.kursID)}" value="Take Course!"  >       
+                    </p:commandButton>     -->
+                    <!--<h:commandLink action="{kursController.kursbean.find(kurs.kursID).getLink()}" value="Take Course!"></h:commandLink>-->
+                    <h:commandLink action="https://www.tutorialspoint.com/java/index.htm" value="Take Course!"></h:commandLink>
+                </h:form>
+            </p:column>
+        </p:dataTable>  
 ----
 The Primefaces tag <p:dataTable> takes a list and knows how to display its content throught the columns. It is the equivalent to the <table> tag of html, but with some extra functions and style modifications. Here, I put in a list of courses. Every course in the list has a titel, description and a link which is displayed in separated columns.
 
@@ -166,7 +197,20 @@ The quiz pages include a interface, where every takeable quiz is displayed, two 
 .quizzes.xhtml
 [source,html]
 ----
-include::../game-trainee-web/src/main/webapp/faces/quizzes.xhtml[tag=dataTable]
+<p:dataTable var="quiz" value="#{quizController.quizzes}">
+    <p:column headerText="Titel" rendered="#{quizController.isTakeable(quiz.QID, &quot;1&quot;)}">
+        <h:outputText value="#{quiz.titel}"></h:outputText>
+    </p:column>
+    <p:column headerText="Beschreibung" rendered="#{quizController.isTakeable(quiz.QID, &quot;1&quot;)}">
+        <h:outputText value="#{quiz.beschreibung}"></h:outputText>
+    </p:column>
+    <p:column rendered="#{quizController.isTakeable(quiz.QID, &quot;1&quot;)}">
+        <h:form>
+            <h:commandButton action="#{quizController.quizUebergabe(quiz.QID)}" value="Take Quiz!" >       
+            </h:commandButton>                                  
+        </h:form>
+    </p:column>
+</p:dataTable>
 ----
 Here, <p:dataTable> is used again, this time to show all available quizzes. It gets a list of quizzes and displays a quiz whether or not it is takeable. This is evaluated in the isTakeable-method in the QuizController Bean.
 
@@ -183,7 +227,21 @@ By clicking on the <p:commandButton>, the user can take the quiz.
 .takequiz.xhtml
 [source,html]
 ----
-include::../game-trainee-web/src/main/webapp/faces/takequiz.xhtml[tag=repeat]
+<ui:repeat var="frage" value="#{quizController.fragemodell}">
+    <div class="question">
+    <h:outputLabel for="radio" value="#{frage.frage}"></h:outputLabel>
+    <div class="answer">
+        <p:selectOneRadio id="radio" value="#{frage.selectedAnswer}" layout="grid" required="true" unselectable="true" columns="1">
+            <f:selectItem itemValue="#{frage.antworten.get(0)}" itemLabel="#{frage.antworten.get(0)}"></f:selectItem>
+            <f:selectItem itemValue="#{frage.antworten.get(1)}" itemLabel="#{frage.antworten.get(1)}"></f:selectItem>
+            <f:selectItem itemValue="#{frage.antworten.get(2)}" itemLabel="#{frage.antworten.get(2)}"></f:selectItem>
+            <f:selectItem itemValue="#{frage.antworten.get(3)}" itemLabel="#{frage.antworten.get(3)}"></f:selectItem>
+        </p:selectOneRadio>
+        <br/>
+    </div>
+    </div>    
+    <br/>
+</ui:repeat>
 ----
 This is the page for taking singlechoice-quizzes. The questions are repeatadly displayed by the <ui:repeat> tag. This tag runs through a given list, and displays the wanted data. The answers are displayed with the <p:selectOneRadio>, which renderes a set of buttons based on the data you set with <f:selectItem>.
 
@@ -206,7 +264,19 @@ The Trainers page should display all the trainers associated with the GAME platf
 .trainers.xhtml
 [source,html]
 ----
-include::../game-trainee-web/src/main/webapp/faces/trainers.xhtml[tag=trainer]
+<p:carousel value="#{trainerController.trainers}" headerText="Trainers" var="trainer" itemStyle="text-align:center" responsive="true">
+    <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+        <f:facet name="header">
+            <p:graphicImage library="img" name="trainer.jpg"/> 
+        </f:facet>
+        <h:outputText value="Name:"  />
+        <h:outputText value="#{trainer.name}" />
+        <h:outputText value="Rolle:" />
+        <h:outputText value="#{trainer.role}" />
+        <h:outputText value="Abteilung:" />
+        <h:outputText value="#{trainer.branch}" />
+    </p:panelGrid>    
+</p:carousel>
 ----
 Here I used a primefaces tag called <p:carousel>. This tag is used to create a carousel. The <p:panelGrid> tag is used to display data in a grid. The <p:graphicImage> is just like the JSF tag <h:graphicImage>. <h:outputText> is used to display text, with the function to call a Backing Bean. For easier explanation here is a picture:
 
@@ -218,7 +288,24 @@ The emblemboard page is used to diplay all the trainees with their names, nickna
 .leaderboard.xhtml
 [source,html]
 ----
-include::../game-trainee-web/src/main/webapp/faces/leaderboard.xhtml[tag=dataTable]
+<p:dataTable var="trainee" value="#{traineeController.trainees}">
+            <p:column headerText="Name">
+                <h:outputText value="#{trainee.vorname}" />
+                <h:outputText value="#{trainee.nachname}" />
+            </p:column>
+            
+            <p:column headerText="Nickname">
+                <h:outputText value="#{trainee.nickname}" />
+            </p:column>
+            
+            <p:column headerText="Abteilung">
+                <h:outputText value="#{trainee.abteilung}" />
+            </p:column>
+            
+            <p:column headerText="Embleme">
+                <h:graphicImage value="data:image/png;base64,#{trainee.embleme}"></h:graphicImage>
+            </p:column>
+</p:dataTable>
 ----
 
 Here, the <p:dataTable> tag is used once again. This time it display all the trainees with their emblems for the other trainees to see. Users can compare each other and are able to check out how the other users are doing.
@@ -267,21 +354,79 @@ The last class I programmed, is the biggest one. It is called QuizController.jav
 .QuizController
 [source,java]
 ----
-include::../game-trainee-web/src/main/java/org/game/trainee/quiz/QuizController.java[tag=multiple]
+ public void evaluateScoreMultiple() {
+        List<Integer> falsche = new ArrayList<>();
+        int richtige=0;
+        for(int i=0; i<fragemodell.size(); i++ ) {
+            List<Integer> indexrichtig = fragemodell.get(i).indexrichtig;
+            for(int z=0; z<4; z++) {
+                if(indexrichtig.get(z) == 1 && !fragemodell.get(i).buttons[z] || indexrichtig.get(z) == 0 && fragemodell.get(i).buttons[z]) {
+                    falsche.add(i);
+                    z=999;
+                } else {
+                    richtige++;
+                }
+            }
+            if(richtige==4) {
+                score+=10;
+                ricounter++;
+                falsche.add(9999);
+            }
+            richtige = 0;
+        }
+        checkResults(falsche);
+    }
 ----
 This method is used to evaluate the results of a MultipleChoice-Quiz. Each button is bound to a boolean-wert of the buttons[]. Every Question is checked, if every button matches the right answers. The user only gets points, if he answers the question correctly.
 
 .QuizController
 [source, java]
 ----
-include::../game-trainee-web/src/main/java/org/game/trainee/quiz/QuizController.java[tag=radio]
+public void evaluateScoreRadio() {
+        List<Integer> falsche = new ArrayList<>();
+        //fragemodell = creator.createModell(qid);
+        int indexri=0;
+        for(int i=0; i<fragemodell.size(); i++) {
+            for(int j=0; j<fragemodell.get(i).indexrichtig.size(); j++) {
+               if(fragemodell.get(i).indexrichtig.get(j) == 1)
+                   indexri = j;
+            }
+            if(fragemodell.get(i).selectedAnswer.equals(fragemodell.get(i).antworten.get(indexri))) {
+                score+=10;
+                ricounter++;
+                falsche.add(9999);
+            } else {
+                falsche.add(i);
+            }
+        }
+        checkResults(falsche);
+    }
 ----
 Here, the singlechoice-quizzes get evaluated. This is much easier, because the radiobuttons function differently than the normal buttons. Every set of radiobuttons is bound to one value (selectedAnswer). We only need to check if the selected Answer matches the correct Answer. 
 
 .QuizController
 [source, java]
 ----
-include::../game-trainee-web/src/main/java/org/game/trainee/quiz/QuizController.java[tag=checkResults]
+public void checkResults(List<Integer> falsche) {
+        results = new ArrayList<>();
+        for(int i=0; i<fragemodell.size(); i++) {
+            List<Integer> indexrichtig = fragemodell.get(i).indexrichtig;
+            if(falsche.get(i) == i) {
+                results.add(new Results(fragemodell.get(i).frage, fragemodell.get(i).antworten, indexrichtig, true));
+            } else {
+                results.add(new Results(fragemodell.get(i).frage, fragemodell.get(i).antworten, indexrichtig, false));
+            }
+        }
+     trainee = traineebean.find("1");
+     trainee.setProgress(trainee.getProgress()+score);
+     traineebean.update(trainee);
+     List<Quizbeantwortung> list =  quizbeantw.findByQIDAndMITID(qid, "1");
+     list.get(0).setErreichtePunkte(score);
+     if(score > fragemodell.size()*10/2) {
+        list.get(0).setIstbestanden(true);
+     }
+     quizbeantw.update(list.get(0));
+    }
 ----
 In _checkResults_, a _Results-List_ i s generated. This list is used to diplay the results on the results.xhtml page.
 
