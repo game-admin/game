@@ -10,7 +10,7 @@ include::../TimetableEric.csv[]
 <<<<
 === Jan Binder
 
-[format=csv, separator=;]
+[format=csv,separator=;]
 |===
-include::./TimetableJan.csv[]
+include::../TimetableJan.csv[]
 |===
