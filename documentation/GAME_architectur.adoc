@@ -70,3 +70,11 @@ include::chapters/Theorie_Jan.adoc[]
 <<<<
 //Praxis Jan
 include::chapters/Praxis_Jan.adoc[]
+
+
+//Timetable Jan
+<<<<
+[format=csv, separator=;]
+|===
+include::./TimetableJan.csv[]
+|===

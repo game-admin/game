@@ -4,13 +4,9 @@
 
 === Begin
 
-Zu aller erst wurden die allgemeinen Grundlagen, wie die Technologie, die verwendet wird, und das Design festgelegt. Auch die Datenbank, in der die entsprechenden Tabellen und Datensätze stehen soll, wurde vereinbart.
-
 First of all the basics, like the technology we are using and the design are set. The database, in which all the tables and data sets are, is also appointed.
 
 === Grundlagen
-
-Man braucht, um eine Datenbank und eine Datenbankverbindung zu erzeugen, ein gewisses Vorwissen. Hier werden SQL, JPA und Java von Nöten sein. Also wie das Programm mit der Datenbank kommuniziert und wie sogenannte Queries erstellt werden.
 
 You need some foreknowledgement to build a database and a database connectivity. Knowlegde about SQL, JPA and Java is required. You need these languages to create queriesor to understand how the program communicates with the database.
 
@@ -129,15 +125,21 @@ Every question has 4 answers this means that there is a Many-To-One relationship
 
 ==== EJBs
 
-EJBs are components that summarize the business logic and take care of transactions and security. It is basically a connection to the database. 
+After knowing how to connect the tables with each other, the next step was to create so called EJBs for every table we needed one for.
+
+EJBs are components that summarize the business logic and take care of transactions and security. It is basically a connection to the database.
+
+They must contain an annotation called "Stateless", this means that after a methode is called it is terminated. This is the usual way to annotate a EJB.
+
+Every EJB has a methode to find exactly one entity, persist/merge an entity or delete one entitiy from the database.
 
 .KursEJB.java
 [source, java]
 ----
-include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursEJB.java[lines=16..]
+include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/KursEJB.java[lines=41..]
 ----
 
-The main use of the EJB is to provide the courses page with all the courses within the database. This is done with the "findAll" methode. It is used on the courses page where all courses available are shown.
+The main use of this EJB is to provide the courses page with all the courses within the database. This is done with the "findAll" methode. It is used on the courses page where all courses available are shown.
 
 .FrageEJB.java
 [source, java]
@@ -185,7 +187,7 @@ The "QuizVoraussetzungsEJB" allocates all "QuizVoraussetzungen" with the "findAl
 include::../../game-trainee-web/src/main/java/org/game/trainee/kurs/VoraussetzungEJB.java[lines=16..]
 ----
 
-This EJB is used for the requirements logic. It contains a find methode where you can search for a requirement via a "VoraussetzID", which then returns a "Voraussetzung"-Entity. Also it has a update and delete methode.
+This EJB is used for the requirements logic. It contains a find methode where you can search for a requirement via a "VoraussetzID", which then returns a "Voraussetzung"-Entity.
 
 .QuizbeantwortungEJB.java
 [source, java]
@@ -193,7 +195,7 @@ This EJB is used for the requirements logic. It contains a find methode where yo
 include::../../game-trainee-web/src/main/java/org/game/trainee/quiz/QuizbeantwortungEJB.java[lines=13..]
 ----
 
-The use of this bean is to provide information to all the quizzes a specific trainee has taken and when. This is done by a query, which is defined in the entity of this bean and it is required in the requirement logic.
+The use of this bean is to provide information to all the quizzes a specific trainee has taken and when. This is done by a query, which is defined in the entity of this bean. It is required in the requirement logic.
 
 ==== Persistence.xml
 
@@ -208,17 +210,16 @@ The "persistence.xml" is used to configure many things, such as the source of th
 In this chapter I will introduce all SQL-files used in this project in the order they are runned when the program is started.
 
 
-.dropSQL.sql
+Dropping all tables::
 
 This script has the function of dropping every table before creating so there are no errors. 
 
 
-.createSQL.sql
+Creating the tables::
 
 This file is used to create all the tables we are using. It produces every table with its associated columns.
 This file is also used to give all the tables its associated primary keys and foreign keys.
 
+Insert of data::
 
-.insertSQL.sql
-
-Last there is the "insertSQL" script, which is used to insert all the data we want into the belonging table. The order of the commands is very important because, if you insert "antwortmoeglichkeiten" at first there would be no existing matching "FNR" or with "frage " no fitting "QID". Here are only the first insert of every table because otherwise there would be too much code, which would make it too complex.
+Last there is the "insertSQL" script, which is used to insert all the data we want into the belonging table. The order of the commands is very important because, if you insert "antwortmoeglichkeiten" at first there would be no matching "FNR" or with "frage " no fitting "QID".
