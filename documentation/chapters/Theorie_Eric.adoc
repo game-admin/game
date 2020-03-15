@@ -1,4 +1,4 @@
-== Theoretische Aufgabenstellung: Eric Haneder
+== Theoretical task: Eric Haneder (Learning)
 
 === Learning
 
@@ -22,7 +22,7 @@ There are many people who have tried to classify different learning preferences 
 
 === Learning type classification according to Vester
 
-In the book "Denken, Lernen, Vergessen" (Vester, 1998), Frederick Vester defined four types of learning. However, his book was interpreted differently, so that different versions of his classification can be found. At least on the fact that there is an auditory, a visual and a haptic learning type, there is agreement. Though there are some people who think that the fourth learning type after Frederik Vester is the communicative learning type and others think that it is an intellectual learning type.
+In the book "Denken, Lernen, Vergessen"(Vester, 1998), Frederick Vester defined four types of learning. However, his book was interpreted differently, so that different versions of his classification can be found. At least on the fact that there is an auditory, a visual and a haptic learning type, there is agreement. Though there are some people who think that the fourth learning type after Frederik Vester is the communicative learning type and others think that it is an intellectual learning type.
 
 NOTE: One also comes across terms like "cognitive learning type" ≙ "intellectual learning type", or the "kinesthetic learning type" ≙ "haptic learning type.
 
@@ -118,7 +118,7 @@ The following figure shows the dimensions:
 .Learning styles according to Kolb
 image::../img/dimensions.png[Learning styles according to Kolb]
 
-Quelle (https://selfdirectedlearning.webnode.es/learning-styles-by-kolb/; letzter Zugriff 28.01.2020)
+Source: (https://selfdirectedlearning.webnode.es/learning-styles-by-kolb/; letzter Zugriff 28.01.2020)
 
 Kolb presents four learning styles defined by the four quadrants that result from these orthogonal dimensions.
 
@@ -134,7 +134,7 @@ Kolb's approach is by far the most frequently cited of the approaches for record
 
 _(vgl. "Lernorientierungen, Lernstile, Lerntypen und kognitive Stile", Ulrike Creß, in "Handbuch Lernstrategien" von Heinz Mandl & Helmut Felix Friedrich, S.371-372)_
 
-=== Selbstreguliertes Lernen
+=== Self-regulated learning
 
 The concept of self-regulated learning is neither a precisely scientifically defined term nor a uniformly used term in everyday language. Furthermore, the terms self-regulated learning, self-directed learning, learner control can hardly be defined clearly.
 
@@ -142,8 +142,6 @@ Niegemann and Hofer (1997) or Büser (2003) define that in self-directed learnin
 
 _(vgl. Selbstreguliertes Lernen in der dualen Ausbildung - Lerntypen und Bedingungen, Johannes Rosendahl, 2010)_
 
-Beim selbstregulierten Lernen spielt die eigene Motivation eine große Rolle. Hierbei kann die Bildung von Zielintentionen(Lernzielen) helfen. (Die Wahl des Lernziels muss aber nicht zwingend selbstbestimmt erfolgen.)
-In diesen Zielintentionen kommen persönliche Standards und Referenzleistungen zum Ausdruck.
 In self-regulated learning, the own motivation plays an important role. Here the formation of learning goals can help.
 In these learning goals personal standards and reference achievements are expressed.
 

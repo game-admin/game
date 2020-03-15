@@ -1,6 +1,4 @@
-== Praktische Aufgabenstellung: Eric Haneder
-
-== Front End: Design und Graphic User Interface
+== Practical task: Eric Haneder (Front end)
 
 === Beginning
 To start with designing user interfaces (= front end), a design must be agreed with the client which suits the client an is realizable for us. The front end is the most important part for the user, because it includes everything the user can see and interact with. I discussed this topic with the client and we came to a conclusion
@@ -13,7 +11,6 @@ image::../img/UserInterfaces.png[]
 After the design was agreed upon, the programming of the interfaces could begin.
 
 === Fundamentals
-Um eine Website zu programmieren, benötigt man ein Menge an umfangreichen Wissen. Man muss html, javascript und css beherrschen. Darüber hinaus sollte man auch wissen, wie aus dem Code eine fertige Seite erzeugt wird, und wie Requests vom User ausgewertet und darauf geantwortet werden kann.
 To program a website, you need a lot of extensive knowledge. You have to know HTML, Javascript and CSS. In addition, you should also know how a finished page is generated from the code you programmed and how requests from the user can be evaluated and responded to.
 
 ==== JSF

@@ -1,5 +1,5 @@
 == Division of Tasks
 
-Eric Haneder ist für die Funktion und Gestaltung der Website zuständig. Er ist dafür verantwortlich, dass die Homepage übersichtlich und leicht zu bedienen ist. Er programmiert die Website auf Basis von _Java Enterprise Edition, _PrimeFaces_ und _HTML_, wie von der Firma gewünscht.
+Eric Haneder is in charge of the functions and design of the website. He is responsible for ensuring that the homepage is clear and easy to use. He programs the website on the basis of _Java Enterprise Edition, _PrimeFaces_ and _HTML_, as requested by the company.
 
-Jan Binder ist zuständig für die Programmierung des Backends. Dies beinhaltet, dass die Verbindung zur Datenbank steht, die Datenbank die korrekten Daten beinhaltet und wie die Website mit der Datenbank kommunizieren kann. Er programmiert mit Hilfe von _JPA_ und _SQL_.
+Jan Binder is responsible for programming the backend. This includes that the connection to the database is established, the database contains the correct data and the way the website can communicate with the database. He programs with the help of _JPA_ and _SQL_.
