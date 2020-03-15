@@ -25,6 +25,7 @@
             <ui:repeat var="frage" value="#{quizController.fragemodell}">
                 <div class="question">
                     <h:outputLabel for="radio" value="#{frage.frage}"></h:outputLabel>
+                    <div class="answer">
                     <p:selectOneRadio id="radio" value="#{frage.selectedAnswer}" layout="grid" required="true" unselectable="true" columns="1">
                         <f:selectItem itemValue="#{frage.antworten.get(0)}" itemLabel="#{frage.antworten.get(0)}"></f:selectItem>
                         <f:selectItem itemValue="#{frage.antworten.get(1)}" itemLabel="#{frage.antworten.get(1)}"></f:selectItem>
@@ -32,6 +33,7 @@
                         <f:selectItem itemValue="#{frage.antworten.get(3)}" itemLabel="#{frage.antworten.get(3)}"></f:selectItem>
                     </p:selectOneRadio>
                     <br/>
+                    </div>
                 </div>    
                 <br/>
             </ui:repeat>
