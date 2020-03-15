@@ -131,7 +131,6 @@ The data is displayed via expression langugage. Here is an example:
 #{traineeController.getTraineesByID("1").get(0).nickname} 
 ----
 
-
 ==== Courses-page
 
 The Courses-page should display a list of courses the trainee can go through. These courses can be mandatory to complete Quizzes.
@@ -141,7 +140,7 @@ The Courses-page should display a list of courses the trainee can go through. Th
 ----
 include::../game-trainee-web/src/main/webapp/faces/courses.xhtml[tag=dataTable]   
 ----
-<1> The Primefaces tag <p:dataTable> takes a list and knows how to display its content throught the columns. It is the equivalent to the <table> tag of html, but with some extra functions and style modifications. Here, I put in a list of courses. Every course in the list has a titel, description and a link which is displayed in separated columns.
+The Primefaces tag <p:dataTable> takes a list and knows how to display its content throught the columns. It is the equivalent to the <table> tag of html, but with some extra functions and style modifications. Here, I put in a list of courses. Every course in the list has a titel, description and a link which is displayed in separated columns.
 
 The <p:commanButton> invokes the takeKurs-method when pressed. In this method, a link of the selected course is returned.
 The <h:commandLink> is linked to the URL of the course. By clicking on it, the user is redirected to the site of the course.
