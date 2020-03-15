@@ -1,7 +1,6 @@
 == Theoretische Aufgabenstellung: Eric Haneder
 
-== Lernen, Lerntypen, Lernstile, Lernpräferenzen und selbstreguliertes Lernen
-=== Lernen
+=== Learning
 
 Everyone has to learn, both actively and passively. Whether at school or in professional life, further education is part of the essence of man. The term "learning" usually means the acquisition of knowledge, the development of skills or the practice of motor processes. However, "learning" also refers to activities that are carried out with the aim of changing internal conditions.
 
@@ -12,10 +11,10 @@ Regardless of the theoretical approach to learning, it is true that learning is 
 
 Despite the large amount of signals that are constantly received by the sense organs from the environment and transmitted to the CNS, the number of connections between the peripheral nervous system and the CNS is relatively small. Most of the estimated 100 billion neurons (Goldstein 1997, S. 11) serve to process information (pattern recognition, linking), they receive their input from cortical neurons and deliver their output to other cortical neurons.
 
-Lernen beruht auf der Plastizität der Synapsen und Dendriten. Die Plastizizät umfasst u. a. Aktivierung oder Abbruch von Verbindungen zwischen Nervenzellen, Aufhebung hemmender Verbindungen, Erhöhungen der Transmitterausschüttung, Erhöhung der Reaktion auf dasselbe Ausmaß von Transmittersubstanz, Veränderungen der synaptischen Dichte sowie Verzweigung und Verdickung der Dendriten. Nicht ein, sondern mehrere dieser Vorgänge sind an den verschiedenen Formen des Lernens beteiligt.
+Learning is based on the plasticity of synapses and dendrites. Plasticity includes activation or breaking of connections between nerve cells, elimination of blocking connections, changes in synaptic density, and branching and thickening of dendrites. Not one but several of these processes are involved in the various forms of learning.
 
-Dendriten: wurzelartige Verästelungen, aus denen die impulübertragenden Zellen des CNS bestehen
-Synapsen: (S22)  
+_Dendrites_: root-like branches that make up the impulse-transmitting cells of the CNS
+ 
 
 _(vgl. Selbstreguliertes Lernen in der dualen Ausbildung - Lerntypen und Bedingungen, Johannes Rosendahl, 2010, S.22)_
 
@@ -60,7 +59,6 @@ The haptic learning type achieves the best learning succes if he cant feel the i
 ==== Cognitive/Intellectual learning type
 This learning type understands and saves information the best, by thinking about and critically examining the information. The perception channel not important for taking up learning content.
 
-
 _(vgl."https://smarter-learning.de/lerntypen/klassische-lerntypen-nach-vester/"; letzter Zugriff: 14.01.2020)_
 
 ==== Connections
@@ -100,13 +98,20 @@ _(vgl. "Lernorientierungen, Lernstile, Lerntypen und kognitive Stile", Ulrike Cr
 
 === Learning styles according to Pask 
 Around 1972, Pask and Scott identified two opposing learning strategies used in problem-solving tasks where people had to search for information independently.They described the consistend usage of these strategies as a learning style.
-The holistic strategy means that learners always keep the big picture in mind and only turn to detailed questions in a second step. If this strategy is applied consistently, Pask speaks of the learning style of comprehension learning. On the other hand, learners with a serial strategy work their way step by step through the learning material and primarily turn to individual questions. If this strategy is used consistently, Park speaks of operation learning. Both strategies can lead to the same success. In their extreme form, however, both have a negative effect on performance, which is why Pask assigns both learning styles to corresponding learning pathologies. _Globetrotting_ refers to the learning pathology of extreme comprehension learning, in which learners make inadmissible generalizations without the corresponding individual analysis. _Improvidence_ describes the extreme form of operation learning, in which people lose themselves in details without being able to connect them to a big picture. Since the differences between holistic and serial approaches affect not only learning behaviour but the entire way in which information is sought and processed, they are often interpreted as cognitive styles.
+
+The holistic strategy means that learners always keep the big picture in mind and only turn to detailed questions in a second step. If this strategy is applied consistently, Pask speaks of the learning style of comprehension learning. On the other hand, learners with a serial strategy work their way step by step through the learning material and primarily turn to individual questions. If this strategy is used consistently, Pask speaks of operation learning. Both strategies can lead to the same success. 
+
+In their extreme form, however, both have a negative effect on performance, which is why Pask assigns both learning styles to corresponding learning pathologies. _Globetrotting_ refers to the learning pathology of extreme comprehension learning, in which learners make inadmissible generalizations without the corresponding individual analysis. _Improvidence_ describes the extreme form of operation learning, in which people lose themselves in details without being able to connect them to a big picture. Since the differences between holistic and serial approaches affect not only learning behaviour but the entire way in which information is sought and processed, they are often interpreted as cognitive styles.
 
 _(vgl."Lernorientierungen, Lernstile, Lerntypen und kognitive Stile", Ulrike Creß, in "Handbuch Lernstrategien" von Heinz Mandl & Helmut Felix Friedrich, S.369)_
 
 
 === Learning styles according to Kolb
-In 1984 David Kolb took a completely different approach to classifying learning types. According to Kolb, the learning process is based on two orthogonal bipolar dimensions. The first dimension depicts how people perceive and collect information. Persons can perceive via the senses through practical experience or through abstract comprehension. The second dimension represents the way information is processed. It ranges from active trying to mental observation.
+In 1984 David Kolb took a completely different approach to classifying learning types. According to Kolb, the learning process is based on two orthogonal bipolar dimensions. 
+
+The first dimension depicts how people perceive and collect information. Persons can perceive via the senses through practical experience or through abstract comprehension. 
+
+The second dimension represents the way information is processed. It ranges from active trying to mental observation.
 (orthogonal -> two straight lines are called orthogonal if they enclose a 90 degree angle)
 The following figure shows the dimensions:
 
@@ -146,7 +151,6 @@ Based on this goal, actions are taken, their execution is monitored and their re
 The actual self-regulation includes the interacting sub-processes self-observation, evaluation processes and self-reaction (Bandura 1986, S. 337).
 During self-observation, the learner registers his performance in terms of various performance dimensions such as quality, originality, quantity and morality as well as correctness and accuracy. Based on this, he will have to take action, as mentioned above. Subsequent results are again observed and evaluated, thus creating a cyclical loop (Bandura 1989).
 
-(S. 20)
 The term self-regulation emphasizes that a person influences his or her own actions to a considerable extent (Weinert 1982). 
 However, this does not exclude the possibility that the trainer/teacher may carry out an occasional learning check (comparison of target and actual learning).
 Purely self-regulated action is theoretically possible, such as the creation of an artificial language and its practice through inner speech, but in professional reality there will usually be a greater degree of external control.
@@ -167,7 +171,11 @@ When a learning platform contains the use of some of these elements, it can be c
 
 
 === Conclusion
+Learning is an essential part of the human nature. The human race developed they way it did, because humanity kept learning and improving skills. "You never stop learning.", is an important figure of speech. In modern times learning is as important as ever, because the world changes rapidly. 
 
+What we created, was another tool for people to learn new things or check their existing knowledge. We did this in a very unique way. In a _gamificated_ way. Combinding elements of games with learning is proven to improve one's learning capabilitys. Even though, there are severy different learning types, and many more interpretation of such, our system is embracing many of them. For example, the visual learning type reads through the course and remembers the material better that way. The cognitive learning type learns better by taking the quizzes and creating connections in their head.
+
+I tried to include as many of the things I learned by researching my theorethical part of the diploma thesis, into the platform. I think, the members of the ARZ will have an easy learning experience with the website we created.
 
 
 
