@@ -2,4 +2,4 @@
 
 Eric Haneder ist für die Funktion und Gestaltung der Website zuständig. Er ist dafür verantwortlich, dass die Homepage übersichtlich und leicht zu bedienen ist. Er programmiert die Website auf Basis von _Java Enterprise Edition, _PrimeFaces_ und _HTML_, wie von der Firma gewünscht.
 
-Jan Binder ...
+Jan Binder ist zuständig für die Programmierung des Backends. Dies beinhaltet, dass die Verbindung zur Datenbank steht, die Datenbank die korrekten Daten beinhaltet und wie die Website mit der Datenbank kommunizieren kann. Er programmiert mit Hilfe von _JPA_ und _SQL_.
