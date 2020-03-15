@@ -1,0 +1,12 @@
+== Timetables
+
+=== Eric Haneder
+
+[format=csv,separator=;]
+|===
+include::../TimetableEric.csv[]
+|===
+
+
+
+=== Jan Binder
