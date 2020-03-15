@@ -26,6 +26,10 @@
 
 *Goncalves A.* (2013). Beginning Java EE 7. Apress.
 
+*Kaja Heitmann* (2012). Wissensmanagement in der Schulentwicklung Theoretische Analse und empirische Exploration aus systemischer Sicht, Springer VS.
+
+*Stary C., Maroscher M. & Stary E.* (2013). Wissensmanagement in der Praxis - Methoden  Werkzeuge Beispiele, Hanser.
+
 == Quellenverzeichnis
 
 
