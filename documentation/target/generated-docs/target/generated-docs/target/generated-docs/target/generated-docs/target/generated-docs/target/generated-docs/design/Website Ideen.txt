@@ -1,0 +1,29 @@
+Trainee Interface
+Navigation:		Home, Courses & Quizzes, Trainers (alternativ), Leaderboard, (Help)
+Account:	Inhalt: abgelegte Kurse, eigener Punktestand, Passwort ändern
+Main:		Inhalt: alle Kurse und Quizzes (nur die auswählbar auf seinem Level, sortiert nach Schwierigkeit)
+			empfohlene Kurse (alternativ)
+Impressum
+
+
+
+Trainer Interface
+Navigation	same+Trainers & Trainees
+Main:		Inhalt:	Kurse & Quizze + Mögl. zum Bearbeiten/Löschen
+
+
+
+Executive Interface
+Navigation:	same+Trainers&Trainees
+ansonsten alles wie bei Trainee
+
+
+
+
+
+
+
+
+Kurse & Quizzes:	Kurse sind theoretische Grundlagen in PDF-Dateien; Quizzes werden dazu verwendet 
+			um zu überprüfen ob der User es verstanden hat Quizzes erst wenn
+			Kurse abgeschlossn sind

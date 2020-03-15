@@ -1,57 +1,57 @@
-﻿Datum;Tätigkeit;Stunden;;;;
-15.06.2019;1ste Besprechung;2,00;;;;
-04.07.2019;Besprechung;3,00;;;;
-;Ausarbeitung der in der Besprechung besprochenen Aufgaben;6,00;;;;
-18.07.2019;Besprechung;2,00;;;;
-;Ausarbeitung der in der Besprechung besprochenen Aufgaben;7,00;;;;
-30.07.2019;Besprechung;2,00;;;;
-;Ausarbeitung der in der Besprechung besprochenen Aufgaben;7,00;;;;
-02.10.2019;C4 Modell fertigstellen;4,00;;;;
-23.10.2019;Kontrollieren auf korrekte Installation aller benötigten Programme;1,00;;;;
-24.10.2019;Besprechung;2,50;;;;
-30.10.2019;Erste Besprechung bezüglich Websiteerstellung;2,00;;;;
-02.11.2019;Website Design Prototyp erstellen (mit Hilfe von Wix);3,00;;;;
-10.11.2019;Website Design und erste Versuche dies zu programmieren;5,00;;;;
-21.11.2019;Besprechung;3,50;;;;
-04.12.2019;ER-Modell erstellen;3,00;;;;
-05.12.2019;Besprechung;2,50;;;;
-17.12.2019;ER-Modell normalisieren;3,00;;;;
-18.12.2019;Weiterarbeiten an der Darstellung des ER-Modells;3,00;;;;
-19.12.2019;Besprechung;3,00;;;;
-20.12.2019;ER-Modell in Asciidoc dargestellt;2,00;;;;
-21.12.2019;Gemeinsames Ausarbeiten der Aufgaben;7,00;;;;
-27.12.2019;Durchsuchen passender Kurse für JPA auf Udemy;2,00;;;;
-28.12.2019;Anschauen der ersten Lektionen des Kurses über JPA inkl Installation der benötigten Software für die Durchführung der Praxisbeispiele;2,00;;;;
-02.01.2020;Weiterschauen der Lektionen des Kurses über JPA;2,00;;;;
-06.01.2020;Weiterschauen der Lektionen des Kurses über JPA;2,00;;;;
-13.01.2020;"Kurse und Fragen ausarbeiten; ersten Entities erstellen";2,00;;;;
-14.01.2020;Kurse und Fragen ausarbeiten;2,00;;;;
-15.01.2020;Kurse und Fragen ausarbeiten;2,00;;;;
-19.01.2020;"Weiterschauen der Lektionen des Kurses über JPA; Kurse und Fragen ausarbeiten";2,00;;;;
-22.01.2020;Besprechung+Planung;4,00;;;;
-23.01.2020;Entities erstellt;3,00;;;;
-25.01.2020;Weiterschauen der Lektionen des Kurses über JPA;1,50;;;;
-26.01.2020;Weiterschauen der Lektionen des Kurses über JPA+Gemeinsames Ausarbeiten der geplanten Aufgaben;5,50;;;;
-02.02.2020;Erste Ansätze in Bezug auf EJBs;2,00;;;;
-03.02.2020;EJBs erweitert;2,00;;;;
-07.02.2020;Gemeinsames Ausarbeiten der Aufgaben;2,00;;;;
-11.02.2020;Besprechung;3,00;;;;
-15.02.2020;Tabellen in Datenbank erstellt und Testdatensätze eingefügt;3,00;;;;
-16.02.2020;Gemeinsames Ausarbeiten der Aufgaben;3,00;;;;
-22.02.2020;Dokumentation schreiben, Fehlerbehebung bei den SQL Dateien;8,00;;;;
-23.02.2020;Dokumentation schreiben, Fehlerbehebung bei den SQL Dateien;3,50;;;;
-25.02.2020;Dokumentation schreiben;2,50;;;;
-26.02.2020;Datenbankanbindungsfehler versuchen zu beheben;2,00;;;;
-27.02.2020;Besprechung und anschließend Datenbankanbindung verbessern;6,00;;;;
-29.02.2020;Theoretische Dokumentation updated;2,00;;;;
-01.03.2020;Fehler in der Datenbankabindung behoben, weiters Datenbankanbindung verbessern;4,00;;;;
-02.03.2020;ModellCreators modified;2,00;;;;
-05.03.2020;Besprechung;4,00;;;;
-06.03.2020;Voraussetzung, Frage, Quiz, Quizbeantwortung, TestQuizController, Traineecontroller modified;2,50;;;;
-07.03.2020;TraineeController error and Voraussetzungslogik fixed;5,00;;;;
-08.03.2020;Dokumentation weitergeschrieben;3,00;;;;
-09.03.2020;Dokumentation weitergeschrieben;3,00;;;;
-11.03.2020;Multiple Choice implementiert, Quiz und Fragen in database written;3,00;;;;
-12.03.2020;Besprechung;3,00;;;;
-14.03.2020;Dokumentation updaten;4,00;;;;
-15.03.2020;Dokumenation updaten;4,00;;;;
+﻿Datum;Tätigkeit;Stunden
+15.06.2019;1ste Besprechung;2,00
+04.07.2019;Besprechung;3,00
+;Ausarbeitung der in der Besprechung besprochenen Aufgaben;6,00
+18.07.2019;Besprechung;2,00
+;Ausarbeitung der in der Besprechung besprochenen Aufgaben;7,00
+30.07.2019;Besprechung;2,00
+;Ausarbeitung der in der Besprechung besprochenen Aufgaben;7,00
+02.10.2019;C4 Modell fertigstellen;4,00
+23.10.2019;Kontrollieren auf korrekte Installation aller benötigten Programme;1,00
+24.10.2019;Besprechung;2,50
+30.10.2019;Erste Besprechung bezüglich Websiteerstellung;2,00
+02.11.2019;Website Design Prototyp erstellen (mit Hilfe von Wix);3,00
+10.11.2019;Website Design und erste Versuche dies zu programmieren;5,00
+21.11.2019;Besprechung;3,50
+04.12.2019;ER-Modell erstellen;3,00
+05.12.2019;Besprechung;2,50
+17.12.2019;ER-Modell normalisieren;3,00
+18.12.2019;Weiterarbeiten an der Darstellung des ER-Modells;3,00
+19.12.2019;Besprechung;3,00
+20.12.2019;ER-Modell in Asciidoc dargestellt;2,00
+21.12.2019;Gemeinsames Ausarbeiten der Aufgaben;7,00
+27.12.2019;Durchsuchen passender Kurse für JPA auf Udemy;2,00
+28.12.2019;Anschauen der ersten Lektionen des Kurses über JPA inkl Installation der benötigten Software für die Durchführung der Praxisbeispiele;2,00
+02.01.2020;Weiterschauen der Lektionen des Kurses über JPA;2,00
+06.01.2020;Weiterschauen der Lektionen des Kurses über JPA;2,00
+13.01.2020;"Kurse und Fragen ausarbeiten; ersten Entities erstellen";2,00
+14.01.2020;Kurse und Fragen ausarbeiten;2,00
+15.01.2020;Kurse und Fragen ausarbeiten;2,00
+19.01.2020;"Weiterschauen der Lektionen des Kurses über JPA; Kurse und Fragen ausarbeiten";2,00
+22.01.2020;Besprechung+Planung;4,00
+23.01.2020;Entities erstellt;3,00
+25.01.2020;Weiterschauen der Lektionen des Kurses über JPA;1,50
+26.01.2020;Weiterschauen der Lektionen des Kurses über JPA+Gemeinsames Ausarbeiten der geplanten Aufgaben;5,50
+02.02.2020;Erste Ansätze in Bezug auf EJBs;2,00
+03.02.2020;EJBs erweitert;2,00
+07.02.2020;Gemeinsames Ausarbeiten der Aufgaben;2,00
+11.02.2020;Besprechung;3,00
+15.02.2020;Tabellen in Datenbank erstellt und Testdatensätze eingefügt;3,00
+16.02.2020;Gemeinsames Ausarbeiten der Aufgaben;3,00
+22.02.2020;Dokumentation schreiben, Fehlerbehebung bei den SQL Dateien;8,00
+23.02.2020;Dokumentation schreiben, Fehlerbehebung bei den SQL Dateien;3,50
+25.02.2020;Dokumentation schreiben;2,50
+26.02.2020;Datenbankanbindungsfehler versuchen zu beheben;2,00
+27.02.2020;Besprechung und anschließend Datenbankanbindung verbessern;6,00
+29.02.2020;Theoretische Dokumentation updated;2,00
+01.03.2020;Fehler in der Datenbankabindung behoben, weiters Datenbankanbindung verbessern;4,00
+02.03.2020;ModellCreators modified;2,00
+05.03.2020;Besprechung;4,00
+06.03.2020;Voraussetzung, Frage, Quiz, Quizbeantwortung, TestQuizController, Traineecontroller modified;2,50
+07.03.2020;TraineeController error and Voraussetzungslogik fixed;5,00
+08.03.2020;Dokumentation weitergeschrieben;3,00
+09.03.2020;Dokumentation weitergeschrieben;3,00
+11.03.2020;Multiple Choice implementiert, Quiz und Fragen in database written;3,00
+12.03.2020;Besprechung;3,00
+14.03.2020;Dokumentation updaten;4,00
+15.03.2020;Dokumenation updaten;4,00
