@@ -1,0 +1,75 @@
+﻿Date;Start time;Activity;Duration
+24.06.2019;15:00;Diplomarbeitsbesprechung ;2  h
+04.07.2019;14:00;Diplomarbeitsbesprechung;3  h
+06.07.2019;15:00;Introduction, Stakeholders documented;4  h
+10.07.2019;16:00;first chapters completed;3  h
+18.07.2019;10:00;Diplomarbeitsbesprechung;2  h
+20.07.2019;15:00;Documentation optimated to clients interest;3  h
+30.07.2019;10:00;Diplomarbeitsbesprechung ;2  h
+02.09.2019;14:00;started market research;5  h
+20.09.2019;16:00;continued market research;4  h
+26.09.2019;15:00;Diplomarbeitsbesprechung;2  h
+28.09.2019;15:30;System Scope and Context, ADRs ;5  h
+02.10.2019;15:00;C4-model created;4  h
+03.10.2019;22:00;completion of ongoing tasks;1  h
+10.10.2019;15:00;Diplomarbeitsbesprechung;2,5  h
+10.10.2019;18:30;discussion of the next steps;1  h
+22.10.2019;20:00;Design Decisions created;2  h
+02.11.2019;19:00;creating first design ideas for the site;3  h
+10.11.2019;19:00;completing the design diagrams;4  h
+21.11.2019;15:00;Diplomarbeitsbesprechung;2  h
+23.11.2019;18:00;realizing the design/structure;3  h
+01.12.2019;16:00;realizing the design/structure;6  h
+02.12.2019;17:00;creation of quiz classes/logic;1,5  h
+05.12.2019;15:00;Diplomarbeitsbesprechung;2,5  h
+16.12.2019;18:00;fixing bugs on the pages;1  h
+18.12.2019;19:30;first testquiz classes created and tested;3,5  h
+19.12.2019;19:00;Reading Java EE book;1  h
+21.12.2019;18:00;created Trainee classes, added new logic to takequiz;7  h
+22.12.2019;19:00;Reading Java EE book;2  h
+23.12.2019;18:00;Reading Java EE book;1,5  h
+26.12.2019;19:30;Reading Java EE book;1  h
+29.12.2019;19:00;Reading Java EE book;2  h
+01.01.2020;16:00;Reading Java EE book;2  h
+02.01.2020;19:00;Theorie writing: Lerntypen;3  h
+03.01.2020;17:00;Theorie/Praxis writing;4  h
+07.01.2020;16:00;new head & footer for the Uis, emblemboard created;3  h
+08.01.2020;18:00;Praxis written, emblemboard developed;3  h
+09.01.2020;18:00;"added a testpackage ""testquiz"" to test some quiz logic";4  h
+10.01.2020;20:00;Theorie writring;2  h
+11.01.2020;20:00;design developed, started the takequiz page;3  h
+12.01.2020;14:00;developed the takequiz page;3,5  h
+13.01.2020;18:00;bugfixes on result.xhtml;2  h
+14.01.2020;18:00;Documentation written, QuizController developed;3,5  h
+15.01.2020;18:00;Documentation written;3  h
+16.01.2020;19:00;Documentation written;1  h
+21.01.2020;16:00;Design further developed, changed quiz appearance;4  h
+22.01.2020;15:00;Diplomarbeitsbesprechung;4  h
+23.01.2020;15:00;Mainlyout further designed (header, footer);3  h
+26.01.2020;19:00;Documentation written;4  h
+27.01.2020;18:00;updated leaderboard, added multipleChoice page;4  h
+28.01.2020;16:00;Theorie weitergeschrieben;2,5  h
+29.01.2020;19:00;Theorie weitergeschrieben;1  h
+11.02.2020;15:00;12. Diplomarbeitsbepsrechung;3  h
+13.02.2020;10:00;creating and formating emblems;1  h
+16.02.2020;15:00;splitted courses & quizzes, QuizController optimated;3  h
+18.02.2020;16:00;added f:param handover to takequiz via Backing Bean;2  h
+19.02.2020;16:00;updated result.xhtml, added KursController;3  h
+20.02.2020;15:00;Diplomarbeitsbesprechung;3  h
+21.02.2020;18:00;Documentation updated (new logo, abstract);2  h
+22.02.2020;17:00;bugfixing in documentation;1  h
+23.02.2020;18:00;Documentation written;2  h
+24.02.2020;19:00;Documentation written;1  h
+25.02.2020;19:00;Database connection set up;1  h
+28.02.2020;13:00;Diplomarbeitsbesprechung;5  h
+01.03.2020;14:00;database connection implemented,;4  h
+02.03.2020;18:00;added a description on every page;1  h
+05.03.2020;15:00;documentation written;1  h
+06.03.2020;20:00;QuizController class modified (added trainee);1  h
+07.03.2020;14:00;bugfixes in Quizcontroller, deleted deprecated code;2  h
+08.03.2020;18:00;documentation written;1  h
+11.03.2020;16:00;fixed menubar, multiplechoice quiz page updated;3  h
+14.03.2020;13:00;Documentation written;3  h
+15.03.2020;10:00;Documentation finished;5  h
+TOTAL;;;194  h
+
