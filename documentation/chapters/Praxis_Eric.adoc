@@ -23,13 +23,26 @@ The following graphic shows the architecture of JSF:
 .JSF architecture
 image::../img/Architektur.png[]
 
- * The Browser is there, to display the websites to the user. Through the browser, users can navigate through the interfaces, make requests to the server and get a respone back.
-* The Faces Servlet handles user interactions that may lead to changes in the data structure (back en) or on the user interfaces (front end). It can be seen as a controller between the front end and the back end. Every request runs through the Faces Servlet which takes action accordingly. It can optionally be configured by a _faces-config.xml_ file.
-* The Renderers are responsible for displaying a component an translating a user's input into the component property values.
-* Converters convert a component's value (Integer, Boolean, etc.) to and from markup values (String).
-* Validators are responsible for ensuring that the value entered by a user is valid.
-* The business logic is made in backing beans, which also control the navigation between pages.
-* Facelets describes the language in which JSF files are written (XHTML). Every page has certain components which will be displayed by the browser with the help of renderers.
+Browser::
+The Browser is there, to display the websites to the user. Through the browser, users can navigate through the interfaces, make requests to the server and get a respone back.
+
+Faces Servlet::
+The Faces Servlet handles user interactions that may lead to changes in the data structure (back en) or on the user interfaces (front end). It can be seen as a controller between the front end and the back end. Every request runs through the Faces Servlet which takes action accordingly. It can optionally be configured by a _faces-config.xml_ file.
+
+Renderer::
+The Renderers are responsible for displaying a component an translating a user's input into the component property values.
+
+Converter::
+Converters convert a component's value (Integer, Boolean, etc.) to and from markup values (String).
+
+Validators::
+Validators are responsible for ensuring that the value entered by a user is valid.
+
+Backing Beans::
+The business logic is made in backing beans, which also control the navigation between pages.
+
+Facelets::
+Facelets describes the language in which JSF files are written (XHTML). Every page has certain components which will be displayed by the browser with the help of renderers.
 
 _(vgl. Goncalves A. (2013). Beginning Java EE 7. Apress.)_
 
@@ -111,6 +124,7 @@ include::../game-trainee-web/src/main/webapp/faces/menubar.xhtml[tag=menubar]
 
 The "Logout" button on the far left is done with the <p:splitButton> tag. It is placed in the menubar with CSS.
 
+.menubar.xhtml
 [source, html]
 ----
 include::../game-trainee-web/src/main/webapp/faces/menubar.xhtml[tag=splitButton]
@@ -119,7 +133,7 @@ include::../game-trainee-web/src/main/webapp/faces/menubar.xhtml[tag=splitButton
 I had to separate the menubar from the mainlyout, because of interferences with the formulars.
 
 === User-Interfaces
-Die UIs liegen hier unter src\main\webapp\faces. "ev. noch was zu UIs sagen"
+User Interfaces describe everything, the user can use to commincate with the application. Die UIs liegen hier unter src\main\webapp\faces.
 
 The index-page is the standard page the browser will run, if you enter a website. On this page, the user should get an overwiev about his statistics, and he should be able to navigate to other pages.
 The structure of the index-page is pretty simple. All data of the current user is fetched from the database and displayed. The trainee can look at his nickname, score, progress and emblems. Furthermore, a little description of the GAME-site is displayed. From here on, the trainee can check out some courses, take quizzes, look at trainers or visit the emblemboard.
@@ -163,9 +177,9 @@ This is how it looks like, when the user has not fulfilled the requirements to t
 
 image::../img/quiz1.png[]
 
-In this picture below, the trainee has met all the requirements needed for the second quiz. To take the second quiz, the user must succesfully take the first quiz.
+In this picture below, the trainee has met all the requirements needed to take the other two quizzes. The second quiz requires the first first quiz to be completed succesfully and the third quiz requires the second quiz. 
 
-image::../img/quiz2.png[]
+image::../img/quiz3.png[]
 
 By clicking on the <p:commandButton>, the user can take the quiz.
 
@@ -183,11 +197,11 @@ By clicking on the "Check Answers" button, the trainee is redirected to the resu
 
 The page for taking multiplechoice quizzes looks almost the same, except for the buttons. I used <p:selectBooleanCheckbox> tags here, because they can be used for multiplechoice purposes. Each of these buttons must be bound to a Boolean property.
 
-"Bilder für takeQuizMultipleChoice"
+image::../img/multiple1.png[]
 
 The results page is responsible for displaying the results of the quiz taken by the trainee. The trainee is able to see how many questions he/she answered right, how many points he/she won and which questions he/she answered incorrectly. Furthermore, the user sees which answers is right for every question. If the question is green and checked, the user answered correctly. If the question is red with a X at the end, the user answered incorrectly.
 
-image::../img/results.png[]
+image::../img/results1.png[]
 
 ==== Trainer page
 The Trainers page should display all the trainers associated with the GAME platform. The trainees can contact these trainers if they need help.
