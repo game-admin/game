@@ -23,18 +23,12 @@ footer {
     /*margin-bottom: 0px; */
 }
 
-#menu {
-    width:1000px;
-    float:left;
-}
-
 #logout {
     position:relative;
-    left:1140px;
-    top:-2.65em;
+    left:72em;
+    top:-2.8em;
     width:200px;
     height:70px;
-    
 }
 
 #data {
@@ -97,6 +91,12 @@ h1 {
     width: fit-content;
     border-radius: 5px;
     color:black;
+    padding: 4px;
+}
+
+.answer {
+    font-size: 0.7em;
+    font-family: "Arial", sans-serif;
 }
 
 .fa-home {
