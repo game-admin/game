@@ -11,7 +11,7 @@ _(vgl. Wissensmanagement in der Schulentwicklung-Theoretische Analyse und empiri
 
 === Knowledge management in context of the knowlegde socitey
 
-
+Knowledge management is inseparable from the knowledge society because it is a response to the needs of the knowledge society. This explains why the talk about knowledge management should be preceded by an outline of the knowledge society.  As early as the 1960s and 1970s, scientists described the change to a society in which knowledge becomes increasingly important and is added to the original production factors of an industrial society. In 1966, for example, the American sociologist Robert Lane was the first to speak of a "knowledgeable society" in an article in the American Sociological Review. In his 1969 work "The age of discontinuity", the American economist Peter Ferdinand Drucker outlined social changes within which the resource knowledge plays an important role. The popularization of the concept of a society based on knowledge ultimately goes back to the American sociologist Daniel Bell and his 1973 work "The coming of post-industrial society". However, the theory of the knowledge society should not be confused with its predecessors, such as the theory of the post-industrial society, because it does not share their world view of 'scientific faith'.
 
 
 
@@ -26,9 +26,10 @@ _(vgl. Wissensmanagement in der Schulentwicklung-Theoretische Analyse und empiri
 
 This technique is used to acquire knowledge and represent it graphically. People often use mental models to solve problems in their everyday life. These models can be collected and presented transparent with this technique.
 
+.Sample Repertory Grid
+image::../img/RepertoryGrid.png[Sample Repertory Grid]
 
-
-image::../img/RepertoryGridImage.png[]
+Quelle (https://www.researchgate.net/figure/Sample-Repertory-Grid_fig1_228296401; letzter Zugriff 15.03.2020)
 
 ===== Objective and possible applications
 
@@ -46,8 +47,6 @@ If the interviewee is given enough time to think, the repertory grid method can 
 Implicit knowledge is above all context and situation dependent. During the survey, reference should be made above all to situations experienced by the interviewees, which the interviewees experienced as directly as possible before the interview. This makes it easier to remember. In the case of shop attractiveness, for example, a purchase that has taken place should be in the mind's eye of the respondents when they name the characteristics.
 
 In an organisational context, it should not be forgotten that people with work experience or experience in a specific field of activity may not be motivated to share their previously unexplained knowledge with others, as it is precisely this knowledge that sets them apart from other people in an organisation or may even make them indispensable. They may therefore refuse to participate in the implementation of the Repertory Grids or may not be particularly cooperative. Well-prepared information events and intensive individual discussions in advance are therefore particularly important. They can allay fears of losing supremacy and help raise awareness of the potential of the method.
-
-
 
 
 _(vgl. Wissensmanagement in der Praxis-Zielsetzung und Einsatzmöglichkeiten, Christian Stary, Monika Moschner, Edith Stary, 2013)_
