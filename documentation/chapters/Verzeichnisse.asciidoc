@@ -1,4 +1,4 @@
-== Literaturverzeichnis
+== Bibliography
 
 *Rosendahl, J.* (2010). Selbstreguliertes Lernen in der dualen Ausbildung. W. Bertelsmann Verlag GmbH & Co. KG, Bielefeld, 2010.
 
@@ -30,10 +30,8 @@
 
 *Stary C., Maroscher M. & Stary E.* (2013). Wissensmanagement in der Praxis - Methoden  Werkzeuge Beispiele, Hanser.
 
-== Quellenverzeichnis
 
-
-== Abbildungsverzeichnis
+== List of figures
 
 
 

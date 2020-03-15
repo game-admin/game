@@ -1,12 +1,10 @@
-== Praktische Aufgabenstellung: Jan Binder
+== Practical task: Jan Binder (Back end)
 
-== Back End: Datenbank und Datenbankverbindung
-
-=== Begin
+=== Beginning
 
 First of all the basics, like the technology we are using and the design are set. The database, in which all the tables and data sets are, is also appointed.
 
-=== Grundlagen
+=== Fundamentals
 
 You need some foreknowledgement to build a database and a database connectivity. Knowlegde about SQL, JPA and Java is required. You need these languages to create queriesor to understand how the program communicates with the database.
 

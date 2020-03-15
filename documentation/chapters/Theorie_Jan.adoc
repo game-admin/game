@@ -1,6 +1,5 @@
-== Theoretische Aufgabenstellung: Jan Binder
+== Theoretical task: Jan Binder (Knowledge management)
 
-== Knowledge management
 === Knowledge
 
 Knowledge is omnipresent whereever we go. Everyone around has more or less knowledge about every kind of topic.

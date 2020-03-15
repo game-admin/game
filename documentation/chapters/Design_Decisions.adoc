@@ -28,5 +28,3 @@ include::../decisions/ADR007-Java EE application server.adoc[]
 <<<<
 include::../decisions/ADR008-Standard code formatter.adoc[]
 
-
-

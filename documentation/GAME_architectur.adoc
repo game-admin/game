@@ -23,7 +23,7 @@ include::chapters/Abstract.adoc[]
 include::chapters/Requirements.adoc[]
 
 //Vorstellung
-include::chapers/Vorstellung.adoc[]
+include::chapters/Vorstellung.adoc[]
 
 <<<<
 //Aufgabenteilung
@@ -51,10 +51,6 @@ include::chapters/Solution_Strategy.adoc[]
 include::chapters/Design_Decisions.adoc[]
 
 <<<<
-// ER-Modell
-include::chapters/ER-Modell.adoc[]
-
-<<<<
 //Theorie Eric
 include::chapters/Theorie_Eric.adoc[]
 
@@ -73,3 +69,7 @@ include::chapters/Praxis_Jan.adoc[]
 <<<<
 //Verzeichnisse
 include::chapters/Verzeichnisse.asciidoc[]
+
+<<<<
+//Timetables
+include::chapters/Timetables.adoc[]
