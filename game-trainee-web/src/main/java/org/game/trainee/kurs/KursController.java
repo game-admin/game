@@ -44,11 +44,12 @@ public class KursController {
         return kursbean.find(kursid).getLink();
     }
     
-    public void updateKurs(String kursid) {
+    public String updateKurs(String kursid) {
      //Trainee trainee = traineebean.find("1");
      List<KursBesuch> list =  kursbesuch.findByKursIDAndMITID(kursid, "1");
      list.get(0).setIstbesucht(true);
      kursbesuch.update(list.get(0)); 
+     return "index.xhtml";
     }
     
     public Boolean isTakeable(String kursid, String mitid) {

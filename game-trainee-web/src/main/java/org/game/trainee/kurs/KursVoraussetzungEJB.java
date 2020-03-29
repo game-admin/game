@@ -6,6 +6,7 @@
 package org.game.trainee.kurs;
 
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -14,6 +15,7 @@ import javax.persistence.PersistenceContext;
  *
  * @author Jan
  */
+@Stateless
 public class KursVoraussetzungEJB {
     @PersistenceContext(unitName = "Diplomarbeit")
     private EntityManager em;

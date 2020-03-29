@@ -6,6 +6,7 @@
 package org.game.trainee.kurs;
 
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -13,6 +14,7 @@ import javax.persistence.PersistenceContext;
  *
  * @author Jan
  */
+@Stateless
 public class KursBesuchEJB {
     @PersistenceContext(unitName = "Diplomarbeit")
     private EntityManager em;
@@ -20,9 +22,7 @@ public class KursBesuchEJB {
     public KursBesuch find(String kursbesuchid) {
         return em.find(KursBesuch.class, kursbesuchid);
     }
-    
-    
-    
+  
     public void update(KursBesuch kursbesuch) {
         em.merge(kursbesuch);
     }

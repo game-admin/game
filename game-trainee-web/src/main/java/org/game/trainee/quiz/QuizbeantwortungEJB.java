@@ -23,8 +23,6 @@ public class QuizbeantwortungEJB {
         return em.find(Quizbeantwortung.class, qbeid);
     }
     
-    
-    
     public void update(Quizbeantwortung quizbeantw) {
         em.merge(quizbeantw);
     }
