@@ -34,7 +34,7 @@ public class KursBesuchEJB {
         em.getTransaction().commit();
     }
     
-    public List<KursBesuch> findByQIDAndMITID(String kursid, String mitid) {
+    public List<KursBesuch> findByKursIDAndMITID(String kursid, String mitid) {
         return em.createNamedQuery(KursBesuch.QUERY_FINDBY_KURSIDANDMITID, KursBesuch.class)
                 .setParameter("KursID", kursid).setParameter("MitID", mitid).getResultList();
     }

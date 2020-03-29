@@ -23,7 +23,7 @@ public class KursModellCreator {
        List<KursModell> list = new ArrayList<>();
        
        for(Kurs kurs : kurse){
-           list.add(new KursModell(kurs.getTitel(), kurs.getBeschreibung(), kurs.getBeschreibung()));
+           list.add(new KursModell(kurs.getKursID(), kurs.getTitel(), kurs.getBeschreibung(), kurs.getBeschreibung()));
         }
         return list;
     }

@@ -22,17 +22,19 @@
         </p>
         <!-- tag::dataTable[] -->
         <p:dataTable var="kurs" value="#{kursController.kursmodel}">
-            <p:column headerText="Titel">
+            <p:column headerText="Titel" rendered="#{kursController.isTakeable(kurs.kursid, &quot;1&quot;)}">
                 <h:outputText value="#{kurs.titel}"></h:outputText>
             </p:column>
-            <p:column headerText="Beschreibung">
+            <p:column headerText="Beschreibung" rendered="#{kursController.isTakeable(kurs.kursid, &quot;1&quot;)}">
                 <h:outputText value="#{kurs.beschreibung}"></h:outputText>
             </p:column>
-            <p:column>
+            <p:column headerText="Link" rendered="#{kursController.isTakeable(kurs.kursid, &quot;1&quot;)}">
                 <h:link outcome="#{kurs.link}" value="Take Course!"></h:link>
             </p:column>
-            <p:column>
-                <h:selectBooleanCheckbox value="#{kurs.isDone}"></h:selectBooleanCheckbox>
+            <p:column headerText="Bestätigung" rendered="#{kursController.isTakeable(kurs.kursid, &quot;1&quot;)}">
+                <h:form>
+                    <h:commandButton action="#{kursController.updateKurs(kurs.kursid)}" value="Bestaetigung"></h:commandButton>
+                </h:form>
             </p:column>
         </p:dataTable>
         <!-- end::dataTable[] -->

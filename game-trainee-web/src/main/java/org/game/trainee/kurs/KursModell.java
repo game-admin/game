@@ -10,12 +10,14 @@ package org.game.trainee.kurs;
  * @author Eric
  */
 public class KursModell {
+   public String kursid;
    public String titel;
    public String beschreibung;
    public String link;
    public Boolean isDone;
    
-   public KursModell(String titel, String beschreibung, String link) {
+   public KursModell(String kursid, String titel, String beschreibung, String link) {
+       this.kursid=kursid;
        this.titel=titel;
        this.beschreibung=beschreibung;
        this.link=link;
@@ -52,6 +54,14 @@ public class KursModell {
 
     public void setIsDone(Boolean isDone) {
         this.isDone = isDone;
+    }
+
+    public String getKursid() {
+        return kursid;
+    }
+
+    public void setKursid(String kursid) {
+        this.kursid = kursid;
     }
    
 }

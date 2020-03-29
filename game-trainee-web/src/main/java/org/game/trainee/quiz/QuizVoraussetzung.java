@@ -47,12 +47,12 @@ public class QuizVoraussetzung implements Serializable{
     }
     
 
-    public String getQuizVorraussetzID() {
+    public String getQuizVoraussetzID() {
         return QuizVoraussetzID;
     }
 
-    public void setQuizVorraussetzID(String QuizVorraussetzID) {
-        this.QuizVoraussetzID = QuizVorraussetzID;
+    public void setQuizVoraussetzID(String QuizVoraussetzID) {
+        this.QuizVoraussetzID = QuizVoraussetzID;
     }
 
     public Quiz getQuiz() {

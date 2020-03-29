@@ -169,7 +169,7 @@ public class QuizController implements Serializable {
         }
 
         //Von quizvor das vorrausgesetzte Quiz/die id des vorrausgesetzten Quiz holen und rauslesen
-        Voraussetzung vor = voraussetzungejb.find(quizvor.get(0).getQuizVorraussetzID());
+        Voraussetzung vor = voraussetzungejb.find(quizvor.get(0).getQuizVoraussetzID());
         String id = vor.getQuiz().getQID();
         List<Quizbeantwortung> list = quizbeantw.findByQIDAndMITID(id, mitid);
         if(list.get(0).isIstbestanden()) {
