@@ -15,7 +15,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+
 
 /**
  *
@@ -23,7 +25,9 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "kursvoraussetzung", schema = "game")
+@NamedQuery(name = KursVoraussetzung.QUERY_FINDALLVORAUSSETZUNGEN, query = "SELECT kursvor FROM KursVoraussetzung kursvor WHERE kursvor.kurs.KursID = :KursID")
 public class KursVoraussetzung implements Serializable {
+    public static final String QUERY_FINDALLVORAUSSETZUNGEN = "KursVoraussetzung.findAllKursVoraussetzzungen";
     @Id
     @Column(name="KURSVORAUSSETZID")
     private String KursVoraussetzID;

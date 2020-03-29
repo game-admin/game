@@ -16,6 +16,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import org.game.trainee.trainee.Trainee;
@@ -27,7 +28,9 @@ import org.game.trainee.trainee.Trainee;
 
 @Entity
 @Table(name = "kursbesuch", schema = "game")
+@NamedQuery(name = KursBesuch.QUERY_FINDBY_KURSIDANDMITID, query="SELECT kursbe FROM KursBesuch kursbe WHERE kursbe.kurs.KursID = :KursID AND kursbe.trainee.MitID = :MitID")
 public class KursBesuch implements Serializable {
+    public static final String QUERY_FINDBY_KURSIDANDMITID="KursBesuch.findByKursIDAndMITID";
     @Id
     @Column(name="KURSBESUCHID")
     private String KursBesuchID;
@@ -42,6 +45,9 @@ public class KursBesuch implements Serializable {
     @NotNull
     @Column(name="DATUM")
     private Date datum;
+    @NotNull
+    @Column(name="istbesucht")
+    private boolean istbesucht;
     
     public KursBesuch(){
     
@@ -82,6 +88,13 @@ public class KursBesuch implements Serializable {
     public void setKurs(Kurs kurs) {
         this.kurs = kurs;
     }
-    
+
+    public boolean isIstbesucht() {
+        return istbesucht;
+    }
+
+    public void setIstbesucht(boolean istbesucht) {
+        this.istbesucht = istbesucht;
+    }
     
 }

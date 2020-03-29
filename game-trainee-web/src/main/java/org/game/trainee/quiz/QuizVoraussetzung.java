@@ -27,7 +27,7 @@ import org.game.trainee.kurs.Voraussetzung;
 @Table(name = "quizvoraussetzung", schema = "game")
 @NamedQuery(name = QuizVoraussetzung.QUERY_FINDALLVORAUSSETZUNGEN, query = "SELECT quizvor FROM QuizVoraussetzung quizvor WHERE quizvor.quiz.QID = :QID")
 public class QuizVoraussetzung implements Serializable{
-    public static final String QUERY_FINDALLVORAUSSETZUNGEN = "QuizVoraussetung.findAllQuizVoraussetzzungen";
+    public static final String QUERY_FINDALLVORAUSSETZUNGEN = "QuizVoraussetzung.findAllQuizVoraussetzzungen";
     @Id
     @Column(name="QUIZVORAUSSETZID")
     private String QuizVoraussetzID;
