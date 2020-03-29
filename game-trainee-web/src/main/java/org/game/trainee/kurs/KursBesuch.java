@@ -43,9 +43,6 @@ public class KursBesuch implements Serializable {
     @NotNull
     private Kurs kurs;
     @NotNull
-    @Column(name="DATUM")
-    private Date datum;
-    @NotNull
     @Column(name="istbesucht")
     private boolean istbesucht;
     
@@ -63,14 +60,6 @@ public class KursBesuch implements Serializable {
 
     public void setKursBesuchID(String KursBesuchID) {
         this.KursBesuchID = KursBesuchID;
-    }
-
-    public Date getDatum() {
-        return datum;
-    }
-
-    public void setDatum(Date datum) {
-        this.datum = datum;
     }
 
     public Trainee getTrainee() {
