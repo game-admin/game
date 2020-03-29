@@ -19,7 +19,7 @@ import javax.inject.Named;
  */
 @Named
 @ApplicationScoped
-public class ModellCreator {
+public class FrageModellCreator {
     
     @Inject
     FrageEJB fragebean;
@@ -27,7 +27,7 @@ public class ModellCreator {
     @Inject
     AntwortmoeglichkeitenEJB antwortbean;
          
-    public ModellCreator() {
+    public FrageModellCreator() {
     }
     
     public List<FrageModell> createModell(String qid) {

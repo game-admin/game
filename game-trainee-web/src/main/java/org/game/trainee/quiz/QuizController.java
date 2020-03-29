@@ -36,7 +36,7 @@ public class QuizController implements Serializable {
     private String qid;
 
     @Inject
-    private ModellCreator creator;
+    private FrageModellCreator creator;
 
     @Inject
     private TraineeEJB traineebean;

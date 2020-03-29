@@ -21,7 +21,7 @@
             wird das jeweilige Quiz freigeschalten!
         </p>
         <!-- tag::dataTable[] -->
-        <p:dataTable var="kurs" value="#{kursController.kurse}">
+        <p:dataTable var="kurs" value="#{kursController.kursmodel}">
             <p:column headerText="Titel">
                 <h:outputText value="#{kurs.titel}"></h:outputText>
             </p:column>
@@ -29,12 +29,10 @@
                 <h:outputText value="#{kurs.beschreibung}"></h:outputText>
             </p:column>
             <p:column>
-                <h:form>
-                    <!--<p:commandButton action="{kursController.takeKurs(kurs.kursID)}" value="Take Course!"  >       
-                    </p:commandButton>     -->
-                    <!--<h:commandLink action="{kursController.kursbean.find(kurs.kursID).getLink()}" value="Take Course!"></h:commandLink>-->
-                    <h:commandLink action="https://www.tutorialspoint.com/java/index.htm" value="Take Course!"></h:commandLink>
-                </h:form>
+                <h:link outcome="#{kurs.link}" value="Take Course!"></h:link>
+            </p:column>
+            <p:column>
+                <h:selectBooleanCheckbox value="#{kurs.isDone}"></h:selectBooleanCheckbox>
             </p:column>
         </p:dataTable>
         <!-- end::dataTable[] -->
