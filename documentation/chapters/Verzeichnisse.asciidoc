@@ -1,37 +1,68 @@
 == Bibliography
 
-*Rosendahl, J.* (2010). Selbstreguliertes Lernen in der dualen Ausbildung. W. Bertelsmann Verlag GmbH & Co. KG, Bielefeld, 2010.
-
-*Hochleitner, P.* (2016). Erforschung der Lerntypen und -strategien am Beispiel einer Handelsschulklasse. Akademiker Verlag.
-
-*Creß, U.* (?). Lernorientierungen, Lernstile, Lerntypen und kognitive Stile. In "Handbuch Lernstrategien" von Heinz Mandl & Helmut Felix Friedrich.
-
-*Pask, G. & Scott, B.* (1972). Learning strategies and individual competence. _International Journal of Man-Machine Studies_, 4, 217-253.
-
-*Vester F.* (1998). Denken, Lernen, Vergessen (25. Auflage). München: dtv.
-
-*Kolb, D.* (1984), Experience as the source of leaning and development. Englewood Cliffs: Prentice-Hall.
-
-*Dunn, R. & Price, G.* (1989). Learning Styles Inventory. Lawrence, KS: Price Systems.
-
-*Niegemann, H. M. & Hofer, M.* (1997). Ein Modell selbstkontrollierten Lernens und über die Schwierigkeiten, selbstkontrolliertes Lernen hervorzubringen. In H. Gruber, A. Renkl, Wege zum Können. Determinanten des Kompetenzerwerbs (S. 263-280). Göttingen: Huber.
+*Bandura, A.* (1986). Social Foundations of Thought and Action. Englewood Cliffs, NJ: Prentice-Hall.
 
 *Büser, T.* (2003). Offene Angebote an geschlossene Systeme - Überlegungen zur Gestaltung von Lernumgebungen für selbstorganisiertes Lernen aus Sicht des Konstruktivismus. In U. Witthaus, W. Wittwer & C. Espe, Selbst gesteuertes Lernen (S. 27-41). Bielefeld: wbv.
 
-*Bandura, A.* (1986). Social Foundations of Thought and Action. Englewood Cliffs, NJ: Prentice-Hall.
+*Creß, U.* (?). Lernorientierungen, Lernstile, Lerntypen und kognitive Stile. In "Handbuch Lernstrategien" von Heinz Mandl & Helmut Felix Friedrich.
 
-*Weinstein, C. E. & Mayer, R. E.* (1986). The Teaching of Learning Strategies. In M. C. Wittrock, Handbook of Research on Teaching (S. 315-327). London: Collier Macmillan Publishers.
-
-*Huang et al* (2013). A Practitioner’s Guide To Gamification Of Education. Rotman School of Management, University of Toronto.
+*Dunn, R. & Price, G.* (1989). Learning Styles Inventory. Lawrence, KS: Price Systems.
 
 *Goncalves A.* (2013). Beginning Java EE 7. Apress.
 
-*Kaja Heitmann* (2012). Wissensmanagement in der Schulentwicklung Theoretische Analse und empirische Exploration aus systemischer Sicht, Springer VS.
+*Heitmann, K.* (2012). Wissensmanagement in der Schulentwicklung Theoretische Analse und empirische Exploration aus systemischer Sicht, Springer VS.
 
-*Stary C., Maroscher M. & Stary E.* (2013). Wissensmanagement in der Praxis - Methoden  Werkzeuge Beispiele, Hanser.
+*Hochleitner, P.* (2016). Erforschung der Lerntypen und -strategien am Beispiel einer Handelsschulklasse. Akademiker Verlag.
+
+*Huang et al* (2013). A Practitioner’s Guide To Gamification Of Education. Rotman School of Management, University of Toronto.
+
+*Kolb, D.* (1984), Experience as the source of leaning and development. Englewood Cliffs: Prentice-Hall.
+
+*Niegemann, H. M. & Hofer, M.* (1997). Ein Modell selbstkontrollierten Lernens und über die Schwierigkeiten, selbstkontrolliertes Lernen hervorzubringen. In H. Gruber, A. Renkl, Wege zum Können. Determinanten des Kompetenzerwerbs (S. 263-280). Göttingen: Huber.
+
+*Pask, G. & Scott, B.* (1972). Learning strategies and individual competence. International Journal of Man-Machine Studies, 4, 217-253.
+
+*Rosendahl, J.* (2010). Selbstreguliertes Lernen in der dualen Ausbildung. W. Bertelsmann Verlag GmbH & Co. KG, Bielefeld, 2010.
+
+*Stary, C. & Maroscher, M. & Stary, E.* (2013). Wissensmanagement in der Praxis - Methoden  Werkzeuge Beispiele, Hanser.
+
+*Vester F.* (1998). Denken, Lernen, Vergessen (25. Auflage). München: dtv.
+
+*Weinstein, C. E. & Mayer, R. E.* (1986). The Teaching of Learning Strategies. In M. C. Wittrock, Handbook of Research on Teaching (S. 315-327). London: Collier Macmillan Publishers.
 
 
 == List of figures
 
+*Fig. 1:* Learning styles according to Kolb
 
+*Fig. 2:* Sample Repertory Grid
 
+*Fig. 3:* System Context diagram for the learning platform "GAME"
+
+*Fig. 4:* System Container diagram for the learning platform "GAME"
+
+*Fig. 5:* User Interface concept
+
+*Fig. 6:* JSF architecture diagram
+
+*Fig. 7:* Design of the GAME platform
+
+*Fig. 8:* Design of the courses page
+
+*Fig. 9:* Design of the quizzes page
+
+*Fig. 10:* Quizzes page with fulfilled requirements
+
+*Fig. 11:* Design of the page, where the user takes a single-choice quiz
+
+*Fig. 12:* Bottom half of the single-choice quiz
+
+*Fig. 13:* Design of the page, where the user takes a multiple-choice quiz
+
+*Fig. 14:* Design of the page, where the user sees his/her quiz-results
+
+*Fig. 15:* Trainers page
+
+*Fig. 16:* Emblemtafel page
+
+*Fig. 17:* ER-Model

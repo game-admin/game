@@ -12,10 +12,12 @@ The technical context describes interfaces linking the system to its environment
 
 The abstract technical context is shown by the following C4-Context Model:
 
+.C4-Context Model
 image::../img/c4_context.png[C4-Context Model]
 
 The GAME system is precisely described through this C4-Container Model:
 
+.C4-Container Model
 image::../img/c4_container.png[C4-Container Model]
 
 === Description
