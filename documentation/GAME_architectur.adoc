@@ -14,9 +14,6 @@
 // 1a. Introduction and Goals
 include::chapters/Introduction.adoc[]
 
-<<<<
-// Abstract
-include::chapters/Abstract.adoc[]
 
 <<<<
 // 1b. Requirements Overview
@@ -38,6 +35,15 @@ include::chapters/Qualitygoals.adoc[]
 include::chapters/Stakeholders.adoc[]
 
 <<<<
+//Theorie Eric
+include::chapters/Theorie_Eric.adoc[]
+
+<<<<
+//Theorie Jan
+include::chapters/Theorie_Jan.adoc[]
+
+
+<<<<
 // 3. System Scope and Context
 include::chapters/System_Scope_and_Context.adoc[]
 
@@ -50,17 +56,11 @@ include::chapters/Solution_Strategy.adoc[]
 // 9. Design Decisions
 include::chapters/Design_Decisions.adoc[]
 
-<<<<
-//Theorie Eric
-include::chapters/Theorie_Eric.adoc[]
 
 <<<<
 //Praxis Eric
 include::chapters/Praxis_Eric.adoc[]
 
-<<<<
-//Theorie Jan
-include::chapters/Theorie_Jan.adoc[]
 
 <<<<
 //Praxis Jan

@@ -3,6 +3,8 @@
 == Stakeholders
 [role="stakeholders"]
 
+The stakeholder are the following:
+
 * *Thesis supervisor* (contractor side)*:* Roland Moder roland.moder@aon.at
 * *Thesis supervisor* (client side)*:* Konrad Renner konrad.renner@arz.at
 * *Human resource development:* Michaela Würzl michaela.wuerzl@arz.at, 
@@ -19,5 +21,5 @@ He expects the software to contain a scoring system that records the learning pr
 
 
 Michaela Würzl and Cornelia Sammer::
-They expect a timely completion of the project, so that the concept is completed by 31.12.2019, and the implementation should be completed by the end of April. Moreover, the software should be utilizable and integrable, this means the user interface should be easy to use for employees, trainers and moderators.
+They expect a timely completion of the project, so that the concept is completed by 31.12.2019, and the implementation should be completed by the end of April. Moreover, the software should be utilizable and integradable, this means the user interface should be easy to use for employees, trainers and moderators.
 

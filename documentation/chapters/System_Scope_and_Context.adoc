@@ -3,6 +3,9 @@
 == System, Scope and Context
 [role="System_Scope_and_Context"]
 
+System scope and context delimits the system from all its communication partners (neighboring systems and users). It thereby specifies the external interfaces.
+
+
 === Technical Context
 
 The technical context describes interfaces linking the system to its environment. 
