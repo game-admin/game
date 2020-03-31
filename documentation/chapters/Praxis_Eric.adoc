@@ -147,7 +147,7 @@ The "Logout" button on the far left is done with the <p:splitButton> tag. It is 
 I had to separate the menubar from the mainlyout, because of interferences with the formulars.
 
 === User-Interfaces
-User Interfaces describe everything, the user can use to commincate with the application. Die UIs liegen hier unter src\main\webapp\faces.
+User Interfaces describe everything the user can use, to commincate with the application.
 
 The index-page is the standard page the browser will run, if you enter a website. On this page, the user should get an overwiev about his statistics, and he should be able to navigate to other pages.
 The structure of the index-page is pretty simple. All data of the current user is fetched from the database and displayed. The trainee can look at his nickname, score, progress and emblems. Furthermore, a little description of the GAME-site is displayed. From here on, the trainee can check out some courses, take quizzes, look at trainers or visit the emblemboard.

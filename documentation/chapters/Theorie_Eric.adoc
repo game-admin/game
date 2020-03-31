@@ -43,7 +43,7 @@ I will be analyzing this classification according to Vester:
 
 1. optical/visual -> Learning through seeing and observing
 2. auditory/acoustically -> Learning through listening and speaking
-3. haptisch -> Learning through action (touching and feeling)
+3. haptic -> Learning through action (touching and feeling)
 4. cognitive -> Learning through recognition/intellect
 
 ==== Auditory learning type
@@ -171,7 +171,7 @@ When a learning platform contains the use of some of these elements, it can be c
 === Conclusion
 Learning is an essential part of the human nature. The human race developed they way it did, because humanity kept learning and improving skills. "You never stop learning.", is an important figure of speech. In modern times learning is as important as ever, because the world changes rapidly. 
 
-What we created, was another tool for people to learn new things or check their existing knowledge. We did this in a very unique way. In a _gamificated_ way. Combinding elements of games with learning is proven to improve one's learning capabilitys. Even though, there are severy different learning types, and many more interpretation of such, our system is embracing many of them. For example, the visual learning type reads through the course and remembers the material better that way. The cognitive learning type learns better by taking the quizzes and creating connections in their head.
+What we created, was another tool for people to learn new things or check their existing knowledge. We did this in a very unique way. In a _gamificated_ way. Combinding elements of games with learning is proven to improve one's learning capabilitys. Even though, there are several different learning types, and many more interpretation of such, our system is embracing many of them. For example, the visual learning type reads through the course and remembers the material better that way. The cognitive learning type learns better by taking the quizzes and creating connections in their head.
 
 I tried to include as many of the things I learned by researching my theorethical part of the diploma thesis, into the platform. I think, the members of the ARZ will have an easy learning experience with the website we created.
 
