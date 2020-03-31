@@ -1,1 +1,25 @@
 ==Summary
+
+Wie war die Zusammenarbeit?
+
+-> The co-operation was good and informative. We met with the client every two weeks in so called "sprint-meeting". In this meetings we discussed problems which occured and set new goals which should be achieved in the next two weeks. The time between the meetings is called a sprint.
+
+Was Erfahrungen haben wir gesammelt?
+
+-> We learned a lot about programming with Java Enterprise Edition and programming skills in general. Furthermore, we had a lot of meetings with the client, in which we learned the people in a firm discuss problems/goals. -> Datenbanken -> Jan, WebsiteDesign -> Eric
+
+Wie wars dort zu arbeiten?
+
+-> The working atmosphere was peaceful and we were always treated with respect and kindness by the employess working at the office.
+
+Was hamma können/Was hamma nicht können?
+
+-> Grundlegende Basics vom Programmieren waren vorhanden, Problem: kein tiefergehendes Wissen zu den Bereichen: Website erstellen (Datenbank usw.) We had to learn a lot and had a lot of problems programming the website.
+
+Ergebnis?
+
+-> We created a prototype, which can be used and updated by the client.
+
+Was könnte die Schule davon haben? (aktueller Bezug, Gamificated Learning etc.)
+
+-> Schüler (jüngere Schüler) würden lieber "gamificated Learning" betreiben, als trockener Frontalunterricht wählen um zu lernen. Unsere Diplomarbeit kann Schulen einen Denkanstoß gebn, ihre Unterrichtsmethoden anzupassen und zu optimieren.
