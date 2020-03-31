@@ -53,6 +53,7 @@ All this vocabulary is completely unknown in an object-oriented language such as
 
 _(vgl. Beginning Java EE-Java Persistence API, Antonio Goncalves, 2013)_
 
+
 === Getting Started
 
 The first task was to visually showcase how all the tables needed, connect with each other, so we can understand what we need to do, and how everything should look and interact. Here we used the diagram called ER-Modell which does exactly that for us.

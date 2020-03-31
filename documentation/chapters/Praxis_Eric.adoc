@@ -146,6 +146,8 @@ The "Logout" button on the far left is done with the <p:splitButton> tag. It is 
 
 I had to separate the menubar from the mainlyout, because of interferences with the formulars.
 
+<<<<
+
 === User-Interfaces
 User Interfaces describe everything the user can use, to commincate with the application.
 

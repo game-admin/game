@@ -13,7 +13,7 @@ _(vgl. Wissensmanagement in der Schulentwicklung-Theoretische Analyse und empiri
 Knowledge management is inseparable from the knowledge society because it is a response to the needs of the knowledge society. This explains why the talk about knowledge management should be preceded by an outline of the knowledge society.  As early as the 1960s and 1970s, scientists described the change to a society in which knowledge becomes increasingly important and is added to the original production factors of an industrial society. In 1966, for example, the American sociologist Robert Lane was the first to speak of a "knowledgeable society" in an article in the American Sociological Review. In his 1969 work "The age of discontinuity", the American economist Peter Ferdinand Drucker outlined social changes within which the resource knowledge plays an important role. The popularization of the concept of a society based on knowledge ultimately goes back to the American sociologist Daniel Bell and his 1973 work "The coming of post-industrial society". However, the theory of the knowledge society should not be confused with its predecessors, such as the theory of the post-industrial society, because it does not share their world view of 'scientific faith'.
 
 
-
+<<<<
 
 === Knowledge management models
 
