@@ -2,7 +2,7 @@
 
 ==== Status
 
-accpeted
+accepted
 
 ==== Context
 

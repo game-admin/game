@@ -1,7 +1,7 @@
 === ADR001-BuildingFromScratch
 
 ==== Status
-accpeted
+accepted
 
 ==== Context
 The ARZ wants to create a learning platform for their members. The project team evaluated possibly alternatives to adapt from. An alternative needs to be able to run on-premise, be up to date with todays standards and preferably be opensource. The evaluated systems are the following:

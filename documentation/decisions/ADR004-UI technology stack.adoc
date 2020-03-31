@@ -1,7 +1,7 @@
 === ADR004-UI technology stack
 
 ==== Status
-accpeted
+accepted
 
 ==== Context
 
