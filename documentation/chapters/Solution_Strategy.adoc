@@ -1,6 +1,8 @@
 [[section-solution-strategy]]
 == Solution Strategy
 
+A short summary and explanation of the fundamental decisions and solution strategies, that shape the system's architecture.
+
 === Building from Scratch
 
 The key decision of this project is the settlement to program the system from scratch, since there is no suitable, open-source platform which can be used for our purpose. Which systems were examined are written in link:../decisions/ADR001-BuildingFromScratch.adoc[Building from Scratch].

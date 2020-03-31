@@ -3,6 +3,7 @@
 == Qualitygoals
 [role="qualitygoals"]
 
+The four quality goals for the architecture whose fulfillment is of highest importance to the major stakeholders
 
 .Quality Goals
 |===

@@ -25,7 +25,7 @@ CREATE TABLE game.kursbesuch(
     "kursbesuchid" text NOT NULL,
     "kursid" text NOT NULL,
     "mitid" text NOT NULL,
-    "datum" date NOT NULL
+    "istbesucht" boolean NOT NULL
 );
 
 CREATE TABLE game.kursvoraussetzung(

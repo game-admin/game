@@ -122,13 +122,21 @@ INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('2', '
 INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('3', 'Konstruktor', 'https://www.tutorialspoint.com/java/java_constructors.htm', 'Das ist ein Kurs über die Konstruktoren in Java. Konstruktoren sind wichtig um ordentlich mit Objekten und Klassen arbeiten zu können.');
 INSERT INTO game.kurs ("kursid", "titel", "link", "beschreibung") VALUES ('4', 'Datentypen', 'https://www.tutorialspoint.com/java/java_constructors.htm', 'Das ist ein Kurs über die Datentypen in Java.');
 
+INSERT INTO game.kursbesuch ("kursbesuchid", "mitid", "kursid", "istbesucht") VALUES ('1', '1', '1', false);
+INSERT INTO game.kursbesuch ("kursbesuchid", "mitid", "kursid", "istbesucht") VALUES ('2', '1', '2', false);
+INSERT INTO game.kursbesuch ("kursbesuchid", "mitid", "kursid", "istbesucht") VALUES ('3', '1', '3', false);
+INSERT INTO game.kursbesuch ("kursbesuchid", "mitid", "kursid", "istbesucht") VALUES ('4', '1', '4', false);
 
 INSERT INTO game.voraussetzung("voraussetzid", "kursid", "qid") VALUES ('1', null, '1');
 INSERT INTO game.voraussetzung("voraussetzid", "kursid", "qid") VALUES ('2', null, '2');
+INSERT INTO game.voraussetzung("voraussetzid", "kursid", "qid") VALUES ('3', '1', null);
+INSERT INTO game.voraussetzung("voraussetzid", "kursid", "qid") VALUES ('4', '2', null);
+INSERT INTO game.voraussetzung("voraussetzid", "kursid", "qid") VALUES ('5', '3', null);
 
 
 INSERT INTO game.quizvoraussetzung("quizvoraussetzid", "voraussetzid", "qid") VALUES ('1', '1', '2');
 INSERT INTO game.quizvoraussetzung("quizvoraussetzid", "voraussetzid", "qid") VALUES ('2', '2', '3');
 
-
-
+INSERT INTO game.kursvoraussetzung("kursvoraussetzid", "voraussetzid", "kursid") VALUES ('1', '3', '2');
+INSERT INTO game.kursvoraussetzung("kursvoraussetzid", "voraussetzid", "kursid") VALUES ('2', '4', '3');
+INSERT INTO game.kursvoraussetzung("kursvoraussetzid", "voraussetzid", "kursid") VALUES ('3', '5', '4');

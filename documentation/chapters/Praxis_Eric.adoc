@@ -100,6 +100,7 @@ The complete GAME project can be viewed under: https://github.com/game-admin/gam
 ==== Creating a layout
 To simplify the creation of the UIs, I prepared a layout which serves every page as a template. This layout is realised in "mainlyaout.xhtml". It constructs the picture at the the top of every file with the headline, the menubar and a little picture in the footer.
 
+.Design/Layout of the game platform
 image:../img/layout1.png[]
 
 This page is not displayed directly to the user, but rather represents a template for all user interfaces. Other pages can define this page as a template and then adopt its content. By using <ui:insert> in the template file, you can give the template clients the possibility to define the content of this tag themselves with <ui:define>. This is shown in any of the actual user interfaces.
@@ -189,6 +190,7 @@ The <h:commandLink> is linked to the URL of the course. By clicking on it, the u
 
 This is how the courses interface looks like:
 
+.Courses page
 image::../img/kurs1.png[]
 
 ==== Quiz pages
@@ -216,10 +218,12 @@ Here, <p:dataTable> is used again, this time to show all available quizzes. It g
 
 This is how it looks like, when the user has not fulfilled the requirements to take a quiz:
 
+.Quizzes page
 image::../img/quiz1.png[]
 
 In this picture below, the trainee has met all the requirements needed to take the other two quizzes. The second quiz requires the first first quiz to be completed succesfully and the third quiz requires the second quiz. 
 
+.Quizzes page with fulfilled requirements
 image::../img/quiz3.png[]
 
 By clicking on the <p:commandButton>, the user can take the quiz.
@@ -243,19 +247,25 @@ By clicking on the <p:commandButton>, the user can take the quiz.
     <br/>
 </ui:repeat>
 ----
-This is the page for taking singlechoice-quizzes. The questions are repeatadly displayed by the <ui:repeat> tag. This tag runs through a given list, and displays the wanted data. The answers are displayed with the <p:selectOneRadio>, which renderes a set of buttons based on the data you set with <f:selectItem>.
+This is the page for taking singlechoice-quizzes. The questions are repeatadly displayed by the <ui:repeat> tag. This tag runs through a given list, and displays the wanted data. The answers are displayed with the <p:selectOneRadio>, which renderes a set of buttons based on the data you 
+set with <f:selectItem>.
 
-image::../img/takequiz1.png[]
+.Single-choice quiz
+image::../img/radio1.png[]
+
+.Bottom half of the single-choice quiz
 image::../img/takequiz2.png[]
 
 By clicking on the "Check Answers" button, the trainee is redirected to the results page.
 
 The page for taking multiplechoice quizzes looks almost the same, except for the buttons. I used <p:selectBooleanCheckbox> tags here, because they can be used for multiplechoice purposes. Each of these buttons must be bound to a Boolean property.
 
+.Multiple-choice quiz
 image::../img/multiple1.png[]
 
 The results page is responsible for displaying the results of the quiz taken by the trainee. The trainee is able to see how many questions he/she answered right, how many points he/she won and which questions he/she answered incorrectly. Furthermore, the user sees which answers is right for every question. If the question is green and checked, the user answered correctly. If the question is red with a X at the end, the user answered incorrectly.
 
+.Results page
 image::../img/results1.png[]
 
 ==== Trainer page
@@ -280,6 +290,7 @@ The Trainers page should display all the trainers associated with the GAME platf
 ----
 Here I used a primefaces tag called <p:carousel>. This tag is used to create a carousel. The <p:panelGrid> tag is used to display data in a grid. The <p:graphicImage> is just like the JSF tag <h:graphicImage>. <h:outputText> is used to display text, with the function to call a Backing Bean. For easier explanation here is a picture:
 
+.Trainers page
 image::../img/trainers.png[]
  
 ==== Emblemboard
@@ -310,6 +321,7 @@ The emblemboard page is used to diplay all the trainees with their names, nickna
 
 Here, the <p:dataTable> tag is used once again. This time it display all the trainees with their emblems for the other trainees to see. Users can compare each other and are able to check out how the other users are doing.
 
+.Emblemtafel page
 image::../img/emblemtafel.png[]
 
 === Java classes

@@ -21,19 +21,19 @@
             wird das jeweilige Quiz freigeschalten!
         </p>
         <!-- tag::dataTable[] -->
-        <p:dataTable var="kurs" value="#{kursController.kurse}">
-            <p:column headerText="Titel">
+        <p:dataTable var="kurs" value="#{kursController.kursmodel}">
+            <p:column headerText="Titel" rendered="#{kursController.isTakeable(kurs.kursid, &quot;1&quot;)}">
                 <h:outputText value="#{kurs.titel}"></h:outputText>
             </p:column>
-            <p:column headerText="Beschreibung">
+            <p:column headerText="Beschreibung" rendered="#{kursController.isTakeable(kurs.kursid, &quot;1&quot;)}">
                 <h:outputText value="#{kurs.beschreibung}"></h:outputText>
             </p:column>
-            <p:column>
+            <p:column headerText="Link" rendered="#{kursController.isTakeable(kurs.kursid, &quot;1&quot;)}">
+                <h:link outcome="#{kurs.link}" value="Take Course!"></h:link>
+            </p:column>
+            <p:column headerText="Bestätigung" rendered="#{kursController.isTakeable(kurs.kursid, &quot;1&quot;)}">
                 <h:form>
-                    <!--<p:commandButton action="{kursController.takeKurs(kurs.kursID)}" value="Take Course!"  >       
-                    </p:commandButton>     -->
-                    <!--<h:commandLink action="{kursController.kursbean.find(kurs.kursID).getLink()}" value="Take Course!"></h:commandLink>-->
-                    <h:commandLink action="https://www.tutorialspoint.com/java/index.htm" value="Take Course!"></h:commandLink>
+                    <h:commandButton action="#{kursController.updateKurs(kurs.kursid)}" value="Bestaetigung"></h:commandButton>
                 </h:form>
             </p:column>
         </p:dataTable>
