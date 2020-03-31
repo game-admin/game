@@ -56,15 +56,17 @@ include::chapters/Solution_Strategy.adoc[]
 // 9. Design Decisions
 include::chapters/Design_Decisions.adoc[]
 
-
 <<<<
 //Praxis Eric
 include::chapters/Praxis_Eric.adoc[]
 
-
 <<<<
 //Praxis Jan
 include::chapters/Praxis_Jan.adoc[]
+
+<<<<
+//Summary
+include::chapters/Summary.adoc[]
 
 <<<<
 //Verzeichnisse

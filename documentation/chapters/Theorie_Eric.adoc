@@ -24,22 +24,32 @@ There are many people who have tried to classify different learning preferences 
 
 In the book "Denken, Lernen, Vergessen"(Vester, 1998), Frederick Vester defined four types of learning. However, his book was interpreted differently, so that different versions of his classification can be found. At least on the fact that there is an auditory, a visual and a haptic learning type, there is agreement. Though there are some people who think that the fourth learning type after Frederik Vester is the communicative learning type and others think that it is an intellectual learning type.
 
-NOTE: One also comes across terms like "cognitive learning type" ≙ "intellectual learning type", or the "kinesthetic learning type" ≙ "haptic learning type.
+NOTE: One also comes across terms like cognitive learning type, which is equal to the intellectual learning type, or the kinesthetic learning typ, which is equal to the haptic learning type.
 
 .Evidence for a classification according to Vester with a "communicative learning type"
- https://www.teko.ch/die-vier-lerntypen-und-ihre-besonderheiten;
- https://www.mystipendium.de/studium/lerntypen;
- https://karrierebibel.de/lerntypentest/#Die-vier-Lerntypen-angelehnt-an-Frederic-Vester;
- https://learnsolution.de/die-vier-lerntypen-nach-frederic-vester/;
+ Wittwer, I. (2018): Die vier Lerntypen und ihre Besonderheiten. Online at: https://www.teko.ch/die-vier-lerntypen-und-ihre-besonderheiten; Accessed on: 14.01.2020.
  
-.Evidence for a classification to Vester with an "intellectual learning type""
- http://www.rechtschreibwerkstatt-konzept.de/wp-content/uploads/2015/02/Looss_Lerntypen.pdf;
- https://wb-web.de/wissen/lehren-lernen/lernstile-und-lerntypen.html;
- https://smarter-learning.de/lerntypen/klassische-lerntypen-nach-vester/;
- https://wissenschafts-thurm.de/lerntypen/;
- "Erforschung der Lerntypen und -strategien am Beispiel einer Handelsschulklasse", Petra Hochleitner, 2016 
+ Maier, M. (2017): Lerntypen: Welcher der 4 bist du?. Online at: https://www.mystipendium.de/studium/lerntypen; Accessed on. 14.01.2020.
  
-I will be analyzing this classification according to Vester:
+ Rassek, A. (2017): Die vier Lerntypen angelehnt an Frederic Vester. Online at: https://karrierebibel.de/lerntypentest/#Die-vier-Lerntypen-angelehnt-an-Frederic-Vester; Accessed on: 14.01.2020.
+ 
+ LearnSolution (2017). Die vier Lerntypen nach Frederic Vester. Online at: https://learnsolution.de/die-vier-lerntypen-nach-frederic-vester/; Accessed on: 14.01.2020.
+ 
+ 
+.Evidence for a classification according to Vester with an "intellectual learning type"
+ Looß, M. (2001). Lerntypen? Ein pädagogisches Konstrukt auf dem Prüfstand. Online at: https://www.rechtschreibwerkstatt-konzept.de/wp-content/uploads/2015/02/Looss_Lerntypen.pdf; Accessed on: 14.01.2020.
+ 
+ Quilling, K. (2015). Lernstile und Lerntypen. Online at: https://wb-web.de/wissen/lehren-lernen/lernstile-und-lerntypen.html; Accessed on: 14.01.2020.
+ 
+ Jacob, T. (2010). Klassische Lerntypen nach Vester. Online at: https://smarter-learning.de/lerntypen/klassische-lerntypen-nach-vester/; Accessed on: 14.01.2020.
+ 
+ Manschwetus, U. (2014). Lerntypen - Echte Hilfe oder nur Theorie?. Online at: https://wissenschafts-thurm.de/lerntypen/; Accessed on: 14.01.2020.
+ 
+ Hochleitner, P. (2016). Erforschung der Lerntypen und -strategien am Beispiel einer Handelsschulklasse. Akademiker Verlag.
+ 
+ 
+ 
+I will be analyzing the classification according to Vester with the following learning types:
 
 1. optical/visual -> Learning through seeing and observing
 2. auditory/acoustically -> Learning through listening and speaking
@@ -73,6 +83,7 @@ It would be a lot easier, if everybody could learn the same way. In reality, the
 *So how can you find out which learning type suits you best?*
 
 On the Internet you can find many so-called "learning type tests". In these tests, u have to answer a few simple questions, that depict typical life situations. Here are two hyperlinks, which lead to easy tests:
+
 * http://arbeitsblaetter.stangl-taller.at/TEST/HALB/Test.shtml
 * http://www.philognosie.net/index.php/tests/testsview/150/
 
@@ -118,7 +129,7 @@ The following figure shows the dimensions:
 .Learning styles according to Kolb
 image::../img/dimensions.png[Learning styles according to Kolb]
 
-Source: (https://selfdirectedlearning.webnode.es/learning-styles-by-kolb/; letzter Zugriff 28.01.2020)
+Source: (https://selfdirectedlearning.webnode.es/learning-styles-by-kolb/; Accessed on: 28.01.2020)
 
 Kolb presents four learning styles defined by the four quadrants that result from these orthogonal dimensions.
 
@@ -174,11 +185,4 @@ Learning is an essential part of the human nature. The human race developed they
 What we created, was another tool for people to learn new things or check their existing knowledge. We did this in a very unique way. In a _gamificated_ way. Combinding elements of games with learning is proven to improve one's learning capabilitys. Even though, there are several different learning types, and many more interpretation of such, our system is embracing many of them. For example, the visual learning type reads through the course and remembers the material better that way. The cognitive learning type learns better by taking the quizzes and creating connections in their head.
 
 I tried to include as many of the things I learned by researching my theorethical part of the diploma thesis, into the platform. I think, the members of the ARZ will have an easy learning experience with the website we created.
-
-
-
-
-
-
-
 
