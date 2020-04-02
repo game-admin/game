@@ -1,0 +1,7 @@
+== Words from the client
+
+With the completion of ther diploma thesis, Eric and Jan have reached an important first milestone in their professional career. I am glad that I could accompany them on this journey with professional and technical know-how. The cooperation was characterized by regular meetings, which were held every second week for 2 to 3 hours. These made it possible that questions and problems could be clarified immediately. Initial gaps in knowledge of the technologies used were quickly closed and so a prototype worthy of presentation for the new ARZ education platform was developed.
+
+Finally, I want to point out the high level of commitment and willingness for further training shown by Eric and Jan. They have been working together intesively with the Java EE technologies over the last few months and so enabled a successful implementation of the prototype.
+
++++-+++ Ing. Konrad Renner
