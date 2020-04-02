@@ -10,7 +10,7 @@ For seamless working together on a shared code base it is advantageous to use th
 
 ==== Decision
 
-The standard code format is defined in the file link:formatter.xml[]. This XML is created as an link:https://www.eclipse.org/[eclipse]-Formatter file, but can also be importet in other IDEs, such as Apache Netbeans or IntelliJ Idea.
+The standard code format is defined in the file link:formatter.xml[]. This XML is created as an link:https://www.eclipse.org/[eclipse]-Formatter file, but can also be imported in other IDEs, such as Apache Netbeans or IntelliJ Idea.
 
 ==== Consequences
 

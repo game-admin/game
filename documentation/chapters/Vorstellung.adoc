@@ -2,12 +2,12 @@
 
 === Eric Haneder
 
-//image::../img/eric.png[] 
+image::../img/eric.jpg[] 
 
 * Place of residence: Untergrub
 * Born: 17.05.2001
 * Education
-** Volkschule Göllersdorf
+** Volksschule Göllersdorf
 ** Hauptschule Göllersdorf
 ** HTL Hollabrunn, Wirtschaftsingenieure-Betriebsinformatik
 

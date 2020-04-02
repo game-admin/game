@@ -1,9 +1,9 @@
 == Practical task: Eric Haneder (Front end)
 
 === Beginning
-To start with designing user interfaces (= front end), a design must be agreed with the client which suits the client an is realizable for us. The front end is the most important part for the user, because it includes everything the user can see and interact with. I discussed this topic with the client and we came to a conclusion
+To start with designing user interfaces (= front end), a design must be agreed with the client which suits the client an is realizable for us. The front end is the most important part for the user, because it includes everything the user can see and interact with. I discussed this topic with the client and we came to a conclusion.
 
-Here is an abstract picture, how the user interfaces should look like:
+Here is an abstract picture of how the user interfaces should look like:
 
 .User interfaces
 image::../img/UserInterfaces.png[]
@@ -45,7 +45,7 @@ _(vgl. Goncalves A. (2013). Beginning Java EE 7. Apress.)_
 
 
 ==== HTML
-Hypertext Markup Language (HTML) is the common used language for building web pages. A HTML page is a text document (with a .html or .htm extension) used by browsers to present text and graphics. A web page is made of content, tags to change some aspects of the content, and external objects such as images, videos, JavaScript, or CSS files.
+Hypertext Markup Language (HTML) is the common used language for building web pages. A HTML page is a text document (with a .html or .htm extension) used by browsers to present text and graphics. A web page is made of content, tags to change some aspects of the content and external objects such as images, videos, JavaScript or CSS files.
 
 .Sample HTML code
 [source, html]
@@ -63,21 +63,20 @@ Hypertext Markup Language (HTML) is the common used language for building web pa
     </body>
 </html>
 ----
-NOTE: U can notice several tags in this code (such as <body> or <p>). Every tag has its on purpose, attributes and must be closed. Href is an attribute of the a-tag.
+NOTE: You can notice several tags in this code (such as <body> or <p>). Every tag has its own purpose, attributes and must be closed. "Href" is an attribute of the <a>-tag.
 
-XHTML is just a validated version of html. This means, that there are certain rules, a html-page has to follow, to be valid. XHMTL pages have a .xhtml extension.
+XHTML is just a validated version of html. There are certain rules, a html-page has to follow, to be valid. XHMTL pages have a .xhtml extension.
 
 Some of the rules are the following:
 
 * All tags must be closed. (so no <br>, <hr>, ...)
 * All tags are lowercase.
-* Attributes appear appear between single or double quotes (<table border="0"> instead of <table border = 0>)
+* Attributes appear between single or double quotes (<table border="0"> instead of <table border = 0>).
 * There must be a strict structure with <html>, <head> and <body> tags.
 
 ==== CSS
-Cascading Style Sheets (CSS) is a styling language used to describe the presentation of a document written in html or xhtml. CSS is used to define colors, fonts layouts, and other aspects of document presentation.It allows separation of a document’s content (written in XHTML) from its presentation (written in CSS).
-To embedd a .css file in your html or xhtml page, use the <link> tag.
-(e.g. <link rel="stylesheet" type="text/css" ?
+"Cascading Style Sheets" (CSS) is a styling language used to describe the presentation of a document written in html or xhtml. CSS is used to define colors, fonts layouts and other aspects of document presentation. It allows separation of a document’s content (written in XHTML) from its presentation (written in CSS).
+To embed a .css file in your html or xhtml page, use the <link> tag.
 
 .Sample CSS code
 [source,css]
@@ -177,15 +176,12 @@ The Courses-page should display a list of courses the trainee can go through. Th
             </p:column>
             <p:column>
                 <h:form>
-                    <!--<p:commandButton action="{kursController.takeKurs(kurs.kursID)}" value="Take Course!"  >       
-                    </p:commandButton>     -->
-                    <!--<h:commandLink action="{kursController.kursbean.find(kurs.kursID).getLink()}" value="Take Course!"></h:commandLink>-->
                     <h:commandLink action="https://www.tutorialspoint.com/java/index.htm" value="Take Course!"></h:commandLink>
                 </h:form>
             </p:column>
         </p:dataTable>  
 ----
-The Primefaces tag <p:dataTable> takes a list and knows how to display its content throught the columns. It is the equivalent to the <table> tag of html, but with some extra functions and style modifications. Here, I put in a list of courses. Every course in the list has a titel, description and a link which is displayed in separated columns.
+The Primefaces tag <p:dataTable> takes a list and knows how to display its content throughout the columns. It is the equivalent to the <table> tag of html, but with some extra functions and style modifications. Here, I put in a list of courses. Every course in the list has a titel, description and a link which is displayed in separated columns.
 
 The <p:commanButton> invokes the takeKurs-method when pressed. In this method, a link of the selected course is returned.
 The <h:commandLink> is linked to the URL of the course. By clicking on it, the user is redirected to the site of the course.
@@ -196,7 +192,7 @@ This is how the courses interface looks like:
 image::../img/kurs1.png[]
 
 ==== Quiz pages
-The quiz pages include a interface, where every takeable quiz is displayed, two pages for taking a quiz and a page where the results are shown. Every quiz has its own emblem, which can be won if they quiz is taken succesfully. This means the user has to has at least half of the questions right.
+The quiz pages include an interface, where every takeable quiz is displayed, two pages for taking a quiz and a page where the results are shown. Every quiz has its own emblem, which can be won if the quiz is taken succesfully. This means the user has to has at least half of the questions right.
 
 .quizzes.xhtml
 [source,html]
@@ -216,9 +212,9 @@ The quiz pages include a interface, where every takeable quiz is displayed, two 
     </p:column>
 </p:dataTable>
 ----
-Here, <p:dataTable> is used again, this time to show all available quizzes. It gets a list of quizzes and displays a quiz whether or not it is takeable. This is evaluated in the isTakeable-method in the QuizController Bean.
+Here, <p:dataTable> is used again, this time to show all available quizzes. It gets a list of quizzes and displays a quiz if it is takeable. This is evaluated in the isTakeable-method in the QuizController Bean.
 
-This is how it looks like, when the user has not fulfilled the requirements to take a quiz:
+This is how it looks like, when the user has not fulfilled the requirements to take all the quizzes:
 
 .Quizzes page
 image::../img/quiz1.png[]
@@ -249,7 +245,7 @@ By clicking on the <p:commandButton>, the user can take the quiz.
     <br/>
 </ui:repeat>
 ----
-This is the page for taking singlechoice-quizzes. The questions are repeatadly displayed by the <ui:repeat> tag. This tag runs through a given list, and displays the wanted data. The answers are displayed with the <p:selectOneRadio>, which renderes a set of buttons based on the data you 
+This is the page for taking singlechoice-quizzes. The questions are repeatedly displayed by the <ui:repeat> tag. This tag runs through a given list and displays the wanted data. The answers are displayed with the <p:selectOneRadio>-tag, which renderes a set of buttons based on the data you 
 set with <f:selectItem>.
 
 .Single-choice quiz
@@ -265,13 +261,13 @@ The page for taking multiplechoice quizzes looks almost the same, except for the
 .Multiple-choice quiz
 image::../img/multiple1.png[]
 
-The results page is responsible for displaying the results of the quiz taken by the trainee. The trainee is able to see how many questions he/she answered right, how many points he/she won and which questions he/she answered incorrectly. Furthermore, the user sees which answers is right for every question. If the question is green and checked, the user answered correctly. If the question is red with a X at the end, the user answered incorrectly.
+The results page is responsible for displaying the results of the quiz taken by the trainee. The trainee is able to see how many questions he/she answered right, how many points he/she won and which questions he/she answered incorrectly. Furthermore, the user sees which answers are right for every question. If the question is green and checked, the user answered correctly. If the question is red with a X at the end, the user answered incorrectly.
 
 .Results page
 image::../img/results1.png[]
 
-==== Trainer page
-The Trainers page should display all the trainers associated with the GAME platform. The trainees can contact these trainers if they need help.
+==== Trainers page
+The trainers page should display all the trainers associated with the GAME platform. The trainees can contact these trainers if they need help.
 
 .trainers.xhtml
 [source,html]
@@ -290,13 +286,13 @@ The Trainers page should display all the trainers associated with the GAME platf
     </p:panelGrid>    
 </p:carousel>
 ----
-Here I used a primefaces tag called <p:carousel>. This tag is used to create a carousel. The <p:panelGrid> tag is used to display data in a grid. The <p:graphicImage> is just like the JSF tag <h:graphicImage>. <h:outputText> is used to display text, with the function to call a Backing Bean. For easier explanation here is a picture:
+Here I used a primefaces tag called <p:carousel>. This tag is used to create a carousel. The <p:panelGrid> tag is used to display data in a grid. <h:outputText> is used to display text, with the function to call a Backing Bean. Here is a picture of the trainers page with dummy data:
 
 .Trainers page
 image::../img/trainers.png[]
  
 ==== Emblemboard
-The emblemboard page is used to diplay all the trainees with their names, nicknames, branches and Icons they got. You should be able to sort them by their names.
+The emblemboard page is used to diplay all the trainees with their names, nicknames, branches and emblems they got. 
  
 .leaderboard.xhtml
 [source,html]
@@ -327,7 +323,7 @@ Here, the <p:dataTable> tag is used once again. This time it display all the tra
 image::../img/emblemtafel.png[]
 
 === Java classes
-Java Classes contain business logic that are need for the application. For example, if you want to display data on a page, you have to fetch data. This is done with Java files. To be more specific, Java classes which communicate with pages are called _Backing Beans_.  
+Java Classes contain business logic that is needed for the application. For example, if you want to display data on a page, you have to fetch data from the database. This is done with java classes. To be more specific, java classes which communicate with pages are called _Backing Beans_.  
 
 Backing Beans are identified by their @Named annotations. Furthermore, every bean has to have a scope annotated. An example for this is the TrainerController class I programmed.
 
@@ -354,14 +350,14 @@ public class TrainerController implements Serializable {
 }
 
 ----
-<1> Here, the TrainerService class is injected via the Jave EE Dependy Injection System. This way, we can use everything from the injected Class, without the need of calling a contructor. The TrainerServe generates a list of trainers to be displayed by the trainers page.
+<1> Here, the TrainerService class is injected via the Jave EE Dependy Injection System. This way, we can use everything from the injected class, without the need of calling a contructor. The "TrainerService" class generates a list of trainers to be displayed by the trainers page.
 
 The TrainerController class is used to diplay all the trainers on the trainers.xhtml page. The list of trainees is used in the <p:carousel> tag. 
 
 
 Another class I developed is the TraineeController. This class is used to display all the trainees on the emblemboard. It looks quite similar to the TrainerController. The only difference is that the data is created by the TraineeEJB class.
 
-The last class I programmed, is the biggest one. It is called QuizController.java and it handles all of the interactions regarding the quizzes. This means it is responsible for forwarding the trainee from the quizzes page to the takquiz page, and from the takequiz page to the results page. Furthermore, it evaluates if a trainee meets all the requirements to take a quiz and it evaluates the results of a taken quiz.
+The last class I programmed, is the biggest one. It is called QuizController.java and it handles all of the interactions regarding the quizzes. This means it is responsible for forwarding the trainee from the quizzes page to the takequiz page, and from the takequiz page to the results page. Furthermore, it evaluates if a trainee meets all the requirements to take a quiz and it evaluates the results of a taken quiz.
 
 ==== Quiz Classes
 
@@ -391,14 +387,13 @@ The last class I programmed, is the biggest one. It is called QuizController.jav
         checkResults(falsche);
     }
 ----
-This method is used to evaluate the results of a MultipleChoice-Quiz. Each button is bound to a boolean-wert of the buttons[]. Every Question is checked, if every button matches the right answers. The user only gets points, if he answers the question correctly.
+This method is used to evaluate the results of a MultipleChoice-Quiz. Each button is bound to a boolean-value of the buttons-array. Every Question is checked, if every button matches the right answers. The user only gets points, if he answers the question correctly.
 
 .QuizController
 [source, java]
 ----
 public void evaluateScoreRadio() {
         List<Integer> falsche = new ArrayList<>();
-        //fragemodell = creator.createModell(qid);
         int indexri=0;
         for(int i=0; i<fragemodell.size(); i++) {
             for(int j=0; j<fragemodell.get(i).indexrichtig.size(); j++) {
@@ -416,7 +411,7 @@ public void evaluateScoreRadio() {
         checkResults(falsche);
     }
 ----
-Here, the singlechoice-quizzes get evaluated. This is much easier, because the radiobuttons function differently than the normal buttons. Every set of radiobuttons is bound to one value (selectedAnswer). We only need to check if the selected Answer matches the correct Answer. 
+Here, the singlechoice-quizzes are evaluated. This is much easier, because the radiobuttons function differently than the normal buttons. Every set of radiobuttons is bound to one value (selectedAnswer). We only need to check if the selected Answer matches the correct Answer. 
 
 .QuizController
 [source, java]
@@ -444,6 +439,6 @@ public void checkResults(List<Integer> falsche) {
 ----
 In _checkResults_, a _Results-List_ i s generated. This list is used to diplay the results on the results.xhtml page.
 
-The QuizController is used to handle everything surrounding the action of taking a quiz. It is responsible for displaying the content on the quizzes-, takequiz- and results-page. It will forward the user from the quizzes page to the takequizpage, where he/she can take the quiz. By clicking on th Submit button, the user is forwarded to the results-site, where their results are shown. 
+The QuizController is used to handle everything surrounding the action of taking a quiz. It is responsible for displaying the content on the quizzes-, takequiz- and results-page. It will forward the user from the quizzes page to the takequiz page, where he/she can take the quiz. By clicking on the "Submit" button, the user is forwarded to the results-site, where his/her results are shown. 
 
 

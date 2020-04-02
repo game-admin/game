@@ -13,7 +13,7 @@ Cornelia Sammer cornelia.sammer@arz.at
 *_Expectations_*:
 
 Roland Moder:: 
-He expects the diploma thesis to run smoothly and be completed within a reasonable time, this means it has to be completed by the end of April. Additionally, the diploma students should fulfill the requirements for a diploma thesis. Furthermore, there should be a sufficient documentation of the work done.
+He expects the diploma thesis to run smoothly and be completed within a reasonable time, this means it has to be completed by the end of March. Additionally, the diploma students should fulfill the requirements for a diploma thesis. Furthermore, there should be a sufficient documentation of the work done.
 
 
 Konrad Renner::
@@ -21,5 +21,5 @@ He expects the software to contain a scoring system that records the learning pr
 
 
 Michaela Würzl and Cornelia Sammer::
-They expect a timely completion of the project, so that the concept is completed by 31.12.2019, and the implementation should be completed by the end of April. Moreover, the software should be utilizable and integradable, this means the user interface should be easy to use for employees, trainers and moderators.
+They expect a timely completion of the project, so that the concept is completed by 31.12.2019, and the implementation should be completed by the end of March. Moreover, the software should be utilizable and integradable, this means the user interface should be easy to use for employees, trainers and moderators.
 

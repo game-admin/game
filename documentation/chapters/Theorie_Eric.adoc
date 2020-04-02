@@ -11,9 +11,10 @@ Regardless of the theoretical approach to learning, it is true that learning is 
 
 Despite the large amount of signals that are constantly received by the sense organs from the environment and transmitted to the CNS, the number of connections between the peripheral nervous system and the CNS is relatively small. Most of the estimated 100 billion neurons (Goldstein 1997, S. 11) serve to process information (pattern recognition, linking), they receive their input from cortical neurons and deliver their output to other cortical neurons.
 
-Learning is based on the plasticity of synapses and dendrites. Plasticity includes activation or breaking of connections between nerve cells, elimination of blocking connections, changes in synaptic density, and branching and thickening of dendrites. Not one but several of these processes are involved in the various forms of learning.
+Learning is based on the plasticity of synapses^+++*+++^ and dendrites^*^. Plasticity includes activation or breaking of connections between nerve cells, elimination of blocking connections, changes in synaptic density, and branching and thickening of dendrites. Not one but several of these processes are involved in the various forms of learning.
 
-_Dendrites_: root-like branches that make up the impulse-transmitting cells of the CNS
+^+++*+++^_dendrites_: root-like branches that make up the impulse-transmitting cells of the CNS +
+^+++*+++^_synapses_: structures that permit neurons to pass a signal to another neuron
  
 
 _(vgl. Selbstreguliertes Lernen in der dualen Ausbildung - Lerntypen und Bedingungen, Johannes Rosendahl, 2010, S.22)_
@@ -60,21 +61,21 @@ I will be analyzing the classification according to Vester with the following le
 The auditory learning type learns while using his hearing. He/She has no problem listening to someone over long periods of time. The auditive type prefers auditioned learning content and learns better if he/she reads the text aloud himself/herself.
 
 ==== Visual learning type
-This learning type learns the best, when he takes up the learning content through his eyes. Reading texts will lead to great learning achievements. This gets a better unterstanding of facts through looking at pictures.
+This learning type learns the best, when he/she takes up the learning content through his/her eyes. Reading texts will lead to great learning achievements. He/She gets a better unterstanding of facts through looking at pictures.
 
 ==== Haptic learning type
-The haptic learning type achieves the best learning succes if he cant feel the information he has to learn.
-"Learning by Doing" describes this lerning method pretty good. He prefers to be actively integrated into the learning process. Practical demonstrations are helpful too. 
+The haptic learning type achieves the best learning succes, if he/she can feel the information he/she has to learn.
+"Learning by Doing" describes this lerning method pretty good. He/She prefers to be actively integrated into the learning process. Practical demonstrations are helpful too. 
 
 ==== Cognitive/Intellectual learning type
-This learning type understands and saves information the best, by thinking about and critically examining the information. The perception channel not important for taking up learning content.
+This learning type understands and saves information the best, by thinking about and critically examining the information. The perception channel is not important for taking up learning content.
 
-_(vgl."https://smarter-learning.de/lerntypen/klassische-lerntypen-nach-vester/"; letzter Zugriff: 14.01.2020)_
+_(vgl. https://smarter-learning.de/lerntypen/klassische-lerntypen-nach-vester/; Accessed on: 14.01.2020)_
 
 ==== Connections
-Most of the time, it is not possible to assign someone a certain learning type, as there mix-types of learning. There are some people who learn faster by reading through text and writing it down afterwards (visual & haptic), and others are better of learning by reading and reciting out lout (auditory & haptic).
+Most of the time, it is not possible to assign someone a certain learning type, as there are mix-types of learning. There are some people who learn faster by reading through text and writing it down afterwards (visual & haptic), and others are better of learning by reading and reciting out lout (auditory & haptic).
 
-So if you want to learn effectively, you should try to appeal to more than one sense,  to find a combination that fits your style.
+So if you want to learn effectively, you should try to appeal to more than one sense and to find a combination that fits your style.
 
 *How are different types of learning formed?*
 
@@ -87,7 +88,7 @@ On the Internet you can find many so-called "learning type tests". In these test
 * http://arbeitsblaetter.stangl-taller.at/TEST/HALB/Test.shtml
 * http://www.philognosie.net/index.php/tests/testsview/150/
 
-After completing one of these tests, you will receive a recommendation as to which type of learner is more suitable for you.
+After completing one of these tests, you will receive a recommendation as to which learning type is more suitable for you.
 
 NOTE: It should be noted that different tests can also lead to different recommendations. This is due to the fact that the tests have different focuses and are more or less comprehensive. 
 
@@ -100,30 +101,32 @@ Dunn and Price (1989) defined learning style as a typical way of learning that i
 
 * physical stimuli (light, sound, temperature, design)
 * social stimuli (pairs, peers, adults, groups)
-* stimuli of learning material (auditiv, visuell, taktil, kinästhetisch)
+* stimuli of learning material (auditory, visual, tactile, kinesthetic)
 * emotional stimuli (responsibility, persistence, motivation, disciplin)
 
-These factors are measured by the "Learning Styles Inventory". However, this model takes little account of the actual cognitive processes that play a role in learning.
+These factors are measured in the book "Learning Styles Inventory" by Dunn and Price. However, this model takes little account of the actual cognitive processes that play a role in learning.
 
 _(vgl. "Lernorientierungen, Lernstile, Lerntypen und kognitive Stile", Ulrike Creß, in "Handbuch Lernstrategien" von Heinz Mandl & Helmut Felix Friedrich, S.373)_
 
 === Learning styles according to Pask 
-Around 1972, Pask and Scott identified two opposing learning strategies used in problem-solving tasks where people had to search for information independently.They described the consistend usage of these strategies as a learning style.
+Around 1972, Pask and Scott identified two opposing learning strategies used in problem-solving tasks where people had to search for information independently. They described the consistent usage of these strategies as a learning style.
 
 The holistic strategy means that learners always keep the big picture in mind and only turn to detailed questions in a second step. If this strategy is applied consistently, Pask speaks of the learning style of comprehension learning. On the other hand, learners with a serial strategy work their way step by step through the learning material and primarily turn to individual questions. If this strategy is used consistently, Pask speaks of operation learning. Both strategies can lead to the same success. 
 
-In their extreme form, however, both have a negative effect on performance, which is why Pask assigns both learning styles to corresponding learning pathologies. _Globetrotting_ refers to the learning pathology of extreme comprehension learning, in which learners make inadmissible generalizations without the corresponding individual analysis. _Improvidence_ describes the extreme form of operation learning, in which people lose themselves in details without being able to connect them to a big picture. Since the differences between holistic and serial approaches affect not only learning behaviour but the entire way in which information is sought and processed, they are often interpreted as cognitive styles.
+In their extreme form however, both have a negative effect on performance, which is why Pask assigns both learning styles to corresponding learning pathologies. _Globetrotting_ refers to the learning pathology of extreme comprehension learning, in which learners make inadmissible generalizations without the corresponding individual analysis. _Improvidence_ describes the extreme form of operation learning, in which people lose themselves in details without being able to connect them to a big picture. Since the differences between holistic and serial approaches affect not only learning behaviour but the entire way in which information is sought and processed, they are often interpreted as cognitive styles.
 
 _(vgl."Lernorientierungen, Lernstile, Lerntypen und kognitive Stile", Ulrike Creß, in "Handbuch Lernstrategien" von Heinz Mandl & Helmut Felix Friedrich, S.369)_
 
 
 === Learning styles according to Kolb
-In 1984 David Kolb took a completely different approach to classifying learning types. According to Kolb, the learning process is based on two orthogonal bipolar dimensions. 
+In 1984 David Kolb took a completely different approach to classifying learning types. According to Kolb, the learning process is based on two orthogonal^+++*+++^ bipolar dimensions. 
 
-The first dimension depicts how people perceive and collect information. Persons can perceive via the senses through practical experience or through abstract comprehension. 
+The first dimension depicts how people perceive and collect information. Persons can perceive via the senses, through practical experience or through abstract comprehension. 
 
 The second dimension represents the way information is processed. It ranges from active trying to mental observation.
-(orthogonal -> two straight lines are called orthogonal if they enclose a 90 degree angle)
+
+^+++*+++^_orthogonal_: two straight lines are called orthogonal if they enclose a 90 degree angle
+
 The following figure shows the dimensions:
 
 .Learning styles according to Kolb
@@ -149,7 +152,7 @@ _(vgl. "Lernorientierungen, Lernstile, Lerntypen und kognitive Stile", Ulrike Cr
 
 The concept of self-regulated learning is neither a precisely scientifically defined term nor a uniformly used term in everyday language. Furthermore, the terms self-regulated learning, self-directed learning, learner control can hardly be defined clearly.
 
-Niegemann and Hofer (1997) or Büser (2003) define that in self-directed learning, in contrast to self-directed or self-regulated learning, the learning goal is determined by the person himself. Other authors, on the other hand, see the decision on learning goals explicitly as a component of self-directed or self-regulated learning (Arnold & Gomez-Tutor 2006; Dehnbostel 2003; Lang & Pätzold 2006; Neber 1978; Schreiber 1998, S. 45).
+Niegemann and Hofer (1997) or Büser (2003) define that in self-directed learning, in contrast to self-directed or self-regulated learning, the learning goal is determined by the person itself. Other authors, on the other hand, see the decision on learning goals explicitly as a component of self-directed or self-regulated learning (Arnold & Gomez-Tutor 2006; Dehnbostel 2003; Lang & Pätzold 2006; Neber 1978; Schreiber 1998, S. 45).
 
 _(vgl. Selbstreguliertes Lernen in der dualen Ausbildung - Lerntypen und Bedingungen, Johannes Rosendahl, 2010)_
 
@@ -157,16 +160,16 @@ In self-regulated learning, the own motivation plays an important role. Here the
 In these learning goals personal standards and reference achievements are expressed.
 
 Based on this goal, actions are taken, their execution is monitored and their results are compared with the goal. In response to the comparison result, the actions are either adjusted or stopped.
-The actual self-regulation includes the interacting sub-processes self-observation, evaluation processes and self-reaction (Bandura 1986, S. 337).
-During self-observation, the learner registers his performance in terms of various performance dimensions such as quality, originality, quantity and morality as well as correctness and accuracy. Based on this, he will have to take action, as mentioned above. Subsequent results are again observed and evaluated, thus creating a cyclical loop (Bandura 1989).
+The actual self-regulation includes the interacting sub-processes self-observation, evaluation processes and self-reaction (Bandura 1986).
+During self-observation, the learner registers his performance in terms of various performance dimensions such as quality, originality, quantity and morality as well as correctness and accuracy. Based on this, he will have to take action, as mentioned above. Subsequent results are again observed and evaluated, thus creating a cyclical loop.
 
-The term self-regulation emphasizes that a person influences his or her own actions to a considerable extent (Weinert 1982). 
+The term self-regulation emphasizes that a person influences his/her own actions to a considerable extent (Weinert 1982). 
 However, this does not exclude the possibility that the trainer/teacher may carry out an occasional learning check (comparison of target and actual learning).
 Purely self-regulated action is theoretically possible, such as the creation of an artificial language and its practice through inner speech, but in professional reality there will usually be a greater degree of external control.
 
 
 === Gamificated Learning
-Gamificated learning is a unique way for learners to remember their learning material. The goal is to maximize enjoyment and egagement through capturing the interest of learners and inspiring them to continue learning (Huang 2013). Gamification in particular means implementing game-elements, to a non-game environment.
+Gamificated learning is an unique way for learners to remember their learning material. The goal is to maximize enjoyment and engagement through capturing the interest of learners and inspiring them to continue learning (Huang 2013). Gamification in particular means implementing game-elements, to a non-game environment.
 
 Some elements of games that can be used to motivate leaners and ease learning include:
 
@@ -176,13 +179,13 @@ Some elements of games that can be used to motivate leaners and ease learning in
 * Social connection
 * Opportunities for mastery, and leveling up
 
-When a learning platform contains the use of some of these elements, it can be considered "gamified". A gamificated system, which is often used in classrooms, is Kahoot. Kahoot is a website, where the teacher can create quizzes, and let the students participate in them via their smartphones. The quiz gets display e.g. with a beamer, so every student can see the questions. The principle is easy: Every student gets to answer the same question in the same timeframe, and whoever answered the fastest, gets the most points. If the student answers incorrectly, he/she will not get any points. At the end of the quiz, a leaderboard is displayed with the best scoring players on the top. This system embraces progress mechanics, immediate feedback and social connection.
+When a learning platform contains some of these elements, it can be considered "gamificated". A gamificated system which is often used in classrooms is Kahoot. Kahoot is a website, where the teacher can create quizzes, and let the students participate in them via their smartphones. The quiz is displayed for example with a beamer, so every student can see the questions. The principle is easy: Every student gets to answer the same question in the same timeframe, and whoever answered the fastest, gets the most points. If the student answers incorrectly, he/she will not get any points. At the end of the quiz, a leaderboard is displayed with the best scoring players on the top. This system embraces progress mechanics, immediate feedback and social connection.
 
 
 === Conclusion
 Learning is an essential part of the human nature. The human race developed they way it did, because humanity kept learning and improving skills. "You never stop learning.", is an important figure of speech. In modern times learning is as important as ever, because the world changes rapidly. 
 
-What we created, was another tool for people to learn new things or check their existing knowledge. We did this in a very unique way. In a _gamificated_ way. Combinding elements of games with learning is proven to improve one's learning capabilitys. Even though, there are several different learning types, and many more interpretation of such, our system is embracing many of them. For example, the visual learning type reads through the course and remembers the material better that way. The cognitive learning type learns better by taking the quizzes and creating connections in their head.
+What we created, was another tool for people to learn new things or check their existing knowledge. We did this in a very unique way. In a _gamificated_ way. Combinding elements of games with learning is proven to improve one's learning capabilities. Even though, there are several different learning types, and many more interpretations of such, our system is embracing many of them. For example, the visual learning type reads through the course and remembers the material better that way. The cognitive learning type learns better by taking the quizzes and creating connections in their head.
 
 I tried to include as many of the things I learned by researching my theorethical part of the diploma thesis, into the platform. I think, the members of the ARZ will have an easy learning experience with the website we created.
 

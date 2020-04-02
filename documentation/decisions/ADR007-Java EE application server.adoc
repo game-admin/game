@@ -6,7 +6,7 @@ accepted
 
 ==== Context
 
-Applications which are implemented on top of the Java EE specification, which is defined as the base technology of the GAME application in the link:ADR002-Technology stack.adoc[ADR002-Technology stack], need an application server as runtime environment.
+Applications which are implemented on top of the Java EE specification, which is defined as the base technology of the GAME application in the chapter "ADR002-Technology stack", need an application server as runtime environment.
 
 ==== Decision
 
@@ -16,5 +16,5 @@ The Wildfly application is open source and has full support for the Java EE 8 sp
 
 ==== Consequences
 
-Wildfly is defined as the default application server of the application, but the application must be as Java EE standard compliant as possible, so that the portability of the application is still warranted.
-Further it must be possible to run the application also on application servers which are just Java EE Web Proile compliant.
+Wildfly is defined as the default application server of the application, but the system must be as Java EE standard compliant as possible, so that the portability of the application is still warranted.
+Furthermore, it must be possible to run the application on application servers which are just Java EE Web Proile compliant.

@@ -6,13 +6,13 @@ accepted
 
 ==== Context
 
-For persistent storage of data in the GAME application a database system is needed.
+For persistent storage of data in the GAME application, a database system is needed.
 
 ==== Decision
 
 The link:https://www.postgresql.org/[PostgreSQL] database will be used as the default database system in the GAME application.
 
-PostgreSQL comes with many features aimed to help developers build applications, administrators to protect data integrity and build fault-tolerant environments, and help you manage your data no matter how big or small the dataset. In addition to being free and open source, PostgreSQL is highly extensible. 
+PostgreSQL comes with many features aimed to help developers build applications, administrators to protect data integrity, fault-tolerant environments and help you manage your data no matter how big or small the dataset is. In addition to being free and open source, PostgreSQL is highly extensible. 
 It's worth mentioning that PostgreSQL also supports many NoSQL features as well.
 
 ==== Consequences

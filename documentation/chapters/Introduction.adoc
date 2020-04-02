@@ -7,11 +7,11 @@ The ARZ wants to establish a new way of gamificated education for the members. A
 
 The workers often have different knowledge about programming, so it is rather time consuming and costly to further educate them.
 
-This is where the idea of "GAME" comes into play. The "GAME" is intended to be a platform on which employees can improve their programming knowledge with little games, quizzes or competitions.
+This is where the idea of "GAME" comes into play. The tool we created is called "GAME", which stands for "Gamificated ARZ Member Education". The "GAME" is intended to be a platform on which employees can improve their programming knowledge with little games, quizzes or competitions.
 
-A great focus lies on the terms "self-study" and "Gamification". Gamification means that the information is transmittetd through games to ease the learning process. 
+A great focus lies on the terms "self-study" and "gamification". Gamification means that the information is transmittetd through games to ease the learning process. 
 
-Furthermore there should be a possibility for trainers to bring in their own ideas, quizzes or modules. One of the goals of this diplome thesis is to motivate the people to continue their education in their free time. There should be a possibility to learn some skills without much effort. 
+Furthermore, there should be a possibility for trainers to bring in their own ideas, quizzes or modules. One of the goals of this diploma thesis is to motivate people to continue their education in their free time. There should be a possibility to learn programming skills without much effort. 
 
 Another important aspect of "GAME" is the scoring system, which will be implemented in the software. This will create transparency for employees and employers. This scoring system will be a great motivation for workers. 
 
