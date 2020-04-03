@@ -22,7 +22,6 @@ include::chapters/Requirements.adoc[]
 //Vorstellung
 include::chapters/Vorstellung.adoc[]
 
-<<<<
 //Aufgabenteilung
 include::chapters/DivisionOfTasks.adoc[]
 

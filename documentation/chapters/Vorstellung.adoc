@@ -11,11 +11,7 @@ image::../img/eric.jpg[]
 ** Hauptschule Göllersdorf
 ** HTL Hollabrunn, Wirtschaftsingenieure-Betriebsinformatik
 
-
-
-
-
-
+<<<<
 
 === Jan Binder
 
